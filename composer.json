@@ -1,5 +1,5 @@
 {
     "require": {
-        "acdh-oeaw/acdh-repo": "^1.0"
+        "acdh-oeaw/acdh-repo": "^1"
     }
 }
