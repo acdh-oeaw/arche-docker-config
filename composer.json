@@ -1,7 +1,7 @@
 {
     "require": {
         "acdh-oeaw/acdh-repo": "^1",
-        "acdh-oeaw/acdh-repo-doorkeeper": "^0.1",
+        "acdh-oeaw/acdh-repo-doorkeeper": "~0.1",
         "acdh-oeaw/arche-schema": ">=1.4"
     }
 }
