@@ -57,6 +57,7 @@ metadataManagment:
     nonRelationProperties:
         - http://www.w3.org/1999/02/22-rdf-syntax-ns#type
         - https://vocabs.acdh.oeaw.ac.at/schema#hasPid
+        - https://vocabs.acdh.oeaw.ac.at/schema#matchesProp
     autoAddIds:
         # add/skip/deny
         default: add
@@ -140,23 +141,19 @@ rest:
         classLoader:
             #acdhOeaw\acdhRepo\tests: /home/zozlak/roboty/ACDH/repo/rdbms/tests
         methods:
-            get:
             create:
                 - type: function
-                  function: \acdhOeaw\acdhRepo\handler\MetadataManager::manage
-                #- type: rpc
-                #  queue: onCreateRpc
-            delete:
+                  function: \acdhOeaw\arche\Doorkeeper::onResEdit
             updateBinary:
                 - type: function
-                  function: \acdhOeaw\acdhRepo\handler\MetadataManager::manage
+                  function: \acdhOeaw\arche\Doorkeeper::onResEdit
             updateMetadata:
                 - type: function
-                  function: \acdhOeaw\acdhRepo\handler\MetadataManager::manage
-            txBegin:
+                  function: \acdhOeaw\arche\Doorkeeper::onResEdit
             txCommit:
-            txRollback:
-            txProlong:
+                - type: function
+                  function: \acdhOeaw\arche\Doorkeeper::onTxCommit
+
 ### BOTH SERVER AND CLIENT SIDE CONFIG
     urlBase: http://127.0.0.1
     pathBase: /
@@ -172,7 +169,7 @@ schema:
     delete: delete://delete
     searchMatch: search://match
     searchFts: search://fts
-    binarySize: https://vocabs.acdh.oeaw.ac.at/schema#hasBinarySize
+    binarySize: https://size
     fileName: http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#filename
     mime: https://vocabs.acdh.oeaw.ac.at/schema#hasFormat
     hash: http://www.loc.gov/premis/rdf/v1#hasMessageDigest
@@ -180,9 +177,24 @@ schema:
     modificationUser: http://fedora.info/definitions/v4/repository#lastModifiedBy
     binaryModificationDate: http://binaryModDate
     binaryModificationUser: http://binaryModUser
-    creationDate: http://fedora.info/definitions/v4/repository#created
+    creationDate: https://vocabs.acdh.oeaw.ac.at/schema#hasAvailableDate
     creationUser: http://fedora.info/definitions/v4/repository#createdBy
 ### CLIENT-ONLY SETTINGS
+    acdh:
+        binarySize: https://vocabs.acdh.oeaw.ac.at/schema#hasBinarySize
+        pid: https://vocabs.acdh.oeaw.ac.at/schema#hasPid
+        hosting: https://vocabs.acdh.oeaw.ac.at/schema#hasHosting
+        accessRestriction: https://vocabs.acdh.oeaw.ac.at/schema#hasAccessRestriction
+        accessRole: https://vocabs.acdh.oeaw.ac.at/schema#hasRestrictionRole
+        count: https://vocabs.acdh.oeaw.ac.at/schema#hasNumberOfItems
+        previous: https://vocabs.acdh.oeaw.ac.at/schema#isPreviousVersionOf
+    classes:
+        repoObject: https://vocabs.acdh.oeaw.ac.at/schema#RepoObject
+        sharedObject: https://vocabs.acdh.oeaw.ac.at/schema#AgentOrPlaceOrPublication
+        container: https://vocabs.acdh.oeaw.ac.at/schema#Container
+    namespaces:
+        ontology: 'https://vocabs.acdh.oeaw.ac.at/schema#'
+        id: 'https://id.acdh.oeaw.ac.at/'
     dissService:
         class: https://vocabs.acdh.oeaw.ac.at/schema#DisseminationService
         location: https://vocabs.acdh.oeaw.ac.at/schema#serviceLocation
@@ -206,6 +218,28 @@ schema:
         isPrevVersion: https://vocabs.acdh.oeaw.ac.at/schema#isPreviousVersionOf
         indexerDefaultBinaryClass: ''
         indexerDefaultCollectionClass: ''
+doorkeeper:
+    default:
+        hosting: 'https://id.acdh.oeaw.ac.at/arche'
+        accessRestriction: 'https://vocabs.acdh.oeaw.ac.at/archeaccessrestrictions/public'
+    rolePublic: public
+    roleAcademic: academic
+    uriMappings:
+        '|^https?://([^.]*[.])?geonames[.]org/([0-9]+)(/.*)?$|': 'https://www.geonames.org/\2'
+        '|^https?://([^.]*[.])?gazetteer[.]dainst[.]org/([A-Za-z]+/)*([0-9]+)([^0-9].*)?$|': 'https://gazetteer.dainst.org/place/\3'
+        '|^https?://([^.]*[.])?pleiades[.]stoa[.]org/places/([0-9]+)(/.*)?$|': 'https://www.pleiades.stoa.org/places/\2'
+        '|^https?://([^.]*[.])?viaf[.]org/viaf/([0-9]+)(/.*)?$|': 'https://viaf.org/viaf/\2'
+        '|^https?://([^.]*[.])?d-nb[.]info/gnd/([0-9]+-[0-9]+)$|': 'https://d-nb.info/gnd/\2'
+        '|^https?://([^.]*[.])?wikidata[.]org/([A-Za-z:]+/)*(Q[0-9]+)([^[0-9].*)?$|': 'https://www.wikidata.org/entity/\3'
+        '|^https?://([^.]*[.])?orcid[.]org/([0-9]{4})-?([0-9]{4})-?([0-9]{4})-?([0-9]{4})$|': 'https://orcid.org/\2-\3-\4-\5'
+        '|^https?://([^.]*[.])?n2t[.]net/ark:/99152/(p0[a-z0-9]+)$|': 'https://n2t.net/ark:/99152/\2'
+        '|^https?://([^.]*[.])?chronontology[.]dainst[.]org/period/([A-Za-z0-9]+)$|': 'https://chronontology.dainst.org/period/\2'
+    epicPid:
+        resolver: 'http://hdl.handle.net/'
+        url: 'https://pid.gwdg.de/handles/'
+        user: user21.11115-01
+        pswd: 
+        prefix: 21.11115
 # client library authorization settings
 auth:
     httpHeader:
