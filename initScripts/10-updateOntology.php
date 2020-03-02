@@ -12,18 +12,18 @@ use acdhOeaw\acdhRepoLib\exception\NotFound;
 $cfgFile      = '/home/www-data/docroot/config.yaml';
 $ontologyFile = '/home/www-data/docroot/vendor/acdh-oeaw/arche-schema/acdh-schema.owl';
 
-$cfgFile2                  = $cfgFile . 'tmp';
-$cfg                       = yaml_parse_file($cfgFile);
-$cfg['composerLocation']   = '/home/www-data/docroot/vendor/autoload.php';
+$cfgFile2                = $cfgFile . 'tmp';
+$cfg                     = yaml_parse_file($cfgFile);
+$cfg['composerLocation'] = '/home/www-data/docroot/vendor/autoload.php';
 yaml_emit_file($cfgFile2, $cfg);
 
 $repo    = Repo::factory($cfgFile2);
 $import  = true;
 try {
-    $res = $repo->getResourceById(preg_replace('/#$/', '', $cfg['schema']['namespaces']['ontology']));
-    $hash = (string) $res->getGraph()->getLiteral($cfg['schema']['hash']);
-    $md5  = 'md5:' . md5_file($ontologyFile);
-    $sha1 = 'sha1:' . sha1_file($ontologyFile);
+    $res    = $repo->getResourceById(preg_replace('/#$/', '', $cfg['schema']['namespaces']['ontology']));
+    $hash   = (string) $res->getGraph()->getLiteral($cfg['schema']['hash']);
+    $md5    = 'md5:' . md5_file($ontologyFile);
+    $sha1   = 'sha1:' . sha1_file($ontologyFile);
     $import = !in_array($hash, [$md5, $sha1]);
 } catch (NotFound $e) {
 

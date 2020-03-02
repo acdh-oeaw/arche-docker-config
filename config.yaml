@@ -57,6 +57,7 @@ metadataManagment:
     nonRelationProperties:
         - http://www.w3.org/1999/02/22-rdf-syntax-ns#type
         - https://vocabs.acdh.oeaw.ac.at/schema#hasPid
+        - https://vocabs.acdh.oeaw.ac.at/schema#hasUrl
         - https://vocabs.acdh.oeaw.ac.at/schema#matchesProp
     autoAddIds:
         # add/skip/deny
@@ -179,6 +180,7 @@ schema:
     binaryModificationUser: http://binaryModUser
     creationDate: https://vocabs.acdh.oeaw.ac.at/schema#hasAvailableDate
     creationUser: http://fedora.info/definitions/v4/repository#createdBy
+    uriNorm: []
 ### CLIENT-ONLY SETTINGS
     acdh:
         binarySize: https://vocabs.acdh.oeaw.ac.at/schema#hasBinarySize
@@ -240,6 +242,35 @@ doorkeeper:
         user: user21.11115-01
         pswd: 
         prefix: 21.11115
+resolver:
+    logging:
+        file: /home/www-data/log/resolver
+        # debug/info/notice/warning/error/critical/alert/emergency
+        level: debug
+    # when empty tries to guess from the connection and HTTP headers
+    idProtocol: https
+    # when empty tries to guess from HTTP headers
+    idHost: id.acdh.oeaw.ac.at
+    idPathBase: ''
+    defaultDissService: raw
+    fastTrack:
+        raw: ''
+        application/octet-stream: ''
+        rdf: /metadata
+        text/turtle: /metadata
+        application/n-triples: /metadata
+        application/rdf+xml: /metadata
+        application/ld+json: /metadata
+    repositories:
+        -   baseUrl: http://127.0.0.1/
+            # optional, when available a faster resource search is performed (saving ~100 ms)
+            dbConnStr: "pgsql:"
+            # acdhOeaw\acdhRepoLib\Repo::__construct() $guzzleOptions parameter value, e.g.:
+            # options:
+            #   auth:
+            #     - httpBasicLogin
+            #     - httpBasicPassword
+            options: []
 # client library authorization settings
 auth:
     httpHeader:
