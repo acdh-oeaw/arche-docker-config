@@ -1,0 +1,14 @@
+schema:
+  uriNorm:
+    '|^https?://([^.]*[.])?geonames[.]org/([0-9]+)(/.*)?$|': https://www.geonames.org/\2
+    '|^https?://([^.]*[.])?gazetteer[.]dainst[.]org/([A-Za-z]+/)*([0-9]+)([^0-9].*)?$|': https://gazetteer.dainst.org/place/\3
+    '|^https?://([^.]*[.])?pleiades[.]stoa[.]org/places/([0-9]+)(/.*)?$|': https://www.pleiades.stoa.org/places/\2
+    '|^https?://([^.]*[.])?viaf[.]org/viaf/([0-9]+)(/.*)?$|': https://viaf.org/viaf/\2
+    '|^https?://([^.]*[.])?d-nb[.]info/gnd/([0-9]+-[0-9]+)$|': https://d-nb.info/gnd/\2
+    '|^https?://([^.]*[.])?wikidata[.]org/([A-Za-z:]+/)*(Q[0-9]+)([^[0-9].*)?$|': https://www.wikidata.org/entity/\3
+    '|^https?://([^.]*[.])?orcid[.]org/([0-9]{4})-?([0-9]{4})-?([0-9]{4})-?([0-9]{4})$|': https://orcid.org/\2-\3-\4-\5
+    '|^https?://([^.]*[.])?n2t[.]net/ark:/99152/(p0[a-z0-9]+)$|': https://n2t.net/ark:/99152/\2
+    '|^https?://([^.]*[.])?chronontology[.]dainst[.]org/period/([A-Za-z0-9]+)$|': https://chronontology.dainst.org/period/\2
+    '|^https?://vocab[.]getty[.]edu/(page/)?aat/([0-9]+)([.][a-z]+)?$|': http://vocab.getty.edu/page/aat/\2
+    '|^https?://vocab[.]getty[.]edu/(page/)?tgn/([0-9]+)([.][a-z]+)?$|': http://vocab.getty.edu/page/tgn/\2
+

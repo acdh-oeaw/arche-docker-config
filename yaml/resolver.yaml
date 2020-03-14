@@ -1,0 +1,25 @@
+resolver:
+    logging:
+        file: /home/www-data/log/resolver
+        # debug/info/notice/warning/error/critical/alert/emergency
+        level: debug
+    # when empty tries to guess from the connection and HTTP headers
+    idProtocol: https
+    # when empty tries to guess from HTTP headers
+    idHost: id.acdh.oeaw.ac.at
+    idPathBase: ''
+    defaultDissService: raw
+    fastTrack:
+        raw: ''
+        application/octet-stream: ''
+        rdf: /metadata
+        text/turtle: /metadata
+        application/n-triples: /metadata
+        application/rdf+xml: /metadata
+        application/ld+json: /metadata
+    repositories:
+        self:
+            baseUrl: http://127.0.0.1/
+            # optional, when available a faster resource search is performed (saving ~100 ms)
+            dbConnStr: "pgsql: user=guest dbname=www-data host=127.0.0.1"
+

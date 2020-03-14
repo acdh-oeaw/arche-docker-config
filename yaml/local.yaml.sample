@@ -1,0 +1,12 @@
+rest:
+    urlBase: http://127.0.0.1
+doorkeeper:
+    epicPid:
+        pswd:
+oai:
+    repoBaseUrl: http://127.0.0.1/
+resolver:
+    repositories:
+        self:
+            baseUrl: http://127.0.0.1/
+

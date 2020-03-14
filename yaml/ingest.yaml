@@ -1,0 +1,6 @@
+schema:
+    ingest:
+        location: https://vocabs.acdh.oeaw.ac.at/schema#hasLocationPath
+        containerToUriPrefix: acdhContainer://
+        defaultBinaryClass: 
+        defaultCollectionClass: 

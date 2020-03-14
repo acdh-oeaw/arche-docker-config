@@ -10,7 +10,7 @@ use acdhOeaw\acdhRepoLib\Repo;
 use acdhOeaw\acdhRepoIngest\MetadataCollection;
 
 MetadataCollection::$debug = true;
-$cfgFile   = '/home/www-data/docroot/config.yaml';
+$cfgFile   = __DIR__ . 'config.yaml';
 $cfg       = json_decode(json_encode(yaml_parse_file($cfgFile)));
 $repo      = Repo::factory($cfgFile);
 $graph     = new MetadataCollection($repo, __DIR__ . '/dissServices.ttl');

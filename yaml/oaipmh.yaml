@@ -1,6 +1,6 @@
 oai:
     ## Repository database connection data
-    dbConnStr: "pgsql: "
+    dbConnStr: "pgsql: user=guest dbname=www-data host=127.0.0.1"
     ## Cache dir - leave empty not to use cache
     cacheDir: ""
     ## Information reported for `verb=Identify`
@@ -8,10 +8,10 @@ oai:
     # Properties defined by the OAI-PMH specification but missing here:
     # - 'granularity' is fixed to "YYYY-MM-DDThh:mm:ssZ" because that's the granularity provided by the repository
     # - 'deletedRecord' is fetched from the class providing deleted resources handling - see the section below
-    repositoryName: myRepositoryName
-    baseUrl: https://my.oai.endpoint/root
+    repositoryName: ARCHE
+    baseUrl: https://arche.acdh.oeaw.ac.at/oai
     earliestDatestamp: 1900-01-01T00:00:00Z
-    adminEmail: oai-admin@my.domain
+    adminEmail: acdh-tech@oeaw.ac.at
     ## Class used to implement deleted records handling
     #
     # Class implementing deleted resources handling. There are two implementations
@@ -36,12 +36,12 @@ oai:
     deletedPropValue: ''
     ## OAI search facets (datestamp and identifier)
     # RDF property storing last modification date
-    dateProp: http://fedora.info/definitions/v4/repository#lastModified
+    dateProp: https://vocabs.acdh.oeaw.ac.at/schema#hasUpdatedDate
     # Namespace of the identfier to be used as the OAI-PMH resource id
     idNmsp: http://hdl.handle.net/
     ## Required repository-related settings
     idProp: https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier
-    repoBaseUrl: http://127.0.0.1/rest/
+    repoBaseUrl: https://arche.acdh.oeaw.ac.at/
     # Class used to implement the search.
     # There is only one implementation provided \acdhOeaw\oai\search\BaseSearch.
     # If it doesn't fit your needs, provide your own and update this property.
@@ -67,15 +67,15 @@ oai:
     # Only when class equals \acdhOeaw\oai\set\Simple, \acdhOeaw\oai\set\Acdh or 
     # \acdhOeaw\oai\set\Complex
     # RDF property denoting sets the resource is part of
-    setProp: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
+    setProp: https://vocabs.acdh.oeaw.ac.at/schema#hasOaiSet
     # Only when class equals \acdhOeaw\oai\set\Complex
     # RDF property storing OAI-PMH <setSpec> value:
     #   [setResource] --oaiSetSpecProp--> setSpecValue
-    setSpecProp: http://www.w3.org/2000/01/rdf-schema#label
+    setSpecProp: https://vocabs.acdh.oeaw.ac.at/schema#hasDescription
     # Only when class equals \acdhOeaw\oai\set\Complex
     # RDF property storing OAI-PMH <setName> value
     #   [setResource] --oaiSetTitleProp--> setTitleValue
-    setNameProp: http://www.w3.org/2000/01/rdf-schema#label
+    setNameProp: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
     ## Metadata formats description
     # 
     # Each section describes a single metadata format:
@@ -135,8 +135,8 @@ oai:
             mode: both
         rdfxml:
             metadataPrefix: rdfxml
-            schema: http://unknown/schema
-            metadataNamespace: http://unknown/namespace
+            schema: https://arche.acdh.oeaw.ac.at/
+            metadataNamespace: https://vocabs.acdh.oeaw.ac.at/#schema
             class: \acdhOeaw\oai\metadata\RdfXml
         resmeta:
             metadataPrefix: resmeta
