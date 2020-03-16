@@ -9,13 +9,13 @@ if [ ! -f /home/www-data/postgresql/postgresql.conf ]; then
     su -l www-data -c '/usr/bin/createuser repo'
     su -l www-data -c '/usr/bin/createuser guest'
     su -l www-data -c 'echo "GRANT SELECT ON ALL TABLES IN SCHEMA PUBLIC TO guest; GRANT USAGE ON SCHEMA public TO guest" | /usr/bin/psql'
-    su -l www-data -c 'echo "GRANT SELECT, INSERT, DELETE, UPDATE, TRUNCATE ON ALL TABLES IN SCHEMA PUBLIC TO repo; GRANT USAGE ON SCHEMA public TO repo" | /usr/bin/psql'
+    su -l www-data -c 'echo "GRANT SELECT, INSERT, DELETE, UPDATE, TRUNCATE ON ALL TABLES IN SCHEMA public TO repo; GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO repo; GRANT USAGE ON SCHEMA public TO repo" | /usr/bin/psql'
     su -l www-data -c '/usr/lib/postgresql/11/bin/pg_ctl stop -D /home/www-data/postgresql'
 fi
 rm -f /home/www-data/postgresql/postmaster.pid /var/run/postgresql/.s.PGSQL.5432.lock
 
 # set random passwords for guest and repo users and store them in /home/www-data/.pgpass
-su -l www-data -c 'cat "" > /home/www-data/.pgpass && chmod 600 /home/www-data/.pgpass'
+su -l www-data -c 'echo "" > /home/www-data/.pgpass && chmod 600 /home/www-data/.pgpass'
 su -l www-data -c '/usr/lib/postgresql/11/bin/pg_ctl start -D /home/www-data/postgresql -l /home/www-data/log/postgresql.log'
 for user in repo guest; do
     PSWD=`< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-32}`

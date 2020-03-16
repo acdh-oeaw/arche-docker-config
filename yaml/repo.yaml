@@ -49,10 +49,10 @@ accessControl:
             - HTTP_EPPN
         - class: \zozlak\auth\authMethod\HttpBasic
           parameters:
-            - repo
+             - repo
         - class: \zozlak\auth\authMethod\Guest
           parameters:
-            - public
+             - public
 metadataManagment:
     nonRelationProperties:
         - http://www.w3.org/1999/02/22-rdf-syntax-ns#type

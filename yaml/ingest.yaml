@@ -4,3 +4,4 @@ schema:
         containerToUriPrefix: acdhContainer://
         defaultBinaryClass: 
         defaultCollectionClass: 
+auth: ~

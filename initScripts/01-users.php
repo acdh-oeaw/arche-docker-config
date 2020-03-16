@@ -21,9 +21,11 @@ $db    = new PdoDb($dbCfg->db->connStr, $dbCfg->db->table, $dbCfg->db->userCol, 
 if (file_exists($usersFile)) {
     $users = json_decode(json_encode(yaml_parse_file($usersFile)));
     foreach ($users as $u) {
-        $db->putUser($u->login, HttpBasic::pswdData($u->password));
+        if (!empty($u->password)) {
+            $db->putUser($u->login, HttpBasic::pswdData($u->password));
+            $u->password = '';
+        }
         $db->putUser($u->login, (object) ['groups' => $u->groups ?? []]);
-        $u->password = '';
     }
     yaml_emit_file($usersFile, json_decode(json_encode($u), true));
 }
@@ -34,5 +36,5 @@ $cfg = new Yaml(__DIR__ . '/config.yaml');
 $cfg->set('$.auth.httpBasic', ['user' => 'init', 'password' => $pswd]);
 $cfg->writeFile(__DIR__ . '/config.yaml');
 $db->putUser('init', HttpBasic::pswdData($pswd));
-$db->putUser('init', (object) ['groups' => 'creators']);
+$db->putUser('init', (object) ['groups' => ['creators']]);
 
