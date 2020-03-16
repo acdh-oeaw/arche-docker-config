@@ -34,8 +34,12 @@ schema:
         container: https://vocabs.acdh.oeaw.ac.at/schema#Container
     namespaces:
         ontology: https://vocabs.acdh.oeaw.ac.at/schema#
-        id: https://id.acdh.oeaw.ac.at/'
+        id: https://id.acdh.oeaw.ac.at/
         vid: https://id.acdh.oeaw.ac.at/vid/
+        ebucore: http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#
+        fedora: http://fedora.info/definitions/v4/repository#
+        premis: http://www.loc.gov/premis/rdf/v1#
+        rdfs: http://www.w3.org/1999/02/22-rdf-syntax-ns#
     dissService:
         class: https://vocabs.acdh.oeaw.ac.at/schema#DisseminationService
         location: https://vocabs.acdh.oeaw.ac.at/schema#serviceLocation

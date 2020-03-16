@@ -116,6 +116,7 @@ rest:
     defaultMetadataFormat: text/turtle
     metadataFormats:
         - text/turtle
+        - text/html
         - application/json
         - application/ld+json
         - application/n-triples
