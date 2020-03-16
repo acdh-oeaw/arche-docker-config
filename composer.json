@@ -1,9 +1,9 @@
 {
     "require": {
         "acdh-oeaw/arche-core": "^1",
-        "acdh-oeaw/arche-doorkeeper": "~0.1",
-        "acdh-oeaw/arche-lib-ingest": "~0.1",
-        "acdh-oeaw/arche-schema": ">=1.4",
+        "acdh-oeaw/arche-doorkeeper": "^1",
+        "acdh-oeaw/arche-lib-ingest": "^1",
+        "acdh-oeaw/arche-schema": "^1",
         "acdh-oeaw/arche-resolver": "^1",
         "acdh-oeaw/arche-oaipmh": "^1",
         "zozlak/yaml-merge": "^1"
