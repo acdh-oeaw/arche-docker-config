@@ -37,5 +37,5 @@ $cfg = new Yaml(__DIR__ . '/config.yaml');
 $cfg->set('$.auth.httpBasic', ['user' => 'init', 'password' => $pswd]);
 $cfg->writeFile(__DIR__ . '/config.yaml');
 $db->putUser('init', HttpBasic::pswdData($pswd));
-$db->putUser('init', (object) ['groups' => ['creators', 'public']]);
+$db->putUser('init', (object) ['groups' => ['admin']]);
 
