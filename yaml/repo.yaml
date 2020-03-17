@@ -17,6 +17,7 @@ storage:
     # as accepted by the https://www.php.net/manual/en/function.hash-init.php
     hashAlgorithm: sha1
 accessControl:
+    publicRole: public
     adminRoles:
         - admin
     create:
