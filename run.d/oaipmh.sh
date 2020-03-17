@@ -8,6 +8,7 @@ su -l www-data -c 'cp /home/www-data/docroot/vendor/acdh-oeaw/arche-oaipmh/index
 
 CMD=/home/www-data/docroot/vendor/zozlak/yaml-merge/bin/yaml-edit.php
 CFGD=/home/www-data/config/yaml
-rm -f /home/www-data/oaipmh/config.yaml
-su -l www-data -c "$CMD --src $CFGD/oaipmh.yaml --src $CFGD/local.yaml /home/www-data/oaipmh/config.yaml"
+rm -f /home/www-data/oaipmh/config.yaml $CFGD/config-oaipmh.yaml
+su -l www-data -c "$CMD --src $CFGD/oaipmh.yaml --src $CFGD/local.yaml $CFGD/config-oaipmh.yaml"
+su -l www-data -c "ln -s $CFGD/config-oaipmh.yaml /home/www-data/oaipmh/config.yaml"
 
