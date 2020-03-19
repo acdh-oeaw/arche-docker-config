@@ -1,6 +1,6 @@
 resolver:
     logging:
-        file: /home/www-data/log/resolver
+        file: /home/www-data/log/resolver.log
         # debug/info/notice/warning/error/critical/alert/emergency
         level: debug
     # when empty tries to guess from the connection and HTTP headers
@@ -22,4 +22,9 @@ resolver:
             baseUrl: http://127.0.0.1/
             # optional, when available a faster resource search is performed (saving ~100 ms)
             dbConnStr: "pgsql: user=guest dbname=www-data host=127.0.0.1"
+            #options:
+            #  auth:
+            #  - login
+            #  - pswd
+
 

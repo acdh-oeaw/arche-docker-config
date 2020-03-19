@@ -11,11 +11,6 @@ acdhids:raw
     acdh:serviceRevProxy    false ;
     acdh:hasTitle           "Download"@en ;
     acdh:hasDescription     "Download current file or collection"@en .
-acdhids:rawMatch1
-    acdh:isPartOf           acdhids:raw ;
-    acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
-    acdh:matchesValue       "http://fedora.info/definitions/v4/repository#Resource" ;
-    acdh:isRequired         true .
 
 # Metadata
 acdhids:rdf
@@ -25,26 +20,16 @@ acdhids:rdf
     acdh:serviceRevProxy    false ;
     acdh:hasTitle           "RDF access"@en ;
     acdh:hasDescription     "Metadata download"@en .
-acdhids:rdfMatch1
-    acdh:isPartOf           acdhids:rdf ;
-    acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
-    acdh:matchesValue       "http://fedora.info/definitions/v4/repository#Resource" ;
-    acdh:isRequired         true .
 
 # GUI
 acdhids:gui
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "https://arche.acdh.oeaw.ac.at/browser/oeaw_detail/{RES_ID|removeprotocol}" ;
+    acdh:serviceLocation    "https://arche.acdh.oeaw.ac.at/browser/oeaw_detail/{RES_ID}" ;
     acdh:hasReturnType      "gui" ;
     acdh:hasReturnType      "text/html; q=0.2" ;
     acdh:serviceRevProxy    false ;
     acdh:hasTitle           "GUI access"@en ;
     acdh:hasDescription     "Access via a graphical user interface"@en .
-acdhids:guiMatch1
-    acdh:isPartOf           acdhids:gui ;
-    acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
-    acdh:matchesValue       "http://fedora.info/definitions/v4/repository#Resource" ;
-    acdh:isRequired         true .
 
 # thumbnail
 acdhids:thumbnail
@@ -55,11 +40,6 @@ acdhids:thumbnail
     acdh:serviceRevProxy    false ;
     acdh:hasTitle           "Thumbnail service"@en ;
     acdh:hasDescription     "Get thumbnail"@en .
-acdhids:thumbnailMatch1
-    acdh:isPartOf           acdhids:thumbnail ;
-    acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
-    acdh:matchesValue       "http://fedora.info/definitions/v4/repository#Resource" ;
-    acdh:isRequired         true .
 acdhids:thumbnailParam1
     a                       acdh:DisseminationServiceParameter ;
     acdh:isPartOf           acdhids:thumbnail ;
@@ -82,15 +62,10 @@ acdhids:tei2html
     acdh:hasDescription     "Converts a TEI XML to an HTML"@en .
 acdhids:tei2hmlMatch1
     acdh:isPartOf           acdhids:tei2html ;
-    acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
-    acdh:matchesValue       "http://fedora.info/definitions/v4/repository#Resource" ;
-    acdh:isRequired         true .
-acdhids:tei2hmlMatch2
-    acdh:isPartOf           acdhids:tei2html ;
     acdh:matchesProp        "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType" ;
     acdh:matchesValue       "application/xml" ;
     acdh:isRequired         false .
-acdhids:tei2hmlMatch3
+acdhids:tei2hmlMatch2
     acdh:isPartOf           acdhids:tei2html ;
     acdh:matchesProp        "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType" ;
     acdh:matchesValue       "text/xml" ;
@@ -253,20 +228,15 @@ acdhids:loris
     acdh:hasDescription     "Redirects to the IIIF endpoint of the current image"@en .
 acdhids:lorisMatch1
     acdh:isPartOf           acdhids:loris ;
-    acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
-    acdh:matchesValue       "http://fedora.info/definitions/v4/repository#Resource" ;
-    acdh:isRequired         true .
-acdhids:lorisMatch2
-    acdh:isPartOf           acdhids:loris ;
     acdh:matchesProp        "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType" ;
     acdh:matchesValue       "image/jpeg" ;
     acdh:isRequired         false .
-acdhids:lorisMatch3
+acdhids:lorisMatch2
     acdh:isPartOf           acdhids:loris ;
     acdh:matchesProp        "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType" ;
     acdh:matchesValue       "image/png" ;
     acdh:isRequired         false .
-acdhids:lorisMatch4
+acdhids:lorisMatch3
     acdh:isPartOf           acdhids:loris ;
     acdh:matchesProp        "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType" ;
     acdh:matchesValue       "image/tiff" ;
@@ -288,20 +258,15 @@ acdhids:wfs
     acdh:hasDescription     "Provides a WFS access to a georeferenced vector data"@en .
 acdhids:wfsMatch1
     acdh:isPartOf           acdhids:wfs ;
-    acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
-    acdh:matchesValue       "//fedora.info/definitions/v4/repository#Resource" ;
-    acdh:isRequired         true .
-acdhids:wfsMatch2
-    acdh:isPartOf           acdhids:wfs ;
     acdh:matchesProp        "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType" ;
     acdh:matchesValue       "application/gml+xml" ;
     acdh:isRequired         false .
-acdhids:wfsMatch3
+acdhids:wfsMatch2
     acdh:isPartOf           acdhids:wfs ;
     acdh:matchesProp        "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType" ;
     acdh:matchesValue       "application/vnd.geo+json" ;
     acdh:isRequired         false .
-acdhids:wfsMatch4
+acdhids:wfsMatch3
     acdh:isPartOf           acdhids:wfs ;
     acdh:matchesProp        "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType" ;
     acdh:matchesValue       "application/vnd.google-earth.kml+xml" ;
@@ -323,15 +288,10 @@ acdhids:wms
     acdh:hasDescription     "Provides a WMS access to a georeferenced raster data"@en .
 acdhids:wmsMatch1
     acdh:isPartOf           acdhids:wms ;
-    acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
-    acdh:matchesValue       "//fedora.info/definitions/v4/repository#Resource" ;
-    acdh:isRequired         true .
-acdhids:wmsMatch2
-    acdh:isPartOf           acdhids:wms ;
     acdh:matchesProp        "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType" ;
     acdh:matchesValue       "image/tiff" ;
     acdh:isRequired         false .
-acdhids:wmsMatch3
+acdhids:wmsMatch2
     acdh:isPartOf           acdhids:wms ;
     acdh:matchesProp        "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType" ;
     acdh:matchesValue       "image/png" ;

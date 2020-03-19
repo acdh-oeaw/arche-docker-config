@@ -7,7 +7,13 @@
 
 require_once '/home/www-data/docroot/vendor/autoload.php';
 use acdhOeaw\acdhRepoLib\Repo;
+use acdhOeaw\acdhRepoLib\RepoResourceInterface;
+use acdhOeaw\acdhRepoLib\SearchTerm;
+use acdhOeaw\acdhRepoLib\SearchConfig;
+use acdhOeaw\acdhRepoLib\exception\Deleted;
 use acdhOeaw\acdhRepoIngest\MetadataCollection;
+use zozlak\RdfConstants as RDF;
+
 
 MetadataCollection::$debug = true;
 $cfgFile   = __DIR__ . '/config.yaml';
@@ -16,7 +22,34 @@ $repo      = Repo::factory($cfgFile);
 $graph     = new MetadataCollection($repo, __DIR__ . '/dissServices.ttl');
 $repo->begin();
 try {
+    // get all existing diss services and their children (match rules and parameters)
+    $query = "
+        SELECT (get_relatives(id, ?, 1, 0)).id
+        FROM metadata
+        WHERE property = ? AND substring(value, 1, 100) = ?
+    ";
+    $param = [$cfg->schema->parent, RDF::RDF_TYPE, $cfg->schema->dissService->class];
+    $sc = new SearchConfig();
+    $sc->metadataMode = RepoResourceInterface::META_RESOURCE;
+    $existing = $repo->getResourcesBySqlQuery($query, $param, $sc);
+
+    // import current diss services definitions
     $resources = $graph->import($cfg->schema->namespaces->id, MetadataCollection::SKIP);
+
+    // remove obsolete dissemination services and/or their parameters/match rules
+    $valid = [];
+    foreach ($resources as $i) {
+        $valid[] = $i->getUri();
+    }
+    foreach ($existing as $i) {
+        if (!in_array($i->getUri(), $valid)) {
+            echo "Removing obsolete diss service " . $i->getUri() . "\n";
+            try {
+                $i->deleteRecursively($cfg->schema->parent, true, true);
+            } catch (Deleted $e) {}
+        }
+    }
+
     $repo->commit();
 } catch (Exception $e) {
     //print_r($e);
