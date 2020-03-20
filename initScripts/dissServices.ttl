@@ -34,7 +34,7 @@ acdhids:gui
 # thumbnail
 acdhids:thumbnail
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "https://arche.acdh.oeaw.ac.at/services/thumbnails{RES_ID|part(path)}?width={WIDTH}&height={HEIGHT}" ;
+    acdh:serviceLocation    "https://arche-thumbnails2.apollo.arz.oeaw.ac.at/{RES_ID}?width={WIDTH}&height={HEIGHT}" ;
     acdh:hasReturnType      "image/png; q=0.1" ;
     acdh:hasReturnType      "thumbnail" ;
     acdh:serviceRevProxy    false ;
