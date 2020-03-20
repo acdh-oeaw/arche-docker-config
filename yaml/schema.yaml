@@ -15,10 +15,10 @@ schema:
     fileName: https://vocabs.acdh.oeaw.ac.at/schema#hasFilename
     mime: https://vocabs.acdh.oeaw.ac.at/schema#hasFormat
     hash: https://vocabs.acdh.oeaw.ac.at/schema#hasHash
-    modificationDate: https://vocabs.acdh.oeaw.ac.at/schema#updated
-    modificationUser: https://vocabs.acdh.oeaw.ac.at/schema#updatedBy
-    binaryModificationDate: https://vocabs.acdh.oeaw.ac.at/schema#binaryUpdated
-    binaryModificationUser: https://vocabs.acdh.oeaw.ac.at/schema#binaryUpdatedBy
+    modificationDate: https://vocabs.acdh.oeaw.ac.at/schema#hasUpdatedDate
+    modificationUser: https://vocabs.acdh.oeaw.ac.at/schema#hasUpdatedRole
+    binaryModificationDate: https://vocabs.acdh.oeaw.ac.at/schema#hasBinaryUpdatedDate
+    binaryModificationUser: https://vocabs.acdh.oeaw.ac.at/schema#hasBinaryUpdatedRole
     creationDate: https://vocabs.acdh.oeaw.ac.at/schema#hasAvailableDate
     creationUser: https://vocabs.acdh.oeaw.ac.at/schema#createdBy
     # non-repo core mappings
