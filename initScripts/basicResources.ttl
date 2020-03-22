@@ -5,37 +5,6 @@
 @prefix dc: <http://purl.org/dc/elements/1.1/>.
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
 
-_:ontology0 a acdh:Collection;
-    acdh:hasIdentifier <https://vocabs.acdh.oeaw.ac.at/schema>;
-    acdh:hasTitle "ACDH-CH-Ontology"@en;
-    acdh:hasTitle "ACDH-CH-Ontologie"@de;
-    acdh:hasDescription "This is the ontology for ARCHE."@en;
-    acdh:hasDescription "Dies ist die Ontologie für ARCHE."@de;
-    acdh:hasContact acdhi:mtrognitz;
-    acdh:hasMetadataCreator acdhi:mtrognitz;
-    acdh:hasDepositor acdhi:mtrognitz;
-    acdh:hasOwner acdhi:acdh;
-    acdh:hasLicense <https://opensource.org/licenses/MIT>;
-    acdh:hasLicensor acdhi:acdh;
-    acdh:hasRightsHolder acdhi:oeaw;
-    acdh:hasHosting acdhi:arche.
-
-_:ontology1 a acdh:Resource;
-    acdh:hasIdentifier acdhi:acdh-schema;
-    acdh:isPartOf <https://vocabs.acdh.oeaw.ac.at/schema>;
-    acdh:hasTitle "ACDH-CH-Ontology - Files"@en;
-    acdh:hasTitle "ACDH-CH-Ontologie - Dateien"@de;
-    acdh:hasDescription "This file in owl format represents the ontology for ARCHE"@en;
-    acdh:hasDescription "Diese Datei im owl-Format repräsentiert die Ontologie für ARCHE"@de;
-    acdh:hasMetadataCreator acdhi:mtrognitz;
-    acdh:hasDepositor acdhi:mtrognitz;
-    acdh:hasOwner acdhi:acdh;
-    acdh:hasLicense <https://opensource.org/licenses/MIT>;
-    acdh:hasLicensor acdhi:acdh;
-    acdh:hasRightsHolder acdhi:oeaw;
-    acdh:hasCategory <https://vocabs.acdh.oeaw.ac.at/archecategory/other>;
-    acdh:hasHosting acdhi:arche.
-
 _:place0 a acdh:Place;
     acdh:hasIdentifier acdhi:vienna;
     acdh:hasTitle "Vienna"@en;

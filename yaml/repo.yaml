@@ -12,8 +12,8 @@ storage:
     # - id = 1234567 and level = 2 stores a binary in  {dir}/45/67/1234567
     # - id = 9 and level = 2 store a binary in {dir}/00/09
     levels: 2
-    modeDir: 777
-    modeFile: 666
+    modeDir: 700
+    modeFile: 600
     # as accepted by the https://www.php.net/manual/en/function.hash-init.php
     hashAlgorithm: sha1
 accessControl:
