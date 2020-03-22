@@ -1,0 +1,2 @@
+dbConnStr:
+  guest: 'pgsql: host=postgresql user=guest dbname=www-data'
