@@ -27,6 +27,6 @@ $yaml = new Yaml('/home/www-data/config/yaml/schema.yaml');
 $yaml->merge('/home/www-data/config/yaml/drupal.yaml');
 $yaml->merge('/home/www-data/config/yaml/local.yaml');
 $dbConnStr = $yaml->get('$.dbConnStr.guest');
-$yaml->set('$.dbConnStr.guest', $dbConnStr . " password=$guestPswd");
+$yaml->set('$.dbConnStr.guest', "'" . $dbConnStr . " password=$guestPswd'");
 $yaml->writeFile('/home/www-data/gui/config.yaml');
 
