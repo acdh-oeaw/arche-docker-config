@@ -1,0 +1,16 @@
+dbConnStr:
+  guest: 'pgsql: host=postgresql user=guest dbname=www-data'
+schema:
+  drupal:
+     vocabsNamespace: https://vocabs.acdh.oeaw.ac.at/schema#
+     uuidNamespace: https://id.acdh.oeaw.ac.at/uuid/
+     idNamespace: https://id.acdh.oeaw.ac.at/
+     epicResolver: http://hdl.handle.net/
+     geonamesUrl: https://www.geonames.org/
+     dnbUrl: http://d-nb.info/
+     viafUrl: http://viaf.org/
+     orcidUrl: https://orcid.org/
+     pelagiosUrl: https://pleiades.stoa.org/
+     gazetteerUrl: https://gazetteer.dainst.org/
+     doiUrl: https://doi.org/
+
