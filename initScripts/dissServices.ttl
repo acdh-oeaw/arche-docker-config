@@ -62,12 +62,12 @@ acdhids:tei2html
     acdh:hasDescription     "Converts a TEI XML to an HTML"@en .
 acdhids:tei2hmlMatch1
     acdh:isPartOf           acdhids:tei2html ;
-    acdh:matchesProp        "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType" ;
+    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "application/xml" ;
     acdh:isRequired         false .
 acdhids:tei2hmlMatch2
     acdh:isPartOf           acdhids:tei2html ;
-    acdh:matchesProp        "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType" ;
+    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "text/xml" ;
     acdh:isRequired         false .
 
@@ -87,17 +87,17 @@ acdhids:cmdi2hmlMatch1
     acdh:isRequired         true .
 acdhids:cmdi2hmlMatch2
     acdh:isPartOf           acdhids:cmdi2html ;
-    acdh:matchesProp        "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType" ;
+    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "text/xml" ;
     acdh:isRequired         false .
 acdhids:cmdi2hmlMatch3
     acdh:isPartOf           acdhids:cmdi2html ;
-    acdh:matchesProp        "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType" ;
+    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "text/plain" ;
     acdh:isRequired         false .
 acdhids:cmdi2hmlMatch4
     acdh:isPartOf           acdhids:cmdi2html ;
-    acdh:matchesProp        "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType" ;
+    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "application/xml" ;
     acdh:isRequired         false .
 
@@ -116,17 +116,17 @@ acdhids:rawCmdiMatch1
     acdh:isRequired         true .
 acdhids:rawCmdiMatch2
     acdh:isPartOf           acdhids:rawCmdi ;
-    acdh:matchesProp        "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType" ;
+    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "text/xml" ;
     acdh:isRequired         false .
 acdhids:rawCmdiMatch3
     acdh:isPartOf           acdhids:rawCmdi ;
-    acdh:matchesProp        "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType" ;
+    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "text/plain" ;
     acdh:isRequired         false .
 acdhids:rawCmdiMatch4
     acdh:isPartOf           acdhids:rawCmdi ;
-    acdh:matchesProp        "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType" ;
+    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "application/xml" ;
     acdh:isRequired         false .
 
@@ -155,7 +155,7 @@ acdhids:3DObject
     acdh:hasDescription     "View 3d resource in a dedicated viewer"@en .
 acdhids:3DObjectMatch1
     acdh:isPartOf           acdhids:3DObject ;
-    acdh:matchesProp        "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType" ;
+    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "application/octet-stream" ;
     acdh:isRequired         true .
 acdhids:3DObjectMatch2
@@ -172,8 +172,9 @@ acdhids:3DObjectMatch3
 # IIIF viewer
 acdhids:iiif
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "https://arche.acdh.oeaw.ac.at/browser/iiif_viewer/{RES_ID|removeprotocol}" ;
-    acdh:hasReturnType      "image/tiff" ;
+    acdh:serviceLocation    "https://arche.acdh.oeaw.ac.at/browser/iiif_viewer/{RES_ID}" ;
+    acdh:hasReturnType      "text/html" ;
+    acdh:hasReturnType      "iiifviewer" ;
     acdh:serviceRevProxy    false ;
     acdh:hasTitle           "View image"@en ;
     acdh:hasDescription     "View image in a dedicated viewer"@en .
@@ -189,17 +190,17 @@ acdhids:iiifMatch2
     acdh:isRequired         true .
 acdhids:iiifMatch3
     acdh:isPartOf           acdhids:iiif ;
-    acdh:matchesProp        "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType" ;
+    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "image/jpeg" ;
     acdh:isRequired         false .
 acdhids:iiifMatch4
     acdh:isPartOf           acdhids:iiif ;
-    acdh:matchesProp        "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType" ;
+    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "image/png" ;
     acdh:isRequired         false .
 acdhids:iiifMatch5
     acdh:isPartOf           acdhids:iiif ;
-    acdh:matchesProp        "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType" ;
+    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "image/tiff" ;
     acdh:isRequired         false .
 
@@ -220,7 +221,7 @@ acdhids:collectionDwnldMatch
 # Loris
 acdhids:loris
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "https://loris.acdh.oeaw.ac.at/uuid:{RES_ID|part(path)}/{PARAM}" ;
+    acdh:serviceLocation    "https://loris.acdh.oeaw.ac.at/uuid:{id_ID|part(path)}/{PARAM}" ;
     acdh:hasReturnType      "image/jpeg" ;
     acdh:hasReturnType      "iiif" ;
     acdh:serviceRevProxy    false ;
@@ -228,17 +229,17 @@ acdhids:loris
     acdh:hasDescription     "Redirects to the IIIF endpoint of the current image"@en .
 acdhids:lorisMatch1
     acdh:isPartOf           acdhids:loris ;
-    acdh:matchesProp        "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType" ;
+    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "image/jpeg" ;
     acdh:isRequired         false .
 acdhids:lorisMatch2
     acdh:isPartOf           acdhids:loris ;
-    acdh:matchesProp        "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType" ;
+    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "image/png" ;
     acdh:isRequired         false .
 acdhids:lorisMatch3
     acdh:isPartOf           acdhids:loris ;
-    acdh:matchesProp        "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType" ;
+    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "image/tiff" ;
     acdh:isRequired         false .
 acdhids:lorisParam
@@ -258,17 +259,17 @@ acdhids:wfs
     acdh:hasDescription     "Provides a WFS access to a georeferenced vector data"@en .
 acdhids:wfsMatch1
     acdh:isPartOf           acdhids:wfs ;
-    acdh:matchesProp        "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType" ;
+    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "application/gml+xml" ;
     acdh:isRequired         false .
 acdhids:wfsMatch2
     acdh:isPartOf           acdhids:wfs ;
-    acdh:matchesProp        "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType" ;
+    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "application/vnd.geo+json" ;
     acdh:isRequired         false .
 acdhids:wfsMatch3
     acdh:isPartOf           acdhids:wfs ;
-    acdh:matchesProp        "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType" ;
+    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "application/vnd.google-earth.kml+xml" ;
     acdh:isRequired         false .
 acdhids:wfsParam1
@@ -288,12 +289,12 @@ acdhids:wms
     acdh:hasDescription     "Provides a WMS access to a georeferenced raster data"@en .
 acdhids:wmsMatch1
     acdh:isPartOf           acdhids:wms ;
-    acdh:matchesProp        "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType" ;
+    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "image/tiff" ;
     acdh:isRequired         false .
 acdhids:wmsMatch2
     acdh:isPartOf           acdhids:wms ;
-    acdh:matchesProp        "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType" ;
+    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "image/png" ;
     acdh:isRequired         false .
 acdhids:wmsParam1
