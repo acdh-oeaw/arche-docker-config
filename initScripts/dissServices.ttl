@@ -15,7 +15,7 @@ acdhids:raw
 # Metadata
 acdhids:rdf
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "{RES_URI}/fcr:metadata" ;
+    acdh:serviceLocation    "{RES_URI}/metadata" ;
     acdh:hasReturnType      "rdf" ;
     acdh:serviceRevProxy    false ;
     acdh:hasTitle           "RDF access"@en ;
@@ -54,7 +54,7 @@ acdhids:thumbnailParam2
 # tei2html
 acdhids:tei2html
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "https://arche.acdh.oeaw.ac.at/services/oxgarage/html{RES_ID|part(path)}" ;
+    acdh:serviceLocation    "https://arche.acdh.oeaw.ac.at/services/oxgarage/html{id_ID|part(path)}" ;
     acdh:hasReturnType      "text/html; q=0.1" ;
     acdh:hasReturnType      "oxgaragehtml" ;
     acdh:serviceRevProxy    false ;
@@ -148,7 +148,7 @@ acdhids:Param1
 # 3D Object
 acdhids:3DObject
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "https://arche.acdh.oeaw.ac.at/browser/oeaw_3d_viewer/{RES_ID|removeprotocol}" ;
+    acdh:serviceLocation    "https://arche.acdh.oeaw.ac.at/browser/oeaw_3d_viewer/{RES_ID}" ;
     acdh:hasReturnType      "application/octet-stream" ;
     acdh:serviceRevProxy    false ;
     acdh:hasTitle           "3D viewer"@en ;
@@ -251,7 +251,7 @@ acdhids:lorisParam
 # WFS using mapserver proxy
 acdhids:wfs
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "https://maps.acdh.oeaw.ac.at/mapserver{RES_ID|part(path)|url}?SERVICE=WFS&{WFS_PARAM}" ;
+    acdh:serviceLocation    "https://maps.acdh.oeaw.ac.at/mapserver{id_ID|part(path)|url}?SERVICE=WFS&{WFS_PARAM}" ;
     acdh:hasReturnType      "application/gml+xml" ;
     acdh:hasReturnType      "wfs" ;
     acdh:serviceRevProxy    false ;
@@ -281,7 +281,7 @@ acdhids:wfsParam1
 # WMS using mapserver proxy
 acdhids:wms
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "https://maps.acdh.oeaw.ac.at/mapserver{RES_ID|part(path)|url}?SERVICE=WMS&{WMS_PARAM}" ;
+    acdh:serviceLocation    "https://maps.acdh.oeaw.ac.at/mapserver{id_ID|part(path)|url}?SERVICE=WMS&{WMS_PARAM}" ;
     acdh:hasReturnType      "image/png" ;
     acdh:hasReturnType      "wms" ;
     acdh:serviceRevProxy    false ;
