@@ -10,7 +10,7 @@ if [ ! -f /home/www-data/postgresql/postgresql.conf ]; then
     echo "host    all             all             127.0.0.1/32            md5" >> /home/www-data/postgresql/pg_hba.conf
     su -l www-data -c '/usr/lib/postgresql/11/bin/pg_ctl start -D /home/www-data/postgresql -l /home/www-data/log/postgresql.log'
     su -l www-data -c '/usr/bin/createdb www-data'
-    su -l www-data -c '/usr/bin/psql -f /home/www-data/docroot/vendor/acdh-oeaw/arche-core/build/db_schema.sql'
+    su -l www-data -c '/usr/bin/psql -f /home/www-data/vendor/acdh-oeaw/arche-core/build/db_schema.sql'
     su -l www-data -c '/usr/bin/createuser repo'
     su -l www-data -c '/usr/bin/createuser guest'
     su -l www-data -c '/usr/bin/createuser gui'
