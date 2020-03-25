@@ -28,7 +28,6 @@ try {
 
 }
 
-$import  = true;
 if ($import) {
     echo "Importing ontology\n";
     system("php -f /home/www-data/vendor/acdh-oeaw/arche-schema/importOntologyRdbms.php $cfgFile $ontologyFile");
