@@ -5,15 +5,15 @@
  * If not, imports it.
  */
 
-require_once '/home/www-data/docroot/vendor/autoload.php';
+require_once '/home/www-data/vendor/autoload.php';
 use acdhOeaw\acdhRepoLib\Repo;
 use acdhOeaw\acdhRepoLib\exception\NotFound;
 
 $cfgFile      = __DIR__ . '/config.yaml';
-$ontologyFile = '/home/www-data/docroot/vendor/acdh-oeaw/arche-schema/acdh-schema.owl';
+$ontologyFile = '/home/www-data/vendor/acdh-oeaw/arche-schema/acdh-schema.owl';
 
 $cfg                     = yaml_parse_file($cfgFile);
-$cfg['composerLocation'] = '/home/www-data/docroot/vendor/autoload.php';
+$cfg['composerLocation'] = '/home/www-data/vendor/autoload.php';
 yaml_emit_file($cfgFile, $cfg);
 
 $repo    = Repo::factory($cfgFile);
@@ -28,9 +28,10 @@ try {
 
 }
 
+$import  = true;
 if ($import) {
     echo "Importing ontology\n";
-    system("php -f /home/www-data/docroot/vendor/acdh-oeaw/arche-schema/importOntologyRdbms.php $cfgFile $ontologyFile");
+    system("php -f /home/www-data/vendor/acdh-oeaw/arche-schema/importOntologyRdbms.php $cfgFile $ontologyFile");
 } else {
     echo "Ontology up to date\n";
 }

@@ -1,13 +1,13 @@
 rest:
     urlBase: http://127.0.0.1
-    pathBase: /
+    pathBase: /api/
 doorkeeper:
     epicPid:
         pswd:
 oai:
-    repoBaseUrl: http://127.0.0.1/
+    repoBaseUrl: http://127.0.0.1/api/
 resolver:
     repositories:
         self:
-            baseUrl: http://127.0.0.1/
+            baseUrl: http://127.0.0.1/api/
 

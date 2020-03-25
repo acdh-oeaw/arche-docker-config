@@ -13,6 +13,8 @@ if [ ! -f /home/www-data/postgresql/postgresql.conf ]; then
     su -l www-data -c '/usr/bin/psql -f /home/www-data/docroot/vendor/acdh-oeaw/arche-core/build/db_schema.sql'
     su -l www-data -c '/usr/bin/createuser repo'
     su -l www-data -c '/usr/bin/createuser guest'
+    su -l www-data -c '/usr/bin/createuser gui'
+    su -l www-data -c 'echo "CREATE SCHEMA gui AUTHORIZATION gui" | /usr/bin/psql'
 else
     su -l www-data -c '/usr/lib/postgresql/11/bin/pg_ctl start -D /home/www-data/postgresql -l /home/www-data/log/postgresql.log'
 fi
@@ -23,7 +25,7 @@ su -l www-data -c 'echo "GRANT SELECT, INSERT, DELETE, UPDATE, TRUNCATE ON ALL T
 
 # set random passwords for guest and repo users and store them in /home/www-data/.pgpass
 su -l www-data -c 'echo "" > /home/www-data/.pgpass && chmod 600 /home/www-data/.pgpass'
-for user in repo guest; do
+for user in repo guest gui; do
     PSWD=`< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-32}`
     su -l www-data -c "echo \"ALTER USER $user WITH password '$PSWD'\" | /usr/bin/psql"
     echo "*:*:*:$user:$PSWD" >> /home/www-data/.pgpass

@@ -8,9 +8,9 @@ use zozlak\auth\usersDb\PdoDb;
 use zozlak\auth\authMethod\HttpBasic;
 use zozlak\yaml\Yaml;
 
-require_once '/home/www-data/docroot/vendor/autoload.php';
+require_once '/home/www-data/vendor/autoload.php';
 
-$cfgFile   = '/home/www-data/docroot/config.yaml';
+$cfgFile   = '/home/www-data/docroot/api/config.yaml';
 $usersFile = __DIR__ . '/users.yaml';
 
 $cfg   = json_decode(json_encode(yaml_parse_file($cfgFile)));

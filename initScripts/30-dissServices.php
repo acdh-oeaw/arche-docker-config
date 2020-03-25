@@ -5,7 +5,7 @@
  * If not, imports it.
  */
 
-require_once '/home/www-data/docroot/vendor/autoload.php';
+require_once '/home/www-data/vendor/autoload.php';
 use acdhOeaw\acdhRepoLib\Repo;
 use acdhOeaw\acdhRepoLib\RepoResourceInterface;
 use acdhOeaw\acdhRepoLib\SearchTerm;
