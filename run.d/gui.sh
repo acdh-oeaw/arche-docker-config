@@ -1,8 +1,8 @@
 #!/bin/bash
-if [ ! -d /home/www-data/docroot/browser ]; then
+if [ ! -d /home/www-data/gui/web ]; then
     su -l www-data -c 'composer create-project drupal/recommended-project /home/www-data/gui --no-interaction --no-install'
     su -l www-data -c "sed -i -e 's|\"drupal-scaffold\" *:.*|\"drupal-scaffold\": {\"allowed-packages\": [\"acdh-oeaw/arche-gui\"],|g' /home/www-data/gui/composer.json"
-    su -l www-data -c "cd /home/www-data/docroot/browser && composer require drush/drush drupal/bootstrap_mint acdh-oeaw/arche-gui acdh-oeaw/arche-theme --update-no-dev"
+    su -l www-data -c "cd /home/www-data/gui && composer require drush/drush drupal/bootstrap_mint acdh-oeaw/arche-gui acdh-oeaw/arche-theme --update-no-dev"
     su -l www-data -c "mkdir -p /home/www-data/gui/web/modules/contrib/arche-gui/config"
     su -l www-data -c "ln -s /home/www-data/gui/web /home/www-data/docroot/browser"
 else
