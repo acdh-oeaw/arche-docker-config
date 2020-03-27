@@ -21,6 +21,7 @@ fi
 
 # assure not-superuser user rights
 su -l www-data -c 'echo "GRANT SELECT ON ALL TABLES IN SCHEMA PUBLIC TO guest; GRANT USAGE ON SCHEMA public TO guest" | /usr/bin/psql'
+su -l www-data -c 'echo "GRANT SELECT ON ALL TABLES IN SCHEMA PUBLIC TO gui; GRANT USAGE ON SCHEMA public TO gui; ALTER SCHEMA gui OWNER TO gui;" | /usr/bin/psql'
 su -l www-data -c 'echo "GRANT SELECT, INSERT, DELETE, UPDATE, TRUNCATE ON ALL TABLES IN SCHEMA public TO repo; GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO repo; GRANT USAGE ON SCHEMA public TO repo" | /usr/bin/psql'
 
 # set random passwords for guest and repo users and store them in /home/www-data/.pgpass
