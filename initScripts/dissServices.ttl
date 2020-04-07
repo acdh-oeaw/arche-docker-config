@@ -207,7 +207,7 @@ acdhids:iiifMatch5
 # Collection Download
 acdhids:collectionDwnld
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "https://fedora.hephaistos.arz.oeaw.ac.at/browser/oeaw_dl_collection/{RES_ID}" ;
+    acdh:serviceLocation    "https://repo.hephaistos.arz.oeaw.ac.at/browser/oeaw_dl_collection/{RES_ID}" ;
     acdh:hasReturnType      "collection" ;
     acdh:serviceRevProxy    false ;
     acdh:hasTitle           "Download Collection"@en ;
