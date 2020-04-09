@@ -28,7 +28,7 @@ if (file_exists($usersFile)) {
         $groups = array_merge(['public'], $u->groups ?? []);
         $db->putUser($u->login, (object) ['groups' => $groups]);
     }
-    yaml_emit_file($usersFile, json_decode(json_encode($u), true));
+    yaml_emit_file($usersFile, json_decode(json_encode($users), true));
 }
 
 // ingestion user for init scripts performing ingestions
