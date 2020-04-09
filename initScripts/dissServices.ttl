@@ -207,8 +207,8 @@ acdhids:iiifMatch5
 # Collection Download
 acdhids:collectionDwnld
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "https://repo.hephaistos.arz.oeaw.ac.at/browser/oeaw_dl_collection/{RES_ID}" ;
-    acdh:hasReturnType      "collection" ;
+    acdh:serviceLocation    "{RES_URI|part(scheme,host)}/browser/oeaw_dl_collection/{RES_ID}" ;
+    acdh:hasReturnType      "Download Collection" ;
     acdh:serviceRevProxy    false ;
     acdh:hasTitle           "Download Collection"@en ;
     acdh:hasDescription     "Download current file or collection"@en .
@@ -251,7 +251,7 @@ acdhids:lorisParam
 # WFS using mapserver proxy
 acdhids:wfs
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "https://maps.acdh.oeaw.ac.at/mapserver{id_ID|part(path)|url}?SERVICE=WFS&{WFS_PARAM}" ;
+    acdh:serviceLocation    "https://maps2.apollo.arz.oeaw.ac.at/mapserver/{RES_URI|url}?SERVICE=WFS&{WFS_PARAM}" ;
     acdh:hasReturnType      "application/gml+xml" ;
     acdh:hasReturnType      "wfs" ;
     acdh:serviceRevProxy    false ;
@@ -272,6 +272,11 @@ acdhids:wfsMatch3
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "application/vnd.google-earth.kml+xml" ;
     acdh:isRequired         false .
+acdhids:wfsMatch4
+    acdh:isPartOf           acdhids:wfs ;
+    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
+    acdh:matchesValue       "application/geo+json" ;
+    acdh:isRequired         false .
 acdhids:wfsParam1
     a                       acdh:DisseminationServiceParameter ;
     acdh:isPartOf           acdhids:wfs ;
@@ -281,7 +286,7 @@ acdhids:wfsParam1
 # WMS using mapserver proxy
 acdhids:wms
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "https://maps.acdh.oeaw.ac.at/mapserver{id_ID|part(path)|url}?SERVICE=WMS&{WMS_PARAM}" ;
+    acdh:serviceLocation    "https://maps2.apollo.arz.oeaw.ac.at/mapserver/{RES_URI|url}?SERVICE=WMS&{WMS_PARAM}" ;
     acdh:hasReturnType      "image/png" ;
     acdh:hasReturnType      "wms" ;
     acdh:serviceRevProxy    false ;
