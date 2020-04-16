@@ -28,7 +28,7 @@ try {
 
 }
 
-if ($import) {
+if ($import || ($argv[1] ?? false)) {
     echo "Importing ontology\n";
     system("php -f /home/www-data/vendor/acdh-oeaw/arche-schema/importOntologyRdbms.php $cfgFile $ontologyFile");
 } else {
