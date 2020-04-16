@@ -60,4 +60,7 @@ schema:
         containerToUriPrefix: acdhContainer://
         defaultBinaryClass: https://vocabs.acdh.oeaw.ac.at/schema#Resource
         defaultCollectionClass: https://vocabs.acdh.oeaw.ac.at/schema#Collection
+    ontology:
+        order: https://vocabs.acdh.oeaw.ac.at/schema#ordering
+        recommended: https://vocabs.acdh.oeaw.ac.at/schema#recommendedClass
 
