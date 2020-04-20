@@ -133,6 +133,7 @@ _:p2 a acdh:Person;
     acdh:hasIdentifier acdhi:pandorfer;
     acdh:hasIdentifier <https://viaf.org/viaf/251032539>;
     acdh:hasIdentifier <https://orcid.org/0000-0002-9575-9372>;
+    acdh:hasIdentifier <https://d-nb.info/gnd/1043833846>;
     acdh:hasTitle "Peter Andorfer"@de;
 	acdh:hasTitle "Peter Andorfer"@en;
 	acdh:hasFirstName "Peter"@de;
