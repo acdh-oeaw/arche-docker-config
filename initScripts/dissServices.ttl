@@ -218,6 +218,29 @@ acdhids:collectionDwnldMatch
     acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/schema#Collection" ;
     acdh:isRequired         true .
 
+# Collection Download Script
+acdhids:collectionDwnldScript
+    a                       acdh:DisseminationService ;
+    acdh:serviceLocation    "{RES_URI|part(scheme,host)}/browser/oeaw_coll_dl_script/{RES_ID}" ;
+    acdh:hasReturnType      "Download Collection Script" ;
+    acdh:serviceRevProxy    false ;
+    acdh:hasTitle           "Download Collection Script"@en ;
+    acdh:hasDescription     "Download current file or collection with a python script"@en .
+acdhids:collectionDwnldMatch
+    acdh:isPartOf           acdhids:collectionDwnldScript ;
+    acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
+    acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/schema#Collection" ;
+    acdh:isRequired         true .
+
+# Turtle file
+acdhids:turtleFile
+    a                       acdh:DisseminationService ;
+    acdh:serviceLocation    "{RES_URI}/metadata?format=text/turtle" ;
+    acdh:hasReturnType      "text/turtle" ;
+    acdh:serviceRevProxy    false ;
+    acdh:hasTitle           "Turtle flie"@en ;
+    acdh:hasDescription     "Download the actual Resource Turtle file"@en .
+
 # Loris
 acdhids:loris
     a                       acdh:DisseminationService ;
