@@ -74,7 +74,7 @@ acdhids:tei2hmlMatch2
 # cmdi2html
 acdhids:cmdi2html
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "https://arche.acdh.oeaw.ac.at/services/cmdi2hml/?cmdi={RES_URI|url}" ;
+    acdh:serviceLocation    "https://cmdi2html.acdh.oeaw.ac.at/?cmdi={RES_URI|url}" ;
     acdh:hasReturnType      "html" ;
     acdh:hasReturnType      "text/html" ;
     acdh:serviceRevProxy    false ;
@@ -133,7 +133,7 @@ acdhids:rawCmdiMatch4
 # customTEI2HTML
 acdhids:customTei2Html
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "https://arche.acdh.oeaw.ac.at/services/customTEI2HTML/?xml={RES_URI|url}&xslt={XSL|url}" ;
+    acdh:serviceLocation    "https://arche-oxgarage.apollo.arz.oeaw.ac.at/?xml={RES_URI|url}&xslt={XSL|url}" ;
     acdh:hasReturnType      "customTEI2HTML" ;
     acdh:serviceRevProxy    true ;
     acdh:hasTitle           "TEI2HTML"@en ;
