@@ -13,6 +13,7 @@ This repository has multiple branches implementing different configurations.
  It has a following structure:
 
 * `yaml` - directory with config files parts. In this particular setup configuration parts are merged together for particular services' configuration by corresponding scripts in the `run.d` directory. When deploying don't forget to copy `yaml/local.yaml.sample` to `yaml/local.yaml` and adjust its content.
+    * From the arche-docker Docker image point of view you can just provide a single `config.yaml` in the config repository root. But if your config deploys many additional components (here also OAI-PMH, resolver and GUI services) the approach used here may be more convenient.
 * `composer.json` - describes PHP dependencies of the repository components. If you add your own PHP components to the repository deployment, you may consider extending it. These dependencies are automatically installed into `/home/www-data/vendor` and updated on every repository container start.
 * `run.d` - allows you to add initialization scripts to be run before the supervisord is started.
 * `supervisord.conf.d` - allows you to add additional services definition. All files with names ending with `.conf` are included in the container's supervisord config.
