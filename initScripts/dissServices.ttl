@@ -149,7 +149,7 @@ acdhids:rawCmdiMatch4
 acdhids:3DObject
     a                       acdh:DisseminationService ;
     acdh:serviceLocation    "{RES_URI|part(scheme,host)}/browser/oeaw_3d_viewer/{RES_ID}" ;
-    acdh:hasReturnType      "application/octet-stream" ;
+    acdh:hasReturnType      "3dViewer" ;
     acdh:serviceRevProxy    false ;
     acdh:hasTitle           "3D viewer"@en ;
     acdh:hasDescription     "View 3d resource in a dedicated viewer"@en .
