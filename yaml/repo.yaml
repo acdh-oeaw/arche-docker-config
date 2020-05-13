@@ -66,7 +66,8 @@ metadataManagment:
         addNamespaces: []
         skipNamespaces: []
         #    - http://127.0.0.1
-        denyNamespaces: []
+        denyNamespaces:
+            - https://id.acdh.oeaw.ac.at/
 transactionController:
     socket: 
         # unix/inet
@@ -84,7 +85,7 @@ transactionController:
     # transaction state check interval in ms
     checkInterval: 500
     # transaction timeout in s
-    timeout: 15
+    timeout: 30
     # do transactions have to be complete in ACID terms?
     enforceCompleteness: false
     # should metadata history table contain only one set of entries per transaction?
