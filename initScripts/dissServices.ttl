@@ -331,7 +331,7 @@ acdhids:wmsParam1
     acdh:hasTitle           "WMS_PARAM"@en ;
     acdh:hasDefaultValue    "REQUEST=GetCapabilities&VERSION=1.1.1" .
 
-#xml insights
+# XML Insights
 acdhids:xmlinsights
     a                       acdh:DisseminationService ;
     acdh:serviceLocation    "http://acdh-oeaw-diss-serv-repo-disserv-tei-utils.10.3.6.55.xip.io/resources/{RES_ID}/summary" ;
@@ -344,6 +344,10 @@ acdhids:xmlinsightsMatch1
     acdh:isPartOf           acdhids:xmlinsights ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "text/xml" ;
-    acdh:isRequired         true .
-
+    acdh:isRequired         false .
+acdhids:xmlinsightsMatch2
+    acdh:isPartOf           acdhids:xmlinsights ;
+    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
+    acdh:matchesValue       "application/xml" ;
+    acdh:isRequired         false .
 
