@@ -1,0 +1,145 @@
+dbConnStr:
+    # admin connection should grant full data modification rights
+    admin: "pgsql: user=repo dbname=www-data host=127.0.0.1"
+    # guest connection should be read-only
+    guest: "pgsql: user=guest dbname=www-data host=127.0.0.1"
+storage: 
+    dir: /home/www-data/data
+    tmpDir: /home/www-data/tmp
+    # number of binary resources directory storage levels
+    # each level corresponds to a two-digit part of the resource id counting from right, e.g.:
+    # - id = 1234567 and level = 1 stores a binary in  {dir}/67/1234567
+    # - id = 1234567 and level = 2 stores a binary in  {dir}/45/67/1234567
+    # - id = 9 and level = 2 store a binary in {dir}/00/09
+    levels: 2
+    modeDir: 700
+    modeFile: 600
+    # as accepted by the https://www.php.net/manual/en/function.hash-init.php
+    hashAlgorithm: sha1
+accessControl:
+    publicRole: public
+    adminRoles:
+        - admin
+    create:
+        # who can create new resources
+        allowedRoles:
+            - creators
+        # rights assigned to the creator uppon resource creation
+        creatorRights:
+            - read
+            - write
+        # rights assigned to other roles upon resource creation
+        assignRoles:
+            read: []
+    defaultAction:
+        read: deny
+        write: deny
+    enforceOnMetadata: true
+    schema:
+        read: https://vocabs.acdh.oeaw.ac.at/schema#aclRead
+        update: https://vocabs.acdh.oeaw.ac.at/schema#aclUpdate
+        write: https://vocabs.acdh.oeaw.ac.at/schema#aclWrite
+    db:
+        connStr: 'pgsql: user=repo dbname=www-data host=127.0.0.1'
+        table: users
+        userCol: user_id
+        dataCol: data
+    authMethods:
+        - class: \zozlak\auth\authMethod\TrustedHeader
+          parameters:
+            - HTTP_EPPN
+        - class: \zozlak\auth\authMethod\HttpBasic
+          parameters:
+             - repo
+        - class: \zozlak\auth\authMethod\Guest
+          parameters:
+             - public
+metadataManagment:
+    nonRelationProperties:
+        - http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+    autoAddIds:
+        # add/skip/deny
+        default: add
+        addNamespaces: []
+        skipNamespaces: []
+        denyNamespaces: []
+transactionController:
+    socket: 
+        # unix/inet
+        type: unix
+        # only for the unix type
+        path: /home/www-data/txSocket
+        # only for the inet type
+        address: ''
+        # only for the inet type
+        port: 0
+    logging:
+        file: /home/www-data/log/tx.log
+        # debug/info/notice/warning/error/critical/alert/emergency
+        level: debug
+    # transaction state check interval in ms
+    checkInterval: 500
+    # transaction timeout in s
+    timeout: 30
+    # do transactions have to be complete in ACID terms?
+    enforceCompleteness: false
+    # should metadata history table contain only one set of entries per transaction?
+    simplifyMetaHistory: true
+fullTextSearch:
+    # e.g. "java -Xmx1g -jar ../tika-app.jar --text" or "http://127.0.0.1:12345/"
+    tikaLocation: http://127.0.0.1:12345/
+    sizeLimits:
+        indexing: 1G
+        highlighting: 10M
+    mimeFilter:
+        # skip/include
+        type: include
+        mime:
+            - text/turtle
+            - text/xml
+            - text/plain
+            - text/html
+            - text/csv
+            - application/xml
+            - application/pdf
+            - application/json
+    propertyFilter:
+        type: skip
+        properties: []
+rest:
+    logging:
+        file: /home/www-data/log/rest.log
+        # debug/info/notice/warning/error/critical/alert/emergency
+        level: debug
+    defaultMime: application/octet-stream
+    defaultMetadataFormat: text/turtle
+    metadataFormats:
+        - text/turtle
+        - text/html
+        - application/json
+        - application/ld+json
+        - application/n-triples
+        - application/rdf+xml
+    # resource/neighbors/relatives
+    defaultMetadataReadMode: neighbors
+    # add/merge/overwrite (merge is probably the only sane default)
+    defaultMetadataWriteMode: merge
+    # resource/neighbors/relatives
+    defaultMetadataSearchMode: resource
+    handlers:
+        rabbitMq:
+            #host: localhost
+            #port: 5672
+            #user: guest
+            #password: guest
+            ## in s
+            #timeout: 1
+            #exceptionOnTimeout: true
+        classLoader:
+            #acdhOeaw\acdhRepo\tests: /home/zozlak/roboty/ACDH/repo/rdbms/tests
+        methods:
+            create: []
+            updateBinary: []
+            updateMetadata: []
+            txCommit: []
+

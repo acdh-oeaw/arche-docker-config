@@ -1,5 +1,6 @@
 {
     "require": {
-        "acdh-oeaw/acdh-repo": "^1"
+        "acdh-oeaw/arche-core": "^1",
+        "zozlak/yaml-merge": "^1"
     }
 }

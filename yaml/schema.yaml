@@ -1,0 +1,68 @@
+rest:
+  headers:
+    metadataReadMode: X-METADATA-READ-MODE
+    metadataParentProperty: X-PARENT-PROPERTY
+    metadataWriteMode: X-METADATA-WRITE-MODE
+    transactionId: X-TRANSACTION-ID
+schema:
+    id: https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier
+    parent: https://vocabs.acdh.oeaw.ac.at/schema#isPartOf
+    label: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
+    delete: delete://delete
+    searchMatch: search://match
+    searchFts: search://fts
+    binarySize: https://vocabs.acdh.oeaw.ac.at/schema#hasRawBinarySize
+    fileName: https://vocabs.acdh.oeaw.ac.at/schema#hasFilename
+    mime: https://vocabs.acdh.oeaw.ac.at/schema#hasFormat
+    hash: https://vocabs.acdh.oeaw.ac.at/schema#hasHash
+    modificationDate: https://vocabs.acdh.oeaw.ac.at/schema#hasUpdatedDate
+    modificationUser: https://vocabs.acdh.oeaw.ac.at/schema#hasUpdatedRole
+    binaryModificationDate: https://vocabs.acdh.oeaw.ac.at/schema#hasBinaryUpdatedDate
+    binaryModificationUser: https://vocabs.acdh.oeaw.ac.at/schema#hasBinaryUpdatedRole
+    creationDate: https://vocabs.acdh.oeaw.ac.at/schema#hasAvailableDate
+    creationUser: https://vocabs.acdh.oeaw.ac.at/schema#createdBy
+    # non-repo core mappings
+    pid: https://vocabs.acdh.oeaw.ac.at/schema#hasPid
+    binarySizeCumulative: https://vocabs.acdh.oeaw.ac.at/schema#hasBinarySize
+    hosting: https://vocabs.acdh.oeaw.ac.at/schema#hasHosting
+    accessRestriction: https://vocabs.acdh.oeaw.ac.at/schema#hasAccessRestriction
+    accessRole: https://vocabs.acdh.oeaw.ac.at/schema#hasRestrictionRole
+    countCumulative: https://vocabs.acdh.oeaw.ac.at/schema#hasNumberOfItems
+    classes:
+        repoObject: https://vocabs.acdh.oeaw.ac.at/schema#RepoObject
+        sharedObject: https://vocabs.acdh.oeaw.ac.at/schema#AgentOrPlaceOrPublication
+        container: https://vocabs.acdh.oeaw.ac.at/schema#Container
+    namespaces:
+        ontology: https://vocabs.acdh.oeaw.ac.at/schema#
+        id: https://id.acdh.oeaw.ac.at/
+        vid: https://id.acdh.oeaw.ac.at/vid/
+        ebucore: http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#
+        fedora: http://fedora.info/definitions/v4/repository#
+        premis: http://www.loc.gov/premis/rdf/v1#
+        rdfs: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+    dissService:
+        class: https://vocabs.acdh.oeaw.ac.at/schema#DisseminationService
+        location: https://vocabs.acdh.oeaw.ac.at/schema#serviceLocation
+        returnFormat: https://vocabs.acdh.oeaw.ac.at/schema#hasReturnType
+        matchProperty: https://vocabs.acdh.oeaw.ac.at/schema#matchesProp
+        matchValue: https://vocabs.acdh.oeaw.ac.at/schema#matchesValue
+        matchRequired: https://vocabs.acdh.oeaw.ac.at/schema#isRequired
+        revProxy: https://vocabs.acdh.oeaw.ac.at/schema#serviceRevProxy
+        parameterClass: https://vocabs.acdh.oeaw.ac.at/schema#DisseminationServiceParameter
+        parameterDefaultValue: https://vocabs.acdh.oeaw.ac.at/schema#hasDefaultValue
+        parameterRdfProperty: https://vocabs.acdh.oeaw.ac.at/schema#usesRdfProperty
+        hasService: https://vocabs.acdh.oeaw.ac.at/schema#hasDissService
+    versioning:
+        isNewOf: https://vocabs.acdh.oeaw.ac.at/schema#isNewVersionOf
+        isPrevOf: https://vocabs.acdh.oeaw.ac.at/schema#isPreviousVersionOf
+    ingest:
+        location: https://vocabs.acdh.oeaw.ac.at/schema#hasLocationPath
+        containerToUriPrefix: acdhContainer://
+        defaultBinaryClass: https://vocabs.acdh.oeaw.ac.at/schema#Resource
+        defaultCollectionClass: https://vocabs.acdh.oeaw.ac.at/schema#Collection
+    ontology:
+        order: https://vocabs.acdh.oeaw.ac.at/schema#ordering
+        recommended: https://vocabs.acdh.oeaw.ac.at/schema#recommendedClass
+        langTag: https://vocabs.acdh.oeaw.ac.at/schema#langTag
+        vocabs: https://vocabs.acdh.oeaw.ac.at/schema#vocabs
+

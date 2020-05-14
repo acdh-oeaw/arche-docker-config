@@ -1,0 +1,6 @@
+/initScripts/users.yaml
+/initScripts/*yaml
+/yaml/local.yaml
+/yaml/config-*yaml
+/composer.lock
+/vendor
