@@ -226,7 +226,7 @@ acdhids:collectionDwnldScript
     acdh:serviceRevProxy    false ;
     acdh:hasTitle           "Download Collection Script"@en ;
     acdh:hasDescription     "Download current file or collection with a python script"@en .
-acdhids:collectionDwnldMatch
+acdhids:collectionDwnldScriptMatch
     acdh:isPartOf           acdhids:collectionDwnldScript ;
     acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
     acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/schema#Collection" ;
