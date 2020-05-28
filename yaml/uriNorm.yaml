@@ -2,7 +2,7 @@ schema:
   uriNorm:
     '|^https?://([^.]*[.])?geonames[.]org/([0-9]+)(/.*)?$|': https://www.geonames.org/\2
     '|^https?://([^.]*[.])?gazetteer[.]dainst[.]org/([A-Za-z]+/)*([0-9]+)([^0-9].*)?$|': https://gazetteer.dainst.org/place/\3
-    '|^https?://([^.]*[.])?pleiades[.]stoa[.]org/places/([0-9]+)(/.*)?$|': https://www.pleiades.stoa.org/places/\2
+    '|^https?://([^.]*[.])?pleiades[.]stoa[.]org/places/([0-9]+)(/.*)?$|': https://pleiades.stoa.org/places/\2
     '|^https?://([^.]*[.])?viaf[.]org/viaf/([0-9]+)(/.*)?$|': https://viaf.org/viaf/\2
     '|^https?://([^.]*[.])?d-nb[.]info/gnd/([0-9]+-[0-9]+)$|': https://d-nb.info/gnd/\2
     '|^https?://([^.]*[.])?wikidata[.]org/([A-Za-z:]+/)*(Q[0-9]+)([^[0-9].*)?$|': https://www.wikidata.org/entity/\3
