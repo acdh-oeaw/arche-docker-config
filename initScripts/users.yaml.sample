@@ -1,0 +1,25 @@
+# Creates/updates repository user accounts upon repository startup
+# (or running 01-users.php)
+#
+# Password is updated only if it's not empty.
+# Password field in this file is made empty just after account creation/update 
+# so it's stored in a plaing text for as short time as possible (for the same
+# reason rerun the repository or run the 01-users.php script just after writing
+# down a password in this file).
+#
+# Adding user to an "admin" group makes him/her a superuser.
+#
+# Rename this file to users.yaml for a 01-users.php script to process it. 
+- login: testuser
+  password: ""
+  groups:
+  - admin
+- login: anotheruser
+  password: ""
+  groups:
+  - anothergroup1
+  - anothergroup2
+- login: yetanotheruser
+  password: ""
+  groups: []
+
