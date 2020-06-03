@@ -11,5 +11,5 @@ su -l www-data -c "$CMD --src $CFGD/schema.yaml --src $CFGD/local.yaml /home/www
 
 rm -f /home/www-data/docroot/api/config.yaml $CFGD/config-repo.yaml
 su -l www-data -c "$CMD --src $CFGD/schema.yaml --src $CFGD/repo.yaml --src $CFGD/local.yaml $CFGD/config-repo.yaml"
+su -l www-data -c "sed -i -e 's/{PG_HOST}/$PG_HOST/g' -e 's/{PG_PORT}/$PG_PORT/g' -e 's/{PG_DBNAME}/$PG_DBNAME/g' -e 's/{PG_USER_PREFIX}/$PG_USER_PREFIX/g' $CFGD/config-repo.yaml"
 su -l www-data -c "ln -s $CFGD/config-repo.yaml /home/www-data/docroot/api/config.yaml"
-
