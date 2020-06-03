@@ -1,5 +1,5 @@
 dbConnStr:
-  guest: 'pgsql: host=127.0.0.1 user=guest dbname=www-data'
+  guest: 'pgsql: host={PG_HOST} port={PG_PORT} user={PG_USER_PREFIX}gui dbname={PG_DBNAME}'
 schema:
   drupal:
      vocabsNamespace: https://vocabs.acdh.oeaw.ac.at/schema#
