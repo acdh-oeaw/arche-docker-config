@@ -3,7 +3,6 @@
         "acdh-oeaw/arche-core": "^1",
         "acdh-oeaw/arche-doorkeeper": "^1",
         "acdh-oeaw/arche-lib-ingest": "^1",
-        "acdh-oeaw/arche-schema": "^1",
         "acdh-oeaw/arche-resolver": "^2",
         "acdh-oeaw/arche-oaipmh": "^1",
         "acdh-oeaw/arche-schema-ingest": "^1",
