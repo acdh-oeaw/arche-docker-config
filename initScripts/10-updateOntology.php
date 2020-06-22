@@ -30,7 +30,7 @@ try {
 
 if ($import || ($argv[1] ?? false)) {
     echo "Importing ontology\n";
-    system("php -f /home/www-data/vendor/acdh-oeaw/arche-schema/importOntologyRdbms.php $cfgFile $ontologyFile");
+    system("php -f /home/www-data/vendor/acdh-oeaw/arche-schema-ingest/importOntology.php $cfgFile $ontologyFile --skipVocabularies");
 } else {
     echo "Ontology up to date\n";
 }

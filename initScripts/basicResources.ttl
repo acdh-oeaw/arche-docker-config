@@ -245,3 +245,34 @@ _:p6 a acdh:Person;
     acdh:hasEmail "ulrike.czeitschner@oeaw.ac.at";
     acdh:isMemberOf _:o1.
 
+_:p7 a acdh:Person;
+    acdh:hasIdentifier acdhi:choffmann;
+    acdh:hasTitle "Christoph Hoffmann"@de;
+    acdh:hasTitle "Christoph Hoffmann"@en;
+    acdh:hasFirstName "Christoph"@de;
+    acdh:hasFirstName "Christoph"@en;
+    acdh:hasLastName "Hoffmann"@de;
+    acdh:hasLastName "Hoffmann"@en;
+    acdh:hasAddressLine1 "Sonnenfelsgasse 19";
+    acdh:hasAddressLine2 "c/o ACDH-CH";
+    acdh:hasCity "Vienna"@en;
+    acdh:hasCity "Wien"@de;
+    acdh:hasCountry "Austria"@en;
+    acdh:hasCountry "Österreich"@de;
+    acdh:hasPostcode "1010";
+    acdh:hasRegion "Vienna"@en;
+    acdh:hasRegion "Wien"@de;
+    acdh:hasUrl <https://www.oeaw.ac.at/acdh/team/current-team/christoph-hoffmann>;
+    acdh:hasEmail "christoph.hoffmann@oeaw.ac.at";
+    acdh:isMemberOf _:o1.
+
+_:p8 a acdh:Person;
+    acdh:hasIdentifier acdhi:elemus;
+    acdh:hasTitle "Elmy Lemus"@de;
+    acdh:hasTitle "Elmy Lemus"@en;
+    acdh:hasFirstName "Elmy"@de;
+    acdh:hasFirstName "Elmy"@en;
+    acdh:hasLastName "Lemus"@de;
+    acdh:hasLastName "Lemus"@en.
+
+
