@@ -66,8 +66,8 @@ metadataManagment:
         addNamespaces: []
         skipNamespaces: []
         #    - http://127.0.0.1
-        denyNamespaces:
-            - https://id.acdh.oeaw.ac.at/
+        denyNamespaces: []
+        #    - https://id.acdh.oeaw.ac.at/
 transactionController:
     socket: 
         # unix/inet

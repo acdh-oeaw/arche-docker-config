@@ -26,5 +26,6 @@ resolver:
             #  auth:
             #  - login
             #  - pswd
-
+        curation:
+            baseUrl: https://arche-curation.acdh-dev.oeaw.ac.at/api/
 
