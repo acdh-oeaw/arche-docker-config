@@ -24,7 +24,7 @@ acdhids:rdf
 # GUI
 acdhids:gui
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "browser/oeaw_detail/{RES_ID}" ;
+    acdh:serviceLocation    "{RES_URI|part(scheme,host)}/browser/oeaw_detail/{RES_ID}" ;
     acdh:hasReturnType      "gui" ;
     acdh:hasReturnType      "text/html; q=0.2" ;
     acdh:serviceRevProxy    false ;
@@ -34,7 +34,7 @@ acdhids:gui
 # thumbnail
 acdhids:thumbnail
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "https://arche-thumbnails2.apollo.arz.oeaw.ac.at/{RES_ID}?width={WIDTH}&height={HEIGHT}" ;
+    acdh:serviceLocation    "https://arche-thumbnails.acdh.oeaw.ac.at/{id_ID|part(host,path,query)}?width={WIDTH}&height={HEIGHT}" ;
     acdh:hasReturnType      "image/png; q=0.1" ;
     acdh:hasReturnType      "thumbnail" ;
     acdh:serviceRevProxy    false ;
@@ -161,12 +161,7 @@ acdhids:3DObjectMatch1
 acdhids:3DObjectMatch2
     acdh:isPartOf           acdhids:3DObject ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasCategory" ;
-    acdh:matchesValue       "3dData" ;
-    acdh:isRequired         false .
-acdhids:3DObjectMatch3
-    acdh:isPartOf           acdhids:3DObject ;
-    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasCategory" ;
-    acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/archecategory/3dData" ;
+    acdh:matchesValue       <https://vocabs.acdh.oeaw.ac.at/archecategory/3dData> ;
     acdh:isRequired         false .
 
 # IIIF viewer
@@ -181,13 +176,13 @@ acdhids:iiif
 acdhids:iiifMatch1
     acdh:isPartOf           acdhids:iiif ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasCategory" ;
-    acdh:matchesValue       "Image" ;
+    acdh:matchesValue       <https://vocabs.acdh.oeaw.ac.at/archecategory/image> ;
     acdh:isRequired         true .
 acdhids:iiifMatch2
     acdh:isPartOf           acdhids:iiif ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "image/tiff" ;
-    acdh:isRequired         true .
+    acdh:isRequired         false .
 acdhids:iiifMatch3
     acdh:isPartOf           acdhids:iiif ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
@@ -197,11 +192,6 @@ acdhids:iiifMatch4
     acdh:isPartOf           acdhids:iiif ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "image/png" ;
-    acdh:isRequired         false .
-acdhids:iiifMatch5
-    acdh:isPartOf           acdhids:iiif ;
-    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
-    acdh:matchesValue       "image/tiff" ;
     acdh:isRequired         false .
 
 # Collection Download
@@ -238,7 +228,7 @@ acdhids:turtleFile
     acdh:serviceLocation    "{RES_URI}/metadata?format=text/turtle" ;
     acdh:hasReturnType      "text/turtle" ;
     acdh:serviceRevProxy    false ;
-    acdh:hasTitle           "Turtle flie"@en ;
+    acdh:hasTitle           "Turtle file"@en ;
     acdh:hasDescription     "Download the actual Resource Turtle file"@en .
 
 # Loris
@@ -274,7 +264,7 @@ acdhids:lorisParam
 # WFS using mapserver proxy
 acdhids:wfs
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "https://maps2.apollo.arz.oeaw.ac.at/mapserver/{RES_URI|url}?SERVICE=WFS&{WFS_PARAM}" ;
+    acdh:serviceLocation    "https://maps.acdh.oeaw.ac.at/mapserver/{RES_URI|url}?SERVICE=WFS&{WFS_PARAM}" ;
     acdh:hasReturnType      "application/gml+xml" ;
     acdh:hasReturnType      "wfs" ;
     acdh:serviceRevProxy    false ;
@@ -309,7 +299,7 @@ acdhids:wfsParam1
 # WMS using mapserver proxy
 acdhids:wms
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "https://maps2.apollo.arz.oeaw.ac.at/mapserver/{RES_URI|url}?SERVICE=WMS&{WMS_PARAM}" ;
+    acdh:serviceLocation    "https://maps.acdh.oeaw.ac.at/mapserver/{RES_URI|url}?SERVICE=WMS&{WMS_PARAM}" ;
     acdh:hasReturnType      "image/png" ;
     acdh:hasReturnType      "wms" ;
     acdh:serviceRevProxy    false ;
