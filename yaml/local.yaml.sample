@@ -5,7 +5,10 @@ doorkeeper:
     epicPid:
         pswd:
 oai:
-    repoBaseUrl: http://127.0.0.1/api/
+    info:
+        baseUrl: http://127.0.0.1/oaipmh/
+    search:
+        repoBaseUrl: http://127.0.0.1/api/
 resolver:
     repositories:
         self:

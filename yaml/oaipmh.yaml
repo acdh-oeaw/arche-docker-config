@@ -3,7 +3,7 @@ oai:
         ## Information reported for `verb=Identify`
         # (deletedRecord is provided by the deletedClass)
         repositoryName: ARCHE
-        baseURL: https://arche.acdh.oeaw.ac.at/oai
+        baseURL: https://arche.acdh.oeaw.ac.at/oaipmh/
         earliestDatestamp: "1900-01-01T00:00:00Z"
         adminEmail: acdh-tech@oeaw.ac.at
         granularity: YYYY-MM-DDThh:mm:ssZ
@@ -47,7 +47,7 @@ oai:
         idNmsp: http://hdl.handle.net/
         # Required repository-related settings
         idProp: https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier
-        repoBaseUrl: https://arche.acdh.oeaw.ac.at/
+        repoBaseUrl: https://arche.acdh.oeaw.ac.at/api/
     sets:
         # Class implementing sets. There are four implementations available:
         # - \acdhOeaw\oai\set\NoSets - when your repository doesn't use sets
