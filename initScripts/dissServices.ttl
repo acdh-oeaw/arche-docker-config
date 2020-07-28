@@ -82,21 +82,25 @@ acdhids:cmdi2html
     acdh:hasDescription     "Display CMDI metadata as HTML"@en .
 acdhids:cmdi2hmlMatch1
     acdh:isPartOf           acdhids:cmdi2html ;
+    acdh:hasTitle           "cmdi2hmlMatch"@en ;
     acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
     acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/schema#Metadata" ;
     acdh:isRequired         true .
 acdhids:cmdi2hmlMatch2
     acdh:isPartOf           acdhids:cmdi2html ;
+    acdh:hasTitle           "cmdi2hmlMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "text/xml" ;
     acdh:isRequired         false .
 acdhids:cmdi2hmlMatch3
     acdh:isPartOf           acdhids:cmdi2html ;
+    acdh:hasTitle           "cmdi2hmlMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "text/plain" ;
     acdh:isRequired         false .
 acdhids:cmdi2hmlMatch4
     acdh:isPartOf           acdhids:cmdi2html ;
+    acdh:hasTitle           "cmdi2hmlMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "application/xml" ;
     acdh:isRequired         false .
@@ -111,21 +115,25 @@ acdhids:rawCmdi
     acdh:hasDescription     "View CMDI metadata"@en .
 acdhids:rawCmdiMatch1
     acdh:isPartOf           acdhids:rawCmdi ;
+    acdh:hasTitle           "rawCmdiMatch"@en ;
     acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
     acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/schema#Metadata" ;
     acdh:isRequired         true .
 acdhids:rawCmdiMatch2
     acdh:isPartOf           acdhids:rawCmdi ;
+    acdh:hasTitle           "rawCmdiMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "text/xml" ;
     acdh:isRequired         false .
 acdhids:rawCmdiMatch3
     acdh:isPartOf           acdhids:rawCmdi ;
+    acdh:hasTitle           "rawCmdiMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "text/plain" ;
     acdh:isRequired         false .
 acdhids:rawCmdiMatch4
     acdh:isPartOf           acdhids:rawCmdi ;
+    acdh:hasTitle           "rawCmdiMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "application/xml" ;
     acdh:isRequired         false .
@@ -155,11 +163,13 @@ acdhids:3DObject
     acdh:hasDescription     "View 3d resource in a dedicated viewer"@en .
 acdhids:3DObjectMatch1
     acdh:isPartOf           acdhids:3DObject ;
+    acdh:hasTitle           "3DObjectMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "application/octet-stream" ;
     acdh:isRequired         true .
 acdhids:3DObjectMatch2
     acdh:isPartOf           acdhids:3DObject ;
+    acdh:hasTitle           "3DObjectMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasCategory" ;
     acdh:matchesValue       <https://vocabs.acdh.oeaw.ac.at/archecategory/3dData> ;
     acdh:isRequired         false .
@@ -175,21 +185,25 @@ acdhids:iiif
     acdh:hasDescription     "View image in a dedicated viewer"@en .
 acdhids:iiifMatch1
     acdh:isPartOf           acdhids:iiif ;
+    acdh:hasTitle           "iiifMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasCategory" ;
     acdh:matchesValue       <https://vocabs.acdh.oeaw.ac.at/archecategory/image> ;
     acdh:isRequired         true .
 acdhids:iiifMatch2
     acdh:isPartOf           acdhids:iiif ;
+    acdh:hasTitle           "iiifMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "image/tiff" ;
     acdh:isRequired         false .
 acdhids:iiifMatch3
     acdh:isPartOf           acdhids:iiif ;
+    acdh:hasTitle           "iiifMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "image/jpeg" ;
     acdh:isRequired         false .
 acdhids:iiifMatch4
     acdh:isPartOf           acdhids:iiif ;
+    acdh:hasTitle           "iiifMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "image/png" ;
     acdh:isRequired         false .
@@ -204,6 +218,7 @@ acdhids:collectionDwnld
     acdh:hasDescription     "Download current file or collection"@en .
 acdhids:collectionDwnldMatch
     acdh:isPartOf           acdhids:collectionDwnld ;
+    acdh:hasTitle           "collectionDwnldMatch"@en ;
     acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
     acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/schema#Collection" ;
     acdh:isRequired         true .
@@ -218,6 +233,7 @@ acdhids:collectionDwnldScript
     acdh:hasDescription     "Download current file or collection with a python script"@en .
 acdhids:collectionDwnldScriptMatch
     acdh:isPartOf           acdhids:collectionDwnldScript ;
+    acdh:hasTitle           "collectionDwnldScriptMatch"@en ;
     acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
     acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/schema#Collection" ;
     acdh:isRequired         true .
@@ -242,16 +258,19 @@ acdhids:loris
     acdh:hasDescription     "Redirects to the IIIF endpoint of the current image"@en .
 acdhids:lorisMatch1
     acdh:isPartOf           acdhids:loris ;
+    acdh:hasTitle           "lorisMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "image/jpeg" ;
     acdh:isRequired         false .
 acdhids:lorisMatch2
     acdh:isPartOf           acdhids:loris ;
+    acdh:hasTitle           "lorisMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "image/png" ;
     acdh:isRequired         false .
 acdhids:lorisMatch3
     acdh:isPartOf           acdhids:loris ;
+    acdh:hasTitle           "lorisMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "image/tiff" ;
     acdh:isRequired         false .
@@ -272,21 +291,25 @@ acdhids:wfs
     acdh:hasDescription     "Provides a WFS access to a georeferenced vector data"@en .
 acdhids:wfsMatch1
     acdh:isPartOf           acdhids:wfs ;
+    acdh:hasTitle           "wfsMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "application/gml+xml" ;
     acdh:isRequired         false .
 acdhids:wfsMatch2
     acdh:isPartOf           acdhids:wfs ;
+    acdh:hasTitle           "wfsMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "application/vnd.geo+json" ;
     acdh:isRequired         false .
 acdhids:wfsMatch3
     acdh:isPartOf           acdhids:wfs ;
+    acdh:hasTitle           "wfsMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "application/vnd.google-earth.kml+xml" ;
     acdh:isRequired         false .
 acdhids:wfsMatch4
     acdh:isPartOf           acdhids:wfs ;
+    acdh:hasTitle           "wfsMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "application/geo+json" ;
     acdh:isRequired         false .
@@ -307,11 +330,13 @@ acdhids:wms
     acdh:hasDescription     "Provides a WMS access to a georeferenced raster data"@en .
 acdhids:wmsMatch1
     acdh:isPartOf           acdhids:wms ;
+    acdh:hasTitle           "wmsMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "image/tiff" ;
     acdh:isRequired         false .
 acdhids:wmsMatch2
     acdh:isPartOf           acdhids:wms ;
+    acdh:hasTitle           "wmsMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "image/png" ;
     acdh:isRequired         false .
@@ -331,11 +356,13 @@ acdhids:xmlinsights
     acdh:hasDescription     "Quick overview on XML Content"@en .
 acdhids:xmlinsightsMatch1
     acdh:isPartOf           acdhids:xmlinsights ;
+    acdh:hasTitle           "xmlinsightsMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "text/xml" ;
     acdh:isRequired         false .
 acdhids:xmlinsightsMatch2
     acdh:isPartOf           acdhids:xmlinsights ;
+    acdh:hasTitle           "xmlinsightsMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "application/xml" ;
     acdh:isRequired         false .
