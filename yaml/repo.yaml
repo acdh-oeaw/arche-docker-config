@@ -85,7 +85,7 @@ transactionController:
     # transaction state check interval in ms
     checkInterval: 500
     # transaction timeout in s
-    timeout: 3000
+    timeout: 30
     # do transactions have to be complete in ACID terms?
     enforceCompleteness: false
     # should metadata history table contain only one set of entries per transaction?
