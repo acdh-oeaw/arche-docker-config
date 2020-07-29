@@ -367,10 +367,10 @@ acdhids:xmlinsightsMatch2
     acdh:matchesValue       "application/xml" ;
     acdh:isRequired         false .
 
-# XML Insights
+# CLARIN LRS
 acdhids:lrs
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "https://switchboard.clarin.eu/#{RES_URI|url}/{MIME|url}" ;
+    acdh:serviceLocation    "https://switchboard.clarin.eu/#/arche/{RES_URI|url}/{MIME|url}" ;
     acdh:hasReturnType      "Processing data" ;
     acdh:serviceRevProxy    false ;
     acdh:hasTitle           "Switchboard"@en ;
