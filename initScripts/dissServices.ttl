@@ -370,7 +370,7 @@ acdhids:xmlinsightsMatch2
 # XML Insights
 acdhids:lrs
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "https://switchboard.clarin.eu/#{RES_URI|url}/{MIME|url}/{LANG|url}" ;
+    acdh:serviceLocation    "https://switchboard.clarin.eu/#{RES_URI|url}/{MIME|url}" ;
     acdh:hasReturnType      "Processing data" ;
     acdh:serviceRevProxy    false ;
     acdh:hasTitle           "Switchboard"@en ;
