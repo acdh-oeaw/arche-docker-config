@@ -54,9 +54,6 @@ oai:
         # - \acdhOeaw\oai\set\Simple - when the set(s) resource belongs to is denoted
         #   by a given RDF property value(s) but there is no other iformation about
         #   the sets (<setName> equals <setSet>, no <setDescription> in reply to ListSets OAI-PMH request)
-        # - \acdhOeaw\oai\set\Acdh - like the `\acdhOeaw\oai\set\Simple`, just also
-        #   parent resources (in ACDH resource inheritance terms) are searched for the
-        #   RDF property describing the set
         # - \acdhOeaw\oai\set\Complex - when a given RDF property points to other
         #   repository resource describing the set. In this case full set information
         #   can be provided in reply to ListSets OAI-PMH request but of course corresponding
@@ -65,8 +62,7 @@ oai:
         #   resource describing a set.
         # If none of them fits your needs, provide your own implementation and update this property.
         setClass: \acdhOeaw\oai\set\Simple
-        # Only when class equals \acdhOeaw\oai\set\Simple, \acdhOeaw\oai\set\Acdh or 
-        # \acdhOeaw\oai\set\Complex
+        # Only when class equals \acdhOeaw\oai\set\Simple or \acdhOeaw\oai\set\Complex
         # RDF property denoting sets the resource is part of
         setProp: https://vocabs.acdh.oeaw.ac.at/schema#hasOaiSet
         # Only when class equals \acdhOeaw\oai\set\Complex
@@ -77,6 +73,10 @@ oai:
         # RDF property storing OAI-PMH <setName> value
         #   [setResource] --oaiSetTitleProp--> setTitleValue
         setNameProp: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
+        # Only when class equals \acdhOeaw\oai\set\Simple
+        # Namespace of the resource identifiers storing the set name
+        #   (in case sets are denoted using relations instead of literal values)
+        setNameNamespace: https://vocabs.acdh.oeaw.ac.at/archeoaisets/
     ## Metadata formats description
     # 
     # Each section describes a single metadata format:
