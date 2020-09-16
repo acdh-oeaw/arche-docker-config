@@ -31,7 +31,7 @@ _:o0 a acdh:Organisation;
     acdh:hasTitle "Österreichische Akademie der Wissenschaften"@de;
     acdh:hasTitle "Austrian Academy of Sciences"@en;
     acdh:hasAlternativeTitle "ÖAW"@de;
-    acdh:hasUrl <https://www.oeaw.ac.at>.
+    acdh:hasUrl "https://www.oeaw.ac.at".
 
 _:o1 a acdh:Organisation;
     acdh:hasIdentifier acdhi:acdh;
@@ -49,7 +49,7 @@ _:o1 a acdh:Organisation;
     acdh:hasTitle "Austrian Centre for Digital Humanities and Cultural Heritage"@en;
     acdh:hasAlternativeTitle "Austrian Centre for Digital Humanities"@en;
     acdh:hasAlternativeTitle "ACDH-CH"@en;
-    acdh:hasUrl <https://www.oeaw.ac.at/acdh>;
+    acdh:hasUrl "https://www.oeaw.ac.at/acdh";
     acdh:isMemberOf _:o0.
     
 _:o2 a acdh:Organisation;
@@ -68,7 +68,7 @@ _:o2 a acdh:Organisation;
     acdh:hasTitle "Institute for the Study of Ancient Culture | Austrian Academy of Sciences"@en; 
     acdh:hasAlternativeTitle "IKAnt"@de;
     acdh:hasEmail "antike@oeaw.ac.at";
-    acdh:hasUrl <https://www.oeaw.ac.at/antike/home>;
+    acdh:hasUrl "https://www.oeaw.ac.at/antike/home";
     acdh:isMemberOf _:o0 .
 
 _:o3 a acdh:Organisation;
@@ -87,7 +87,7 @@ _:o3 a acdh:Organisation;
     acdh:hasTitle "Austrian Archaeological Institute | Austrian Academy of Sciences"@en;
     acdh:hasAlternativeTitle "ÖAI"@de;
     acdh:hasAlternativeTitle "OeAI"@en;
-    acdh:hasUrl <https://www.oeaw.ac.at/oeai>;
+    acdh:hasUrl "https://www.oeaw.ac.at/oeai";
     acdh:isMemberOf _:o0 . 
     
 _:o4 a acdh:Organisation;
@@ -103,7 +103,7 @@ _:o4 a acdh:Organisation;
     acdh:hasPostcode "1010";
     acdh:hasTitle "ARCHE"@en;
     acdh:hasAlternativeTitle "A Resource Centre for the HumanitiEs"@en;
-    acdh:hasUrl <https://arche.acdh.oeaw.ac.at/browser>;
+    acdh:hasUrl "https://arche.acdh.oeaw.ac.at/browser";
     acdh:isMemberOf _:o1.   
     
 _:p1 a acdh:Person;
@@ -126,7 +126,7 @@ _:p1 a acdh:Person;
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
     acdh:hasEmail "matej.durco@oeaw.ac.at";
-    acdh:hasUrl <https://www.oeaw.ac.at/acdh/team/current-team/matej-durco>;
+    acdh:hasUrl "https://www.oeaw.ac.at/acdh/team/current-team/matej-durco";
     acdh:isMemberOf _:o1.
     
 _:p2 a acdh:Person;
@@ -151,7 +151,7 @@ _:p2 a acdh:Person;
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
     acdh:hasEmail "peter.andorfer@oeaw.ac.at";
-    acdh:hasUrl <https://www.oeaw.ac.at/acdh/team/current-team/peter-andorfer>;
+    acdh:hasUrl "https://www.oeaw.ac.at/acdh/team/current-team/peter-andorfer";
     acdh:isMemberOf _:o1.
     
  _:p3 a acdh:Person;
@@ -173,7 +173,7 @@ _:p2 a acdh:Person;
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
     acdh:hasEmail "martina.trognitz@oeaw.ac.at";
-    acdh:hasUrl <https://www.oeaw.ac.at/acdh/team/current-team/martina-trognitz>;
+    acdh:hasUrl "https://www.oeaw.ac.at/acdh/team/current-team/martina-trognitz";
     acdh:isMemberOf _:o1.
     
 _:p4 a acdh:Person;
@@ -197,7 +197,7 @@ _:p4 a acdh:Person;
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
     acdh:hasEmail "daniel.schopper@oeaw.ac.at" ;
-    acdh:hasUrl <https://www.oeaw.ac.at/acdh/team/current-team/daniel-schopper>;
+    acdh:hasUrl "https://www.oeaw.ac.at/acdh/team/current-team/daniel-schopper";
     acdh:isMemberOf _:o1.
 	
 _:p5 a acdh:Person;
@@ -218,7 +218,7 @@ _:p5 a acdh:Person;
     acdh:hasPostcode "1010";
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
-    acdh:hasUrl <https://www.oeaw.ac.at/acdh/team/current-team/hannes-pirker> ;
+    acdh:hasUrl "https://www.oeaw.ac.at/acdh/team/current-team/hannes-pirker" ;
     acdh:hasEmail "hannes.pirker@oeaw.ac.at";
     acdh:isMemberOf _:o1.
     
@@ -241,7 +241,7 @@ _:p6 a acdh:Person;
     acdh:hasPostcode "1010";
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
-    acdh:hasUrl <https://www.oeaw.ac.at/acdh/team/current-team/ulrike-czeitschner>;
+    acdh:hasUrl "https://www.oeaw.ac.at/acdh/team/current-team/ulrike-czeitschner";
     acdh:hasEmail "ulrike.czeitschner@oeaw.ac.at";
     acdh:isMemberOf _:o1.
 
@@ -262,7 +262,7 @@ _:p7 a acdh:Person;
     acdh:hasPostcode "1010";
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
-    acdh:hasUrl <https://www.oeaw.ac.at/acdh/team/current-team/christoph-hoffmann>;
+    acdh:hasUrl "https://www.oeaw.ac.at/acdh/team/current-team/christoph-hoffmann";
     acdh:hasEmail "christoph.hoffmann@oeaw.ac.at";
     acdh:isMemberOf _:o1.
 
