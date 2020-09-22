@@ -30,6 +30,7 @@ schema:
     countCumulative: https://vocabs.acdh.oeaw.ac.at/schema#hasNumberOfItems
     classes:
         repoObject: https://vocabs.acdh.oeaw.ac.at/schema#RepoObject
+        binaryContent: https://vocabs.acdh.oeaw.ac.at/schema#BinaryContent
         sharedObject: https://vocabs.acdh.oeaw.ac.at/schema#AgentOrPlaceOrPublication
         container: https://vocabs.acdh.oeaw.ac.at/schema#Container
     namespaces:
