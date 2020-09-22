@@ -34,7 +34,7 @@ accessControl:
     defaultAction:
         read: deny
         write: deny
-    enforceOnMetadata: true
+    enforceOnMetadata: false
     schema:
         read: https://vocabs.acdh.oeaw.ac.at/schema#aclRead
         update: https://vocabs.acdh.oeaw.ac.at/schema#aclUpdate
