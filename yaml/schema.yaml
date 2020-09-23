@@ -31,6 +31,7 @@ schema:
     license: https://vocabs.acdh.oeaw.ac.at/schema#hasLicense
     licenseAgg: https://vocabs.acdh.oeaw.ac.at/schema#hasLicenseSummary
     countCumulative: https://vocabs.acdh.oeaw.ac.at/schema#hasNumberOfItems
+    isNewVersionOf: https://vocabs.acdh.oeaw.ac.at/schema#isNewVersionOf
     classes:
         repoObject: https://vocabs.acdh.oeaw.ac.at/schema#RepoObject
         binaryContent: https://vocabs.acdh.oeaw.ac.at/schema#BinaryContent
@@ -56,9 +57,6 @@ schema:
         parameterDefaultValue: https://vocabs.acdh.oeaw.ac.at/schema#hasDefaultValue
         parameterRdfProperty: https://vocabs.acdh.oeaw.ac.at/schema#usesRdfProperty
         hasService: https://vocabs.acdh.oeaw.ac.at/schema#hasDissService
-    versioning:
-        isNewOf: https://vocabs.acdh.oeaw.ac.at/schema#isNewVersionOf
-        isPrevOf: https://vocabs.acdh.oeaw.ac.at/schema#isPreviousVersionOf
     ingest:
         location: https://vocabs.acdh.oeaw.ac.at/schema#hasLocationPath
         containerToUriPrefix: acdhContainer://
