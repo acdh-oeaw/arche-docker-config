@@ -25,8 +25,11 @@ schema:
     pid: https://vocabs.acdh.oeaw.ac.at/schema#hasPid
     binarySizeCumulative: https://vocabs.acdh.oeaw.ac.at/schema#hasBinarySize
     hosting: https://vocabs.acdh.oeaw.ac.at/schema#hasHosting
-    accessRestriction: https://vocabs.acdh.oeaw.ac.at/schema#hasAccessRestriction
     accessRole: https://vocabs.acdh.oeaw.ac.at/schema#hasRestrictionRole
+    accessRestriction: https://vocabs.acdh.oeaw.ac.at/schema#hasAccessRestriction
+    accessRestrictionAgg: https://vocabs.acdh.oeaw.ac.at/schema#hasAccessRestrictionSummary
+    license: https://vocabs.acdh.oeaw.ac.at/schema#hasLicense
+    licenseAgg: https://vocabs.acdh.oeaw.ac.at/schema#hasLicenseSummary
     countCumulative: https://vocabs.acdh.oeaw.ac.at/schema#hasNumberOfItems
     classes:
         repoObject: https://vocabs.acdh.oeaw.ac.at/schema#RepoObject
