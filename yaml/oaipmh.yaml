@@ -148,21 +148,9 @@ oai:
             requestOptions:
                 headers:
                     eppn: admin
-        cmdi_collection:
-            metadataPrefix: cmdi_collection
-            schema: http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1345561703620/xsd
-            metadataNamespace: http://www.clarin.eu/cmd/1
-            class: \acdhOeaw\oai\metadata\CmdiMetadata
-            # RDF property denoting repository resource storing actual CMDI XML
-            metaResProp: https://vocabs.acdh.oeaw.ac.at/schema#hasMetadata
-            # CMDI resource RDF property storing its schema
-            cmdiSchemaProp: https://vocabs.acdh.oeaw.ac.at/schema#hasSchema
-            requestOptions:
-                headers:
-                    eppn: admin
         cmdi:
             metadataPrefix: cmdi
-            schema: https://infra.clarin.eu/cmd/xsd/minimal-cmdi.xsd
+            schema: http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1288172614023/xsd
             metadataNamespace: http://www.clarin.eu/cmd/
             class: \acdhOeaw\oai\metadata\LiveCmdiMetadata
             # RDF property used as `cmd:ResourceRef` CMDI value
@@ -185,6 +173,18 @@ oai:
             schemaDefault: clarin.eu:cr1:p_1288172614023
             # Handle only resources having `schemaProp` metadata property value equal to the `schemaEnforce` value.
             schemaEnforce: ""
+        cmdi_collection:
+            metadataPrefix: cmdi_collection
+            schema: http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1345561703620/xsd
+            metadataNamespace: http://www.clarin.eu/cmd/1
+            class: \acdhOeaw\oai\metadata\CmdiMetadata
+            # RDF property denoting repository resource storing actual CMDI XML
+            metaResProp: https://vocabs.acdh.oeaw.ac.at/schema#hasMetadata
+            # CMDI resource RDF property storing its schema
+            cmdiSchemaProp: https://vocabs.acdh.oeaw.ac.at/schema#hasSchema
+            requestOptions:
+                headers:
+                    eppn: admin
         kulturpool:
             metadataPrefix: kulturpool
             metadataNamespace: http://we.do.not.care
