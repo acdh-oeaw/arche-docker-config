@@ -151,7 +151,7 @@ oai:
         cmdi:
             metadataPrefix: cmdi
             schema: http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1288172614023/xsd
-            metadataNamespace: http://www.clarin.eu/cmd/
+            metadataNamespace: http://www.clarin.eu/cmd/1
             class: \acdhOeaw\oai\metadata\LiveCmdiMetadata
             # RDF property used as `cmd:ResourceRef` CMDI value
             uriProp: https://vocabs.acdh.oeaw.ac.at/schema#hasPid
