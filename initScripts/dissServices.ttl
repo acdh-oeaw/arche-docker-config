@@ -171,7 +171,7 @@ acdhids:3DObjectMatch2
     acdh:isPartOf           acdhids:3DObject ;
     acdh:hasTitle           "3DObjectMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasCategory" ;
-    acdh:matchesValue       <https://vocabs.acdh.oeaw.ac.at/archecategory/3dData> ;
+    acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/archecategory/3dData" ;
     acdh:isRequired         false .
 
 # IIIF viewer
@@ -187,7 +187,7 @@ acdhids:iiifMatch1
     acdh:isPartOf           acdhids:iiif ;
     acdh:hasTitle           "iiifMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasCategory" ;
-    acdh:matchesValue       <https://vocabs.acdh.oeaw.ac.at/archecategory/image> ;
+    acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/archecategory/image" ;
     acdh:isRequired         true .
 acdhids:iiifMatch2
     acdh:isPartOf           acdhids:iiif ;
