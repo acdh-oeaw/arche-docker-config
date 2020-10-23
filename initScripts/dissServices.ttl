@@ -320,31 +320,31 @@ acdhids:wfsParam1
     acdh:hasDefaultValue    "VERSION=2.0.0&REQUEST=GetCapabilities" .
 
 # WMS using mapserver proxy
-acdhids:wms
-    a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "https://maps.acdh.oeaw.ac.at/mapserver/{RES_URI|url}?SERVICE=WMS&{WMS_PARAM}" ;
-    acdh:hasReturnType      "image/png" ;
-    acdh:hasReturnType      "wms" ;
-    acdh:serviceRevProxy    false ;
-    acdh:hasTitle           "WMS Endpoint"@en ;
-    acdh:hasDescription     "Provides a WMS access to a georeferenced raster data"@en .
-acdhids:wmsMatch1
-    acdh:isPartOf           acdhids:wms ;
-    acdh:hasTitle           "wmsMatch"@en ;
-    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
-    acdh:matchesValue       "image/tiff" ;
-    acdh:isRequired         false .
-acdhids:wmsMatch2
-    acdh:isPartOf           acdhids:wms ;
-    acdh:hasTitle           "wmsMatch"@en ;
-    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
-    acdh:matchesValue       "image/png" ;
-    acdh:isRequired         false .
-acdhids:wmsParam1
-    a                       acdh:DisseminationServiceParameter ;
-    acdh:isPartOf           acdhids:wms ;
-    acdh:hasTitle           "WMS_PARAM"@en ;
-    acdh:hasDefaultValue    "REQUEST=GetCapabilities&VERSION=1.1.1" .
+#acdhids:wms
+#    a                       acdh:DisseminationService ;
+#    acdh:serviceLocation    "https://maps.acdh.oeaw.ac.at/mapserver/{RES_URI|url}?SERVICE=WMS&{WMS_PARAM}" ;
+#    acdh:hasReturnType      "image/png" ;
+#    acdh:hasReturnType      "wms" ;
+#    acdh:serviceRevProxy    false ;
+#    acdh:hasTitle           "WMS Endpoint"@en ;
+#    acdh:hasDescription     "Provides a WMS access to a georeferenced raster data"@en .
+#acdhids:wmsMatch1
+#    acdh:isPartOf           acdhids:wms ;
+#    acdh:hasTitle           "wmsMatch"@en ;
+#    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
+#    acdh:matchesValue       "image/tiff" ;
+#    acdh:isRequired         false .
+#acdhids:wmsMatch2
+#    acdh:isPartOf           acdhids:wms ;
+#    acdh:hasTitle           "wmsMatch"@en ;
+#    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
+#    acdh:matchesValue       "image/png" ;
+#    acdh:isRequired         false .
+#acdhids:wmsParam1
+#    a                       acdh:DisseminationServiceParameter ;
+#    acdh:isPartOf           acdhids:wms ;
+#    acdh:hasTitle           "WMS_PARAM"@en ;
+#    acdh:hasDefaultValue    "REQUEST=GetCapabilities&VERSION=1.1.1" .
 
 # XML Insights
 acdhids:xmlinsights
