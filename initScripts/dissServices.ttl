@@ -17,6 +17,7 @@ acdhids:rdf
     a                       acdh:DisseminationService ;
     acdh:serviceLocation    "{RES_URI}/metadata" ;
     acdh:hasReturnType      "rdf" ;
+    acdh:hasReturnType      "metadata" ;
     acdh:serviceRevProxy    false ;
     acdh:hasTitle           "RDF access"@en ;
     acdh:hasDescription     "Metadata download"@en .
