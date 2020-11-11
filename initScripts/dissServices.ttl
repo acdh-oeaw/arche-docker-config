@@ -16,11 +16,12 @@ acdhids:raw
 acdhids:rdf
     a                       acdh:DisseminationService ;
     acdh:serviceLocation    "{RES_URI}/metadata" ;
-    acdh:hasReturnType      "rdf" ;
-    acdh:hasReturnType      "metadata" ;
+    acdh:hasReturnType      "rdf" ,
+                            "metadata" ,
+                            "text/turtle" ;
     acdh:serviceRevProxy    false ;
     acdh:hasTitle           "RDF access"@en ;
-    acdh:hasDescription     "Metadata download"@en .
+    acdh:hasDescription     "Metadata download (turtle format)"@en .
 
 # GUI
 acdhids:gui
@@ -238,15 +239,6 @@ acdhids:collectionDwnldScriptMatch
     acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
     acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/schema#Collection" ;
     acdh:isRequired         true .
-
-# Turtle file
-acdhids:turtleFile
-    a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "{RES_URI}/metadata?format=text/turtle" ;
-    acdh:hasReturnType      "text/turtle" ;
-    acdh:serviceRevProxy    false ;
-    acdh:hasTitle           "Turtle file"@en ;
-    acdh:hasDescription     "Download the actual Resource Turtle file"@en .
 
 # Loris
 acdhids:loris
