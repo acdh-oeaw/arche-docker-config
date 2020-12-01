@@ -17,6 +17,7 @@ resolver:
         application/n-triples: /metadata
         application/rdf+xml: /metadata
         application/ld+json: /metadata
+    cmdiIdNamespace: https://id.acdh.oeaw.ac.at/cmdi/
     repositories:
         self:
             baseUrl: http://127.0.0.1/
