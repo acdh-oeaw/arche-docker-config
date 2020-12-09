@@ -7,6 +7,7 @@
         "acdh-oeaw/arche-oaipmh": "^1",
         "acdh-oeaw/arche-schema-ingest": "^1",
         "acdh-oeaw/arche-schema": "^1",
-        "zozlak/yaml-merge": "^1"
+        "zozlak/yaml-merge": "^1",
+        "acdh-oeaw/arche-fcs": "^1"
     }
 }
