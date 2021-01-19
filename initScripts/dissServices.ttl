@@ -312,7 +312,7 @@ acdhids:wfsParam1
 # XML Insights
 acdhids:xmlinsights
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "http://acdh-oeaw-diss-serv-repo-disserv-tei-utils.10.3.6.55.xip.io/resources/summary?id={RES_URI}" ;
+    acdh:serviceLocation    "http://acdh-oeaw-diss-serv-repo-disserv-tei-utils.10.3.6.53.nip.io/resources/summary?id={RES_URI}" ;
     acdh:hasReturnType      "XML Insights" ;
     acdh:serviceRevProxy    false ;
     acdh:hasTitle           "XML Content Insights"@en ;
