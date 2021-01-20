@@ -113,6 +113,7 @@ rest:
         file: /home/www-data/log/rest.log
         # debug/info/notice/warning/error/critical/alert/emergency
         level: debug
+    cors: __origin__
     defaultMime: application/octet-stream
     defaultMetadataFormat: text/turtle
     metadataFormats:

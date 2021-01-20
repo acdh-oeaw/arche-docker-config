@@ -32,6 +32,7 @@ schema:
     licenseAgg: https://vocabs.acdh.oeaw.ac.at/schema#hasLicenseSummary
     countCumulative: https://vocabs.acdh.oeaw.ac.at/schema#hasNumberOfItems
     isNewVersionOf: https://vocabs.acdh.oeaw.ac.at/schema#isNewVersionOf
+    cmdiPid: https://vocabs.acdh.oeaw.ac.at/schema#hasMetadataPid
     classes:
         repoObject: https://vocabs.acdh.oeaw.ac.at/schema#RepoObject
         binaryContent: https://vocabs.acdh.oeaw.ac.at/schema#BinaryContent
@@ -41,6 +42,7 @@ schema:
         ontology: https://vocabs.acdh.oeaw.ac.at/schema#
         id: https://id.acdh.oeaw.ac.at/
         vid: https://id.acdh.oeaw.ac.at/vid/
+        cmdi: https://id.acdh.oeaw.ac.at/cmdi/
         ebucore: http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#
         fedora: http://fedora.info/definitions/v4/repository#
         premis: http://www.loc.gov/premis/rdf/v1#
