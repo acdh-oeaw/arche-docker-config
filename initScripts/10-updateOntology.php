@@ -30,7 +30,7 @@ try {
 
 if ($import || ($argv[1] ?? false)) {
     // bypass check for out of ontology properties for the time of the ontology import
-    $sCfgFile = __DIR__ . '/config-repo.yaml';
+    $sCfgFile = __DIR__ . '/../yaml/config-repo.yaml';
     $sCfg = yaml_parse_file($sCfgFile);
     $scfg['doorkeeper']['checkUnknownProperties'] = false;
     yaml_emit_file($sCfgFile, $sCfg);
