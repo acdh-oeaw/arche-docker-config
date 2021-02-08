@@ -86,7 +86,7 @@ acdhids:cmdi2htmlMatch1
     acdh:isPartOf           acdhids:cmdi2html ;
     acdh:hasTitle           "cmdi2htmlMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasOaiSet" ;
-    acdh:matchesValue       <https://vocabs.acdh.oeaw.ac.at/archeoaisets/clarin-vlo> ;
+    acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/archeoaisets/clarin-vlo" ;
     acdh:isRequired         true .
 
 # raw cmdi
@@ -101,7 +101,7 @@ acdhids:rawCmdiMatch1
     acdh:isPartOf           acdhids:rawCmdi ;
     acdh:hasTitle           "rawCmdiMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasOaiSet" ;
-    acdh:matchesValue       <https://vocabs.acdh.oeaw.ac.at/archeoaisets/clarin-vlo> ;
+    acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/archeoaisets/clarin-vlo" ;
     acdh:isRequired         true .
 acdhids:rawCmdiParam
     a                       acdh:DisseminationServiceParameter ;
