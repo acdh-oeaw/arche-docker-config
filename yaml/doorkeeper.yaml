@@ -2,7 +2,7 @@ doorkeeper:
     rolePublic: public
     roleAcademic: academic
     # Should Doorkeeper::checkUnknownProperties() be run? We need to be able to turn it off for the ontology import.
-    checkUnknownProperties: true
+    checkUnknownProperties: false
     epicPid:
         resolver: 'http://hdl.handle.net/'
         url: 'https://pid.gwdg.de/handles/'
