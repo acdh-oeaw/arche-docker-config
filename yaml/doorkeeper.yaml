@@ -11,3 +11,4 @@ doorkeeper:
         prefix: 21.11115
         createValue: create
         clarinSet: https://vocabs.acdh.oeaw.ac.at/archeoaisets/clarin-vlo
+        clarinSetProperty: https://vocabs.acdh.oeaw.ac.at/schema#hasOaiSet
