@@ -59,6 +59,7 @@ schema:
         parameterDefaultValue: https://vocabs.acdh.oeaw.ac.at/schema#hasDefaultValue
         parameterRdfProperty: https://vocabs.acdh.oeaw.ac.at/schema#usesRdfProperty
         hasService: https://vocabs.acdh.oeaw.ac.at/schema#hasDissService
+        parent: https://vocabs.acdh.oeaw.ac.at/schema#relation
     ingest:
         location: https://vocabs.acdh.oeaw.ac.at/schema#hasLocationPath
         containerToUriPrefix: acdhContainer://
