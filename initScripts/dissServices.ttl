@@ -136,8 +136,8 @@ acdhids:3DObjectMatch2
 acdhids:iiif
     a                       acdh:DisseminationService ;
     acdh:serviceLocation    "{RES_URI|part(scheme,host)}/browser/iiif_viewer/{RES_ID}" ;
-    acdh:hasReturnType      "text/html" ;
     acdh:hasReturnType      "iiifviewer" ;
+	acdh:hasReturnType      "text/html; q=0.1" ;
     acdh:serviceRevProxy    false ;
     acdh:hasTitle           "View image"@en ;
     acdh:hasDescription     "View image in a dedicated viewer"@en .
@@ -179,7 +179,13 @@ acdhids:collectionDwnldMatch
     acdh:hasTitle           "collectionDwnldMatch"@en ;
     acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
     acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/schema#Collection" ;
-    acdh:isRequired         true .
+    acdh:isRequired         false .
+acdhids:collectionDwnldMatch2
+    acdh:relation           acdhids:collectionDwnld ;
+    acdh:hasTitle           "collectionDwnldMatch"@en ;
+    acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
+    acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/schema#TopCollection" ;
+    acdh:isRequired         false .
 
 # Collection Download Script
 acdhids:collectionDwnldScript
@@ -194,7 +200,13 @@ acdhids:collectionDwnldScriptMatch
     acdh:hasTitle           "collectionDwnldScriptMatch"@en ;
     acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
     acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/schema#Collection" ;
-    acdh:isRequired         true .
+    acdh:isRequired         false .
+acdhids:collectionDwnldScriptMatch2
+    acdh:relation           acdhids:collectionDwnldScript ;
+    acdh:hasTitle           "collectionDwnldScriptMatch"@en ;
+    acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
+    acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/schema#TopCollection" ;
+    acdh:isRequired         false .
 
 # Loris
 acdhids:loris
