@@ -53,6 +53,45 @@ acdhids:thumbnailParam2
     acdh:hasTitle           "HEIGHT"@en ;
     acdh:hasDefaultValue    100 .
 
+# biblatex
+acdhids:biblatex
+    a                       acdh:DisseminationService ;
+    acdh:serviceLocation    "https://arche-biblatex.acdh.oeaw.ac.at/?lang={LANG}&id={id_ID|url}" ;
+    acdh:hasReturnType      "application/x-bibtex" ;
+    acdh:hasReturnType      "biblatex" ;
+    acdh:serviceRevProxy    false ;
+    acdh:hasTitle           "BibLaTeX service"@en ;
+    acdh:hasDescription     "Get BibLaTeX"@en .
+acdhids:biblatexMatch1
+    acdh:relation           acdhids:biblatex ;
+    acdh:hasTitle           "biblatexMatch"@en ;
+    acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
+    acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/schema#TopCollection" ;
+    acdh:isRequired         false .
+acdhids:biblatexMatch2
+    acdh:relation           acdhids:biblatex ;
+    acdh:hasTitle           "biblatexMatch"@en ;
+    acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
+    acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/schema#Collection" ;
+    acdh:isRequired         false .
+acdhids:biblatexMatch3
+   acdh:relation           acdhids:biblatex ;
+    acdh:hasTitle           "biblatexMatch"@en ;
+    acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
+    acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/schema#Resource" ;
+    acdh:isRequired         false .
+acdhids:biblatexMatch4
+    acdh:relation           acdhids:biblatex ;
+    acdh:hasTitle           "biblatexMatch"@en ;
+    acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
+    acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/schema#Metadata" ;
+    acdh:isRequired         false .
+acdhids:biblatexParam1
+    a                       acdh:DisseminationServiceParameter ;
+    acdh:relation           acdhids:biblatex ;
+    acdh:hasTitle           "LANG"@en ;
+    acdh:hasDefaultValue    "en" .
+
 # cmdi2html
 acdhids:cmdi2html
     a                       acdh:DisseminationService ;
