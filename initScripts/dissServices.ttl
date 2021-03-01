@@ -44,34 +44,53 @@ acdhids:thumbnail
     acdh:hasDescription     "Get thumbnail"@en .
 acdhids:thumbnailParam1
     a                       acdh:DisseminationServiceParameter ;
-    acdh:isPartOf           acdhids:thumbnail ;
+    acdh:relation           acdhids:thumbnail ;
     acdh:hasTitle           "WIDTH"@en ;
     acdh:hasDefaultValue    100 .
 acdhids:thumbnailParam2
     a                       acdh:DisseminationServiceParameter ;
-    acdh:isPartOf           acdhids:thumbnail ;
+    acdh:relation           acdhids:thumbnail ;
     acdh:hasTitle           "HEIGHT"@en ;
     acdh:hasDefaultValue    100 .
 
-# tei2html
-#acdhids:tei2html
-#    a                       acdh:DisseminationService ;
-#    acdh:serviceLocation    "https://arche.acdh.oeaw.ac.at/services/oxgarage/html{id_ID|part(path)}" ;
-#    acdh:hasReturnType      "text/html; q=0.1" ;
-#    acdh:hasReturnType      "oxgaragehtml" ;
-#    acdh:serviceRevProxy    false ;
-#    acdh:hasTitle           "TEI to HTML conversion Endpoint"@en ;
-#    acdh:hasDescription     "Converts a TEI XML to an HTML"@en .
-#acdhids:tei2hmlMatch1
-#    acdh:isPartOf           acdhids:tei2html ;
-#    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
-#    acdh:matchesValue       "application/xml" ;
-#    acdh:isRequired         false .
-#acdhids:tei2hmlMatch2
-#    acdh:isPartOf           acdhids:tei2html ;
-#    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
-#    acdh:matchesValue       "text/xml" ;
-#    acdh:isRequired         false .
+# biblatex
+acdhids:biblatex
+    a                       acdh:DisseminationService ;
+    acdh:serviceLocation    "https://arche-biblatex.acdh.oeaw.ac.at/?lang={LANG}&id={id_ID|url}" ;
+    acdh:hasReturnType      "application/x-bibtex" ;
+    acdh:hasReturnType      "biblatex" ;
+    acdh:serviceRevProxy    false ;
+    acdh:hasTitle           "BibLaTeX service"@en ;
+    acdh:hasDescription     "Get BibLaTeX"@en .
+acdhids:biblatexMatch1
+    acdh:relation           acdhids:biblatex ;
+    acdh:hasTitle           "biblatexMatch"@en ;
+    acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
+    acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/schema#TopCollection" ;
+    acdh:isRequired         false .
+acdhids:biblatexMatch2
+    acdh:relation           acdhids:biblatex ;
+    acdh:hasTitle           "biblatexMatch"@en ;
+    acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
+    acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/schema#Collection" ;
+    acdh:isRequired         false .
+acdhids:biblatexMatch3
+   acdh:relation           acdhids:biblatex ;
+    acdh:hasTitle           "biblatexMatch"@en ;
+    acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
+    acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/schema#Resource" ;
+    acdh:isRequired         false .
+acdhids:biblatexMatch4
+    acdh:relation           acdhids:biblatex ;
+    acdh:hasTitle           "biblatexMatch"@en ;
+    acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
+    acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/schema#Metadata" ;
+    acdh:isRequired         false .
+acdhids:biblatexParam1
+    a                       acdh:DisseminationServiceParameter ;
+    acdh:relation           acdhids:biblatex ;
+    acdh:hasTitle           "LANG"@en ;
+    acdh:hasDefaultValue    "en" .
 
 # cmdi2html
 acdhids:cmdi2html
@@ -83,10 +102,10 @@ acdhids:cmdi2html
     acdh:hasTitle           "CMDI2HTML access"@en ;
     acdh:hasDescription     "Display CMDI metadata as HTML"@en .
 acdhids:cmdi2htmlMatch1
-    acdh:isPartOf           acdhids:cmdi2html ;
+    acdh:relation           acdhids:cmdi2html ;
     acdh:hasTitle           "cmdi2htmlMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasOaiSet" ;
-    acdh:matchesValue       <https://vocabs.acdh.oeaw.ac.at/archeoaisets/clarin-vlo> ;
+    acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/archeoaisets/clarin-vlo" ;
     acdh:isRequired         true .
 
 # raw cmdi
@@ -98,32 +117,38 @@ acdhids:rawCmdi
     acdh:hasTitle           "RAW CMDI access"@en ;
     acdh:hasDescription     "View CMDI metadata"@en .
 acdhids:rawCmdiMatch1
-    acdh:isPartOf           acdhids:rawCmdi ;
+    acdh:relation           acdhids:rawCmdi ;
     acdh:hasTitle           "rawCmdiMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasOaiSet" ;
-    acdh:matchesValue       <https://vocabs.acdh.oeaw.ac.at/archeoaisets/clarin-vlo> ;
+    acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/archeoaisets/clarin-vlo" ;
     acdh:isRequired         true .
 acdhids:rawCmdiParam
     a                       acdh:DisseminationServiceParameter ;
-    acdh:isPartOf           acdhids:rawCmdi ;
+    acdh:relation           acdhids:rawCmdi ;
     acdh:hasTitle           "PID"@en ;
     acdh:hasDefaultValue    "" ;
     acdh:usesRdfProperty    "https://vocabs.acdh.oeaw.ac.at/schema#hasPid" .
 
 # customTEI2HTML
-#acdhids:customTei2Html
-#    a                       acdh:DisseminationService ;
-#    acdh:serviceLocation    "https://arche-oxgarage.apollo.arz.oeaw.ac.at/?xml={RES_URI|url}&xslt={XSL|url}" ;
-#    acdh:hasReturnType      "customTEI2HTML" ;
-#    acdh:serviceRevProxy    true ;
-#    acdh:hasTitle           "TEI2HTML"@en ;
-#    acdh:hasDescription     "Transform a TEI document with a custom XSLT stylesheet into HTML"@en .
-#acdhids:Param1
-#    a                       acdh:DisseminationServiceParameter ;
-#    acdh:isPartOf           acdhids:customTei2Html ;
-#    acdh:hasTitle           "XSL"@en ;
-#    acdh:hasDefaultValue    "http://diglib.hab.de/edoc/ed000223/tei-introduction.xsl" ;
-#    acdh:usesRdfProperty    "https://vocabs.acdh.oeaw.ac.at/schema#hasCustomXSL" .
+acdhids:customTei2Html
+   a                       acdh:DisseminationService ;
+   acdh:serviceLocation    "https://service4tei.acdh-dev.oeaw.ac.at?tei={RES_URI|url}&xsl={XSL|url}" ;
+   acdh:hasReturnType      "customTei2Html" ;
+   acdh:serviceRevProxy    false ;
+   acdh:hasTitle           "Custom TEI to HTML transformation"@en ;
+   acdh:hasDescription     "Transform a TEI document with a custom XSLT stylesheet into HTML"@en .
+acdhids:customTei2HtmlMatch1
+   acdh:relation           acdhids:customTei2Html ;
+   acdh:hasTitle           "customTei2HtmlMatch"@en ;
+   acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasCustomXsl" ;
+   acdh:isRequired         true .
+
+acdhids:customTei2HtmlParam1
+   a                       acdh:DisseminationServiceParameter ;
+   acdh:relation           acdhids:customTei2Html ;
+   acdh:hasTitle           "XSL"@en ;
+   acdh:hasDefaultValue    "https://tei4arche.acdh-dev.oeaw.ac.at/xsl/test.xsl" ;
+   acdh:usesRdfProperty    "https://vocabs.acdh.oeaw.ac.at/schema#hasCustomXsl" .
 
 # 3D Object
 acdhids:3DObject
@@ -134,13 +159,13 @@ acdhids:3DObject
     acdh:hasTitle           "3D viewer"@en ;
     acdh:hasDescription     "View 3d resource in a dedicated viewer"@en .
 acdhids:3DObjectMatch1
-    acdh:isPartOf           acdhids:3DObject ;
+    acdh:relation           acdhids:3DObject ;
     acdh:hasTitle           "3DObjectMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "application/octet-stream" ;
     acdh:isRequired         true .
 acdhids:3DObjectMatch2
-    acdh:isPartOf           acdhids:3DObject ;
+    acdh:relation           acdhids:3DObject ;
     acdh:hasTitle           "3DObjectMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasCategory" ;
     acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/archecategory/3dData" ;
@@ -150,31 +175,31 @@ acdhids:3DObjectMatch2
 acdhids:iiif
     a                       acdh:DisseminationService ;
     acdh:serviceLocation    "{RES_URI|part(scheme,host)}/browser/iiif_viewer/{RES_ID}" ;
-    acdh:hasReturnType      "text/html" ;
     acdh:hasReturnType      "iiifviewer" ;
+	acdh:hasReturnType      "text/html; q=0.1" ;
     acdh:serviceRevProxy    false ;
     acdh:hasTitle           "View image"@en ;
     acdh:hasDescription     "View image in a dedicated viewer"@en .
 acdhids:iiifMatch1
-    acdh:isPartOf           acdhids:iiif ;
+    acdh:relation           acdhids:iiif ;
     acdh:hasTitle           "iiifMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasCategory" ;
     acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/archecategory/image" ;
     acdh:isRequired         true .
 acdhids:iiifMatch2
-    acdh:isPartOf           acdhids:iiif ;
+    acdh:relation           acdhids:iiif ;
     acdh:hasTitle           "iiifMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "image/tiff" ;
     acdh:isRequired         false .
 acdhids:iiifMatch3
-    acdh:isPartOf           acdhids:iiif ;
+    acdh:relation           acdhids:iiif ;
     acdh:hasTitle           "iiifMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "image/jpeg" ;
     acdh:isRequired         false .
 acdhids:iiifMatch4
-    acdh:isPartOf           acdhids:iiif ;
+    acdh:relation           acdhids:iiif ;
     acdh:hasTitle           "iiifMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "image/png" ;
@@ -189,11 +214,17 @@ acdhids:collectionDwnld
     acdh:hasTitle           "Download Collection"@en ;
     acdh:hasDescription     "Download current file or collection"@en .
 acdhids:collectionDwnldMatch
-    acdh:isPartOf           acdhids:collectionDwnld ;
+    acdh:relation           acdhids:collectionDwnld ;
     acdh:hasTitle           "collectionDwnldMatch"@en ;
     acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
     acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/schema#Collection" ;
-    acdh:isRequired         true .
+    acdh:isRequired         false .
+acdhids:collectionDwnldMatch2
+    acdh:relation           acdhids:collectionDwnld ;
+    acdh:hasTitle           "collectionDwnldMatch"@en ;
+    acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
+    acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/schema#TopCollection" ;
+    acdh:isRequired         false .
 
 # Collection Download Script
 acdhids:collectionDwnldScript
@@ -204,11 +235,17 @@ acdhids:collectionDwnldScript
     acdh:hasTitle           "Download Collection Script"@en ;
     acdh:hasDescription     "Download current file or collection with a python script"@en .
 acdhids:collectionDwnldScriptMatch
-    acdh:isPartOf           acdhids:collectionDwnldScript ;
+    acdh:relation           acdhids:collectionDwnldScript ;
     acdh:hasTitle           "collectionDwnldScriptMatch"@en ;
     acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
     acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/schema#Collection" ;
-    acdh:isRequired         true .
+    acdh:isRequired         false .
+acdhids:collectionDwnldScriptMatch2
+    acdh:relation           acdhids:collectionDwnldScript ;
+    acdh:hasTitle           "collectionDwnldScriptMatch"@en ;
+    acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
+    acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/schema#TopCollection" ;
+    acdh:isRequired         false .
 
 # Loris
 acdhids:loris
@@ -220,26 +257,26 @@ acdhids:loris
     acdh:hasTitle           "IIIF Endpoint"@en ;
     acdh:hasDescription     "Redirects to the IIIF endpoint of the current image"@en .
 acdhids:lorisMatch1
-    acdh:isPartOf           acdhids:loris ;
+    acdh:relation           acdhids:loris ;
     acdh:hasTitle           "lorisMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "image/jpeg" ;
     acdh:isRequired         false .
 acdhids:lorisMatch2
-    acdh:isPartOf           acdhids:loris ;
+    acdh:relation           acdhids:loris ;
     acdh:hasTitle           "lorisMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "image/png" ;
     acdh:isRequired         false .
 acdhids:lorisMatch3
-    acdh:isPartOf           acdhids:loris ;
+    acdh:relation           acdhids:loris ;
     acdh:hasTitle           "lorisMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "image/tiff" ;
     acdh:isRequired         false .
 acdhids:lorisParam
     a                       acdh:DisseminationServiceParameter ;
-    acdh:isPartOf           acdhids:loris ;
+    acdh:relation           acdhids:loris ;
     acdh:hasTitle           "PARAM"@en ;
     acdh:hasDefaultValue    "full/full/0/default.jpg" .
 
@@ -253,32 +290,32 @@ acdhids:wfs
     acdh:hasTitle           "WFS Endpoint"@en ;
     acdh:hasDescription     "Provides a WFS access to a georeferenced vector data"@en .
 acdhids:wfsMatch1
-    acdh:isPartOf           acdhids:wfs ;
+    acdh:relation           acdhids:wfs ;
     acdh:hasTitle           "wfsMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "application/gml+xml" ;
     acdh:isRequired         false .
 acdhids:wfsMatch2
-    acdh:isPartOf           acdhids:wfs ;
+    acdh:relation           acdhids:wfs ;
     acdh:hasTitle           "wfsMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "application/vnd.geo+json" ;
     acdh:isRequired         false .
 acdhids:wfsMatch3
-    acdh:isPartOf           acdhids:wfs ;
+    acdh:relation           acdhids:wfs ;
     acdh:hasTitle           "wfsMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "application/vnd.google-earth.kml+xml" ;
     acdh:isRequired         false .
 acdhids:wfsMatch4
-    acdh:isPartOf           acdhids:wfs ;
+    acdh:relation           acdhids:wfs ;
     acdh:hasTitle           "wfsMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "application/geo+json" ;
     acdh:isRequired         false .
 acdhids:wfsParam1
     a                       acdh:DisseminationServiceParameter ;
-    acdh:isPartOf           acdhids:wfs ;
+    acdh:relation           acdhids:wfs ;
     acdh:hasTitle           "WFS_PARAM"@en ;
     acdh:hasDefaultValue    "VERSION=2.0.0&REQUEST=GetCapabilities" .
 
@@ -292,39 +329,39 @@ acdhids:wfsParam1
 #    acdh:hasTitle           "WMS Endpoint"@en ;
 #    acdh:hasDescription     "Provides a WMS access to a georeferenced raster data"@en .
 #acdhids:wmsMatch1
-#    acdh:isPartOf           acdhids:wms ;
+#    acdh:relation           acdhids:wms ;
 #    acdh:hasTitle           "wmsMatch"@en ;
 #    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
 #    acdh:matchesValue       "image/tiff" ;
 #    acdh:isRequired         false .
 #acdhids:wmsMatch2
-#    acdh:isPartOf           acdhids:wms ;
+#    acdh:relation           acdhids:wms ;
 #    acdh:hasTitle           "wmsMatch"@en ;
 #    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
 #    acdh:matchesValue       "image/png" ;
 #    acdh:isRequired         false .
 #acdhids:wmsParam1
 #    a                       acdh:DisseminationServiceParameter ;
-#    acdh:isPartOf           acdhids:wms ;
+#    acdh:relation           acdhids:wms ;
 #    acdh:hasTitle           "WMS_PARAM"@en ;
 #    acdh:hasDefaultValue    "REQUEST=GetCapabilities&VERSION=1.1.1" .
 
 # XML Insights
 acdhids:xmlinsights
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "http://acdh-oeaw-diss-serv-repo-disserv-tei-utils.10.3.6.55.xip.io/resources/summary?id={RES_URI}" ;
+    acdh:serviceLocation    "http://acdh-oeaw-diss-serv-repo-disserv-tei-utils.10.3.6.53.nip.io/resources/summary?id={RES_URI}" ;
     acdh:hasReturnType      "XML Insights" ;
     acdh:serviceRevProxy    false ;
     acdh:hasTitle           "XML Content Insights"@en ;
     acdh:hasDescription     "Quick overview on XML Content"@en .
 acdhids:xmlinsightsMatch1
-    acdh:isPartOf           acdhids:xmlinsights ;
+    acdh:relation           acdhids:xmlinsights ;
     acdh:hasTitle           "xmlinsightsMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "text/xml" ;
     acdh:isRequired         false .
 acdhids:xmlinsightsMatch2
-    acdh:isPartOf           acdhids:xmlinsights ;
+    acdh:relation           acdhids:xmlinsights ;
     acdh:hasTitle           "xmlinsightsMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "application/xml" ;
@@ -339,18 +376,18 @@ acdhids:lrs
     acdh:hasTitle           "Switchboard"@en ;
     acdh:hasDescription     "Allows to apply on from a large set of processing web services on the data"@en .
 acdhids:lrsMatch1
-    acdh:isPartOf           acdhids:lrs;
+    acdh:relation           acdhids:lrs;
     acdh:hasTitle           "LRSMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasSchema" ;
     acdh:matchesValue       "https://www.tei-c.org/release/xml/tei/schema/relaxng/tei.rng" ;
     acdh:isRequired         true .
 acdhids:lrsParam1
     a                       acdh:DisseminationServiceParameter ;
-    acdh:isPartOf           acdhids:lrs  ;
+    acdh:relation           acdhids:lrs  ;
     acdh:hasTitle           "MIME"@en ;    
     acdh:usesRdfProperty    "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" .
 # acdhids:lrsParam2
 #    a                       acdh:DisseminationServiceParameter ;
-#    acdh:isPartOf           acdhids:lrs  ;
+#    acdh:relation           acdhids:lrs  ;
 #    acdh:hasTitle           "LANG"@en ;    
 #    acdh:usesRdfProperty    "https://vocabs.acdh.oeaw.ac.at/schema#hasLanguage" .
