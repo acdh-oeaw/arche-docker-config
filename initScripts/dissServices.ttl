@@ -176,7 +176,7 @@ acdhids:iiif
     a                       acdh:DisseminationService ;
     acdh:serviceLocation    "{RES_URI|part(scheme,host)}/browser/iiif_viewer/{RES_ID}" ;
     acdh:hasReturnType      "iiifviewer" ;
-	acdh:hasReturnType      "text/html; q=0.1" ;
+    acdh:hasReturnType      "text/html; q=0.1" ;
     acdh:serviceRevProxy    false ;
     acdh:hasTitle           "View image"@en ;
     acdh:hasDescription     "View image in a dedicated viewer"@en .
@@ -347,25 +347,25 @@ acdhids:wfsParam1
 #    acdh:hasDefaultValue    "REQUEST=GetCapabilities&VERSION=1.1.1" .
 
 # XML Insights
-acdhids:xmlinsights
-    a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "http://acdh-oeaw-diss-serv-repo-disserv-tei-utils.10.3.6.53.nip.io/resources/summary?id={RES_URI}" ;
-    acdh:hasReturnType      "XML Insights" ;
-    acdh:serviceRevProxy    false ;
-    acdh:hasTitle           "XML Content Insights"@en ;
-    acdh:hasDescription     "Quick overview on XML Content"@en .
-acdhids:xmlinsightsMatch1
-    acdh:relation           acdhids:xmlinsights ;
-    acdh:hasTitle           "xmlinsightsMatch"@en ;
-    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
-    acdh:matchesValue       "text/xml" ;
-    acdh:isRequired         false .
-acdhids:xmlinsightsMatch2
-    acdh:relation           acdhids:xmlinsights ;
-    acdh:hasTitle           "xmlinsightsMatch"@en ;
-    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
-    acdh:matchesValue       "application/xml" ;
-    acdh:isRequired         false .
+# acdhids:xmlinsights
+#     a                       acdh:DisseminationService ;
+#     acdh:serviceLocation    "http://acdh-oeaw-diss-serv-repo-disserv-tei-utils.10.3.6.53.nip.io/resources/summary?id={RES_URI}" ;
+#     acdh:hasReturnType      "XML Insights" ;
+#     acdh:serviceRevProxy    false ;
+#     acdh:hasTitle           "XML Content Insights"@en ;
+#     acdh:hasDescription     "Quick overview on XML Content"@en .
+# acdhids:xmlinsightsMatch1
+#     acdh:relation           acdhids:xmlinsights ;
+#     acdh:hasTitle           "xmlinsightsMatch"@en ;
+#     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
+#     acdh:matchesValue       "text/xml" ;
+#     acdh:isRequired         false .
+# acdhids:xmlinsightsMatch2
+#     acdh:relation           acdhids:xmlinsights ;
+#     acdh:hasTitle           "xmlinsightsMatch"@en ;
+#     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
+#     acdh:matchesValue       "application/xml" ;
+#     acdh:isRequired         false .
 
 # CLARIN LRS
 acdhids:lrs
