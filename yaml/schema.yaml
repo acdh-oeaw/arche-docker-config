@@ -38,6 +38,7 @@ schema:
         binaryContent: https://vocabs.acdh.oeaw.ac.at/schema#BinaryContent
         sharedObject: https://vocabs.acdh.oeaw.ac.at/schema#AgentOrPlaceOrPublication
         collection: https://vocabs.acdh.oeaw.ac.at/schema#Collection
+        topCollection: https://vocabs.acdh.oeaw.ac.at/schema#TopCollection
     namespaces:
         ontology: https://vocabs.acdh.oeaw.ac.at/schema#
         id: https://id.acdh.oeaw.ac.at/
@@ -59,6 +60,7 @@ schema:
         parameterDefaultValue: https://vocabs.acdh.oeaw.ac.at/schema#hasDefaultValue
         parameterRdfProperty: https://vocabs.acdh.oeaw.ac.at/schema#usesRdfProperty
         hasService: https://vocabs.acdh.oeaw.ac.at/schema#hasDissService
+        parent: https://vocabs.acdh.oeaw.ac.at/schema#relation
     ingest:
         location: https://vocabs.acdh.oeaw.ac.at/schema#hasLocationPath
         containerToUriPrefix: acdhContainer://
