@@ -1,10 +1,8 @@
 doorkeeper:
-    default:
-        hosting: 'https://id.acdh.oeaw.ac.at/arche'
-        accessRestriction: 'https://vocabs.acdh.oeaw.ac.at/archeaccessrestrictions/public'
     rolePublic: public
     roleAcademic: academic
-    checkUnknownProperties: false
+    # Should Doorkeeper::checkUnknownProperties() be run? We need to be able to turn it off for the ontology import.
+    checkUnknownProperties: true
     epicPid:
         resolver: 'http://hdl.handle.net/'
         url: 'https://pid.gwdg.de/handles/'
@@ -14,4 +12,3 @@ doorkeeper:
         createValue: create
         clarinSet: https://vocabs.acdh.oeaw.ac.at/archeoaisets/clarin-vlo
         clarinSetProperty: https://vocabs.acdh.oeaw.ac.at/schema#hasOaiSet
-

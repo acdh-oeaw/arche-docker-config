@@ -1,8 +1,8 @@
 #!/bin/bash
 if [ ! -d /home/www-data/gui/web ]; then
-    su -l www-data -c 'composer create-project drupal/recommended-project:8.8.0 /home/www-data/gui --no-interaction --no-install'
+    su -l www-data -c 'composer create-project drupal/recommended-project:9.1.0 /home/www-data/gui --no-interaction --no-install'
     su -l www-data -c "sed -i -e 's|\"drupal-scaffold\" *:.*|\"drupal-scaffold\": {\"allowed-packages\": [\"acdh-oeaw/arche-gui\"],|g' /home/www-data/gui/composer.json"
-    su -l www-data -c "cd /home/www-data/gui && composer require drush/drush drupal/bootstrap_mint acdh-oeaw/arche-gui acdh-oeaw/arche-theme drupal/core-composer-scaffold drupal/core-project-message drupal/devel drupal/devel_entity_updates drupal/pathauto drupal/matomo acdh-oeaw/arche-gui-ontology acdh-oeaw/arche-dashboard  --update-no-dev"
+    su -l www-data -c "cd /home/www-data/gui && composer require drush/drush acdh-oeaw/arche-gui acdh-oeaw/arche-theme acdh-oeaw/arche-gui-ontology acdh-oeaw/arche-dashboard composer/installers drupal/core-composer-scaffold drupal/core-project-message drupal/core-recommended drupal/devel drupal/devel_entity_updates drupal/restui drupal/matomo --update-no-dev"
 else
     su -l www-data -c 'cd /home/www-data/gui && composer update --no-dev'
 fi
