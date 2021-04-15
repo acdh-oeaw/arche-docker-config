@@ -32,14 +32,16 @@ if ($import || ($argv[1] ?? false)) {
     // bypass check for out of ontology properties for the time of the ontology import
     $sCfgFile = __DIR__ . '/../yaml/config-repo.yaml';
     $sCfg = yaml_parse_file($sCfgFile);
-    $sCfg['doorkeeper']['checkUnknownProperties'] = false;
+    $sCfg['doorkeeper']['checkUnknownProperties']    = false;
+    $sCfg['doorkeeper']['checkAutoCreatedResources'] = false;
     yaml_emit_file($sCfgFile, $sCfg);
 
     echo "Importing ontology\n";
     system("php -f /home/www-data/vendor/acdh-oeaw/arche-schema-ingest/importOntology.php $cfgFile $ontologyFile --skipVocabularies");
     
     // restore check for out of ontology properties
-    $sCfg['doorkeeper']['checkUnknownProperties'] = true;
+    $sCfg['doorkeeper']['checkUnknownProperties']    = true;
+    $sCfg['doorkeeper']['checkAutoCreatedResources'] = true;
     yaml_emit_file($sCfgFile, $sCfg);
 } else {
     echo "Ontology up to date\n";
