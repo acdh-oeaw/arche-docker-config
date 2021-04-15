@@ -3,6 +3,8 @@ doorkeeper:
     roleAcademic: academic
     # Should Doorkeeper::checkUnknownProperties() be run? We need to be able to turn it off for the ontology import.
     checkUnknownProperties: false
+    # Should Doorkeeper::checkAutoCreatedResources() be run? We need to be able to turn it off for the ontology import.
+    checkAutoCreatedResources: true    
     epicPid:
         resolver: 'http://hdl.handle.net/'
         url: 'https://pid.gwdg.de/handles/'
