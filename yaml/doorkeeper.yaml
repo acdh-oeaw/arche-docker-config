@@ -4,7 +4,7 @@ doorkeeper:
     # Should Doorkeeper::checkUnknownProperties() be run? We need to be able to turn it off for the ontology import.
     checkUnknownProperties: true
     epicPid:
-        resolver: 'http://hdl.handle.net/'
+        resolver: 'https://hdl.handle.net/'
         url: 'https://pid.gwdg.de/handles/'
         user: user21.11115-01
         pswd: 
