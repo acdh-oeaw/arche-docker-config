@@ -11,6 +11,7 @@ schema:
     delete: delete://delete
     searchMatch: search://match
     searchFts: search://fts
+    searchCount: search://count
     binarySize: https://vocabs.acdh.oeaw.ac.at/schema#hasRawBinarySize
     fileName: https://vocabs.acdh.oeaw.ac.at/schema#hasFilename
     mime: https://vocabs.acdh.oeaw.ac.at/schema#hasFormat
