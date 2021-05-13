@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" 
+           xmlns:dc="http://purl.org/dc/elements/1.1/" 
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+           xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+  <dc:title       count="*" lang="true" val="/acdh:hasTitle"></dc:title>
+  <dc:creator     count="*" lang="true" val="@acdh:hasCreator/acdh:hasTitle"></dc:creator>
+  <dc:creator     count="*"             val="/acdh:hasCreator"></dc:creator>
+  <dc:subject     count="*" lang="true" val="/acdh:hasSubject"></dc:subject>
+  <dc:description count="*" lang="true" val="/acdh:hasDescription"></dc:description>
+  <dc:date        count="*" lang="true" val="/acdh:hasAvailableDate"></dc:date>
+  <dc:publisher   count="*" lang="true" val="/acdh:hasPublisher"></dc:publisher>
+  <dc:contributor count="*" lang="true" val="@acdh:hasContributor/acdh:hasTitle"></dc:contributor>
+  <dc:contributor count="*"             val="/acdh:hasContributor"></dc:contributor>
+  <dc:type        count="*" lang="true" val="@acdh:hasCategory/acdh:hasTitle"></dc:type>
+  <dc:type        count="*"             val="/acdh:hasCategory"></dc:type>
+  <dc:format      count="*" lang="true" val="/acdh:hasFormat"></dc:format>
+  <dc:identifier  count="*" lang="true" val="/acdh:hasIdentifier"></dc:identifier>
+  <dc:source      count="*" lang="true" val="@acdh:hasSource/acdh:hasTitle"></dc:source>
+  <dc:source      count="*"             val="/acdh:hasSource"></dc:source>
+  <dc:language    count="*"             val="@acdh:hasLanguage/acdh:hasTitle"></dc:language>
+  <dc:relation    count="*"             val="@acdh:isPartOf/acdh:hasTitle"></dc:relation>
+  <dc:relation    count="*"             val="/acdh:isPartOf"></dc:relation>
+  <dc:coverage    count="*" lang="true" val="/acdh:hasTemporalCoverage"></dc:coverage>
+  <dc:coverage    count="*"             val="/acdh:hasTemporalCoverageIdentifier"></dc:coverage>
+  <dc:coverage    count="*" lang="true" val="@acdh:hasSpatialCoverage/acdh:hasTitle"></dc:coverage>
+  <dc:coverage    count="*"             val="/acdh:hasSpatialCoverage"></dc:coverage>
+  <dc:rights      count="*" lang="true" val="@acdh:hasLicense/acdh:hasTitle"></dc:rights>
+  <dc:rights      count="*" lang="true" val="@acdh:hasLicensor/acdh:hasTitle"></dc:rights>
+  <dc:rights      count="*"             val="/acdh:hasLicensor"></dc:rights>
+</oai_dc:dc>

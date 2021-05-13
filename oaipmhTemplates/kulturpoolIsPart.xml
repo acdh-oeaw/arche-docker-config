@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IsPartOf>
+  <title val="/acdh:hasTitle" count="*" lang="true"></title>
+  <alttitle val="/acdh:hasAlternativeTitle" count="*" lang="true"></alttitle>
+  <id val="/acdh:hasIdentifier" count="*"></id>
+</IsPartOf>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmd:Creator>
+    <cmd:Contact ComponentId="clarin.eu:cr1:c_1290431694487">
+        <cmd:Person count="1" val="/acdh:hasTitle"></cmd:Person>
+        <cmd:Address count="1" val="/acdh:hasAddressLine1">Sonnenfelsgasse 19, 1010 Wien</cmd:Address>
+        <cmd:Email count="1" val="/acdh:hasEmail">acdh@oeaw.ac.at</cmd:Email>
+        <cmd:Department></cmd:Department>                 
+        <cmd:Organisation></cmd:Organisation>
+        <cmd:Url></cmd:Url>
+    </cmd:Contact>
+</cmd:Creator>

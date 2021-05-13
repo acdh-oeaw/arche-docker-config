@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmd:CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cmd="http://www.clarin.eu/cmd/1" 
+    xmlns:cmdp="http://www.clarin.eu/cmd/1/profiles/clarin.eu:cr1:p_1271859438164" CMDVersion="1.2" xsi:schemaLocation="http://www.clarin.eu/cmd/1 https://infra.clarin.eu/CMDI/1.x/xsd/cmd-envelop.xsd http://www.clarin.eu/cmd/1/profiles/clarin.eu:cr1:p_1271859438164 https://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/1.x/profiles/clarin.eu:cr1:p_1271859438164/xsd">
+    <cmd:Header>
+        <cmd:MdCreator val="@acdh:hasCreator/acdh:hasTitle"></cmd:MdCreator>
+        <cmd:MdCreationDate val="/acdh:hasAvailableDate"></cmd:MdCreationDate>
+        <cmd:MdSelfLink val="/acdh:hasPid"></cmd:MdSelfLink>
+        <cmd:MdProfile val="/acdh:hasCmdiSchema"></cmd:MdProfile>
+        <cmd:MdCollectionDisplayName val="/acdh:MdCollectionDisplayName"></cmd:MdCollectionDisplayName>
+    </cmd:Header>
+    <!--
+    <cmd:Header>
+        <cmd:MdCreator>ACDH, Vienna</cmd:MdCreator>
+        <cmd:MdCreationDate>2017-04-06</cmd:MdCreationDate>
+        <cmd:MdSelfLink>http://hdl.handle.net/11022/0000-0003-88D3-5</cmd:MdSelfLink>
+        <cmd:MdProfile>clarin.eu:cr1:p_1271859438164</cmd:MdProfile>
+        <cmd:MdCollectionDisplayName>Language Resources Portal</cmd:MdCollectionDisplayName>
+    </cmd:Header>
+    -->
+    <cmd:Resources>
+        <cmd:ResourceProxyList>    
+            <cmd:ResourceProxy id="ref0">                
+                <cmd:ResourceType>LandingPage</cmd:ResourceType>                
+                <cmd:ResourceRef val="/acdh:hasLandingPage"></cmd:ResourceRef>
+            </cmd:ResourceProxy>
+        </cmd:ResourceProxyList><cmd:JournalFileProxyList/><cmd:ResourceRelationList/>
+    </cmd:Resources>
+    <cmd:IsPartOfList>
+        <cmd:IsPartOf/>
+    </cmd:IsPartOfList>
+    <cmd:Components>
+        <cmdp:TextCorpusProfile>
+            <cmdp:Collection>
+                <cmdp:GeneralInfo >
+                    <cmdp:Name val="/acdh:hasTitle"></cmdp:Name>
+                    <cmdp:Version val="/acdh:hasVersion"></cmdp:Version>
+                    <cmdp:Owner   val="@acdh:hasOwner/acdh:hasTitle"></cmdp:Owner>
+                    <!-- in extData! hasPublicationYear -->                               
+                    <cmdp:PublicationYear val="/acdh:extData[PublicationYear]"></cmdp:PublicationYear>                   
+                    <cmdp:TimeCoverage>
+                        <cmdp:minDate val="/acdh:hasCoverageStartDate"></cmdp:minDate>
+                        <cmdp:maxDate val="/acdh:hasCoverageEndDate"></cmdp:maxDate>                       
+                    </cmdp:TimeCoverage>
+                    
+                    <cmdp:Description>
+                        <cmdp:Description val="/acdh:hasDescription" count="+"></cmdp:Description>
+                    </cmdp:Description>
+                </cmdp:GeneralInfo>
+                <cmdp:OriginLocation>
+                    <cmdp:Location>
+                        <cmdp:Country>
+                            <cmdp:Code val="/acdh:extData[LocationCountryCode]"></cmdp:Code>
+                        </cmdp:Country>
+                    </cmdp:Location>
+                </cmdp:OriginLocation>
+                <cmdp:Project>
+                    
+            
+                </cmdp:Project>
+                <cmdp:Creators>
+                    <cmdp:Creator>
+                        <cmdp:Contact>
+                            <cmdp:Person count="*" val="@acdh:hasCreator/acdh:hasTitle"></cmdp:Person>
+                            <cmdp:Address                val="@acdh:hasOwner/acdh:hasAddressLine1"></cmdp:Address>
+                            <cmdp:Address                val="@acdh:hasOwner/acdh:hasPostcode"></cmdp:Address>
+                            <cmdp:Address                val="@acdh:hasOwner/acdh:hasCity"></cmdp:Address>
+                            <cmdp:Email count="1" val="/acdh:extData[ContactEmail]"></cmdp:Email>           
+                            <!-- use acdh:Owner (which is ACDH) because there is no acdh:Organisation  --> 
+                            <cmdp:Organisation count="1" val="@acdh:hasOwner/acdh:hasTitle"></cmdp:Organisation> 
+                                                                                                       
+                        </cmdp:Contact>
+                    </cmdp:Creator>
+                </cmdp:Creators>
+                <cmdp:Access>
+                    <cmdp:Availability val="/acdh:hasLicense"></cmdp:Availability>
+                    <cmdp:Availability val="/acdh:extData[Availability]"></cmdp:Availability>
+                    <!--  ist immer "public" 
+                    <cmdp:AvailabilityX val="/acdh:hasAccessRestriction" count="+"></cmdp:AvailabilityX>
+                    -->
+                    <cmdp:Contact>
+                       
+                        <cmdp:Address  val="@acdh:hasOwner/acdh:hasAddressLine1"></cmdp:Address>
+                        <cmdp:Address  val="@acdh:hasOwner/acdh:hasPostcode"></cmdp:Address>
+                        <cmdp:Address  val="@acdh:hasOwner/acdh:hasCity"></cmdp:Address>
+                        <cmdp:Email    val="/acdh:extData[ContactEmail]"></cmdp:Email>             
+                        <cmdp:Organisation count="1" val="@acdh:hasOwner/acdh:hasTitle"></cmdp:Organisation> 
+                    </cmdp:Contact>
+                </cmdp:Access>
+                <cmdp:CollectionType>
+                    <cmdp:CollectionType val="/acdh:extData[CollectionType]"></cmdp:CollectionType>
+                </cmdp:CollectionType>                
+            </cmdp:Collection>
+            
+            <cmdp:Corpus>
+                <cmdp:Topic></cmdp:Topic>
+                <cmdp:Multilinguality>
+                    <cmdp:Multilinguality val="/acdh:extData[Multilinguality]"></cmdp:Multilinguality>
+                </cmdp:Multilinguality>
+                <cmdp:AnnotationTypes asXML="true" val="/acdh:extData[AnnotationTypes]"></cmdp:AnnotationTypes>              
+                <cmdp:Size>
+                        <cmdp:TotalSize>
+<!--                            A hack! we had to introduce SizeUnit as extData-property to guarantee correct ordering-->
+                            <cmdp:Number    val="/acdh:extData[NumberOfToken]"></cmdp:Number>
+                            <cmdp:SizeUnit  val="/acdh:extData[SizeUnitToken]"></cmdp:SizeUnit>
+                        </cmdp:TotalSize>
+                        <cmdp:TotalSize>
+                            <cmdp:Number    val="/acdh:extData[NumberOfDocuments]"></cmdp:Number>
+                            <cmdp:SizeUnit  val="/acdh:extData[SizeUnitDocs]"></cmdp:SizeUnit>
+                        </cmdp:TotalSize>                                         
+                </cmdp:Size>
+                <cmdp:SubjectLanguages>
+                    <cmdp:SubjectLanguage>
+                        <cmdp:Language>
+                            <cmdp:LanguageName></cmdp:LanguageName>
+                            <cmdp:ISO639>
+                                <cmdp:iso-639-3-code val="/acdh:hasLanguage"></cmdp:iso-639-3-code>
+                            </cmdp:ISO639>
+                        </cmdp:Language>
+                    </cmdp:SubjectLanguage>
+                </cmdp:SubjectLanguages>
+                <cmdp:Modality>
+                    <cmdp:Modality val="/acdh:extData[Modality]"></cmdp:Modality>
+                </cmdp:Modality>               
+            </cmdp:Corpus>
+            
+            <cmdp:TextCorpus>
+                <cmdp:SourceType></cmdp:SourceType>
+                <cmdp:TextTechnical>
+                    <cmdp:MimeType>
+                        <cmdp:MimeType val="/acdh:hasFormat"></cmdp:MimeType>
+                    </cmdp:MimeType>
+                </cmdp:TextTechnical>
+            </cmdp:TextCorpus>
+        </cmdp:TextCorpusProfile>
+        
+    </cmd:Components>
+</cmd:CMD>
+

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Object>
+  <url val="ID" format="image/jpeg"/>
+  <!-- iiif stuff -->
+  <service>
+    <url val="IIIFURL"/>
+    <ConformsTo>http://iiif.io/api/image</ConformsTo>
+    <Implements>http://iiif.io/api/image/2/level1.json</Implements>
+  </service>
+</Object>

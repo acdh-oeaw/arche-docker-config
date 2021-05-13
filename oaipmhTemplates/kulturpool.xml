@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+  <!-- simple resource property example -->
+  <Title val="/acdh:hasTitle" count="1" lang="true"/>
+
+  <!-- simple resource property example - multiple values allowed -->
+  <id val="/acdh:hasIdentifier" count="*"/>
+
+  <ShortDescription val="/acdh:hasDescription" count="*" lang="true"/>
+  <Keyword val="/acdh:hasSubject" count="*" lang="true"/>
+
+  <CreationDate val="/acdh:hasCreatedDate" count="*" dateFormat="Date"/>
+  <EarliestDate val="/acdh:hasCreatedStartDate" count="*" dateFormat="Date"/>
+  <LatestDate val="/acdh:hasCreatedEndDate" count="*" dateFormat="Date"/>
+
+  <Object ComponentId="kulturpoolObject" val="@acdh:hasTitleImage" count="1"/>
+
+  <IsShownBy val="/acdh:isSourceOf" format="raw"/>
+  <IsShownAt val="/acdh:hasUrl" count="*"/>
+
+  <ObjectType val="/acdh:hasCategory" count="*" valueMapProp="skos:relatedMatch" valueMapKeepSrc="true"/> <!-- not used for arche collection -->
+  <Format val="/acdh:hasFormat" count="*"/> <!-- not used for arche collection -->
+
+  <Language val="/acdh:hasLanguage" count="*"/>
+  <Extent val="/acdh:hasExtent" count="1" lang="true"/>
+
+<!--  <Spatial val="@acdh:hasSpatialCoverage" count="*" lang="true"/> -->
+  <Spatial ComponentId="kulturpoolSpatial" val="@acdh:hasSpatialCoverage" count="*"/>
+
+<!--  <Temporal val="@acdh:hasTemporalCoverage" count="*" lang="true"/> -->
+  <Temporal ComponentId="kulturpoolTemporal" val="@acdh:hasTemporalCoverage" count="*"/>
+  <TemporalID val="/acdh:hasTemporalCoverageIdentifier" count="*"/>
+
+  <!-- Hosting institution is called 'Contributor' at Kulturpool -->
+  <Contributor val="@acdh:hasHosting/acdh:hasTitle" count="*" lang="true"/>
+
+  <Rights val="/acdh:hasLicense" count="1"/>
+  <RightsStatus val="/acdh:hasLicense" count="1"/>
+<!--  <Publisher val="@acdh:hasRightsHolder" count="*" lang="true"/> -->
+  <Publisher ComponentId="kulturpoolPublisher" val="@acdh:hasRightsHolder" count="*"/>
+
+<!--  <Source val="@acdh:hasSource" count="*"/> -->
+  <Source ComponentId="kulturpoolSource" val="@acdh:hasSource" count="*"/>
+
+<!--  <Relation val="@acdh:relation" count="*"/> -->
+  <Relation ComponentId="kulturpoolRelatedEntity" val="@acdh:relation" count="*"/>
+
+<!--  <HasView val="@^acdh:isPartOf/acdh:hasPid" count="*"/> -->
+  <HasView ComponentId="kulturpoolHasView" val="@^acdh:isPartOf" count="*"/>
+
+<!--  <IsPartOf val="@acdh:isPartOf/acdh:hasTitle" count="*"/> -->
+  <IsPartOf ComponentId="kulturpoolIsPart" val="@acdh:isPartOf" count="*"/>
+
+  <AvailableDate val="/acdh:hasAvailableDate" count="1" dateFormat="Date"/>
+</resource>
