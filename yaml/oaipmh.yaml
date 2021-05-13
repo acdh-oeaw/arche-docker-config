@@ -128,7 +128,7 @@ oai:
             idProp: https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier
             labelProp: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
             defaultLang: en
-            templateDir: /home/www-data/vendor/acdh-oeaw/arche-oaipmh/src/acdhOeaw/oai/metadata/liveCmdi
+            templateDir: /home/www-data/config/oaipmhTemplates
             schemaProp: https://vocabs.acdh.oeaw.ac.at/schema#hasSchema
             schemaDefault: oai_dc
             schemaEnforce: ""
@@ -154,7 +154,7 @@ oai:
             # Default language used to map multilingual metadata properties to CMDI elements of cardinality 1
             defaultLang: en
             # Path to the directory storing CMDI XML templates
-            templateDir: /home/www-data/vendor/acdh-oeaw/arche-oaipmh/src/acdhOeaw/oai/metadata/liveCmdi
+            templateDir: /home/www-data/config/oaipmhTemplates
             # Metadata property prividng the CMDI schema to be used for a given resource
             schemaProp: https://vocabs.acdh.oeaw.ac.at/schema#hasSchema
             # Namespace prefixes used in template file's metadata property placeholders
@@ -181,7 +181,7 @@ oai:
             # Default language used to map multilingual metadata properties to CMDI elements of cardinality 1
             defaultLang: en
             # Path to the directory storing CMDI XML templates
-            templateDir: /home/www-data/vendor/acdh-oeaw/arche-oaipmh/src/acdhOeaw/oai/metadata/liveCmdi
+            templateDir: /home/www-data/config/oaipmhTemplates
             # Metadata property prividng the CMDI schema to be used for a given resource
             schemaProp: http://can.not.be.overwritten
             # Namespace prefixes used in template file's metadata property placeholders
