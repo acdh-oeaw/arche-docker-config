@@ -1,4 +1,4 @@
-dbConnStr:
+dbConn:
     # admin connection should grant full data modification rights
     admin: "pgsql: user={PG_USER_PREFIX}repo dbname={PG_DBNAME} host={PG_HOST} port={PG_PORT}"
     # guest connection should be read-only
