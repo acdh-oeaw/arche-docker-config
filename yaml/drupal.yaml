@@ -1,4 +1,4 @@
-dbConnStr:
+dbConn:
   guest: 'pgsql: host={PG_HOST} port={PG_PORT} user={PG_USER_PREFIX}gui dbname={PG_DBNAME}'
 schema:
   drupal:
