@@ -6,12 +6,12 @@
  */
 
 require_once '/home/www-data/vendor/autoload.php';
-use acdhOeaw\acdhRepoLib\Repo;
-use acdhOeaw\acdhRepoLib\RepoResourceInterface;
-use acdhOeaw\acdhRepoLib\SearchTerm;
-use acdhOeaw\acdhRepoLib\SearchConfig;
-use acdhOeaw\acdhRepoLib\exception\Deleted;
-use acdhOeaw\acdhRepoIngest\MetadataCollection;
+use acdhOeaw\arche\lib\Repo;
+use acdhOeaw\arche\lib\RepoResourceInterface;
+use acdhOeaw\arche\lib\SearchTerm;
+use acdhOeaw\arche\lib\SearchConfig;
+use acdhOeaw\arche\lib\exception\Deleted;
+use acdhOeaw\arche\lib\ingest\MetadataCollection;
 use zozlak\RdfConstants as RDF;
 
 

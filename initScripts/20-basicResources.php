@@ -6,8 +6,8 @@
  */
 
 require_once '/home/www-data/vendor/autoload.php';
-use acdhOeaw\acdhRepoLib\Repo;
-use acdhOeaw\acdhRepoIngest\MetadataCollection;
+use acdhOeaw\arche\lib\Repo;
+use acdhOeaw\arche\lib\ingest\MetadataCollection;
 
 MetadataCollection::$debug = true;
 $cfgFile   = __DIR__ . '/config.yaml';

@@ -6,8 +6,8 @@
  */
 
 require_once '/home/www-data/vendor/autoload.php';
-use acdhOeaw\acdhRepoLib\Repo;
-use acdhOeaw\acdhRepoLib\exception\NotFound;
+use acdhOeaw\arche\lib\Repo;
+use acdhOeaw\arche\lib\exception\NotFound;
 
 $cfgFile      = __DIR__ . '/config.yaml';
 $ontologyFile = '/home/www-data/vendor/acdh-oeaw/arche-schema/acdh-schema.owl';
