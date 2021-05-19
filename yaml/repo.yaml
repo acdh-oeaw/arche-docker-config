@@ -108,6 +108,22 @@ fullTextSearch:
     propertyFilter:
         type: skip
         properties: []
+spatialSearch:
+    # list of properties containing geometries in the WKT format
+    properties:
+        - https://vocabs.acdh.oeaw.ac.at/schema#hasWKT
+    # property is binary content's mime type, value is a callable returning an
+    # object implementing the acdhOeaw\arche\core\util\SpatialInterface allowing
+    # to get an SQL query extracting the geometry as well as information on the
+    # input format (text/binary)
+    mimeTypes:
+        application/geo+json: \acdhOeaw\arche\core\util\Spatial::fromGeojson
+        application/vnd.geo+json: \acdhOeaw\arche\core\util\Spatial::fromGeojson
+        application/vnd.google-earth.kml+xml: \acdhOeaw\arche\core\util\Spatial::fromKml
+        application/gml+xml: \acdhOeaw\arche\core\util\Spatial::fromGml
+        image/tiff: \acdhOeaw\arche\core\util\Spatial::fromRaster
+        image/png: \acdhOeaw\arche\core\util\Spatial::fromRaster
+    sizeLimit: 100M
 rest:
     logging:
         file: /home/www-data/log/rest.log
