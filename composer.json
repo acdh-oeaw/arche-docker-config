@@ -2,7 +2,7 @@
     "require": {
         "acdh-oeaw/arche-core": "^2.0.0-alpha",
         "acdh-oeaw/arche-lib": "^2.0.0-alpha",
-        "acdh-oeaw/arche-doorkeeper": "^1",
+        "acdh-oeaw/arche-doorkeeper": "^2.0.0-alpha",
         "acdh-oeaw/arche-schema-ingest": "^2.0.0-alpha",
         "acdh-oeaw/arche-schema": "^2",
         "zozlak/yaml-merge": "^1",
