@@ -143,14 +143,14 @@ rest:
         methods:
             create:
                 - type: function
-                  function: \acdhOeaw\arche\Doorkeeper::onResEdit
+                  function: \acdhOeaw\arche\doorkeeper\Doorkeeper::onResEdit
             updateBinary:
                 - type: function
-                  function: \acdhOeaw\arche\Doorkeeper::onResEdit
+                  function: \acdhOeaw\arche\doorkeeper\Doorkeeper::onResEdit
             updateMetadata:
                 - type: function
-                  function: \acdhOeaw\arche\Doorkeeper::onResEdit
+                  function: \acdhOeaw\arche\doorkeeper\Doorkeeper::onResEdit
             txCommit:
                 - type: function
-                  function: \acdhOeaw\arche\Doorkeeper::onTxCommit
+                  function: \acdhOeaw\arche\doorkeeper\Doorkeeper::onTxCommit
 
