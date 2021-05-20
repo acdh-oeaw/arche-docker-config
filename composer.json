@@ -6,6 +6,9 @@
         "acdh-oeaw/arche-doorkeeper": "^2.0.0-alpha",
         "acdh-oeaw/arche-schema-ingest": "^2.0.0-alpha",
         "acdh-oeaw/arche-lib-ingest": "^2.0.0-alpha",
+        "acdh-oeaw/arche-lib-disserv": "^3.0.0-alpha",
+        "acdh-oeaw/arche-resolver": "^3.0.0-alpha",
+        "acdh-oeaw/arche-oaipmh": "^2.0.0-alpha",
         "acdh-oeaw/arche-fcs": "^1",
         "zozlak/yaml-merge": "^1"
     }
