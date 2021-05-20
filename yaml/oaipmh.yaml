@@ -18,29 +18,29 @@ oai:
     deleted:
         # Class implementing deleted resources handling. There are two implementations
         # available:
-        # - \acdhOeaw\oai\deleted\No - when the feature is not supported
-        # - \acdhOeaw\oai\deleted\Tombstone - when resources in the tombstone state
+        # - \acdhOeaw\arche\oaipmh\deleted\No - when the feature is not supported
+        # - \acdhOeaw\arche\oaipmh\deleted\Tombstone - when resources in the tombstone state
         #   should be reported as deleted
-        # - \acdhOeaw\oai\deleted\RdfProperty - when the deleted resources have a given
+        # - \acdhOeaw\arche\oaipmh\deleted\RdfProperty - when the deleted resources have a given
         #   RDF property values (and not deleted resources don't)
-        deletedClass: \acdhOeaw\oai\deleted\Tombstone
+        deletedClass: \acdhOeaw\arche\oaipmh\deleted\Tombstone
         # Value to be reported for the `deletedRecord` property for the OAI-PMH 
         # `identify` request (can be "transient" or "persistent" - 
         # see https://www.openarchives.org/OAI/openarchivesprotocol.html#DeletedRecords).
-        # Needed only if `oaiDeletedClass` other then "acdhOeaw\oai\deleted\no".
+        # Needed only if `oaiDeletedClass` other then "acdhOeaw\arche\oaipmh\deleted\no".
         deletedRecord: transient
         # RDF property indicating a resource is deleted
-        # Needed only if `oaiDeletedClass` equals "acdhOeaw\oai\deleted\RdfProperty".
+        # Needed only if `oaiDeletedClass` equals "acdhOeaw\arche\oaipmh\deleted\RdfProperty".
         deletedProp: https://vocabs.acdh.oeaw.ac.at/schema#isDeleted
         # `deletedProp` RDF property value indicating a resource is deleted. If empty,
         # the existence of the `deletedProp` will be reported as a deletion state
-        # Needed only if `oaiDeletedClass` equals "acdhOeaw\oai\deleted\RdfProperty".
+        # Needed only if `oaiDeletedClass` equals "acdhOeaw\arche\oaipmh\deleted\RdfProperty".
         deletedPropValue: ''
     search:
         # Class used to implement the search.
-        # There is only one implementation provided \acdhOeaw\oai\search\BaseSearch.
+        # There is only one implementation provided \acdhOeaw\arche\oaipmh\search\BaseSearch.
         # If it doesn't fit your needs, provide your own and update this property.
-        searchClass: \acdhOeaw\oai\search\BaseSearch
+        searchClass: \acdhOeaw\arche\oaipmh\search\BaseSearch
         # RDF property storing last modification date
         dateProp: https://vocabs.acdh.oeaw.ac.at/schema#hasUpdatedDate
         # Namespace of the identfier to be used as the OAI-PMH resource id
@@ -50,30 +50,30 @@ oai:
         repoBaseUrl: https://arche.acdh.oeaw.ac.at/api/
     sets:
         # Class implementing sets. There are four implementations available:
-        # - \acdhOeaw\oai\set\NoSets - when your repository doesn't use sets
-        # - \acdhOeaw\oai\set\Simple - when the set(s) resource belongs to is denoted
+        # - \acdhOeaw\arche\oaipmh\set\NoSets - when your repository doesn't use sets
+        # - \acdhOeaw\arche\oaipmh\set\Simple - when the set(s) resource belongs to is denoted
         #   by a given RDF property value(s) but there is no other iformation about
         #   the sets (<setName> equals <setSet>, no <setDescription> in reply to ListSets OAI-PMH request)
-        # - \acdhOeaw\oai\set\Complex - when a given RDF property points to other
+        # - \acdhOeaw\arche\oaipmh\set\Complex - when a given RDF property points to other
         #   repository resource describing the set. In this case full set information
         #   can be provided in reply to ListSets OAI-PMH request but of course corresponding
         #   resources describing sets must exist in your repository. <setDescripiotn> is
-        #   gathered using the `\acdhOeaw\oai\metadata\DcMetadata` class created for the
+        #   gathered using the `\acdhOeaw\arche\oaipmh\metadata\DcMetadata` class created for the
         #   resource describing a set.
         # If none of them fits your needs, provide your own implementation and update this property.
-        setClass: \acdhOeaw\oai\set\Simple
-        # Only when class equals \acdhOeaw\oai\set\Simple or \acdhOeaw\oai\set\Complex
+        setClass: \acdhOeaw\arche\oaipmh\set\Simple
+        # Only when class equals \acdhOeaw\arche\oaipmh\set\Simple or \acdhOeaw\arche\oaipmh\set\Complex
         # RDF property denoting sets the resource is part of
         setProp: https://vocabs.acdh.oeaw.ac.at/schema#hasOaiSet
-        # Only when class equals \acdhOeaw\oai\set\Complex
+        # Only when class equals \acdhOeaw\arche\oaipmh\set\Complex
         # RDF property storing OAI-PMH <setSpec> value:
         #   [setResource] --oaiSetSpecProp--> setSpecValue
         setSpecProp: https://vocabs.acdh.oeaw.ac.at/schema#hasDescription
-        # Only when class equals \acdhOeaw\oai\set\Complex
+        # Only when class equals \acdhOeaw\arche\oaipmh\set\Complex
         # RDF property storing OAI-PMH <setName> value
         #   [setResource] --oaiSetTitleProp--> setTitleValue
         setNameProp: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
-        # Only when class equals \acdhOeaw\oai\set\Simple
+        # Only when class equals \acdhOeaw\arche\oaipmh\set\Simple
         # Namespace of the resource identifiers storing the set name
         #   (in case sets are denoted using relations instead of literal values)
         setNameNamespace: https://vocabs.acdh.oeaw.ac.at/archeoaisets/
@@ -85,25 +85,25 @@ oai:
     #   are simply OAI properties reported for `verb=ListMetadataFormats`
     # - `class`  configuration property denotes a PHP class implementing the given metadata format.
     #   At the moment six classes are available:
-    #   - `\acdhOeaw\oai\metatada\DcMetata` - takes resource's RDF metadata and 
+    #   - `\acdhOeaw\arche\oaipmh\metatada\DcMetata` - takes resource's RDF metadata and 
     #     extracts all RDF properties in `dc` and `dcterms` namespaces.
     #     Doesn't require any additional configuration properties.
-    #   - `\acdhOeaw\oai\metatada\AcdhDcMetata` - takes resource's RDF metadata and 
+    #   - `\acdhOeaw\arche\oaipmh\metatada\AcdhDcMetata` - takes resource's RDF metadata and 
     #     extracts all RDF properties either being in `dc` and `dcterms` namespaces
     #     or having mappings to `dc`/`dcterms` properties.
     #     References to other resources can be handled either by providing their URLs,
     #     or their titles or both.
     #     Requires additional configuration properties: `eqProp`, `acdhNmsp`, 
     #     `titleProp` and `mode`.
-    #   - `\acdhOeaw\oai\metadata\RdfXml` - takes resource's RDF metadata and serialises
+    #   - `\acdhOeaw\arche\oaipmh\metadata\RdfXml` - takes resource's RDF metadata and serialises
     #     them as an RDF-XML.
     #     Doesn't require any additional configuration properties.
-    #   - `\acdhOeaw\oai\metadata\ResMetadata` - fetches metadata from a binary 
+    #   - `\acdhOeaw\arche\oaipmh\metadata\ResMetadata` - fetches metadata from a binary 
     #     content of another repository resource:
     #       [oaiRes]  --format.metaResProp--> metaRes
     #       [metaRes] binary contains XML with the metadata
     #     Requires additional configuration properties: `metaResProp` and `requestOptions`.
-    #   - `\acdhOeaw\oai\metadata\CmdiMetadata` - fetches metadata from a binary
+    #   - `\acdhOeaw\arche\oaipmh\metadata\CmdiMetadata` - fetches metadata from a binary
     #     content of another repository resource checking if schema match requested
     #     format schema:
     #       [oaiRes]  --format.metaResProp-->    metaRes
@@ -111,7 +111,7 @@ oai:
     #       [metaRes] binary contains XML with the metadata
     #     Requires additional configuration properties: `metaResProp`, `cmdiSchemaProp`,
     #     `requestOptions` and `schema`.
-    #   - `\acdhOeaw\oai\metadata\LiveCmdiMetadata` - generates metadata by filling up
+    #   - `\acdhOeaw\arche\oaipmh\metadata\LiveCmdiMetadata` - generates metadata by filling up
     #     CMDI XML templates with resource's metadata values
     #     Requires additional configuration properties: `uriProp`, `labelProp`, 
     #     `schemaProp`, `templateDir` and `defaultLang`.
@@ -123,7 +123,7 @@ oai:
             metadataPrefix: oai_dc
             schema: http://www.openarchives.org/OAI/2.0/oai_dc.xsd
             metadataNamespace: http://www.openarchives.org/OAI/2.0/oai_dc/
-            class: \acdhOeaw\oai\metadata\LiveCmdiMetadata
+            class: \acdhOeaw\arche\oaipmh\metadata\LiveCmdiMetadata
             uriProp: https://vocabs.acdh.oeaw.ac.at/schema#hasPid
             idProp: https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier
             labelProp: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
@@ -138,12 +138,12 @@ oai:
             metadataPrefix: rdfxml
             schema: https://arche.acdh.oeaw.ac.at/
             metadataNamespace: https://vocabs.acdh.oeaw.ac.at/#schema
-            class: \acdhOeaw\oai\metadata\RdfXml
+            class: \acdhOeaw\arche\oaipmh\metadata\RdfXml
         cmdi:
             metadataPrefix: cmdi
             schema: http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1288172614023/xsd
             metadataNamespace: http://www.clarin.eu/cmd/1
-            class: \acdhOeaw\oai\metadata\LiveCmdiMetadata
+            class: \acdhOeaw\arche\oaipmh\metadata\LiveCmdiMetadata
             # RDF property used as `cmd:ResourceRef` CMDI value
             uriProp: https://vocabs.acdh.oeaw.ac.at/schema#hasPid
             # idProp and labelProp are used to fetch URI labels (e.g. fetch name of a resource creator)
@@ -168,7 +168,7 @@ oai:
             metadataPrefix: kulturpool
             metadataNamespace: http://we.do.not.care
             schema: http://we.do.not.have.an.xsd
-            class: \acdhOeaw\oai\metadata\LiveCmdiMetadata
+            class: \acdhOeaw\arche\oaipmh\metadata\LiveCmdiMetadata
             # RDF property used as `cmd:ResourceRef` CMDI value
             uriProp: https://vocabs.acdh.oeaw.ac.at/schema#hasPid
             # idProp and labelProp are used to fetch URI labels (e.g. fetch name of a resource creator)
