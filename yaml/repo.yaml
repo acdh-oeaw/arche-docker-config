@@ -3,6 +3,9 @@ dbConn:
     admin: "pgsql: user={PG_USER_PREFIX}repo dbname={PG_DBNAME} host={PG_HOST} port={PG_PORT}"
     # guest connection should be read-only
     guest: "pgsql: user={PG_USER_PREFIX}guest dbname={PG_DBNAME} host={PG_HOST} port={PG_PORT}"
+dbConnStr:
+    admin: "pgsql: user={PG_USER_PREFIX}repo dbname={PG_DBNAME} host={PG_HOST} port={PG_PORT}"
+    guest: "pgsql: user={PG_USER_PREFIX}guest dbname={PG_DBNAME} host={PG_HOST} port={PG_PORT}"
 storage: 
     dir: /home/www-data/data
     tmpDir: /home/www-data/tmp
