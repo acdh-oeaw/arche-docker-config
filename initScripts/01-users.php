@@ -42,5 +42,5 @@ $db->putUser('init', (object) ['groups' => ['admin']]);
 // ADMIN_PSWD
 $adminPswd = getenv('ADMIN_PSWD');
 if (!empty($adminPswd)) {
-    $db->putUser('admin', (object), HttpBasic::pswdData($adminPswd));
+    $db->putUser('admin', (object) HttpBasic::pswdData($adminPswd));
 }
