@@ -39,3 +39,8 @@ $cfg->writeFile(__DIR__ . '/config.yaml');
 $db->putUser('init', HttpBasic::pswdData($pswd));
 $db->putUser('init', (object) ['groups' => ['admin']]);
 
+// ADMIN_PSWD
+$adminPswd = getenv('ADMIN_PSWD');
+if (!empty($adminPswd)) {
+    $db->putUser('admin', (object), HttpBasic::pswdData($adminPswd));
+}
