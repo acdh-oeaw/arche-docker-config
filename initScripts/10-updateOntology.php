@@ -31,7 +31,8 @@ try {
 if ($import || ($argv[1] ?? false)) {
     // turn off some doorkeeper checks
     $sCfgFile = __DIR__ . '/../yaml/config-repo.yaml';
-    $sCfg = yaml_parse_file($sCfgFile);
+    $sCfg     = yaml_parse_file($sCfgFile);
+    $dCfgBak  = $sCfg['doorkeeper'];
     $sCfg['doorkeeper']['checkUnknownProperties']    = false;
     $sCfg['doorkeeper']['checkAutoCreatedResources'] = false;
     yaml_emit_file($sCfgFile, $sCfg);
@@ -40,8 +41,8 @@ if ($import || ($argv[1] ?? false)) {
     system("php -f /home/www-data/vendor/acdh-oeaw/arche-schema-ingest/importOntology.php $cfgFile $ontologyFile --skipVocabularies");
     
     // restore doorkeeper checks
-    $sCfg['doorkeeper']['checkUnknownProperties']    = true;
-    $sCfg['doorkeeper']['checkAutoCreatedResources'] = true;
+    $sCfg['doorkeeper']['checkUnknownProperties']    = $dCfgBak['checkUnknownProperties'];
+    $sCfg['doorkeeper']['checkAutoCreatedResources'] = $dCfgBak['checkAutoCreatedResources'];
     yaml_emit_file($sCfgFile, $sCfg);
 } else {
     echo "Ontology up to date\n";

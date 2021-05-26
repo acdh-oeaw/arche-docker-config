@@ -13,7 +13,8 @@ yaml_emit_file($cfgFile, $cfg);
 
 // turn off some doorkeeper checks
 $sCfgFile = __DIR__ . '/../yaml/config-repo.yaml';
-$sCfg = yaml_parse_file($sCfgFile);
+$sCfg     = yaml_parse_file($sCfgFile);
+$dCfgBak  = $sCfg['doorkeeper'];
 $sCfg['doorkeeper']['checkUnknownProperties']    = false;
 $sCfg['doorkeeper']['checkAutoCreatedResources'] = false;
 yaml_emit_file($sCfgFile, $sCfg);
@@ -21,7 +22,7 @@ yaml_emit_file($sCfgFile, $sCfg);
 echo "Importing external vocabularies\n";
 system("php -f /home/www-data/vendor/acdh-oeaw/arche-schema-ingest/importVocabularies.php $cfgFile");
 
-$sCfg['doorkeeper']['checkUnknownProperties']    = true;
-$sCfg['doorkeeper']['checkAutoCreatedResources'] = true;
+$sCfg['doorkeeper']['checkUnknownProperties']    = $dCfgBak['checkUnknownProperties'];
+$sCfg['doorkeeper']['checkAutoCreatedResources'] = $dCfgBak['checkAutoCreatedResources'];
 yaml_emit_file($sCfgFile, $sCfg);
 
