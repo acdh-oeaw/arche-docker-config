@@ -1,7 +1,6 @@
 {
     "require": {
-        "acdh-oeaw/arche-core": "^2.0.0-alpha",
-        "acdh-oeaw/arche-lib": "^2.0.0-alpha",
+        "acdh-oeaw/arche-core": "^2",
         "zozlak/yaml-merge": "^1"
     }
 }
