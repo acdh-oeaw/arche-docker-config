@@ -46,7 +46,9 @@ oai:
         # Namespace of the identfier to be used as the OAI-PMH resource id
         idNmsp: https://hdl.handle.net/
         # Required repository-related settings
-        idProp: https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier
+        id: https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier
+        searchMatch: search://match
+        searchCount: search://count
         repoBaseUrl: https://arche.acdh.oeaw.ac.at/api/
     sets:
         # Class implementing sets. There are four implementations available:
