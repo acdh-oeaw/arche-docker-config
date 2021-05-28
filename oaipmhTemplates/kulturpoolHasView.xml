@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <HasView>
   <id val="/acdh:hasPid" count="*"/>
-  <url val="ID" format="image/jpeg"/>
+  <url val="ID&amp;id" format="image/jpeg"/>
   <title val="/acdh:hasTitle" count="*" lang="true"/>
   <ObjectType val="/acdh:hasCategory" count="*" valueMapProp="skos:relatedMatch" valueMapKeepSrc="true"/> <!-- not used for arche collection -->
   <Format val="/acdh:hasFormat" count="*"/> <!-- not used for arche collection -->
@@ -12,3 +12,4 @@
     <Implements>http://iiif.io/api/image/2/level2.json</Implements>
   </service>
 </HasView>
+
