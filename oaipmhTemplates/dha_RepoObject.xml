@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE RDF [
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace">
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#">
+    <!ENTITY skos "http://www.w3.org/2004/02/skos/core#">
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/">
+    <!ENTITY dct "http://purl.org/dc/terms/">
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/">
+    <!ENTITY premis "http://www.loc.gov/premis/rdf/v1#">
+    <!ENTITY dha "https://digital-humanities.at/schema#">
+    <!ENTITY ebucore "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#">
+]>
+<rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xml="&xml;" xmlns:xsd="&xsd;"
+    xmlns:skos="&skos;" xmlns:dc="&dc;" xmlns:dct="&dct;" xmlns:foaf="&foaf;" xmlns:dha="&dha;" xmlns:premis="&premis;">
+
+    <!--
+    ////////////////////////////////////////////////////////////////////////////
+    //
+    // Mapping for RepoObject
+    //
+    ////////////////////////////////////////////////////////////////////////////
+    -->
+
+    <dha:RepoObject> <!-- Q: how do I include rdf:about with URI of the Resource? -->
+
+        <dha:hasMetadataDescription rdf:parseType="Resource">
+            <dc:title count="*" lang="true" val="/acdh:hasTitle"></dc:title>
+            <dc:identifier count="*" val="@acdh:hasIdentifier/acdh:hasTitle"></dc:identifier>
+            <dc:creator count="*" val="@acdh:hasCreator/acdh:hasTitle"></dc:creator>
+            <dc:contributor count="*" val="@acdh:hasContributor/acdh:hasTitle"></dc:contributor>
+        </dha:hasMetadataDescription>
+
+        <dha:basedOn> <!-- Q: is it possible to create as many elements for this property as the values for ^acdh:isSourceOf? -->
+            <dha:Object> <!-- Q: Actually, it's not sure that this is a dha:Object, and it may well be a dha:Collection. Is it possible to add some sort of if-condition? If the object is a Collection, then print dha:Collection; if it is a Resource, then print dha:Object -->
+              <!-- Q: A rdf:about attribute should be added here too; see above -->
+              <!-- The following part can be avoided:
+              <dha:hasMetadataDescription rdf:parseType="Resource">
+                  <dc:title count="*" lang="true" val="@^acdh:isSourceOf/acdh:hasTitle"></dc:title>
+                  <dc:identifier count="*" val="@^acdh:isSourceOf/acdh:hasIdentifier/acdh:hasTitle"></dc:identifier>
+                  <dc:creator count="*" val="@^acdh:isSourceOf/acdh:hasCreator/acdh:hasTitle"></dc:creator>
+                  <dc:contributor count="*" val="@^acdh:isSourceOf/acdh:hasContributor/acdh:hasTitle"></dc:contributor>
+              </dha:hasMetadataDescription>
+            -->
+            </dha:Object>
+        </dha:basedOn>
+
+        <dha:hasPreservationDescription rdf:parseType="Resource">
+            <premis:hasIdentifier count="*" val="/acdh:hasPid"></premis:hasIdentifier>
+            <dha:hasAccessRights count="*" val="@acdh:hasAccessRestriction/hasIdentifier"></dha:hasAccessRights> <!-- Q: I need an identifier that is just a xsd:anyURI here, while hasIdentifier is an object property in ARCHE. How can I convert the value to a literal? -->
+            <dha:hasLicense count="*" val="/acdh:hasLicense"></dha:hasLicense> <!-- same here -->
+        </dha:hasPreservationDescription>
+
+        <dha:hasDisseminationDescription rdf:parseType="Resource"> <!-- Q: Would it be possible to list all Dissemination Services and include each of them as separate objects, by repeating the template  in the element <dha:hasDisseminationService>? -->
+            <dha:hasDisseminationService rdf:parseType="Resource">
+                <premis:hasIdentifier/> <!-- Q: URI to Dissemination Service for this object. For images, IIIFURL could be used here? -->
+                <dha:hasAnchorLabel/> <!-- Q: This is something like a literal label: how can I insert the title of the dissemination service? -->
+                <dha:conformsTo count="*" val=""/> <!-- Q: In the examples there is something like &dha;/service/api/get - maybe we could put something similar from ARCHE? -->
+                <dha:hasMimeType count="*" val="/acdh:hasFormat"/>
+            </dha:hasDisseminationService>
+        </dha:hasDisseminationDescription>
+
+        <dha:hasAnnotationDescription rdf:parseType="Resource">
+
+                <dha:Concept rdf:parseType="Resource">
+                    <dha:hasCatchPhrase count="*" val="/acdh:hasSubject"></dha:hasCatchPhrase>
+                    <!-- The following part doesn't apply, since subjects are literals in ARCHE:
+
+                      <dha:hasIdentifier rdf:parseType="Resource">
+                          <premis:hasIdentifier></premis:hasIdentifier>
+                          <dha:conformsTo></dha:conformsTo>
+                          <dha:hasParsableMetadata></dha:hasParsableMetadata>
+                      </dha:hasIdentifier>
+
+                    -->
+                </dha:Concept>
+
+                <dha:NamedEntity rdf:parseType="Resource">
+
+                    <dha:Artefact rdf:parseType="Resource">
+                        <dha:hasCatchPhrase></dha:hasCatchPhrase>
+                        <dha:hasIdentifier rdf:parseType="Resource">
+                            <premis:hasIdentifier></premis:hasIdentifier>
+                            <dha:conformsTo></dha:conformsTo>
+                            <dha:hasParsableMetadata></dha:hasParsableMetadata>
+                        </dha:hasIdentifier>
+                    </dha:Artefact>
+
+                    <dha:Organization rdf:parseType="Resource"> <!-- Q: How do distinguish between hasActor that points to an Organization rather than a Person? Use If conditions? -->
+                        <dha:hasCatchPhrase count="*" lang="true" val="@acdh:hasActor/hasTitle"></dha:hasCatchPhrase>
+                        <dha:hasIdentifier rdf:parseType="Resource">
+                            <premis:hasIdentifier count="1" val="@acdh:hasActor/hasIdentifier"></premis:hasIdentifier>
+                            <dha:conformsTo>https://id.acdh.oeaw.ac.at/</dha:conformsTo>
+                            <dha:hasParsableMetadata count="*" val="METAURL"></dha:hasParsableMetadata>
+                        </dha:hasIdentifier>
+                    </dha:Organization>
+
+                    <dha:Person rdf:parseType="Resource">
+                        <dha:hasCatchPhrase count="*" val="@acdh:hasActor/hasTitle"></dha:hasCatchPhrase>
+                        <dha:hasIdentifier rdf:parseType="Resource">
+                            <premis:hasIdentifier count="1" val="@acdh:hasActor/hasIdentifier"></premis:hasIdentifier>
+                            <dha:conformsTo>https://id.acdh.oeaw.ac.at/</dha:conformsTo>
+                            <dha:hasParsableMetadata count="*" val="METAURL"></dha:hasParsableMetadata>
+                        </dha:hasIdentifier>
+                    </dha:Person>
+
+                    <dha:Place rdf:parseType="Resource">
+                        <dha:hasCatchPhrase count="*" lang="true" val="@acdh:hasSpatialCoverage/hasTitle"></dha:hasCatchPhrase>
+                        <dha:hasIdentifier rdf:parseType="Resource">
+                            <premis:hasIdentifier count="*" val="@acdh:hasSpatialCoverage/hasIdentifier"></premis:hasIdentifier>
+                            <dha:conformsTo>https://id.acdh.oeaw.ac.at/</dha:conformsTo>
+                            <dha:hasParsableMetadata count="*" val="METAURL"></dha:hasParsableMetadata>
+                        </dha:hasIdentifier>
+                    </dha:Place>
+
+                </dha:NamedEntity>
+
+                <dha:Timespan rdf:parseType="Resource">
+                    <dha:hasCatchPhrase count="*" lang="true" val="/acdh:hasTemporalCoverage"></dha:hasCatchPhrase>
+                    <dha:hasIdentifier rdf:parseType="Resource">
+                        <premis:hasIdentifier count="*" val="/acdh:hasTemporalCoverageIdentifier"></premis:hasIdentifier>
+                        <dha:conformsTo></dha:conformsTo> <!-- It may be from perio.do or chronontology.dai or other sources, so it cannot be stated a priori -->
+                        <dha:hasParsableMetadata></dha:hasParsableMetadata>
+                    </dha:hasIdentifier>
+                    <dha:hasISODate></dha:hasISODate> <!-- Q: How to concatenate start and end coverage dates, using slash for duration? -->
+                </dha:Timespan>
+
+        </dha:hasAnnotationDescription>
+
+        <dha:isPartOf>
+            <dha:RepoCollection count="*" val="/acdh:isPartOf">
+            </dha:RepoCollection>
+        </dha:isPartOf>
+
+<!--
+        <dha:hasResource>
+            <dha:Resource>
+                <dha:hasDisseminationDescription rdf:parseType="Resource">
+                    <dha:hasDisseminationService rdf:parseType="Resource">
+                        <premis:hasIdentifier/>
+                        <dha:hasAnchorLabel/>
+                        <dha:conformsTo/>
+                        <dha:hasMimeType/>
+                    </dha:hasDisseminationService>
+                </dha:hasDisseminationDescription>
+                <dha:hasMimeType></dha:hasMimeType>
+            </dha:Resource>
+        </dha:hasResource>
+-->
+        <dha:hasType count="*" val="@acdh:hasCategory/acdh:hasIdentifier"></dha:hasType>
+
+    </dha:RepoObject>
+
+</rdf:RDF>
