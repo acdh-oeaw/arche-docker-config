@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dha:basedOn>
+  <dha:Object val="URI" asAttribute="rdf:about" count="*">
+</dha:basedOn>
