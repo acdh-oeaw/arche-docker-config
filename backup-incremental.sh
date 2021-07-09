@@ -11,7 +11,7 @@ if [ "`id -u`" == "0" ]; then
     cp "$BDIR/dateFile" "$DATEFILE"
     chown www-data:www-data "$DATEFILE"
 fi
-su -l www-data -c "$SDIR/backup.php --dateFile '$DATEFILE' --compression gzip --include skipSearch --lock skip /home/www-data/docroot/api/config.yaml '$TDIR/${FILE}tgz'" > "$BDIR/${FILE}log" 2>&1
+su -l www-data -c "$SDIR/backup.php --dateFile '$DATEFILE' --compression gzip --include all --lock skip /home/www-data/docroot/api/config.yaml '$TDIR/${FILE}tgz'" > "$BDIR/${FILE}log" 2>&1
 if [ "`id -u`" == "0" ]; then
     cp "$DATEFILE" "$BDIR/dateFile"
     rm "$DATEFILE"

@@ -35,4 +35,6 @@ resolver:
             #  - pswd
         curation:
             baseUrl: https://arche-curation.acdh-dev.oeaw.ac.at/api/
+        dev:
+            baseUrl: https://arche-dev.acdh-dev.oeaw.ac.at/api/
 
