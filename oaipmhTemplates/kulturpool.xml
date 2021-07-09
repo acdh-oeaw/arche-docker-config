@@ -28,7 +28,7 @@
   <Spatial ComponentId="kulturpoolSpatial" val="@acdh:hasSpatialCoverage" count="*"/>
 
 <!--  <Temporal val="@acdh:hasTemporalCoverage" count="*" lang="true"/> -->
-  <Temporal ComponentId="kulturpoolTemporal" val="@acdh:hasTemporalCoverage" count="*"/>
+  <Temporal ComponentId="kulturpoolTemporal" val="/acdh:hasTemporalCoverage" count="*"/>
   <TemporalID val="/acdh:hasTemporalCoverageIdentifier" count="*"/>
 
   <!-- Hosting institution is called 'Contributor' at Kulturpool -->
