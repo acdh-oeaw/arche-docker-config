@@ -212,7 +212,7 @@ oai:
             # Default language used to map multilingual metadata properties to CMDI elements of cardinality 1
             defaultLang: en
             # Path to the directory storing CMDI XML templates
-            templateDir: /home/www-data/config/oaipmhTemplates
+            templateDir: /home/www-data/config/oaipmhTemplates/dha
             # Metadata property prividng the CMDI schema to be used for a given resource
             schemaProp: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
             # Namespace prefixes used in template file's metadata property placeholders
