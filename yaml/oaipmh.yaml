@@ -163,15 +163,15 @@ oai:
             propNmsp:
                 acdh: https://vocabs.acdh.oeaw.ac.at/schema#
             # Default CMDI schema to be used when a resource doesn't have the `schemaProp` metadatada property or it points to a schema without a tempalte
-            schemaDefault: clarin.eu:cr1:p_1288172614023
+            schemaDefault: http___catalog_clarin_eu_ds_ComponentRegistry_rest_registry_profiles_clarin_eu_cr1:p_1288172614023_xsd
             # Handle only resources having `schemaProp` metadata property value equal to the `schemaEnforce` value.
             schemaEnforce: ""
         kulturpool:
             metadataPrefix: kulturpool
             metadataNamespace: http://we.do.not.care
             schema: http://we.do.not.have.an.xsd
-            class: \acdhOeaw\arche\oaipmh\metadata\LiveCmdiMetadata
             # RDF property used as `cmd:ResourceRef` CMDI value
+            class: \acdhOeaw\arche\oaipmh\metadata\LiveCmdiMetadata
             uriProp: https://vocabs.acdh.oeaw.ac.at/schema#hasPid
             # idProp and labelProp are used to fetch URI labels (e.g. fetch name of a resource creator)
             # They are tightly coupled with the metadata repository structure used by the ACDH:
@@ -192,7 +192,37 @@ oai:
             idNmsp:
                 id: https://id.acdh.oeaw.ac.at/
                 cmdiid: https://id.acdh.oeaw.ac.at/cmdi/
-            # Default CMDI schema to be used when a resource doesn't have the `schemaProp` metadatada property or it points to a schema without a tempalte
+            # Default CMDI schema to be used when a resource doesn't have the `schemaProp` metadatada property or it points to a schema without a template
             schemaDefault: kulturpool
+            # Handle only resources having `schemaProp` metadata property value equal to the `schemaEnforce` value.
+            schemaEnforce: ""
+        dha:
+            metadataPrefix: dha
+            metadataNamespace: http://we.do.not.care
+            schema: http://we.do.not.care
+            class: \acdhOeaw\arche\oaipmh\metadata\LiveCmdiMetadata
+            # RDF property used as `cmd:ResourceRef` CMDI value
+            uriProp: https://vocabs.acdh.oeaw.ac.at/schema#hasPid
+            # idProp and labelProp are used to fetch URI labels (e.g. fetch name of a resource creator)
+            # They are tightly coupled with the metadata repository structure used by the ACDH:
+            #   resIdUri <--idProp-- res --labelProp--> label
+            idProp: https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier
+            labelProp: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
+            iiifBaseUrl: 'https://loris.acdh.oeaw.ac.at/uuid:'
+            # Default language used to map multilingual metadata properties to CMDI elements of cardinality 1
+            defaultLang: en
+            # Path to the directory storing CMDI XML templates
+            templateDir: /home/www-data/config/oaipmhTemplates/dha
+            # Metadata property prividng the CMDI schema to be used for a given resource
+            schemaProp: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+            # Namespace prefixes used in template file's metadata property placeholders
+            propNmsp:
+                acdh: https://vocabs.acdh.oeaw.ac.at/schema#
+                skos: http://www.w3.org/2004/02/skos/core#
+            idNmsp:
+                id: https://id.acdh.oeaw.ac.at/
+                cmdiid: https://id.acdh.oeaw.ac.at/cmdi/
+            # Default CMDI schema to be used when a resource doesn't have the `schemaProp` metadatada property or it points to a schema without a template
+            schemaDefault: https://vocabs.acdh.oeaw.ac.at/schema#RepoObject
             # Handle only resources having `schemaProp` metadata property value equal to the `schemaEnforce` value.
             schemaEnforce: ""

@@ -18,24 +18,25 @@
   <IsShownBy val="/acdh:isSourceOf" format="raw"/>
   <IsShownAt val="/acdh:hasUrl" count="*"/>
 
-  <ObjectType val="/acdh:hasCategory" count="*" valueMapProp="skos:relatedMatch" valueMapKeepSrc="true"/> <!-- not used for arche collection -->
+  <!--<ObjectType val="@acdh:hasCategory" count="*" valueMapProp="skos:relatedMatch" valueMapKeepSrc="true"/>--> <!-- not used for arche collection -->
+  <ObjectType val="@acdh:hasCategory/acdh:hasTitle" count="*" lang="true"/> <!-- not used for arche collection -->
   <Format val="/acdh:hasFormat" count="*"/> <!-- not used for arche collection -->
 
-  <Language val="/acdh:hasLanguage" count="*"/>
+  <Language val="@acdh:hasLanguage/acdh:hasTitle" count="*" lang="true"/>
   <Extent val="/acdh:hasExtent" count="1" lang="true"/>
 
 <!--  <Spatial val="@acdh:hasSpatialCoverage" count="*" lang="true"/> -->
   <Spatial ComponentId="kulturpoolSpatial" val="@acdh:hasSpatialCoverage" count="*"/>
 
 <!--  <Temporal val="@acdh:hasTemporalCoverage" count="*" lang="true"/> -->
-  <Temporal ComponentId="kulturpoolTemporal" val="@acdh:hasTemporalCoverage" count="*"/>
+  <Temporal ComponentId="kulturpoolTemporal" val="/acdh:hasTemporalCoverage" count="*"/>
   <TemporalID val="/acdh:hasTemporalCoverageIdentifier" count="*"/>
 
   <!-- Hosting institution is called 'Contributor' at Kulturpool -->
   <Contributor val="@acdh:hasHosting/acdh:hasTitle" count="*" lang="true"/>
 
-  <Rights val="/acdh:hasLicense" count="1"/>
-  <RightsStatus val="/acdh:hasLicense" count="1"/>
+  <Rights val="@acdh:hasLicense/acdh:hasTitle" count="1" lang="true"/>
+  <RightsStatus val="@acdh:hasLicense/acdh:hasTitle" count="1" lang="true"/>
 <!--  <Publisher val="@acdh:hasRightsHolder" count="*" lang="true"/> -->
   <Publisher ComponentId="kulturpoolPublisher" val="@acdh:hasRightsHolder" count="*"/>
 
