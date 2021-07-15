@@ -35,6 +35,7 @@ if ($import || ($argv[1] ?? false)) {
     $dCfgBak  = $sCfg['doorkeeper'];
     $sCfg['doorkeeper']['checkUnknownProperties']    = false;
     $sCfg['doorkeeper']['checkAutoCreatedResources'] = false;
+    $sCfg['doorkeeper']['checkVocabularyValues']     = false;
     yaml_emit_file($sCfgFile, $sCfg);
 
     echo "Importing ontology\n";
@@ -43,6 +44,7 @@ if ($import || ($argv[1] ?? false)) {
     // restore doorkeeper checks
     $sCfg['doorkeeper']['checkUnknownProperties']    = $dCfgBak['checkUnknownProperties'];
     $sCfg['doorkeeper']['checkAutoCreatedResources'] = $dCfgBak['checkAutoCreatedResources'];
+    $sCfg['doorkeeper']['checkVocabularyValues']     = $dCfgBak['checkVocabularyValues'];
     yaml_emit_file($sCfgFile, $sCfg);
 } else {
     echo "Ontology up to date\n";
