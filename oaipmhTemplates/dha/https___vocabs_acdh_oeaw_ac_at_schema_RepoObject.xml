@@ -29,20 +29,20 @@
 
 <!-- hasDisseminationDescription: see leftovers -->
 
+<!-- dha:Concept misses val attribute
         <dha:hasAnnotationDescription>
-
                 <dha:Concept ComponentId="dhaConcept" count="*"/>
-
+        <dha:hasAnnotationDescription>
+-->
+        <dha:hasAnnotationDescription>
                 <dha:NamedEntity>
-
-<!-- dha:Organization: see letfovers -->
-
+                    <!-- dha:Organization: see letfovers -->
                     <dha:Person ComponentId="dhaPerson" val="@acdh:hasActor" count="*"/>
-
                     <dha:Place ComponentId="dhaPlace" val="@acdh:hasSpatialCoverage" count="*"/>
-
                 </dha:NamedEntity>
+        </dha:hasAnnotationDescription>
 
+        <dha:hasAnnotationDescription>
                 <dha:Timespan>
                     <dha:hasCatchPhrase count="*" lang="true" val="/acdh:hasTemporalCoverage"></dha:hasCatchPhrase>
                     <dha:hasIdentifier rdf:parseType="Resource">
@@ -54,7 +54,6 @@
                         <startdate val="/acdh:hasCoverageStartDate" replaceXMLTag="true"/>/<enddate val="/acdh:hasCoverageEndDate" replaceXMLTag="true"/>
                     </dha:hasISODate>
                 </dha:Timespan>
-
         </dha:hasAnnotationDescription>
 
         <dha:isPartOf ComponentId="dhaPartOfRepoCollection" val="@acdh:isPartOf" count="*"/>
