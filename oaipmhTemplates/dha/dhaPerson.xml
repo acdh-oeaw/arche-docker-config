@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dha:Person>
+<dha:Person xmlns:dha="https://digital-humanities.at/schema#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     <dha:hasCatchPhrase count="*" val="/acdh:hasTitle"></dha:hasCatchPhrase>
     <dha:hasIdentifier rdf:parseType="Resource">
         <premis:hasIdentifier count="*" val="/acdh:hasIdentifier"></premis:hasIdentifier>

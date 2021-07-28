@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dha:Place>
+<dha:Place xmlns:dha="https://digital-humanities.at/schema#">
     <dha:hasCatchPhrase count="*" lang="true" val="/acdh:hasTitle"></dha:hasCatchPhrase>
     <dha:hasIdentifier rdf:parseType="Resource">
         <premis:hasIdentifier count="*" val="/acdh:hasIdentifier"></premis:hasIdentifier>
