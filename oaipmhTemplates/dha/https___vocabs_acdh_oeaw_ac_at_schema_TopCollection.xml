@@ -39,7 +39,7 @@
       	</dha:hasDisseminationService>
       </dha:hasDisseminationDescription>
 -->
-      <dha:hasPart>
+      <dha:hasPart rdf:parseType="Resource">
         <dha:RepoObject val="@^acdh:isPartOf" count="*"/>
       </dha:hasPart>
 
