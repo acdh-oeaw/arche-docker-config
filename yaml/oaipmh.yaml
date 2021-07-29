@@ -223,6 +223,6 @@ oai:
                 id: https://id.acdh.oeaw.ac.at/
                 cmdiid: https://id.acdh.oeaw.ac.at/cmdi/
             # Default CMDI schema to be used when a resource doesn't have the `schemaProp` metadatada property or it points to a schema without a template
-            schemaDefault: https://vocabs.acdh.oeaw.ac.at/schema#RepoObject
+            schemaDefault: https://vocabs.acdh.oeaw.ac.at/schema#TopCollection
             # Handle only resources having `schemaProp` metadata property value equal to the `schemaEnforce` value.
-            schemaEnforce: ""
+            schemaEnforce: https://vocabs.acdh.oeaw.ac.at/schema#TopCollection
