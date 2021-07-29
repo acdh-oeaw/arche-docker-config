@@ -28,12 +28,11 @@
         </dha:hasPreservationDescription>
 
 <!-- hasDisseminationDescription: see leftovers -->
+        
+        <dha:hasAnnotationDescription>
+                <dha:Concept val="/rdfProperty" ComponentId="dhaConcept" count="*"/>
+        <dha:hasAnnotationDescription>
 
-<!-- dha:Concept misses val attribute
-        <dha:hasAnnotationDescription>
-                <dha:Concept ComponentId="dhaConcept" count="*"/>
-        <dha:hasAnnotationDescription>
--->
         <dha:hasAnnotationDescription>
                 <dha:NamedEntity>
                     <!-- dha:Organization: see letfovers -->
