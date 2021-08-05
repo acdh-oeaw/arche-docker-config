@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dha:Place xmlns:dha="https://digital-humanities.at/schema#">
-    <dha:hasCatchPhrase count="*" lang="true" val="/acdh:hasTitle"></dha:hasCatchPhrase>
-    <dha:hasIdentifier rdf:parseType="Resource">
+<dha:hasAnnotationDescription xmlns:dha="https://digital-humanities.at/schema#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <dha:NamedEntity>
+    <dha:Place>
+      <dha:hasCatchPhrase count="*" lang="true" val="/acdh:hasTitle"></dha:hasCatchPhrase>
+      <dha:hasIdentifier rdf:parseType="Resource">
         <premis:hasIdentifier count="*" val="/acdh:hasIdentifier"></premis:hasIdentifier>
         <dha:conformsTo>https://id.acdh.oeaw.ac.at/</dha:conformsTo>
         <dha:hasParsableMetadata count="*" val="METAURL"></dha:hasParsableMetadata>
-    </dha:hasIdentifier>
-</dha:Place>
+      </dha:hasIdentifier>
+    </dha:Place>
+  </dha:NamedEntity>
+</dha:hasAnnotationDescription>

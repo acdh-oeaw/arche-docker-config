@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dha:Concept xmlns:dha="https://digital-humanities.at/schema#">
+<dha:hasAnnotationDescription xmlns:dha="https://digital-humanities.at/schema#">
+  <dha:Concept>
     <dha:hasCatchPhrase val="/acdh:hasSubject"></dha:hasCatchPhrase>
-</dha:Concept>
+  </dha:Concept>
+</dha:hasAnnotationDescription>

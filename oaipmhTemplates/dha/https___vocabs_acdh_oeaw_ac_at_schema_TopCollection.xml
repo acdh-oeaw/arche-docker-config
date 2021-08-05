@@ -19,7 +19,7 @@
         <dc:creator count="*" val="@acdh:hasCreator/acdh:hasTitle"></dc:creator>
       </dha:hasMetadataDescription>
 
-      <dha:isRepoCollectionOf ComponentId="dhaRepoCollectionOf" val="@^acdh:isSourceOf" count="*"/>
+      <dha:isRepoCollectionOf asAttribute="rdf:resource" ComponentId="dhaRepoCollectionOf" val="@^acdh:isSourceOf" count="*"/>
 
       <dha:basedOn ComponentId="dhaBasedOnCollection" val="@^acdh:isSourceOf" count="*"/>
 
@@ -39,9 +39,7 @@
       	</dha:hasDisseminationService>
       </dha:hasDisseminationDescription>
 -->
-      <dha:hasPart rdf:parseType="Resource">
-        <dha:RepoObject val="@^acdh:isPartOf" count="*"/>
-      </dha:hasPart>
+      <dha:hasPart ComponentId="dhaHasPartRepoObject" val="@^acdh:isPartOf" count="*"/>
 
       <!-- <dha:hasType/> what kind of 'type' is expected for a RepoCollection? acdh:hasCategory cannot be applied to Collections --> <!-- it is possible that subclasses will be reused as categories in a Types vocabularu for collections, such as in the examples.rdf -->
 
