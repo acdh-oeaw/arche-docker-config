@@ -166,6 +166,14 @@ oai:
             schemaDefault: http___catalog_clarin_eu_ds_ComponentRegistry_rest_registry_profiles_clarin_eu_cr1:p_1288172614023_xsd
             # Handle only resources having `schemaProp` metadata property value equal to the `schemaEnforce` value.
             schemaEnforce: ""
+            cache:
+                statistics: false
+                perResource: false
+                skipClasses:
+                - https://vocabs.acdh.oeaw.ac.at/schema#TopCollection
+                - https://vocabs.acdh.oeaw.ac.at/schema#Collection
+                - https://vocabs.acdh.oeaw.ac.at/schema#Resource
+                includeClasses: []
         kulturpool:
             metadataPrefix: kulturpool
             metadataNamespace: http://we.do.not.care
@@ -196,6 +204,14 @@ oai:
             schemaDefault: kulturpool
             # Handle only resources having `schemaProp` metadata property value equal to the `schemaEnforce` value.
             schemaEnforce: ""
+            cache:
+                statistics: false
+                perResource: false
+                skipClasses:
+                - https://vocabs.acdh.oeaw.ac.at/schema#TopCollection
+                - https://vocabs.acdh.oeaw.ac.at/schema#Collection
+                - https://vocabs.acdh.oeaw.ac.at/schema#Resource
+                includeClasses: []
         dha:
             metadataPrefix: dha
             metadataNamespace: http://we.do.not.care
@@ -219,6 +235,7 @@ oai:
             propNmsp:
                 acdh: https://vocabs.acdh.oeaw.ac.at/schema#
                 skos: http://www.w3.org/2004/02/skos/core#
+                rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
             idNmsp:
                 id: https://id.acdh.oeaw.ac.at/
                 cmdiid: https://id.acdh.oeaw.ac.at/cmdi/
@@ -226,6 +243,14 @@ oai:
             schemaDefault: https://vocabs.acdh.oeaw.ac.at/schema#TopCollection
             # Handle only resources having `schemaProp` metadata property value equal to the `schemaEnforce` value.
             schemaEnforce: https://vocabs.acdh.oeaw.ac.at/schema#TopCollection
+            cache:
+                statistics: false
+                perResource: false
+                skipClasses:
+                - https://vocabs.acdh.oeaw.ac.at/schema#TopCollection
+                - https://vocabs.acdh.oeaw.ac.at/schema#Collection
+                - https://vocabs.acdh.oeaw.ac.at/schema#Resource
+                includeClasses: []
         dhatest:
             metadataPrefix: dhatest
             metadataNamespace: http://we.do.not.care
@@ -249,10 +274,20 @@ oai:
             propNmsp:
                 acdh: https://vocabs.acdh.oeaw.ac.at/schema#
                 skos: http://www.w3.org/2004/02/skos/core#
+                rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
             idNmsp:
                 id: https://id.acdh.oeaw.ac.at/
                 cmdiid: https://id.acdh.oeaw.ac.at/cmdi/
             # Default CMDI schema to be used when a resource doesn't have the `schemaProp` metadatada property or it points to a schema without a template
-            schemaDefault: https://vocabs.acdh.oeaw.ac.at/schema#Resource
+            schemaDefault: https://vocabs.acdh.oeaw.ac.at/schema#TopCollection
             # Handle only resources having `schemaProp` metadata property value equal to the `schemaEnforce` value.
             schemaEnforce: ""
+            cache:
+                statistics: false
+                perResource: false
+                skipClasses:
+                - https://vocabs.acdh.oeaw.ac.at/schema#TopCollection
+                - https://vocabs.acdh.oeaw.ac.at/schema#Collection
+                - https://vocabs.acdh.oeaw.ac.at/schema#Resource
+                includeClasses: []
+
