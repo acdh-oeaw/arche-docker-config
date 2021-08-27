@@ -169,11 +169,14 @@ oai:
             cache:
                 statistics: false
                 perResource: false
-                skipClasses:
-                - https://vocabs.acdh.oeaw.ac.at/schema#TopCollection
-                - https://vocabs.acdh.oeaw.ac.at/schema#Collection
-                - https://vocabs.acdh.oeaw.ac.at/schema#Resource
-                includeClasses: []
+                skipClasses: []
+                includeClasses: 
+                - http://www.w3.org/2004/02/skos/core#Concept
+                - https://vocabs.acdh.oeaw.ac.at/schema#Organisation
+                - https://vocabs.acdh.oeaw.ac.at/schema#Person
+                - https://vocabs.acdh.oeaw.ac.at/schema#Place
+                - https://vocabs.acdh.oeaw.ac.at/schema#Project
+                - https://vocabs.acdh.oeaw.ac.at/schema#Publication
         kulturpool:
             metadataPrefix: kulturpool
             metadataNamespace: http://we.do.not.care
@@ -207,11 +210,14 @@ oai:
             cache:
                 statistics: false
                 perResource: false
-                skipClasses:
-                - https://vocabs.acdh.oeaw.ac.at/schema#TopCollection
-                - https://vocabs.acdh.oeaw.ac.at/schema#Collection
-                - https://vocabs.acdh.oeaw.ac.at/schema#Resource
-                includeClasses: []
+                skipClasses: []
+                includeClasses: 
+                - http://www.w3.org/2004/02/skos/core#Concept
+                - https://vocabs.acdh.oeaw.ac.at/schema#Organisation
+                - https://vocabs.acdh.oeaw.ac.at/schema#Person
+                - https://vocabs.acdh.oeaw.ac.at/schema#Place
+                - https://vocabs.acdh.oeaw.ac.at/schema#Project
+                - https://vocabs.acdh.oeaw.ac.at/schema#Publication
         dha:
             metadataPrefix: dha
             metadataNamespace: http://we.do.not.care
@@ -290,4 +296,9 @@ oai:
                 - https://vocabs.acdh.oeaw.ac.at/schema#Collection
                 - https://vocabs.acdh.oeaw.ac.at/schema#Resource
                 includeClasses: []
+            valueMaps:
+                type:
+                    https://vocabs.acdh.oeaw.ac.at/schema#TopCollection: dha:topCollection
+                    https://vocabs.acdh.oeaw.ac.at/schema#Collection: dha:collection
+                    https://vocabs.acdh.oeaw.ac.at/schema#Resource: dha:resource
 
