@@ -24,8 +24,8 @@ oai:
         # - \acdhOeaw\arche\oaipmh\deleted\RdfProperty - when the deleted resources have a given
         #   RDF property values (and not deleted resources don't)
         deletedClass: \acdhOeaw\arche\oaipmh\deleted\Tombstone
-        # Value to be reported for the `deletedRecord` property for the OAI-PMH 
-        # `identify` request (can be "transient" or "persistent" - 
+        # Value to be reported for the `deletedRecord` property for the OAI-PMH
+        # `identify` request (can be "transient" or "persistent" -
         # see https://www.openarchives.org/OAI/openarchivesprotocol.html#DeletedRecords).
         # Needed only if `oaiDeletedClass` other then "acdhOeaw\arche\oaipmh\deleted\no".
         deletedRecord: transient
@@ -80,27 +80,27 @@ oai:
         #   (in case sets are denoted using relations instead of literal values)
         setNameNamespace: https://vocabs.acdh.oeaw.ac.at/archeoaisets/
     ## Metadata formats description
-    # 
+    #
     # Each section describes a single metadata format:
     # - Section name is not important (it has to be unique but nothing more then that).
-    # - `metadataPrefix`, `schema` and `metadataNamespace` configuration properties 
+    # - `metadataPrefix`, `schema` and `metadataNamespace` configuration properties
     #   are simply OAI properties reported for `verb=ListMetadataFormats`
     # - `class`  configuration property denotes a PHP class implementing the given metadata format.
     #   At the moment six classes are available:
-    #   - `\acdhOeaw\arche\oaipmh\metatada\DcMetata` - takes resource's RDF metadata and 
+    #   - `\acdhOeaw\arche\oaipmh\metatada\DcMetata` - takes resource's RDF metadata and
     #     extracts all RDF properties in `dc` and `dcterms` namespaces.
     #     Doesn't require any additional configuration properties.
-    #   - `\acdhOeaw\arche\oaipmh\metatada\AcdhDcMetata` - takes resource's RDF metadata and 
+    #   - `\acdhOeaw\arche\oaipmh\metatada\AcdhDcMetata` - takes resource's RDF metadata and
     #     extracts all RDF properties either being in `dc` and `dcterms` namespaces
     #     or having mappings to `dc`/`dcterms` properties.
     #     References to other resources can be handled either by providing their URLs,
     #     or their titles or both.
-    #     Requires additional configuration properties: `eqProp`, `acdhNmsp`, 
+    #     Requires additional configuration properties: `eqProp`, `acdhNmsp`,
     #     `titleProp` and `mode`.
     #   - `\acdhOeaw\arche\oaipmh\metadata\RdfXml` - takes resource's RDF metadata and serialises
     #     them as an RDF-XML.
     #     Doesn't require any additional configuration properties.
-    #   - `\acdhOeaw\arche\oaipmh\metadata\ResMetadata` - fetches metadata from a binary 
+    #   - `\acdhOeaw\arche\oaipmh\metadata\ResMetadata` - fetches metadata from a binary
     #     content of another repository resource:
     #       [oaiRes]  --format.metaResProp--> metaRes
     #       [metaRes] binary contains XML with the metadata
@@ -115,7 +115,7 @@ oai:
     #     `requestOptions` and `schema`.
     #   - `\acdhOeaw\arche\oaipmh\metadata\LiveCmdiMetadata` - generates metadata by filling up
     #     CMDI XML templates with resource's metadata values
-    #     Requires additional configuration properties: `uriProp`, `labelProp`, 
+    #     Requires additional configuration properties: `uriProp`, `labelProp`,
     #     `schemaProp`, `templateDir` and `defaultLang`.
     #     The `propNmsp[]`, `schemaEnforce` and `schemaDefault` configuration properties are optional.
     # - ... other properties required by class handling given metadata format
@@ -170,7 +170,7 @@ oai:
                 statistics: false
                 perResource: false
                 skipClasses: []
-                includeClasses: 
+                includeClasses:
                 - http://www.w3.org/2004/02/skos/core#Concept
                 - https://vocabs.acdh.oeaw.ac.at/schema#Organisation
                 - https://vocabs.acdh.oeaw.ac.at/schema#Person
@@ -211,7 +211,7 @@ oai:
                 statistics: false
                 perResource: false
                 skipClasses: []
-                includeClasses: 
+                includeClasses:
                 - http://www.w3.org/2004/02/skos/core#Concept
                 - https://vocabs.acdh.oeaw.ac.at/schema#Organisation
                 - https://vocabs.acdh.oeaw.ac.at/schema#Person
@@ -257,6 +257,26 @@ oai:
                 - https://vocabs.acdh.oeaw.ac.at/schema#Collection
                 - https://vocabs.acdh.oeaw.ac.at/schema#Resource
                 includeClasses: []
+            valueMaps:
+                type:
+                    https://vocabs.acdh.oeaw.ac.at/schema#TopCollection: https://digital-humanities.at/schema#RepoCollection
+                    https://vocabs.acdh.oeaw.ac.at/schema#Collection: https://digital-humanities.at/schema#RepoCollection
+                    https://vocabs.acdh.oeaw.ac.at/schema#Resource: https://digital-humanities.at/schema#RepoObject
+                    https://vocabs.acdh.oeaw.ac.at/schema#Publication: https://digital-humanities.at/schema#Object
+                    https://vocabs.acdh.oeaw.ac.at/schema#Person: https://digital-humanities.at/schema#Person
+                    https://vocabs.acdh.oeaw.ac.at/schema#Place: https://digital-humanities.at/schema#Place
+                    https://vocabs.acdh.oeaw.ac.at/schema#Organisation: https://digital-humanities.at/schema#Organization
+                license:
+                  https://arche.acdh.oeaw.ac.at/api/48534: https://creativecommons.org/licenses/by/4.0/
+                  https://arche.acdh.oeaw.ac.at/api/48903: https://creativecommons.org/licenses/by-nc-nd/4.0/
+                  https://arche.acdh.oeaw.ac.at/api/48904: https://creativecommons.org/licenses/by-nc-sa/3.0/at/
+                  https://arche.acdh.oeaw.ac.at/api/48905: https://creativecommons.org/licenses/by-nc-sa/4.0/
+                  https://arche.acdh.oeaw.ac.at/api/48907: https://creativecommons.org/licenses/by-sa/4.0/
+                  https://arche.acdh.oeaw.ac.at/api/48908: https://creativecommons.org/publicdomain/zero/1.0/
+                  https://arche.acdh.oeaw.ac.at/api/48910: http://rightsstatements.org/vocab/InC/1.0/
+                  https://arche.acdh.oeaw.ac.at/api/48913: https://opensource.org/licenses/MIT
+                  https://arche.acdh.oeaw.ac.at/api/48916: https://creativecommons.org/publicdomain/mark/1.0/
+
         dhatest:
             metadataPrefix: dhatest
             metadataNamespace: http://we.do.not.care
@@ -298,7 +318,20 @@ oai:
                 includeClasses: []
             valueMaps:
                 type:
-                    https://vocabs.acdh.oeaw.ac.at/schema#TopCollection: dha:topCollection
-                    https://vocabs.acdh.oeaw.ac.at/schema#Collection: dha:collection
-                    https://vocabs.acdh.oeaw.ac.at/schema#Resource: dha:resource
-
+                    https://vocabs.acdh.oeaw.ac.at/schema#TopCollection: https://digital-humanities.at/schema#RepoCollection
+                    https://vocabs.acdh.oeaw.ac.at/schema#Collection: https://digital-humanities.at/schema#RepoCollection
+                    https://vocabs.acdh.oeaw.ac.at/schema#Resource: https://digital-humanities.at/schema#RepoObject
+                    https://vocabs.acdh.oeaw.ac.at/schema#Publication: https://digital-humanities.at/schema#Object
+                    https://vocabs.acdh.oeaw.ac.at/schema#Person: https://digital-humanities.at/schema#Person
+                    https://vocabs.acdh.oeaw.ac.at/schema#Place: https://digital-humanities.at/schema#Place
+                    https://vocabs.acdh.oeaw.ac.at/schema#Organisation: https://digital-humanities.at/schema#Organization
+                license:
+                  https://arche.acdh.oeaw.ac.at/api/48534: https://creativecommons.org/licenses/by/4.0/
+                  https://arche.acdh.oeaw.ac.at/api/48903: https://creativecommons.org/licenses/by-nc-nd/4.0/
+                  https://arche.acdh.oeaw.ac.at/api/48904: https://creativecommons.org/licenses/by-nc-sa/3.0/at/
+                  https://arche.acdh.oeaw.ac.at/api/48905: https://creativecommons.org/licenses/by-nc-sa/4.0/
+                  https://arche.acdh.oeaw.ac.at/api/48907: https://creativecommons.org/licenses/by-sa/4.0/
+                  https://arche.acdh.oeaw.ac.at/api/48908: https://creativecommons.org/publicdomain/zero/1.0/
+                  https://arche.acdh.oeaw.ac.at/api/48910: http://rightsstatements.org/vocab/InC/1.0/
+                  https://arche.acdh.oeaw.ac.at/api/48913: https://opensource.org/licenses/MIT
+                  https://arche.acdh.oeaw.ac.at/api/48916: https://creativecommons.org/publicdomain/mark/1.0/
