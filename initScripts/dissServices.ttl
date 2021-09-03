@@ -91,6 +91,12 @@ acdhids:biblatexMatch4
     acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
     acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/schema#Metadata" ;
     acdh:isRequired         false .
+acdhids:biblatexMatch5
+    acdh:relation           acdhids:biblatex ;
+    acdh:hasTitle           "biblatexMatch"@en ;
+    acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
+    acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/schema#Publication" ;
+    acdh:isRequired         false .
 acdhids:biblatexParam1
     a                       acdh:DisseminationServiceParameter ;
     acdh:relation           acdhids:biblatex ;
