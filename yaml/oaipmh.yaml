@@ -166,6 +166,7 @@ oai:
             schemaDefault: http___catalog_clarin_eu_ds_ComponentRegistry_rest_registry_profiles_clarin_eu_cr1:p_1288172614023_xsd
             # Handle only resources having `schemaProp` metadata property value equal to the `schemaEnforce` value.
             schemaEnforce: ""
+            timeout: 60
             cache:
                 statistics: false
                 perResource: false
@@ -207,6 +208,7 @@ oai:
             schemaDefault: kulturpool
             # Handle only resources having `schemaProp` metadata property value equal to the `schemaEnforce` value.
             schemaEnforce: ""
+            timeout: 60
             cache:
                 statistics: false
                 perResource: false
@@ -249,6 +251,7 @@ oai:
             schemaDefault: https://vocabs.acdh.oeaw.ac.at/schema#TopCollection
             # Handle only resources having `schemaProp` metadata property value equal to the `schemaEnforce` value.
             schemaEnforce: https://vocabs.acdh.oeaw.ac.at/schema#TopCollection
+            timeout: 60
             cache:
                 statistics: false
                 perResource: false
@@ -308,6 +311,7 @@ oai:
             schemaDefault: https://vocabs.acdh.oeaw.ac.at/schema#TopCollection
             # Handle only resources having `schemaProp` metadata property value equal to the `schemaEnforce` value.
             schemaEnforce: ""
+            timeout: 60
             cache:
                 statistics: false
                 perResource: false
