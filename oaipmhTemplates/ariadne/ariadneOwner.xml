@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <aocat:has_owner count="+">
+        <aocat:AO_Agent val="URI" asAttribute="rdf:about">
+            <aocat:has_name val="/acdh:hasTitle" count="*" lang="true"></aocat:has_name>
+            <aocat:has_agent_identifier></aocat:has_agent_identifier>
+            <aocat:has_email val="/acdh:hasEmail" count="*"></aocat:has_email>
+            <aocat:has_homepage val="/acdh:hasUrl" count="*"></aocat:has_homepage>
+            <aocat:has_institution val="@acdh:isMemberOf/acdh:hasTitle" count="*" lang="true"></aocat:has_institution>
+            <rdfs:label val="/acdh:hasTitle" count="*" lang="true"></rdfs:label>
+          </aocat:AO_Agent>
+    </aocat:has_owner>
