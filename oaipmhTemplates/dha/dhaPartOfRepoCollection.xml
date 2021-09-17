@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<dha:isPartOf xmlns:dha="https://digital-humanities.at/schema#">
-  <dha:RepoCollection asAttribute="rdf:about" count="*" val="/acdh:hasIdentifier"/>
-</dha:isPartOf>

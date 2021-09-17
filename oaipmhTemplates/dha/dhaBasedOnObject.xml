@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<dha:basedOn xmlns:dha="https://digital-humanities.at/schema#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-  <dha:Object val="URI" asAttribute="rdf:about" count="*"/>
-</dha:basedOn>
