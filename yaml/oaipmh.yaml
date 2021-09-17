@@ -237,7 +237,7 @@ oai:
             # Path to the directory storing CMDI XML templates
             templateDir: /home/www-data/config/oaipmhTemplates/ariadne
             # Metadata property prividng the CMDI schema to be used for a given resource
-            schemaProp: http://can.not.be.overwritten
+            schemaProp: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
             # Namespace prefixes used in template file's metadata property placeholders
             propNmsp:
                 acdh: https://vocabs.acdh.oeaw.ac.at/schema#
@@ -248,7 +248,7 @@ oai:
             # Default CMDI schema to be used when a resource doesn't have the `schemaProp` metadatada property or it points to a schema without a template
             schemaDefault: https://vocabs.acdh.oeaw.ac.at/schema#TopCollection
             # Handle only resources having `schemaProp` metadata property value equal to the `schemaEnforce` value.
-            schemaEnforce: ""
+            schemaEnforce: https://vocabs.acdh.oeaw.ac.at/schema#TopCollection
             cache:
                 statistics: false
                 perResource: false
