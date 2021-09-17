@@ -7,7 +7,7 @@
         "acdh-oeaw/arche-resolver": "^3",
         "acdh-oeaw/arche-oaipmh": "^2",
         "acdh-oeaw/arche-fcs": "^1",
-        "acdh-oeaw/arche-openrefine": "^0.1",
+        "acdh-oeaw/arche-openrefine": "^0.2",
         "zozlak/yaml-merge": "^1"
     }
 }

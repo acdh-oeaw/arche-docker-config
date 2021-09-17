@@ -1,4 +1,4 @@
-basePath: /openrefine/
+baseUrl: to be filled from local config
 dbConnStr: 'dbname=www-data user=guest host=127.0.0.1'
 name: ARCHE
 identifierSpace: https://arche.acdh.oeaw.ac.at/api/
