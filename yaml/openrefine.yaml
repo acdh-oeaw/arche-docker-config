@@ -1,0 +1,38 @@
+basePath: /openrefine/
+dbConnStr: 'dbname=www-data user=guest host=127.0.0.1'
+name: ARCHE
+identifierSpace: https://arche.acdh.oeaw.ac.at/api/
+schemaSpace: https://vocabs.acdh.oeaw.ac.at/schema#
+types:
+- id: https://vocabs.acdh.oeaw.ac.at/schema#Organisation
+  name: organisation
+- id: https://vocabs.acdh.oeaw.ac.at/schema#Person
+  name: person
+- id: https://vocabs.acdh.oeaw.ac.at/schema#Place
+  name: place
+- id: https://vocabs.acdh.oeaw.ac.at/schema#Publication
+  name: publication
+- id: https://vocabs.acdh.oeaw.ac.at/schema#Project
+  name: project
+- id: https://vocabs.acdh.oeaw.ac.at/schema#Collection
+  name: collection
+- id: https://vocabs.acdh.oeaw.ac.at/schema#TopCollection
+  name: top collection
+cors: "*"
+debug: true
+preferredLangs:
+- en
+- de
+schema:
+  nameProp: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
+  descriptionProp: https://vocabs.acdh.oeaw.ac.at/schema#hasDescription
+  typeProp: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+partialMatchCoefficient: 0.5
+matchThreshold: 10
+propertyWeights:
+  'https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier': 100
+  'https://vocabs.acdh.oeaw.ac.at/schema#hasLastName': 75
+  'https://vocabs.acdh.oeaw.ac.at/schema#hasTitle': 50
+  'https://vocabs.acdh.oeaw.ac.at/schema#hasFirstName': 25
+  'https://vocabs.acdh.oeaw.ac.at/schema#hasDescription': 10
+
