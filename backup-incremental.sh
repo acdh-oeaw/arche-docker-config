@@ -12,12 +12,12 @@ if [ "`id -u`" == "0" ]; then
     cp "$BDIR/dateFile" "$DATEFILE"
     chown www-data:www-data "$DATEFILE"
 fi
-su -l www-data -c "$SDIR/backup.php --dateFile '$DATEFILE' --compression gzip --include all --lock skip /home/www-data/docroot/api/config.yaml '$TDIR/${FILE}tgz'" > "$BDIR/${FILE}log" 2>&1
 su -l www-data -c "mkdir -p $ODIR"
-su -l www-data -c "cp '$BDIR/${FILE}log' '$ODIR/backup_last.log'"
+su -l www-data -c "$SDIR/backup.php --dateFile '$DATEFILE' --compression gzip --include all --lock skip /home/www-data/docroot/api/config.yaml '$TDIR/${FILE}tgz'" > "$ODIR/backup_last.log" 2>&1
 if [ "`id -u`" == "0" ]; then
     cp "$DATEFILE" "$BDIR/dateFile"
     rm "$DATEFILE"
+    cp "$ODIR/backup_last.log" "$BDIR/${FILE}log"
 fi
 sha1sum "$TDIR/${FILE}tgz" > "$BDIR/${FILE}tgz.sha1"
 mv "$TDIR/${FILE}tgz" "$BDIR/${FILE}tgz"
