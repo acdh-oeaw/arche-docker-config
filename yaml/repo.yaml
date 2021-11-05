@@ -85,6 +85,11 @@ transactionController:
     enforceCompleteness: false
     # should metadata history table contain only one set of entries per transaction?
     simplifyMetaHistory: true
+    # the maximum time parallel request can wait for the lock on a transaction before
+    # reporting HTTP 409 Conflict (in miliseconds)
+    lockTimeout: 1000
+    # REST API single SQL statement timeout (in miliseconds)
+    statementTimeout: 600000
 fullTextSearch:
     # e.g. "java -Xmx1g -jar ../tika-app.jar --text" or "http://127.0.0.1:12345/"
     tikaLocation: http://127.0.0.1:12345/
