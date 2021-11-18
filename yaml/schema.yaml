@@ -50,6 +50,7 @@ schema:
         place: https://vocabs.acdh.oeaw.ac.at/schema#Place
         organisation: https://vocabs.acdh.oeaw.ac.at/schema#Organisation
         person: https://vocabs.acdh.oeaw.ac.at/schema#Person
+        agent: https://vocabs.acdh.oeaw.ac.at/schema#Agent
     namespaces:
         ontology: https://vocabs.acdh.oeaw.ac.at/schema#
         id: https://id.acdh.oeaw.ac.at/
