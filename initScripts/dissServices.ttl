@@ -143,7 +143,7 @@ acdhids:rawCmdiParam
 # customTEI2HTML
 acdhids:customTei2Html
    a                       acdh:DisseminationService ;
-   acdh:serviceLocation    "https://service4tei.acdh-dev.oeaw.ac.at?tei={RES_URI|url}&xsl={XSL|url}" ;
+   acdh:serviceLocation    "https://service4tei.acdh-dev.oeaw.ac.at/tei2html.xql?tei={RES_URI|url}&xsl={XSL|url}" ;
    acdh:hasReturnType      "customTei2Html" ;
    acdh:serviceRevProxy    false ;
    acdh:hasTitle           "Custom TEI to HTML transformation"@en ;
