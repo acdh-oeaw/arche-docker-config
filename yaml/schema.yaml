@@ -36,6 +36,7 @@ schema:
     isNewVersionOf: https://vocabs.acdh.oeaw.ac.at/schema#isNewVersionOf
     cmdiPid: https://vocabs.acdh.oeaw.ac.at/schema#hasMetadataPid
     biblatex: https://vocabs.acdh.oeaw.ac.at/schema#hasCustomCitation
+    titleImage: https://vocabs.acdh.oeaw.ac.at/schema#isTitleImageOf
     classes:
         repoObject: https://vocabs.acdh.oeaw.ac.at/schema#RepoObject
         binaryContent: https://vocabs.acdh.oeaw.ac.at/schema#BinaryContent
