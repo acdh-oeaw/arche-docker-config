@@ -20,6 +20,7 @@ types:
   name: top collection
 cors: "*"
 debug: true
+viewUrl: https://arche.acdh.oeaw.ac.at/browser/oeaw_detail/{{id}}
 preferredLangs:
 - en
 - de
