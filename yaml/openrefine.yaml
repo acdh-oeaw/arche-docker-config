@@ -28,6 +28,7 @@ schema:
   nameProp: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
   descriptionProp: https://vocabs.acdh.oeaw.ac.at/schema#hasDescription
   typeProp: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+  idProp: https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier
 partialMatchCoefficient: 0.5
 matchThreshold: 10
 propertyWeights:
@@ -36,4 +37,43 @@ propertyWeights:
   'https://vocabs.acdh.oeaw.ac.at/schema#hasTitle': 50
   'https://vocabs.acdh.oeaw.ac.at/schema#hasFirstName': 25
   'https://vocabs.acdh.oeaw.ac.at/schema#hasDescription': 10
+properties:
+  viafId:
+    name: VIAF Id
+    type: text
+    valueType: str
+    property: https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier
+    filter: "^https://viaf.org/viaf/"
+    types:
+    - organisation
+    - person
+  gndId:
+    name: GND Id
+    type: text
+    valueType: str
+    property: https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier
+    filter: "^https://d-nb.info/gnd/"
+    types:
+    - organisation
+    - person
+  geonamesId:
+    name: geonames Id
+    type: text
+    valueType: str
+    property: https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier
+    filter: "^https://sws.geonames.org/"
+    types:
+    - place
+  latitude:
+    type: text
+    valueType: float
+    property: https://vocabs.acdh.oeaw.ac.at/schema#hasLatitude
+    types:
+    - place
+  longitude:
+    type: text
+    valueType: float
+    property: https://vocabs.acdh.oeaw.ac.at/schema#hasLongitude
+    types:
+    - https://vocabs.acdh.oeaw.ac.at/schema#Place
 
