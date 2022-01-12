@@ -257,4 +257,24 @@ _:p8 a acdh:Person;
     acdh:hasFirstName "Elmy"@und;
     acdh:hasLastName "Lemus"@und.
 
+_:p9 a acdh:Person;
+    acdh:hasIdentifier acdhi:kmoerth;
+    acdh:hasIdentifier <https://viaf.org/viaf/311166103>;
+    acdh:hasTitle "Karlheinz Mörth"@und;
+    acdh:hasFirstName "Karlheinz"@und;
+    acdh:hasLastName "Mörth"@und;
+    acdh:hasPersonalTitle "Dr.";
+    acdh:hasAddressLine1 "Sonnenfelsgasse 19";
+    acdh:hasAddressLine2 "c/o ACDH-CH";
+    acdh:hasPostcode "1010";
+    acdh:hasCity "Vienna"@en;
+    acdh:hasCity "Wien"@de;
+    acdh:hasCountry "Austria"@en;
+    acdh:hasCountry "Österreich"@de;
+    acdh:hasRegion "Vienna"@en;
+    acdh:hasRegion "Wien"@de;
+    acdh:hasEmail "karlheinz.moerth@oeaw.ac.at";
+    acdh:hasUrl "https://www.oeaw.ac.at/acdh/team/current-team/karlheinz-moerth";
+    acdh:isMemberOf _:o1.
+
 
