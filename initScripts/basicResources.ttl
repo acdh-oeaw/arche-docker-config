@@ -277,4 +277,84 @@ _:p9 a acdh:Person;
     acdh:hasUrl "https://www.oeaw.ac.at/acdh/team/current-team/karlheinz-moerth";
     acdh:isMemberOf _:o1.
 
+_:p10 a acdh:Person;
+    acdh:hasIdentifier acdhi:sstuhec;
+    acdh:hasIdentifier <https://orcid.org/0000-0002-1218-9635>;
+    acdh:hasTitle "Seta Štuhec"@und;
+    acdh:hasFirstName "Seta"@und;
+    acdh:hasLastName "Štuhec"@und;
+    acdh:hasPersonalTitle "Dr.";
+    acdh:hasAddressLine1 "Sonnenfelsgasse 19";
+    acdh:hasAddressLine2 "c/o ACDH-CH";
+    acdh:hasPostcode "1010";
+    acdh:hasCity "Vienna"@en;
+    acdh:hasCity "Wien"@de;
+    acdh:hasCountry "Austria"@en;
+    acdh:hasCountry "Österreich"@de;
+    acdh:hasRegion "Vienna"@en;
+    acdh:hasRegion "Wien"@de;
+    acdh:hasEmail "seta.stuhec@oeaw.ac.at";
+    acdh:hasUrl "https://www.oeaw.ac.at/acdh/team/current-team/seta-stuhec";
+    acdh:isMemberOf _:o1.
+
+_:p11 a acdh:Person;
+    acdh:hasIdentifier acdhi:mkirnbauer;
+    acdh:hasIdentifier <https://orcid.org/0000-0001-7081-2280>;
+    acdh:hasTitle "Martin Kirnbauer"@und;
+    acdh:hasFirstName "Martin"@und;
+    acdh:hasLastName "Kirnbauer"@und;
+    acdh:hasPersonalTitle "MA";
+    acdh:hasAddressLine1 "Sonnenfelsgasse 19";
+    acdh:hasAddressLine2 "c/o ACDH-CH";
+    acdh:hasPostcode "1010";
+    acdh:hasCity "Vienna"@en;
+    acdh:hasCity "Wien"@de;
+    acdh:hasCountry "Austria"@en;
+    acdh:hasCountry "Österreich"@de;
+    acdh:hasRegion "Vienna"@en;
+    acdh:hasRegion "Wien"@de;
+    acdh:hasEmail "martin.kirnbauer@oeaw.ac.at";
+    acdh:hasUrl "https://www.oeaw.ac.at/acdh/team/current-team/martin-kirnbauer";
+    acdh:isMemberOf _:o1.
+
+_:p12 a acdh:Person;
+    acdh:hasIdentifier acdhi:mcarloni;
+    acdh:hasIdentifier <https://orcid.org/0000-0003-2208-5108>;
+    acdh:hasTitle "Massimiliano Carloni"@und;
+    acdh:hasFirstName "Massimiliano"@und;
+    acdh:hasLastName "Carloni"@und;
+    acdh:hasPersonalTitle "PhD";
+    acdh:hasAddressLine1 "Sonnenfelsgasse 19";
+    acdh:hasAddressLine2 "c/o ACDH-CH";
+    acdh:hasPostcode "1010";
+    acdh:hasCity "Vienna"@en;
+    acdh:hasCity "Wien"@de;
+    acdh:hasCountry "Austria"@en;
+    acdh:hasCountry "Österreich"@de;
+    acdh:hasRegion "Vienna"@en;
+    acdh:hasRegion "Wien"@de;
+    acdh:hasEmail "massimiliano.carloni@oeaw.ac.at";
+    acdh:hasUrl "https://www.oeaw.ac.at/acdh/team/current-team/massimiliano-carloni";
+    acdh:isMemberOf _:o1.
+
+_:p13 a acdh:Person;
+    acdh:hasIdentifier acdhi:dstoxreiter;
+    acdh:hasIdentifier <https://orcid.org/0000-0002-0636-4476>;
+    acdh:hasTitle "Daniel Stoxreiter"@und;
+    acdh:hasFirstName "Daniel"@und;
+    acdh:hasLastName "Stoxreiter"@und;
+    acdh:hasPersonalTitle "MA";
+    acdh:hasAddressLine1 "Sonnenfelsgasse 19";
+    acdh:hasAddressLine2 "c/o ACDH-CH";
+    acdh:hasPostcode "1010";
+    acdh:hasCity "Vienna"@en;
+    acdh:hasCity "Wien"@de;
+    acdh:hasCountry "Austria"@en;
+    acdh:hasCountry "Österreich"@de;
+    acdh:hasRegion "Vienna"@en;
+    acdh:hasRegion "Wien"@de;
+    acdh:hasEmail "daniel.stoxreiter@oeaw.ac.at";
+    acdh:hasUrl "https://www.oeaw.ac.at/acdh/team/current-team/daniel-stoxreiter";
+    acdh:isMemberOf _:o1.
+
 
