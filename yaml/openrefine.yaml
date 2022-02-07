@@ -38,6 +38,20 @@ propertyWeights:
   'https://vocabs.acdh.oeaw.ac.at/schema#hasFirstName': 25
   'https://vocabs.acdh.oeaw.ac.at/schema#hasDescription': 10
 properties:
+  acdhId:
+    name: ACDH Id
+    type: text
+    valueType: str
+    property: https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier
+    filter: ^https://id.acdh.oeaw.ac.at/
+    types:
+    - organisation
+    - person
+    - place
+    - publication
+    - project
+    - collection
+    - top collection
   viafId:
     name: VIAF Id
     type: text
