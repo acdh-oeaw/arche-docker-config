@@ -357,4 +357,41 @@ _:p13 a acdh:Person;
     acdh:hasUrl "https://www.oeaw.ac.at/acdh/team/current-team/daniel-stoxreiter";
     acdh:isMemberOf _:o1.
 
+_:p14 a acdh:Person;
+    acdh:hasIdentifier acdhi:mzoltak;
+    acdh:hasIdentifier <https://orcid.org/0000-0001-5853-2534>;
+    acdh:hasTitle "Mateusz Żółtak"@und;
+    acdh:hasFirstName "Mateusz"@und;
+    acdh:hasLastName "Żółtak"@und;
+    acdh:hasPersonalTitle "Ing. Mag.";
+    acdh:hasAddressLine1 "Sonnenfelsgasse 19";
+    acdh:hasAddressLine2 "c/o ACDH-CH";
+    acdh:hasPostcode "1010";
+    acdh:hasCity "Vienna"@en;
+    acdh:hasCity "Wien"@de;
+    acdh:hasCountry "Austria"@en;
+    acdh:hasCountry "Österreich"@de;
+    acdh:hasRegion "Vienna"@en;
+    acdh:hasRegion "Wien"@de;
+    acdh:hasEmail "mateusz.zoltak@oeaw.ac.at";
+    acdh:hasUrl "https://www.oeaw.ac.at/acdh/team/current-team/mateusz-zoltak";
+    acdh:isMemberOf _:o1.
+
+_:p15 a acdh:Person;
+    acdh:hasIdentifier acdhi:nczirjak;
+    acdh:hasTitle "Norbert Czirjak"@und;
+    acdh:hasFirstName "Norbert"@und;
+    acdh:hasLastName "Czirjak"@und;
+    acdh:hasAddressLine1 "Sonnenfelsgasse 19";
+    acdh:hasAddressLine2 "c/o ACDH-CH";
+    acdh:hasPostcode "1010";
+    acdh:hasCity "Vienna"@en;
+    acdh:hasCity "Wien"@de;
+    acdh:hasCountry "Austria"@en;
+    acdh:hasCountry "Österreich"@de;
+    acdh:hasRegion "Vienna"@en;
+    acdh:hasRegion "Wien"@de;
+    acdh:hasEmail "norbert.czirjak@oeaw.ac.at";
+    acdh:hasUrl "https://www.oeaw.ac.at/acdh/team/current-team/norbert-czirjak";
+    acdh:isMemberOf _:o1.
 
