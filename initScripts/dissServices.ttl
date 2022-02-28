@@ -36,7 +36,7 @@ acdhids:gui
 # thumbnail
 acdhids:thumbnail
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "https://arche-thumbnails.acdh.oeaw.ac.at/?id={RES_URI|url}&width={WIDTH}&height={HEIGHT}" ;
+    acdh:serviceLocation    "https://arche-thumbnails.acdh.oeaw.ac.at/?id={RES_URI|url}&width={width}&height={height}" ;
     acdh:hasReturnType      "image/png; q=0.1" ;
     acdh:hasReturnType      "thumbnail" ;
     acdh:serviceRevProxy    false ;
@@ -45,18 +45,18 @@ acdhids:thumbnail
 acdhids:thumbnailParam1
     a                       acdh:DisseminationServiceParameter ;
     acdh:relation           acdhids:thumbnail ;
-    acdh:hasTitle           "WIDTH"@en ;
+    acdh:hasTitle           "width"@en ;
     acdh:hasDefaultValue    100 .
 acdhids:thumbnailParam2
     a                       acdh:DisseminationServiceParameter ;
     acdh:relation           acdhids:thumbnail ;
-    acdh:hasTitle           "HEIGHT"@en ;
+    acdh:hasTitle           "height"@en ;
     acdh:hasDefaultValue    100 .
 
 # biblatex
 acdhids:biblatex
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "https://arche-biblatex.acdh.oeaw.ac.at/?lang={LANG}&id={RES_URI|url}&override={OVERRIDE}" ;
+    acdh:serviceLocation    "https://arche-biblatex.acdh.oeaw.ac.at/?lang={lang}&id={RES_URI|url}&override={override}" ;
     acdh:hasReturnType      "application/x-bibtex" ;
     acdh:hasReturnType      "biblatex" ;
     acdh:serviceRevProxy    false ;
@@ -95,12 +95,12 @@ acdhids:biblatexMatch5
 acdhids:biblatexParam1
     a                       acdh:DisseminationServiceParameter ;
     acdh:relation           acdhids:biblatex ;
-    acdh:hasTitle           "LANG"@en ;
+    acdh:hasTitle           "lang"@en ;
     acdh:hasDefaultValue    "en" .
 acdhids:biblatexParam2
     a                       acdh:DisseminationServiceParameter ;
     acdh:relation           acdhids:biblatex ;
-    acdh:hasTitle           "OVERRIDE"@en ;
+    acdh:hasTitle           "override"@en ;
     acdh:hasDefaultValue    "" .
 
 # cmdi2html
@@ -122,7 +122,7 @@ acdhids:cmdi2htmlMatch1
 # raw cmdi
 acdhids:rawCmdi
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "https://arche.acdh.oeaw.ac.at/oaipmh/?verb=GetRecordRaw&metadataPrefix=cmdi&identifier={PID|url}" ;
+    acdh:serviceLocation    "https://arche.acdh.oeaw.ac.at/oaipmh/?verb=GetRecordRaw&metadataPrefix=cmdi&identifier={pid|url}" ;
     acdh:hasReturnType      "application/x-cmdi+xml" ;
     acdh:serviceRevProxy    false ;
     acdh:hasTitle           "RAW CMDI access"@en ;
@@ -136,14 +136,14 @@ acdhids:rawCmdiMatch1
 acdhids:rawCmdiParam
     a                       acdh:DisseminationServiceParameter ;
     acdh:relation           acdhids:rawCmdi ;
-    acdh:hasTitle           "PID"@en ;
+    acdh:hasTitle           "pid"@en ;
     acdh:hasDefaultValue    "" ;
     acdh:usesRdfProperty    "https://vocabs.acdh.oeaw.ac.at/schema#hasPid" .
 
 # customTEI2HTML
 acdhids:customTei2Html
    a                       acdh:DisseminationService ;
-   acdh:serviceLocation    "https://service4tei.acdh-dev.oeaw.ac.at/tei2html.xql?tei={RES_URI|url}&xsl={XSL|url}" ;
+   acdh:serviceLocation    "https://service4tei.acdh-dev.oeaw.ac.at/tei2html.xql?tei={RES_URI|url}&xsl={xsl|url}" ;
    acdh:hasReturnType      "customTei2Html" ;
    acdh:serviceRevProxy    false ;
    acdh:hasTitle           "Custom TEI to HTML transformation"@en ;
@@ -157,7 +157,7 @@ acdhids:customTei2HtmlMatch1
 acdhids:customTei2HtmlParam1
    a                       acdh:DisseminationServiceParameter ;
    acdh:relation           acdhids:customTei2Html ;
-   acdh:hasTitle           "XSL"@en ;
+   acdh:hasTitle           "xsl"@en ;
    acdh:hasDefaultValue    "https://tei4arche.acdh-dev.oeaw.ac.at/xsl/test.xsl" ;
    acdh:usesRdfProperty    "https://vocabs.acdh.oeaw.ac.at/schema#hasCustomXsl" .
 
@@ -261,7 +261,7 @@ acdhids:collectionDwnldScriptMatch2
 # Loris
 acdhids:loris
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "https://loris.acdh.oeaw.ac.at/uuid:{ID&id|part(path)}/{PARAM}" ;
+    acdh:serviceLocation    "https://loris.acdh.oeaw.ac.at/uuid:{ID&id|part(path)}/{param}" ;
     acdh:hasReturnType      "image/jpeg" ;
     acdh:hasReturnType      "iiif" ;
     acdh:serviceRevProxy    false ;
@@ -288,7 +288,7 @@ acdhids:lorisMatch3
 acdhids:lorisParam
     a                       acdh:DisseminationServiceParameter ;
     acdh:relation           acdhids:loris ;
-    acdh:hasTitle           "PARAM"@en ;
+    acdh:hasTitle           "param"@en ;
     acdh:hasDefaultValue    "full/full/0/default.jpg" .
 
 # WFS using mapserver proxy
