@@ -13,4 +13,7 @@ resolver:
     repositories:
         self:
             baseUrl: http://127.0.0.1/api/
+openrefine:
+   baseUrl: http://127.0.0.1/openrefine/
+   viewUrl: http://127.0.0.1/browser/oeaw_detail/{{id}}
 
