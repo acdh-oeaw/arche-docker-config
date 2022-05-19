@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<creator xsi:schemaLocation="http://datacite.org/schema/kernel-3 http://schema.datacite.org/meta/kernel-3/metadata.xsd" xmlns="http://datacite.org/schema/kernel-3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <creatorName val="/acdh:hasTitle" count="1"/>
+    <!-- nameIdentifierScheme attribute is mandatory but can contain any value -->
+    <nameIdentifier nameIdentifierScheme="ORCID" val="ID?orcid" count="*"/>
+    <nameIdentifier nameIdentifierScheme="VIAF" val="ID?viaf" count="*"/>
+    <nameIdentifier nameIdentifierScheme="GND" val="ID?gnd" count="*"/>
+    <nameIdentifier nameIdentifierScheme="ARCHE" val="ID?acdhi" count="*"/>
+    <affiliation val="@acdh:isMemberOf/acdh:hasTitle"/>
+</creator>
+

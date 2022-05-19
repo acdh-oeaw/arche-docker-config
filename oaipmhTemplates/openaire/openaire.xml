@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see https://guidelines.openaire.eu/en/latest/data/index.html, http://schema.datacite.org/meta/kernel-3/index.html -->
+<resource xsi:schemaLocation="http://datacite.org/schema/kernel-3 http://schema.datacite.org/meta/kernel-3/metadata.xsd" xmlns="http://datacite.org/schema/kernel-3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <!--INFO possible identifierTypes: ARK, DOI, Handle, PURL, URN, URL -->
+    <identifier identifierType="Handle" val="OAIID"/>
+    <creators ComponentId="creator" val="@acdh:hasCreator" count="*"/>
+    <titles>
+        <title val="/acdh:hasTitle" count="+" lang="true"/>
+    </titles>
+    <!--ERROR Choose the right ARCHE property. Cardinality in OpenAIRE is "exact 1" and they stress this property plays a prominent role in the OpenAIRE catalog
+    <publisher val="@acdh:hasXXX/acdh:hasTitle" count="1"/> -->
+    <publicationYear val="/acdh:hasAvailableDate" count="1" dateFormat="Year"/>
+    <!--WARNING Check if right ARCHE property is used. It can be both free text or a controlled vocabulary (in the latter case it would be nice to also provide subjectScheme and schemeURI attributes)  -->
+    <subjects>
+        <subject val="@acdh:hasSubject" count="?" lang="true"/>
+    </subjects>
+    <contributors>
+        <!--INFO possible contributorTypes: ContactPerson, DataCollector, DataCurator, DataManager, Distributor, Editor, Funder, HostingInstitution, Producer, ProjectLeader, ProjectManager, ProjectMember, RegistrationAgency, RegistrationAuthority, RelatedPerson, Researcher, ResearchGroup, RightsHolder, Sponsor, Supervisor, WorkPackageLeader, Other -->
+        <contributor ComponentId="ContactPerson" val="@acdh:hasContact" count="*"/>
+        <contributor ComponentId="DataCurator" val="@acdh:hasCurator" count="*"/>
+        <contributor ComponentId="Editor" val="@acdh:hasEditor" count="*"/>
+        <contributor ComponentId="HostingInstitution" val="@acdh:hasHosting" count="*"/>
+        <contributor ComponentId="ProjectLeader" val="@acdh:hasPrincipalInvestigator" count="*"/>
+        <contributor ComponentId="RightsHolder" val="@acdh:hasRightsHolder" count="*"/>
+        <contributor ComponentId="Sponsor" val="@acdh:hasFunder" count="*"/>
+        <contributor ComponentId="Other" val="@acdh:hasContributor" count="*"/>
+    </contributors>
+    <dates>
+        <!--INFO possible dateTypes: Accepted, Available, Copyrighted, Collected, Created, Issued, Submitted, Updated, Valid -->
+        <date dateType="Available" val="/acdh:hasAvailableDate" dateFormat="Date" count="*"/>
+        <date dateType="Updated" val="/acdh:hasUpdatedDate" dateFormat="Date" count="*"/>
+    </dates>
+    <!--WARNING In ARCHE 0-n in OpenAIRE 0-1 so we can't map it reliably -->
+    <language val="@acdh:hasLanguage/acdh:hasTitle" count="?"/>
+    <resourceType resourceTypeGeneral="Collection">Collection</resourceType>
+    <alternateIdentifiers>
+        <alternateIdentifier alternateIdentifierType="URL" val="ID" count="*"/>
+    </alternateIdentifiers>
+    <relatedIdentifiers>
+        <!--INFO possible relationTypes: IsCitedBy, Cites, IsSupplementTo, IsSupplementedBy, IsContinuedBy, Continues, HasMetadata, IsMetadataFor, IsNewVersionOf, IsPreviousVersionOf, IsPartOf, HasPart, IsReferencedBy, References, IsDocumentedBy, Documents, IsCompiledBy, Compiles, IsVariantFormOf, IsOriginalFormOf, IsIdenticalTo, IsReviewedBy, Reviews, IsDerivedFrom, IsSourceOf
+                 possible relatedIdentifierTypes ARK, arXiv, bibcode, DOI, EAN13, EISSN, Handle, ISBN, ISSN, ISTC, LISSN, LSID, PMID, PURL, UPC, URL, URN -->
+        <!--WARNING Check if we have properties corresponding to toher datacite relationTypes -->
+        <relatedIdentifier relatedIdentifierType="Handle" relationType="IsNewVersionOf" val="@acdh:isNewVersionOf/acdh:hasPid" count="*"/>
+        <relatedIdentifier relatedIdentifierType="Handle" relationType="IsPreviousVersionOf" val="@^acdh:isNewVersionOf/acdh:hasPid" count="*"/>
+        <relatedIdentifier relatedIdentifierType="Handle" relationType="HasPart" val="@^acdh:isPartOf/acdh:hasPid" count="*"/>
+    </relatedIdentifiers>
+    <sizes>
+        <size val="/acdh:hasExtent" count="*"/>
+    </sizes>
+    <!--WARNING ARCHE doesn't store format information on the collection level. Fortunately it's only optional in the datacite
+    <formats>
+        <format val="/acdh:" count="*"/>
+    </formats>-->
+    <version val="/acdh:hasVersion" count="*"/>
+    <rightsList>
+        <rights val="/acdh:hasLicenseSummary" count="*"/>
+    </rightsList>
+    <descriptions>
+        <!--INFO possible descriptionType: Abstract, Methods, SeriesInformation, TableOfContents, Other -->
+        <!--WARNING Check if we haven't missed any mapping -->
+        <description descriptionType="Methods" val="/acdh:hasAppliedMethod" count="*"/>
+        <description descriptionType="Methods" val="/acdh:hasAppliedMethodDescription" count="*"/>
+        <description descriptionType="SeriesInformation" val="/acdh:hasSeriesInformation" count="*"/>
+        <description descriptionType="TableOfContents" val="/acdh:hasTableOfContents" count="*"/>
+        <description descriptionType="Other" val="/acdh:hasTechnicalInfo" count="*"/>
+        <description descriptionType="Other" val="/acdh:hasNote" count="*"/>
+    </descriptions>
+    <geoLocations>
+        <geoLocation ComponentId="geoLocation" val="/acdh:hasSpatialCoverage" count="*"/>
+    </geoLocations>
+</resource>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contributor contributorType="Other" xsi:schemaLocation="http://datacite.org/schema/kernel-3 http://schema.datacite.org/meta/kernel-3/metadata.xsd" xmlns="http://datacite.org/schema/kernel-3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <contributorName val="/acdh:hasTitle" count="1"/>
+    <!-- nameIdentifierScheme attribute is mandatory but can contain any value -->
+    <nameIdentifier nameIdentifierScheme="ORCID" val="ID?orcid" count="*"/>
+    <nameIdentifier nameIdentifierScheme="VIAF" val="ID?viaf" count="*"/>
+    <nameIdentifier nameIdentifierScheme="GND" val="ID?gnd" count="*"/>
+    <nameIdentifier nameIdentifierScheme="ARCHE" val="ID?acdhi" count="*"/>
+    <!--WARNING Can lead to many values differing only in language but datacite doesn't allow xml:lang on <affiliation>. Anyway, <affiliation> is 0-N so it's still syntactically valid. -->
+    <affiliation val="@acdh:isMemberOf/acdh:hasTitle" count="*"/>
+</contributor>
+
