@@ -335,6 +335,7 @@ oai:
             # Namespace prefixes used in template file's metadata property placeholders
             propNmsp:
                 acdh: https://vocabs.acdh.oeaw.ac.at/schema#
+                skos: http://www.w3.org/2004/02/skos/core#
             idNmsp:
                 acdhi: https://id.acdh.oeaw.ac.at/
                 orcid: https://orcid.org/
