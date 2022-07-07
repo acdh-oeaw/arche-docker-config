@@ -3,20 +3,11 @@
     xmlns:cmdp="http://www.clarin.eu/cmd/1/profiles/clarin.eu:cr1:p_1271859438164" CMDVersion="1.2" xsi:schemaLocation="http://www.clarin.eu/cmd/1 https://infra.clarin.eu/CMDI/1.x/xsd/cmd-envelop.xsd http://www.clarin.eu/cmd/1/profiles/clarin.eu:cr1:p_1271859438164 https://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/1.x/profiles/clarin.eu:cr1:p_1271859438164/xsd">
     <cmd:Header>
         <cmd:MdCreator val="@acdh:hasCreator/acdh:hasTitle"></cmd:MdCreator>
-        <cmd:MdCreationDate val="/acdh:hasAvailableDate"></cmd:MdCreationDate>
+        <cmd:MdCreationDate val="/acdh:hasAvailableDate" dateFormat="Y-m-d"></cmd:MdCreationDate>
         <cmd:MdSelfLink val="/acdh:hasPid"></cmd:MdSelfLink>
         <cmd:MdProfile val="/acdh:hasCmdiSchema"></cmd:MdProfile>
         <cmd:MdCollectionDisplayName val="/acdh:MdCollectionDisplayName"></cmd:MdCollectionDisplayName>
     </cmd:Header>
-    <!--
-    <cmd:Header>
-        <cmd:MdCreator>ACDH, Vienna</cmd:MdCreator>
-        <cmd:MdCreationDate>2017-04-06</cmd:MdCreationDate>
-        <cmd:MdSelfLink>http://hdl.handle.net/11022/0000-0003-88D3-5</cmd:MdSelfLink>
-        <cmd:MdProfile>clarin.eu:cr1:p_1271859438164</cmd:MdProfile>
-        <cmd:MdCollectionDisplayName>Language Resources Portal</cmd:MdCollectionDisplayName>
-    </cmd:Header>
-    -->
     <cmd:Resources>
         <cmd:ResourceProxyList>    
             <cmd:ResourceProxy id="ref0">                

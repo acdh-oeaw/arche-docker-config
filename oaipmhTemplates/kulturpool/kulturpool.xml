@@ -9,11 +9,11 @@
   <ShortDescription val="/acdh:hasDescription" count="*" lang="true"/>
   <Keyword val="/acdh:hasSubject" count="*" lang="true"/>
 
-  <CreationDate val="/acdh:hasCreatedDate" count="*" dateFormat="Date"/>
-  <EarliestDate val="/acdh:hasCreatedStartDate" count="*" dateFormat="Date"/>
-  <LatestDate val="/acdh:hasCreatedEndDate" count="*" dateFormat="Date"/>
+  <CreationDate val="/acdh:hasCreatedDate" count="*" dateFormat="Y-m-d"/>
+  <EarliestDate val="/acdh:hasCreatedStartDate" count="*" dateFormat="Y-m-d"/>
+  <LatestDate val="/acdh:hasCreatedEndDate" count="*" dateFormat="Y-m-d"/>
 
-  <Object ComponentId="kulturpoolObject" val="@acdh:hasTitleImage" count="1"/>
+  <Object ComponentId="kulturpoolObject" val="@^acdh:isTitleImageOf" count="1"/>
 
   <IsShownBy val="/acdh:isSourceOf" format="raw"/>
   <IsShownAt val="/acdh:hasUrl" count="*"/>
@@ -52,5 +52,5 @@
 <!--  <IsPartOf val="@acdh:isPartOf/acdh:hasTitle" count="*"/> -->
   <IsPartOf ComponentId="kulturpoolIsPart" val="@acdh:isPartOf" count="*"/>
 
-  <AvailableDate val="/acdh:hasAvailableDate" count="1" dateFormat="Date"/>
+  <AvailableDate val="/acdh:hasAvailableDate" count="1" dateFormat="Y-m-d"/>
 </resource>

@@ -15,15 +15,15 @@
     <aocat:has_type></aocat:has_type> <!-- TODO: !-->
     <aocat:has_title val="/acdh:hasTitle" count="*" lang="true"></aocat:has_title>
     <aocat:has_description val="/acdh:hasDescription" count="*" lang="true"></aocat:has_description>
-    <aocat:was_issued val="/acdh:hasAvailableDate" count="1" dateFormat="Date"></aocat:was_issued>
-    <aocat:was_created_on val="/acdh:hasAvailableDate" count="1" dateFormat="Date"></aocat:was_created_on> <!-- how is this different from was_issued?-->
-    <aocat:was_modified val="/acdh:hasUpdatedDate" count="*" dateFormat="Date"></aocat:was_modified>
+    <aocat:was_issued val="/acdh:hasAvailableDate" count="1" dateFormat="Y-m-d"></aocat:was_issued>
+    <aocat:was_created_on val="/acdh:hasAvailableDate" count="1" dateFormat="Y-m-d"></aocat:was_created_on> <!-- how is this different from was_issued?-->
+    <aocat:was_modified val="/acdh:hasUpdatedDate" count="*" dateFormat="Y-m-d"></aocat:was_modified>
     <aocat:has_language>
-        <aocat:AO_Concept val="acdh:hasLanguage" asAttribute="rdf:about" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+        <aocat:AO_Concept val="/acdh:hasLanguage" asAttribute="rdf:about" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
             <skos:prefLabel val="@acdh:hasLanguage/acdh:hasTitle" count="*" lang="true"></skos:prefLabel>
         </aocat:AO_Concept>
     <!-- longer TODO: link our lang vocab to lexvo.org -->
-    <!-- and also find a way to inlude the shortcodes instead of the full language-->
+    <!-- and also find a way to inlude the shortcodes instead of the full language - [Mateusz] val="@acdh:hasLanguage/acdh:hasIdentifier" match="^https://vocabs[.]acdh[.]oeaw[.]ac[.]at/iso6393/(.*)$" replace="\1" -->
     </aocat:has_language>
     <aocat:has_landing_page val="/acdh:hasPid" asAttribute="rdf:resource" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"></aocat:has_landing_page>
 
@@ -38,13 +38,7 @@
     <aocat:has_owner ComponentId="ariadneOwner" val="@acdh:hasOwner" count="+"/>
     <aocat:has_responsible ComponentId="ariadneResponsible" val="@acdh:hasContact" count="+"/>
     <aocat:has_contributor ComponentId="ariadneContributor" val="@acdh:hasContributor" count="+"/>
-
-    <!-- TODO: 
-    aocat:has_primary_visual_component -> titleimage
-
-    Problem: Each thumbnail copied into the ARIADNE Content Cloud must be licensed under
-    license CC0 by the provider.
-    -->
+    <aocat:has_spatial_coverage ComponentId="ariadnePlace" val="@acdh:hasSpatialCoverage" count="+"/>
     
     <!-- TODO:
     aocat:refers_to
@@ -78,10 +72,7 @@
 
     <!--
     aocat:has_temporal_coverage -> aocat:AO_Temporal_Region (aocat:has_period (periodO), aocat:has_native_period -> local vocabulary, aocat:from ISO 8601, aocat:until)
-    aocat:AO_Spatial_Region_Point (aocat:has_latitude, has_longitude,)
-    aocat:AO_Spatial_Region_StdName -> has_place_IRI
-
-    aocat:has_spatial_coverage -> aocat:AO_Spatial_Region (aocat:has_place_name)
+    has_place_IRI see if it is possible to only have geonames links added
 
     -->
 

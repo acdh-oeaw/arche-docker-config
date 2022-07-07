@@ -42,7 +42,7 @@
 					<dha:hasAnnotationProperty ComponentId="dhaAnnotationPlace" val="@acdh:hasSpatialCoverage" count="*"/>
 				</dha:AnnotationDescription>
 			</dha:hasAnnotationDescription>
-			<dha:basedOn ComponentId="dhaBasedOn" val="@^acdh:isSourceOf" count="*"/>
+            <dha:basedOn ComponentId="dhaBasedOn" val="@^acdh:isSourceOf" count="*"/>
 			<dha:hasType count="*" val="@acdh:hasCategory/acdh:hasIdentifier" asAttribute="rdf:resource" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
 		</dha:RepoObject>
 	</dha:hasPart>

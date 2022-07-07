@@ -7,7 +7,7 @@
   <Format val="/acdh:hasFormat" count="*"/> <!-- not used for arche collection -->
   <!-- iiif stuff -->
   <service>
-    <url val="IIIFURL"/>
+    <url val="/acdh:hasIdentifier" match="https://id.acdh.oeaw.ac.at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1"/>
     <ConformsTo>http://iiif.io/api/image</ConformsTo>
     <Implements>http://iiif.io/api/image/2/level2.json</Implements>
   </service>

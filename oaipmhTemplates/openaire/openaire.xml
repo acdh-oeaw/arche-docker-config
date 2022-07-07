@@ -11,7 +11,7 @@
     </titles>
     <!--WARNING Cardinality in datacite is "exact 1" and the OpenAIRE notes that "this property will be used to formulate the citation, so consider the prominence of the role." -->
     <publisher val="@acdh:hasHosting/acdh:hasTitle" count="1"/>
-    <publicationYear val="/acdh:hasAvailableDate" count="1" dateFormat="Year"/>
+    <publicationYear val="/acdh:hasAvailableDate" count="1" dateFormat="Y"/>
     <!--WARNING Check if right ARCHE property is used. It can be both free text or a controlled vocabulary (in the latter case it would be nice to also provide subjectScheme and schemeURI attributes)  -->
     <subjects>
         <subject val="@acdh:hasSubject" count="?" lang="true"/>
@@ -30,15 +30,15 @@
     </contributors>
     <dates>
         <!--INFO possible dateTypes: Accepted, Available, Copyrighted, Collected, Created, Issued, Submitted, Updated, Valid -->
-        <date dateType="Issued" val="/acdh:hasAvailableDate" dateFormat="Date" count="*"/>
-        <date dateType="Updated" val="/acdh:hasUpdatedDate" dateFormat="Date" count="*"/>
-        <date dateType="Submitted" val="/acdh:hasAvailableDate" dateFormat="Date" count="*"/>
+        <date dateType="Issued" val="/acdh:hasAvailableDate" dateFormat="Y-m-d" count="*"/>
+        <date dateType="Updated" val="/acdh:hasUpdatedDate" dateFormat="Y-m-d" count="*"/>
+        <date dateType="Submitted" val="/acdh:hasAvailableDate" dateFormat="Y-m-d" count="*"/>
     </dates>
     <!--WARNING In ARCHE 0-n in OpenAIRE 0-1 so we can't map it reliably -->
     <language val="@acdh:hasLanguage/acdh:hasTitle" count="?"/>
     <resourceType resourceTypeGeneral="Collection">Collection</resourceType>
     <alternateIdentifiers>
-        <alternateIdentifier alternateIdentifierType="URL" val="ID" count="*"/>
+        <alternateIdentifier alternateIdentifierType="URL" val="/acdh:hasIdentifier" count="*"/>
     </alternateIdentifiers>
     <relatedIdentifiers>
         <!--INFO possible relationTypes: IsCitedBy, Cites, IsSupplementTo, IsSupplementedBy, IsContinuedBy, Continues, HasMetadata, IsMetadataFor, IsNewVersionOf, IsPreviousVersionOf, IsPartOf, HasPart, IsReferencedBy, References, IsDocumentedBy, Documents, IsCompiledBy, Compiles, IsVariantFormOf, IsOriginalFormOf, IsIdenticalTo, IsReviewedBy, Reviews, IsDerivedFrom, IsSourceOf

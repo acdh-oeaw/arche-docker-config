@@ -2,10 +2,10 @@
 <creator xmlns="http://datacite.org/schema/kernel-3">
     <creatorName val="/acdh:hasTitle" count="1"/>
     <!-- nameIdentifierScheme attribute is mandatory but can contain any value -->
-    <nameIdentifier nameIdentifierScheme="ORCID" val="ID?orcid" count="*"/>
-    <nameIdentifier nameIdentifierScheme="VIAF" val="ID?viaf" count="*"/>
-    <nameIdentifier nameIdentifierScheme="GND" val="ID?gnd" count="*"/>
-    <nameIdentifier nameIdentifierScheme="ARCHE" val="ID?acdhi" count="*"/>
+    <nameIdentifier nameIdentifierScheme="ORCID" val="/acdh:hasIdentifier" match="^https://orcid[.]org/" count="*"/>
+    <nameIdentifier nameIdentifierScheme="VIAF" val="/acdh:hasIdentifier" match="^https://viaf[.]org/" count="*"/>
+    <nameIdentifier nameIdentifierScheme="GND" val="/acdh:hasIdentifier" match="^https://www[.]dnb[.]de/" count="*"/>
+    <nameIdentifier nameIdentifierScheme="ARCHE" val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/" count="*"/>
     <affiliation val="@acdh:isMemberOf/acdh:hasTitle"/>
 </creator>
 

@@ -3,7 +3,7 @@
   <title val="/acdh:hasTitle" count="*" lang="true"></title>
   <id val="/acdh:hasIdentifier" count="*"></id>
   <author val="/acdh:hasAuthor/acdh:hasTitle" count="*" lang="true"></author>
-  <pubdate val="/acdh:hasAvailableDate" count="*" dateFormat="Date"></pubdate>
+  <pubdate val="/acdh:hasAvailableDate" count="*" dateFormat="Y-m-d"></pubdate>
   <pubcity val="/acdh:hasCity" count="*" lang="true"></pubcity>
   <pubextent val="/acdh:hasExtent" count="*" lang="true"></pubextent>
   <pubpublisher val="@acdh:hasPublisher/acdh:hasTitle" count="*" lang="true"></pubpublisher>

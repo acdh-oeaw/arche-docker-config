@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Object>
-  <url val="ID" format="image/jpeg"/>
+  <url val="OAIID" format="image/jpeg"/>
   <!-- iiif stuff -->
   <service>
-    <url val="IIIFURL"/>
+    <url val="/acdh:hasIdentifier" match="https://id.acdh.oeaw.ac.at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1"/>
     <ConformsTo>http://iiif.io/api/image</ConformsTo>
     <Implements>http://iiif.io/api/image/2/level1.json</Implements>
   </service>
