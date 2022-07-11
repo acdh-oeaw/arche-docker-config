@@ -9,7 +9,7 @@
     <titles>
         <title val="/acdh:hasTitle" count="+" lang="true"/>
     </titles>
-    <!--WARNING Cardinality in datacite is "exact 1" and the OpenAIRE notes that "this property will be used to formulate the citation, so consider the prominence of the role." -->
+    <!--WARNING Cardinality in DataCite is "exact 1" and DataCite as well as OpenAIRE note that "this property will be used to formulate the citation, so consider the prominence of the role." -->
     <publisher val="@acdh:hasHosting/acdh:hasTitle" count="1"/>
     <publicationYear val="/acdh:hasAvailableDate" count="1" dateFormat="Y"/>
     <!--WARNING Check if right ARCHE property is used. It can be both free text or a controlled vocabulary (in the latter case it would be nice to also provide subjectScheme and schemeURI attributes)  -->
@@ -30,9 +30,13 @@
     </contributors>
     <dates>
         <!--INFO possible dateTypes: Accepted, Available, Copyrighted, Collected, Created, Issued, Submitted, Updated, Valid -->
+        <date dateType="Accepted" val="/acdh:hasAcceptedDate" dateFormat="Y-m-d" count="*"/>
+        <date dateType="Available" val="/acdh:hasAvailableDate" dateFormat="Y-m-d" count="*"/>
+        <date dateType="Collected" val="/acdh:hasCollectedEndDate" dateFormat="Y-m-d" count="*"/>
+        <date dateType="Created" val="/acdh:hasCreatedEndDate" dateFormat="Y-m-d" count="*"/>
         <date dateType="Issued" val="/acdh:hasAvailableDate" dateFormat="Y-m-d" count="*"/>
+        <date dateType="Submitted" val="/acdh:hasSubmissionDate" dateFormat="Y-m-d" count="*"/>
         <date dateType="Updated" val="/acdh:hasUpdatedDate" dateFormat="Y-m-d" count="*"/>
-        <date dateType="Submitted" val="/acdh:hasAvailableDate" dateFormat="Y-m-d" count="*"/>
     </dates>
     <!--WARNING In ARCHE 0-n in OpenAIRE 0-1 so we can't map it reliably -->
     <language val="@acdh:hasLanguage/acdh:hasTitle" count="?"/>
@@ -48,7 +52,7 @@
         <relatedIdentifier relatedIdentifierType="Handle" relationType="IsPreviousVersionOf" val="@^acdh:isNewVersionOf/acdh:hasPid" count="*"/>
         <relatedIdentifier relatedIdentifierType="Handle" relationType="IsPartOf" val="@acdh:isPartOf/acdh:hasPid" count="*"/>
         <relatedIdentifier relatedIdentifierType="Handle" relationType="HasPart" val="@^acdh:isPartOf/acdh:hasPid" count="*"/>
-        <!--WARNING This won't work for publications as ARCHE doesn't store (or even alow) acdh:hasPid on them -->
+        <!--WARNING This won't work for publications as ARCHE doesn't store (or even allow) acdh:hasPid on them -->
         <relatedIdentifier relatedIdentifierType="Handle" relationType="Documents" val="@acdh:documents/acdh:hasPid" count="*"/>
         <relatedIdentifier relatedIdentifierType="Handle" relationType="IsDocumentedBy" val="@^acdh:documents/acdh:hasPid" count="*"/>
     </relatedIdentifiers>

@@ -2,10 +2,9 @@
 <creator xmlns="http://datacite.org/schema/kernel-3">
     <creatorName val="/acdh:hasTitle" count="1"/>
     <!-- nameIdentifierScheme attribute is mandatory but can contain any value -->
-    <nameIdentifier nameIdentifierScheme="ORCID" val="/acdh:hasIdentifier" match="^https://orcid[.]org/" count="*"/>
-    <nameIdentifier nameIdentifierScheme="VIAF" val="/acdh:hasIdentifier" match="^https://viaf[.]org/" count="*"/>
-    <nameIdentifier nameIdentifierScheme="GND" val="/acdh:hasIdentifier" match="^https://www[.]dnb[.]de/" count="*"/>
-    <nameIdentifier nameIdentifierScheme="ARCHE" val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/" count="*"/>
+    <nameIdentifier schemeURI="https://orcid.org/" nameIdentifierScheme="ORCID" val="/acdh:hasIdentifier" match="^https://orcid[.]org/" count="*"/>
+    <nameIdentifier schemeURI="https://viaf.org" nameIdentifierScheme="VIAF" val="/acdh:hasIdentifier" match="^https://viaf[.]org/" count="*"/>
+    <nameIdentifier schemeURI="https://www.dnb.de/" nameIdentifierScheme="GND" val="/acdh:hasIdentifier" match="^https://www[.]dnb[.]de/" count="*"/>
+    <nameIdentifier schemeURI="https://id.acdh.oeaw.ac.at/" nameIdentifierScheme="ARCHE" val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/" count="*"/>
     <affiliation val="@acdh:isMemberOf/acdh:hasTitle"/>
 </creator>
-
