@@ -50,6 +50,12 @@ oai:
         searchMatch: search://match
         searchCount: search://count
         repoBaseUrl: https://arche.acdh.oeaw.ac.at/api/
+        # Execution time after each a resumption token is returned
+        # for the listRecords verb
+        resumptionTimeout: 120
+        resumptionDir: "tmp"
+        # Number of seconds a resumption token stays alive
+        resumptionKeepAlive: 600
     sets:
         # Class implementing sets. There are four implementations available:
         # - \acdhOeaw\arche\oaipmh\set\NoSets - when your repository doesn't use sets

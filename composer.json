@@ -5,7 +5,7 @@
         "acdh-oeaw/arche-schema-ingest": "^2",
         "acdh-oeaw/arche-lib-ingest": "^3",
         "acdh-oeaw/arche-resolver": "^3.1",
-        "acdh-oeaw/arche-oaipmh": "^3",
+        "acdh-oeaw/arche-oaipmh": "^4",
         "acdh-oeaw/arche-fcs": "^1.1",
         "acdh-oeaw/arche-openrefine": "^0.5",
         "zozlak/yaml-merge": "^1"
