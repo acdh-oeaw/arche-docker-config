@@ -38,8 +38,9 @@
         <date dateType="Submitted" val="/acdh:hasSubmissionDate" dateFormat="Y-m-d" count="*"/>
         <date dateType="Updated" val="/acdh:hasUpdatedDate" dateFormat="Y-m-d" count="*"/>
     </dates>
-    <!--WARNING In ARCHE 0-n in OpenAIRE 0-1 so we can't map it reliably -->
-    <language val="@acdh:hasLanguage/acdh:hasTitle" count="?"/>
+    <!--WARNING In ARCHE 0-n in OpenAIRE 0-1 so we can't map it reliably
+    In addition, we should also give this value as a two-letter code: reuse URI of exact match and take last two characters? -->
+    <language val="@acdh:hasLanguage/acdh:hasTitle" count="1"/>
     <resourceType resourceTypeGeneral="Collection">Collection</resourceType>
     <alternateIdentifiers>
         <alternateIdentifier alternateIdentifierType="URL" val="/acdh:hasIdentifier" count="*"/>
@@ -52,34 +53,43 @@
         <relatedIdentifier relatedIdentifierType="Handle" relationType="IsPreviousVersionOf" val="@^acdh:isNewVersionOf/acdh:hasPid" count="*"/>
         <relatedIdentifier relatedIdentifierType="Handle" relationType="IsPartOf" val="@acdh:isPartOf/acdh:hasPid" count="*"/>
         <relatedIdentifier relatedIdentifierType="Handle" relationType="HasPart" val="@^acdh:isPartOf/acdh:hasPid" count="*"/>
-        <!--WARNING This won't work for publications as ARCHE doesn't store (or even allow) acdh:hasPid on them -->
+        <!--WARNING This won't work for publications as ARCHE doesn't store (or even allow) acdh:hasPid on them. But we could try to find specific kinds of identifiers through regex -->
         <relatedIdentifier relatedIdentifierType="Handle" relationType="Documents" val="@acdh:documents/acdh:hasPid" count="*"/>
         <relatedIdentifier relatedIdentifierType="Handle" relationType="IsDocumentedBy" val="@^acdh:documents/acdh:hasPid" count="*"/>
+        <relatedIdentifier relatedIdentifierType="Handle" relationType="Continues" val="@acdh:continues/acdh:hasPid" count="*"/>
+        <relatedIdentifier relatedIdentifierType="Handle" relationType="IsContinuedBy" val="@^acdh:continues/acdh:hasPid" count="*"/>
+        <relatedIdentifier relatedIdentifierType="Handle" relationType="IsSourceOf" val="@acdh:isSourceOf/acdh:hasPid" count="*"/>
+        <relatedIdentifier relatedIdentifierType="Handle" relationType="IsDerivedFrom" val="@^acdh:isSourceOf/acdh:hasPid" count="*"/>
     </relatedIdentifiers>
     <sizes>
         <size val="/acdh:hasExtent" count="*"/>
+        <size val="/acdh:hasBinarySize" count="*"/>
     </sizes>
     <!--WARNING ARCHE doesn't store format information on the collection level. Fortunately it's only optional in the datacite
     <formats>
         <format val="/acdh:" count="*"/>
     </formats>-->
-    <version val="/acdh:hasVersion" count="*"/>
+    <version val="/acdh:hasVersion" count="1"/>
     <rightsList>
-        <!--WARNING acdh:hasLicense is optional on the (Top)Collection. We are guaranteed to have acdh:hasLicenseSummary there but it's an open text (with counts) so it's pretty useless.  -->
+        <!--WARNING acdh:hasLicense is optional on the (Top)Collection. We are guaranteed to have acdh:hasLicenseSummary there but it's an open text (with counts) so it's pretty useless. But maybe we can give it a try, since  -->
         <rights ComponentId="rights" val="@acdh:hasLicense" count="*"/>
+        <rights val="/acdh:hasLicenseSummary" count="*"/>
     </rightsList>
     <descriptions>
         <!--INFO possible descriptionType: Abstract, Methods, SeriesInformation, TableOfContents, Other -->
         <!--WARNING Check if we haven't missed any mapping -->
-        <description descriptionType="Abstract" val="/acdh:description" count="*" lang="true"/>
+        <description descriptionType="Abstract" val="/acdh:hasDescription" count="*" lang="true"/>
         <description descriptionType="Methods" val="/acdh:hasAppliedMethod" count="*" lang="true"/>
         <description descriptionType="Methods" val="/acdh:hasAppliedMethodDescription" count="*" lang="true"/>
-        <description descriptionType="SeriesInformation" val="/acdh:hasSeriesInformation" count="*" lang="true"/>
+        <description descriptionType="Methods" val="/acdh:hasEditorialPractice" count="*" lang="true"/>
+        <!-- This only used for Publications: <description descriptionType="SeriesInformation" val="/acdh:hasSeriesInformation" count="*" lang="true"/> -->
         <description descriptionType="TableOfContents" val="/acdh:hasTableOfContents" count="*" lang="true"/>
+        <description descriptionType="Other" val="/acdh:hasArrangement" count="*" lang="true"/>
         <description descriptionType="Other" val="/acdh:hasTechnicalInfo" count="*" lang="true"/>
         <description descriptionType="Other" val="/acdh:hasNote" count="*" lang="true"/>
+        <description descriptionType="Other" val="/acdh:hasVersionInfo" count="*" lang="true"/>
     </descriptions>
     <geoLocations>
-        <geoLocation ComponentId="geoLocation" val="/acdh:hasSpatialCoverage" count="*"/>
+        <geoLocation ComponentId="geoLocation" val="@acdh:hasSpatialCoverage" count="*"/>
     </geoLocations>
 </resource>
