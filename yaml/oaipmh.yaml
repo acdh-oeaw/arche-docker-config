@@ -259,6 +259,10 @@ oai:
                 perResource: false
                 skipClasses: []
                 includeClasses: []
+            valueMaps:
+                language:
+                    https://vocabs.acdh.oeaw.ac.at/iso6393/eng: http://lexvo.org/id/iso639-3/eng
+                    https://vocabs.acdh.oeaw.ac.at/iso6393/deu: http://lexvo.org/id/iso639-3/deu
         dha:
             metadataPrefix: dha
             metadataNamespace: http://we.do.not.care

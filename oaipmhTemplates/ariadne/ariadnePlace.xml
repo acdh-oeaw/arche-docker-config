@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-    <aocat:has_spatial_coverage  xmlns:aocat="https://www.ariadne-infrastructure.eu/resource/ao/cat/1.1/" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-        <aocat:AO_Spatial_Region val="URI" asAttribute="rdf:about" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-            <aocat:has_place_name val="/acdh:hasTitle" count="*" lang="true"></aocat:has_place_name>
-            <aocat:has_place_IRI val="/acdh:hasIdentifier" match="https://sws[.]geonames[.]org/" count="*"></aocat:has_place_IRI>
-            <aocat:has_latitude val="/acdh:hasLatitude" count="*"></aocat:has_latitude>
-	        <aocat:has_longitude val="/acdh:hasLongitude" count="*"></aocat:has_longitude>
-	        <aocat:has_polygonal_representation val="/acdh:hasWKT" count="*"></aocat:has_polygonal_representation> 
-            <rdfs:label val="/acdh:hasTitle" count="*" lang="true"></rdfs:label>
-       </aocat:AO_Spatial_Region>
+    <aocat:has_spatial_coverage xmlns:aocat="https://www.ariadne-infrastructure.eu/resource/ao/cat/1.1/" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+        <aocat:AO_Spatial_Region_Point>
+           <rdfs:label val="/acdh:hasTitle" count="1" lang="true"></rdfs:label>
+           <aocat:has_place_name val="/acdh:hasTitle" count="1" lang="true"></aocat:has_place_name>
+           <aocat:has_latitude val="/acdh:hasLatitude" count="*"></aocat:has_latitude>
+           <aocat:has_longitude val="/acdh:hasLongitude" count="*"></aocat:has_longitude>
+        </aocat:AO_Spatial_Region_Point>
     </aocat:has_spatial_coverage>
