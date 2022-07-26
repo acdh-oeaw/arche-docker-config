@@ -5,6 +5,8 @@ rest:
     metadataWriteMode: X-METADATA-WRITE-MODE
     transactionId: X-TRANSACTION-ID
     withReferences: X-WITH-REFERENCES
+    resourceProperties: X-RESOURCE-PROPERTIES
+    relativesProperties: X-RELATIVES-PROPERTIES
 schema:
     id: https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier
     parent: https://vocabs.acdh.oeaw.ac.at/schema#isPartOf
@@ -12,6 +14,7 @@ schema:
     delete: delete://delete
     searchMatch: search://match
     searchOrder: search://order
+    searchOrderValue: search://orderValue
     searchFts: search://fts
     searchCount: search://count
     binarySize: https://vocabs.acdh.oeaw.ac.at/schema#hasRawBinarySize
