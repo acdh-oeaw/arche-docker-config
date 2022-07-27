@@ -12,14 +12,14 @@ else
     PG_CONN=$PG_DBNAME
     if [ ! -f /home/www-data/postgresql/postgresql.conf ]; then
         # initialize local database cluster
-        su -l www-data -c '/usr/lib/postgresql/12/bin/initdb -D /home/www-data/postgresql --auth=ident -U www-data --locale en_US.UTF-8'
+        su -l www-data -c '/usr/lib/postgresql/*/bin/initdb -D /home/www-data/postgresql --auth=ident -U www-data --locale en_US.UTF-8'
         sed -i -E 's/^(host.*ident)$/#\1/g' /home/www-data/postgresql/pg_hba.conf
         echo "host    all             all             127.0.0.1/32            md5" >> /home/www-data/postgresql/pg_hba.conf
-        su -l www-data -c '/usr/lib/postgresql/12/bin/pg_ctl start -D /home/www-data/postgresql -l /home/www-data/log/postgresql.log'
+        su -l www-data -c '/usr/lib/postgresql/*/bin/pg_ctl start -D /home/www-data/postgresql -l /home/www-data/log/postgresql.log'
         su -l www-data -c "createdb $PG_DBNAME"
         INIT_DB=1
     else
-        su -l www-data -c '/usr/lib/postgresql/12/bin/pg_ctl start -D /home/www-data/postgresql -l /home/www-data/log/postgresql.log'
+        su -l www-data -c '/usr/lib/postgresql/*/bin/pg_ctl start -D /home/www-data/postgresql -l /home/www-data/log/postgresql.log'
     fi
 fi
 if [ "1" == "$INIT_DB" ]; then
@@ -42,6 +42,6 @@ done
 PSWD=""
 
 if [ -z "$PG_EXTERNAL" ]; then
-    su -l www-data -c '/usr/lib/postgresql/12/bin/pg_ctl stop -D /home/www-data/postgresql'
+    su -l www-data -c '/usr/lib/postgresql/*/bin/pg_ctl stop -D /home/www-data/postgresql'
 fi
 
