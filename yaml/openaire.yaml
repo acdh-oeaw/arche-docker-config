@@ -5,7 +5,6 @@ openaire:
     authToken: ""
     trackIp: false
     trackUserAgent: true
-    urlref: "{baseUrl}../browser/oeaw_detail/{id}"
     pidQuery: |
         SELECT m1.value
         FROM
