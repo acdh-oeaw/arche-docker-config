@@ -1,0 +1,17 @@
+openaire:
+    url: "https://analytics.openaire.eu/piwik.php"
+    id: 602
+    # defined in local.yaml
+    authToken: ""
+    trackIp: false
+    trackUserAgent: true
+    urlref: "{baseUrl}../browser/oeaw_detail/{id}"
+rest:
+    handlers:
+        methods:
+            get:
+                - type: function
+                  function: \acdhOeaw\arche\openaire\Handlers::onGet
+            getMetadata:
+                - type: function
+                  function: \acdhOeaw\arche\openaire\Handlers::onGetMetadata

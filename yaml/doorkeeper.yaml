@@ -16,3 +16,18 @@ doorkeeper:
         createValue: create
         clarinSet: https://vocabs.acdh.oeaw.ac.at/archeoaisets/clarin-vlo
         clarinSetProperty: https://vocabs.acdh.oeaw.ac.at/schema#hasOaiSet
+rest:
+    handlers:
+        methods:
+            create:
+                - type: function
+                  function: \acdhOeaw\arche\doorkeeper\Doorkeeper::onResEdit
+            updateBinary:
+                - type: function
+                  function: \acdhOeaw\arche\doorkeeper\Doorkeeper::onResEdit
+            updateMetadata:
+                - type: function
+                  function: \acdhOeaw\arche\doorkeeper\Doorkeeper::onResEdit
+            txCommit:
+                - type: function
+                  function: \acdhOeaw\arche\doorkeeper\Doorkeeper::onTxCommit
