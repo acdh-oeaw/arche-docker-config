@@ -19,8 +19,7 @@ try {
     $resources = $graph->import($cfg->schema->namespaces->id, MetadataCollection::SKIP);
     $repo->commit();
 } catch (Exception $e) {
-    //print_r($e);
-    echo $e->getMessage()."\n";
+    echo acdhOeaw\arche\lib\exception\ExceptionUtil::unwrap($e) . "\n";
     $repo->rollback();
 }
 
