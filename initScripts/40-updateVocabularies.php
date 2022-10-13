@@ -14,7 +14,17 @@ $pswd = escapeshellarg($cfg['password']);
 $args = implode(' ', array_map('escapeshellarg', array_slice($argv, 1)));
 
 echo "Importing external vocabularies\n";
-# all arche: properties are skipped because the quite often don't follow the current ontology
+setDoorkeeperChecks(false);
 system("/home/www-data/vendor/bin/arche-import-vocabularies http://127.0.0.1/api --user $user --pswd $pswd --concurrency 6 --makePublic --dropHasTopConcept --allowedNmsp 'http://www.w3.org/2004/02/skos/core#' 'http://purl.org/dc/' $args");
-
+setDoorkeeperChecks(true);
+ 
+function setDoorkeeperChecks(bool $restoreOrFalse): void {
+    $sCfgFile = __DIR__ . '/../yaml/config-repo.yaml';
+    static $dCfgBak = [];
+    $sCfg           = yaml_parse_file($sCfgFile);
+    $dCfgBakTmp     = $sCfg['doorkeeper'];
+    $sCfg['doorkeeper']['checkVocabularyValues'] = $restoreOrFalse ? $dCfgBak['checkVocabularyValues'] : false;
+    yaml_emit_file($sCfgFile, $sCfg);
+    $dCfgBak  = $dCfgBakTmp;
+}
 
