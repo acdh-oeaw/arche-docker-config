@@ -23,10 +23,11 @@ setDoorkeeperChecks(true);
 function setDoorkeeperChecks(bool $on): void {
     $sCfgFile = __DIR__ . '/../yaml/config-repo.yaml';
     static $dCfgBak = [];
-    $sCfg     = yaml_parse_file($sCfgFile);
-    $dCfgBak  = $sCfg['doorkeeper'];
-    $sCfg['doorkeeper']['checkUnknownProperties']    = $on ? $dCfgBak['checkUnknownProperties'] : false;
-    $sCfg['doorkeeper']['checkAutoCreatedResources'] = $on ? $dCfgBak['checkAutoCreatedResources'] : false;
-    $sCfg['doorkeeper']['checkVocabularyValues']     = $on ? $dCfgBak['checkVocabularyValues'] : false;
+    $sCfg           = yaml_parse_file($sCfgFile);
+    $dCfgBakTmp     = $sCfg['doorkeeper'];
+    $sCfg['doorkeeper']['checkUnknownProperties']    = $restoreOrFalse ? $dCfgBak['checkUnknownProperties'] : false;
+    $sCfg['doorkeeper']['checkAutoCreatedResources'] = $restoreOrFalse ? $dCfgBak['checkAutoCreatedResources'] : false;
+    $sCfg['doorkeeper']['checkVocabularyValues']     = $restoreOrFalse ? $dCfgBak['checkVocabularyValues'] : false;
     yaml_emit_file($sCfgFile, $sCfg);
+    $dCfgBak  = $dCfgBakTmp;
 }
