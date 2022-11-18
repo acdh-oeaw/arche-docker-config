@@ -8,15 +8,22 @@
 
 require_once '/home/www-data/vendor/autoload.php';
 
-$cfg = yaml_parse_file(__DIR__ . '/config.yaml')['auth']['httpBasic'];
-$user = escapeshellarg($cfg['user']);
-$pswd = escapeshellarg($cfg['password']);
-$args = implode(' ', array_map('escapeshellarg', array_slice($argv, 1)));
+$cfg   = yaml_parse_file(__DIR__ . '/config.yaml')['auth']['httpBasic'];
+$cache = $cfg['doorkeeper']['ontologyCacheFile'] ?? '';
+$user  = escapeshellarg($cfg['user']);
+$pswd  = escapeshellarg($cfg['password']);
+$args  = implode(' ', array_map('escapeshellarg', array_slice($argv, 1)));
 
 setDoorkeeperChecks(false);
+if (file_exists($cache)) {
+    unlink($cache);
+}
 echo "Importing ontology\n";
 system("/home/www-data/vendor/bin/arche-import-ontology --user $user --pswd $pswd --concurrency 6 $args http://127.0.0.1/api");
 setDoorkeeperChecks(true);
+if (file_exists($cache)) {
+    unlink($cache);
+}
 
 // helper functions
 

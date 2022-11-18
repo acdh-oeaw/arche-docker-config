@@ -1,13 +1,7 @@
 doorkeeper:
     rolePublic: public
     roleAcademic: academic
-    referenceByUri:
-        https://vocabs.acdh.oeaw.ac.at/schema#Agent:
-        - http://viaf.org/viaf/
-        - https://orcid.org/
-        - https://d-nb.info/gnd/
-        - https://www.wikidata.org/entity/
-    referenceByUriResolve: true
+    ontologyCacheFile: ontologyCache.sqlite
     # Should Doorkeeper::checkUnknownProperties() be run? We need to be able to turn it off for the ontology import.
     checkUnknownProperties: true
     # Should Doorkeeper::checkAutoCreatedResources() be run? We need to be able to turn it off for the ontology import.
