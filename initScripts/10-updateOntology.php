@@ -20,7 +20,7 @@ setDoorkeeperChecks(true);
 
 // helper functions
 
-function setDoorkeeperChecks(bool $on): void {
+function setDoorkeeperChecks(bool $restoreOrFalse): void {
     $sCfgFile = __DIR__ . '/../yaml/config-repo.yaml';
     static $dCfgBak = [];
     $sCfg           = yaml_parse_file($sCfgFile);

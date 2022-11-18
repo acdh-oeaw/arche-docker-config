@@ -41,7 +41,7 @@
 
     <aocat:has_temporal_coverage>
        <aocat:AO_Temporal_Region> 
-          <aocat:has_period ComponentId="ariadnePeriod" val="@acdh:hasTemporalCoverageIdentifier" count="*"/>
+          <aocat:has_period val="/acdh:hasTemporalCoverageIdentifier" asAttribute="rdf:resource" match="^http://n2t.net/ark:/" count="*"></aocat:has_period>
           <aocat:has_native_period ComponentId="ariadneNativePeriod" val="@acdh:hasTemporalCoverage" count="*" lang="true"/>
           <aocat:from val="/acdh:hasCoverageStartDate" aggregate="min" count="1" dateFormat="Y-m-d"></aocat:from>
           <aocat:until val="/acdh:hasCoverageEndDate" aggregate="max" count="1" dateFormat="Y-m-d"></aocat:until>

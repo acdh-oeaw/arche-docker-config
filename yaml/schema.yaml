@@ -93,4 +93,5 @@ schema:
         url: https://vocabs.acdh.oeaw.ac.at/schema#hasUrl
         version: https://vocabs.acdh.oeaw.ac.at/schema#hasVersion
         info: https://vocabs.acdh.oeaw.ac.at/schema#hasVersionInfo
+        description: https://vocabs.acdh.oeaw.ac.at/schema#hasDescription
 
