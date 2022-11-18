@@ -7,6 +7,10 @@ doorkeeper:
     checkAutoCreatedResources: true
     # Should Doorkeeper::maintainPropertyRangeVocabs() be run? We need to be able to turn it off for the ontology import.
     checkVocabularyValues: true
+    checkRanges:
+        https://vocabs.acdh.oeaw.ac.at/schema#Agent: [viaf, orcid, gnd, wikidata, arche-localhost, acdhi, arche, pmb]
+        https://vocabs.acdh.oeaw.ac.at/schema#Place: [wikidata, arche-localhost, acdhi, arche, pmb, geonames]
+        https://vocabs.acdh.oeaw.ac.at/schema#AgentOrPlace: [[viaf, orcid, gnd, wikidata, arche-localhost, acdhi, arche, pmb, geonames]
     epicPid:
         resolver: 'https://hdl.handle.net/'
         url: 'https://pid.gwdg.de/handles/'
