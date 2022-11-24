@@ -27,8 +27,8 @@
     <aocat:has_access_policy rdf:resource="https://arche.acdh.oeaw.ac.at/browser/terms-of-use"/>
     <aocat:has_access_rights val="/acdh:hasLicenseSummary" count="1" lang="true"></aocat:has_access_rights>
     <aocat:has_extent val="acdh:hasExtent" count="*" lang="true"></aocat:has_extent>
-
-    <aocat:has_language ComponentId="ariadneLanguage" val="@acdh:hasLanguage" count="*"/>
+    
+    <aocat:has_language ComponentId="ariadneLanguage" val="@acdh:hasLanguage" count="*"/> 
 
     <aocat:has_publisher ComponentId="ariadnePublisher" val="@acdh:hasHosting" count="+"/>
     <aocat:has_creator ComponentId="ariadneCreator" val="@acdh:hasCreator" count="+"/>
@@ -40,13 +40,21 @@
     <aocat:has_spatial_coverage ComponentId="ariadnePlace" val="@acdh:hasSpatialCoverage" count="+"/>
 
     <aocat:has_temporal_coverage>
-       <aocat:AO_Temporal_Region> 
-          <aocat:has_period val="/acdh:hasTemporalCoverageIdentifier" asAttribute="rdf:resource" match="^http://n2t.net/ark:/" count="*"></aocat:has_period>
-          <aocat:has_native_period ComponentId="ariadneNativePeriod" val="@acdh:hasTemporalCoverage" count="*" lang="true"/>
-          <aocat:from val="/acdh:hasCoverageStartDate" aggregate="min" count="1" dateFormat="Y-m-d"></aocat:from>
-          <aocat:until val="/acdh:hasCoverageEndDate" aggregate="max" count="1" dateFormat="Y-m-d"></aocat:until>
-       </aocat:AO_Temporal_Region>  
+        <aocat:AO_Temporal_Region> 
+            <aocat:has_period val="/acdh:hasTemporalCoverageIdentifier" asAttribute="rdf:resource" match="^http://n2t.net/ark:/" count="*"></aocat:has_period>
+        </aocat:AO_Temporal_Region>
     </aocat:has_temporal_coverage>    
+
+    <aocat:has_temporal_coverage ComponentId="ariadneNativePeriod" val="@acdh:hasTemporalCoverage" count="*" lang="true"/>
+
+    <aocat:has_temporal_coverage>
+        <aocat:AO_Temporal_Region>
+            <aocat:from val="/acdh:hasCoverageStartDate" aggregate="min" count="1" dateFormat="Y-m-d"></aocat:from>
+            <aocat:until val="/acdh:hasCoverageEndDate" aggregate="max" count="1" dateFormat="Y-m-d"></aocat:until>
+        </aocat:AO_Temporal_Region>
+    </aocat:has_temporal_coverage>
+
+    <!-- It has been requested by ARIADNE to provide temporal periods individually and not all within a single AO_Temporal_Region with argumentation, that each period is a period on its own. -->    
 
     <aocat:has_native_subject ComponentId="ariadneNativeSubject" val="@acdh:hasSubject" count="*" lang="true"/>
     <aocat:has_ARIADNE_subject>
