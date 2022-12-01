@@ -1,0 +1,29 @@
+openaire:
+    url: "https://analytics.openaire.eu/piwik.php"
+    id: 602
+    # defined in local.yaml
+    authToken: ""
+    trackIp: false
+    trackUserAgent: true
+    pidQuery: |
+        SELECT m1.value
+        FROM
+            (SELECT id FROM get_relatives(?, ?, 0, -99999, false, false) t ORDER BY n LIMIT 1) i
+            JOIN metadata m1 USING (id)
+            JOIN metadata m2 USING (id)
+        WHERE m1.property = ? AND m2.property = ? AND m2.value = ?
+    pidQueryParam:
+        - "{id}"
+        - https://vocabs.acdh.oeaw.ac.at/schema#isPartOf
+        - https://vocabs.acdh.oeaw.ac.at/schema#hasPid
+        - http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+        - https://vocabs.acdh.oeaw.ac.at/schema#TopCollection
+rest:
+    handlers:
+        methods:
+            get:
+                - type: function
+                  function: \acdhOeaw\arche\openaire\Handlers::onGet
+            getMetadata:
+                - type: function
+                  function: \acdhOeaw\arche\openaire\Handlers::onGetMetadata

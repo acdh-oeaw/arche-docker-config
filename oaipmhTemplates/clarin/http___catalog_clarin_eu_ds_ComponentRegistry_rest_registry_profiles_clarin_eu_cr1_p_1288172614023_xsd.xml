@@ -129,8 +129,7 @@
             <cmdp:temporal              count="*"             val="/acdh:hasTemporalCoverageIdentifier"/>
             <cmdp:title                 count="*" lang="true" val="/acdh:hasTitle"/>
             <cmdp:type                  count="*" lang="true" val="@acdh:hasCategory/acdh:hasTitle"/>
-            <cmdp:type                  count="*"             val="@acdh:hasCategory/acdh:hasIdentifier" valueMapProp="skos:prefLabel"/>
-            <cmdp:type                  count="*"             val="@acdh:hasCategory/acdh:hasIdentifier" valueMapProp="skos:relatedMatch"/>
+            <cmdp:type                  count="*" lang="true" val="@acdh:hasCategory/skos:prefLabel"/>
             <!--
             <cmdp:valid                 count="*" lang="true" val=""/>  
             -->

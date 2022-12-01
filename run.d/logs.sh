@@ -5,7 +5,7 @@ LD=/home/www-data/log
 rm -f $LD/apache2.log $LD/initScripts.log $LD/postgresql.log $LD/supervisor.log $LD/supervisor.pid $LD/txDaemon.log
 
 # compress persistent logs
-MAX_SIZE=104857600 # 10M
+MAX_SIZE=1048576000 # 100M
 for i in `ls -1 $LD | grep -v gz$`; do
     if (( `du -b $LD/$i | cut -f -1` > $MAX_SIZE )) ; then
         echo "Compressing log file $i" 

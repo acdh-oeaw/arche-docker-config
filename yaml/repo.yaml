@@ -164,17 +164,5 @@ rest:
             #exceptionOnTimeout: true
         classLoader:
             #acdhOeaw\acdhRepo\tests: /home/zozlak/roboty/ACDH/repo/rdbms/tests
-        methods:
-            create:
-                - type: function
-                  function: \acdhOeaw\arche\doorkeeper\Doorkeeper::onResEdit
-            updateBinary:
-                - type: function
-                  function: \acdhOeaw\arche\doorkeeper\Doorkeeper::onResEdit
-            updateMetadata:
-                - type: function
-                  function: \acdhOeaw\arche\doorkeeper\Doorkeeper::onResEdit
-            txCommit:
-                - type: function
-                  function: \acdhOeaw\arche\doorkeeper\Doorkeeper::onTxCommit
+        methods: {}
 

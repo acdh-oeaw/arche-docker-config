@@ -6,7 +6,7 @@ use GuzzleHttp\Pool;
 
 include '/home/www-data/vendor/autoload.php';
 
-$param = ['dbConn' => 'pgsql:', 'timeout' => 10, 'parallel' => 5, 'retry400WithGet' => false, 'help' => false];
+$param = ['dbConn' => 'pgsql:', 'timeout' => 10, 'parallel' => 5, 'retry400WithGet' => false, 'help' => false, 'progress' => false];
 $helpStr = "$argv[0] [--timeout seconds] [--parallel N] [--dbConn PDOconnString] [--retryGet] [--help]\n\nSearches arche-core database for broken URLs.\nAll literal values of type xsd:anyURI are checked.\n\ndefault parameter values: dbConn: '" . $param['dbConn'] . "', timeout: " . $param['timeout'] . ", parallel: " . $param['parallel'] . "\n\n";
 foreach ($argv as $n => $v) {
     if (in_array($v, ['--timeout', '--parallel', '--dbConn'])) {
@@ -15,7 +15,7 @@ foreach ($argv as $n => $v) {
             exit();
         }
         $param[substr($v, 2)] = $argv[$n + 1];
-    } else if (in_array($v, ['--retry400WithGet', '--help'])) {
+    } else if (in_array($v, ['--retry400WithGet', '--help', '--progress'])) {
         $param[substr($v, 2)] = true;
     }
 }
@@ -42,13 +42,17 @@ echo "@ Checking for broken URLs (" . date('Y-m-d H:i:s') . ") $count URLs to ch
 
 $urls = [];
 function fetchRequests($pdo) {
-    global $urls;
+    global $urls, $param, $count, $t0;
     $query = $pdo->query("SELECT DISTINCT value FROM metadata WHERE type = 'http://www.w3.org/2001/XMLSchema#anyURI'");
     $n = 0;
     while ($i = $query->fetchColumn()) {
         $urls[(string)$n] = $i;
         yield new Request('HEAD', $urls[(string)$n]);
         $n++;
+        if ($param['progress'] && $n % 1000 === 0) {
+            $t = intval(microtime(true) - $t0);
+            fwrite(STDERR, "# $n / $count (" . intval(100 * $n / $count) . "%) $t s ETA " . intval($t / $n * $count - $t) . " s\n");
+        }
     }
 }
 $broken  = [];
@@ -96,7 +100,15 @@ if (count($failing) > 0) {
         echo "* $url => $reason\n" . reportResources($url) . "\n";
     }
 }
-foreach ($broken as $code => $urls) {
+// move 403 to the bottom
+$codes = array_filter(array_keys($broken), fn($x) => intval($x) !== 403);
+sort($codes);
+if (isset($broken['403'])) {
+    $codes[] = '403';
+}
+// print
+foreach ($codes as $code) {
+    $urls = $broken[$code];
     echo "\n# HTTP code $code:\n\n";
     foreach ($urls as $url => $redirects) {
         $other = '';

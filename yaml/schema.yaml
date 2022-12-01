@@ -88,4 +88,10 @@ schema:
         recommended: https://vocabs.acdh.oeaw.ac.at/schema#recommendedClass
         langTag: https://vocabs.acdh.oeaw.ac.at/schema#langTag
         vocabs: https://vocabs.acdh.oeaw.ac.at/schema#vocabs
+        dateStart: https://vocabs.acdh.oeaw.ac.at/schema#hasCreatedStartDate
+        dateEnd: https://vocabs.acdh.oeaw.ac.at/schema#hasCreatedEndDate
+        url: https://vocabs.acdh.oeaw.ac.at/schema#hasUrl
+        version: https://vocabs.acdh.oeaw.ac.at/schema#hasVersion
+        info: https://vocabs.acdh.oeaw.ac.at/schema#hasVersionInfo
+        description: https://vocabs.acdh.oeaw.ac.at/schema#hasDescription
 
