@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <aocat:has_period xmlns:aocat="https://www.ariadne-infrastructure.eu/resource/ao/cat/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:skos="http://www.w3.org/2004/02/skos/core#">
-     <aocat:AO_Concept>
-        <skos:prefLabel val="/acdh:hasTemporalCoverageIdentifier" match="^http://n2t.net/ark:/" count ="*"></skos:prefLabel>
-     </aocat:AO_Concept>
+  <aocat:has_period xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:aocat="https://www.ariadne-infrastructure.eu/resource/ao/cat/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+     <owl:Thing val="/acdh:hasTemporalCoverageIdentifier" match="^http://n2t.net/ark:/" asAttribute="rdf:about">
+        <rdfs:label val="/acdh:hasTemporalCoverageIdentifier" match="^http://n2t.net/ark:/" count ="*"></rdfs:label>
+     </owl:Thing>
   </aocat:has_period>
 

@@ -2,7 +2,7 @@
   <aocat:has_temporal_coverage xmlns:aocat="https://www.ariadne-infrastructure.eu/resource/ao/cat/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:skos="http://www.w3.org/2004/02/skos/core#">
       <aocat:AO_Temporal_Region>
           <aocat:has_native_period>  
-             <aocat:AO_Concept>
+             <aocat:AO_Concept val="/acdh:hasTemporalCoverage" asAttribute="rdf:about">
                  <skos:prefLabel val="/acdh:hasTemporalCoverage" count ="*" lang="true"></skos:prefLabel>
              </aocat:AO_Concept>
           </aocat:has_native_period>
