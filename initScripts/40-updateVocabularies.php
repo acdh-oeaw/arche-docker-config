@@ -15,7 +15,7 @@ $args = implode(' ', array_map('escapeshellarg', array_slice($argv, 1)));
 
 echo "Importing external vocabularies\n";
 setDoorkeeperChecks(false);
-system("/home/www-data/vendor/bin/arche-import-vocabularies http://127.0.0.1/api --user $user --pswd $pswd --verbose --concurrency 6 --makePublic --dropHasTopConcept --allowedNmsp 'http://www.w3.org/2004/02/skos/core#' 'http://purl.org/dc/' $args");
+system("/home/www-data/vendor/bin/arche-import-vocabularies http://127.0.0.1/api --user $user --pswd $pswd --concurrency 6 --makePublic --dropHasTopConcept --allowedNmsp 'http://www.w3.org/2004/02/skos/core#' 'http://purl.org/dc/' $args");
 setDoorkeeperChecks(true);
  
 function setDoorkeeperChecks(bool $restoreOrFalse): void {
