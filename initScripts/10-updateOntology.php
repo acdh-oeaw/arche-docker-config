@@ -19,7 +19,7 @@ if (file_exists($cache)) {
     unlink($cache);
 }
 echo "Importing ontology\n";
-system("/home/www-data/vendor/bin/arche-import-ontology --user $user --pswd $pswd --concurrency 6 $args http://127.0.0.1/api");
+system("/home/www-data/vendor/bin/arche-import-ontology --user $user --pswd $pswd --verbose --concurrency 6 $args http://127.0.0.1/api");
 setDoorkeeperChecks(true);
 if (file_exists($cache)) {
     unlink($cache);
