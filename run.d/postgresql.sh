@@ -10,7 +10,6 @@ if [ ! -z "$PG_EXTERNAL" ]; then
         INIT_DB=1
     fi
 else
-    PG_CONN=$PG_DBNAME
     if [ ! -f /home/www-data/postgresql/postgresql.conf ]; then
         # initialize local database cluster
         su -l www-data -c "/usr/lib/postgresql/$PG_VERSION/bin/initdb -D /home/www-data/postgresql --auth=ident -U www-data --locale en_US.UTF-8" &&\
