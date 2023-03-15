@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-    <aocat:has_spatial_coverage xmlns:aocat="https://www.ariadne-infrastructure.eu/resource/ao/cat/1.1/" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-        <aocat:AO_Spatial_Region_Point>
-           <rdfs:label val="/acdh:hasTitle" count="1" lang="true"></rdfs:label>
-           <aocat:has_place_name val="/acdh:hasTitle" count="1" lang="true"></aocat:has_place_name>
-           <aocat:has_latitude val="/acdh:hasLatitude" count="*"></aocat:has_latitude>
-           <aocat:has_longitude val="/acdh:hasLongitude" count="*"></aocat:has_longitude>
-        </aocat:AO_Spatial_Region_Point>
-    </aocat:has_spatial_coverage>
+<aocat:has_spatial_coverage xmlns:aocat="https://www.ariadne-infrastructure.eu/resource/ao/cat/1.1/" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <!--<aocat:AO_Spatial_Region_Point val="URI" asAttribute="rdf:about" match="^.*/([^/]+)$" replace="https://ariadne-infrastructure.eu/aocat/Place/OEAW/\1">-->
+    <aocat:AO_Spatial_Region_Point val="URI" asAttribute="rdf:about">
+        <aocat:has_coordinate_system xml:lang="en">WGS-84</aocat:has_coordinate_system>
+        <rdfs:label val="/acdh:hasTitle" count="1" lang="true"></rdfs:label>
+        <aocat:has_place_name val="/acdh:hasTitle" count="1" lang="true"></aocat:has_place_name>
+        <aocat:has_latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal" val="/acdh:hasLatitude" count="*"></aocat:has_latitude>
+        <aocat:has_longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal" val="/acdh:hasLongitude" count="*"></aocat:has_longitude>
+    </aocat:AO_Spatial_Region_Point>
+</aocat:has_spatial_coverage>
