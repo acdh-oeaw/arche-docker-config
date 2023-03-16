@@ -52,8 +52,7 @@ try {
 
     $repo->commit();
 } catch (Exception $e) {
-    //print_r($e);
-    echo $e->getMessage()."\n";
+    echo acdhOeaw\arche\lib\exception\ExceptionUtil::unwrap($e) . "\n";
     $repo->rollback();
 }
 
