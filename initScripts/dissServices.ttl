@@ -459,7 +459,7 @@ acdhids:turtleCollectionMatch2
 # EXIF
 acdhids:exif
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "https://arche-exif.minerva.arz.oeaw.ac.at/id={RES_URI|url}" ;
+    acdh:serviceLocation    "https://arche-exif.apollo.arz.oeaw.ac.at/?id={RES_URI|url}" ;
     acdh:hasReturnType      "application/json" ;
     acdh:hasReturnType      "exif" ;
     acdh:serviceRevProxy    false ;
