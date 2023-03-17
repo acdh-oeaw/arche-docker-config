@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aocat:has_native_subject xmlns:aocat="https://www.ariadne-infrastructure.eu/resource/ao/cat/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:skos="http://www.w3.org/2004/02/skos/core#">
-    <aocat:AO_Concept val="/acdh:hasSubject" match="(^.*$)" replace="https://ariadne-infrastructure.eu/aocat/Concept/ARCHE/\0" asAttribute="rdf:about">
+    <aocat:AO_Concept val="/acdh:hasSubject" match="(^.*$)" replace="https://ariadne-infrastructure.eu/aocat/Concept/OEAW/\0" asAttribute="rdf:about">
         <skos:prefLabel val="/acdh:hasSubject" count ="*" lang="true"></skos:prefLabel>
     </aocat:AO_Concept>
 </aocat:has_native_subject>

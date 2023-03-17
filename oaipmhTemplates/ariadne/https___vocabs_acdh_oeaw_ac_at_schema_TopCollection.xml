@@ -47,7 +47,7 @@
     <aocat:has_language ComponentId="ariadneLanguage" val="@acdh:hasLanguage" count="*"/> 
 
     <aocat:has_publisher>    
-        <aocat:AO_Agent>
+        <aocat:AO_Agent rdf:about="https://ariadne-infrastructure.eu/aocat/Agent/Austrian%20Academy%20of%20Sciences%20%28OeAW%29">
             <aocat:has_homepage>
                 <owl:Thing rdf:about="https://www.oeaw.ac.at/">
                     <rdfs:label>https://www.oeaw.ac.at/</rdfs:label>
@@ -98,7 +98,7 @@
     <aocat:has_native_subject ComponentId="ariadneNativeSubject" val="@acdh:hasSubject" count="*" lang="true"/>
    
     <aocat:has_ARIADNE_subject>
-        <aocat:AO_Concept val="/acdh:hasSubject" match="^(Site and monument|Fieldwork|Fieldwork report|Scientific analysis|Date|Artefact|Coin|Building survey|Fieldwork archive|Maritime|Inscription|Rock art|Burial)$" count ="1" replace="https://ariadne-infrastructure.eu/aocat/Concept/AO_Subject/OEAW/\1" asAttribute="rdf:about">
+        <aocat:AO_Concept val="/acdh:hasSubject" match="^(Site and monument|Fieldwork|Fieldwork report|Scientific analysis|Date|Artefact|Coin|Building survey|Fieldwork archive|Maritime|Inscription|Rock art|Burial)$" count ="1" replace="https://ariadne-infrastructure.eu/aocat/Concept/AO_Subject/\1" asAttribute="rdf:about">
             <skos:prefLabel val="/acdh:hasSubject" match="^(Site and monument|Fieldwork|Fieldwork report|Scientific analysis|Date|Artefact|Coin|Building survey|Fieldwork archive|Maritime|Inscription|Rock art|Burial)$" count ="1" lang="true"></skos:prefLabel>
         </aocat:AO_Concept> 
     </aocat:has_ARIADNE_subject>
