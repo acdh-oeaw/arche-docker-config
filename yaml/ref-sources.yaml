@@ -1,0 +1,209 @@
+# ARCHE repository base URL
+repositoryUrl: https://arche-dev.acdh-dev.oeaw.ac.at/api
+namespaces:
+  acdh: https://vocabs.acdh.oeaw.ac.at/schema#
+  acdhi: https://id.acdh.oeaw.ac.at/
+referenceSources:
+  # identifier of the external authority file matching the UriNormalizer rule's
+  # `name` property, see e.g. https://github.com/acdh-oeaw/arche-assets/blob/master/AcdhArcheAssets/uriNormRules.json
+  gnd:
+    # class reported by the external authority file
+    https://d-nb.info/standards/elementset/gnd#DifferentiatedPerson:
+      # ARCHE schema property
+    - property: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+      action: if missing
+      # set a fixed value
+      value: https://vocabs.acdh.oeaw.ac.at/schema#Person
+      type: resource
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier
+      # How to merge extracted values with values from other databases
+      # - add - just take union of all values
+      # - replace - replace already harvested values with values extracted from this database
+      #             (as databases are processed in the order given in the config file
+      #              this can be still influenced by below-defined database mappings)
+      # - if missing - add values only if a given property has no value yet
+      action: add
+      # ARCHE schema property type: id, literal or resource
+      type: id
+      # Path of RDF properties leading to the given property in the RDF metadata
+      # provided by the external reference source.
+      # In the simple case (like here) just an equivalent property in the external reference source.
+      path:
+      - http://www.w3.org/2002/07/owl#sameAs
+      # (optional) Only values matching given regexp will be included.
+      # Can be used e.g. to allow only identifiers in allowed namespaces (like here).
+      # (if "match" is provided, both conditions must be fulfilled)
+      match: viaf.org|wikidata.org|d-nb.info|orcid.org
+      # (optional) Only values which don't match given regexp will be included.
+      # Can be used e.g. to skip identifiers in namespaces we don't trust (like here).
+      # (if "match" is provided, both conditions must be fulfilled)
+      skip: isni.org|id.loc.gov.pl
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
+      action: if missing
+      type: literal
+      # One of:
+      # - overwrite - forcefully set lang of all values to the `langValue` config property value
+      # - assure [default] - if lang is missing, set it to the `langValue` config property value
+      #                      (note that if `langValue` is missing or empty, it's equivalent to "pass")
+      # - remove - drop all lang tags
+      # - pass - just pass what's in the data
+      # It's worth nothing language tag is processed only when `type` config property equals "literal"
+      langProcess: overwrite
+      langValue: und
+      # maximum number of values per lang tag value; first encountered values below the limit are kept
+      maxPerLang: 1
+      path:
+      - https://d-nb.info/standards/elementset/gnd#preferredNameForThePerson
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasFirstName
+      action: if missing
+      type: literal
+      langProcess: overwrite
+      langValue: und
+      maxPerLang: 1
+      path:
+      - https://d-nb.info/standards/elementset/gnd#preferredNameEntityForThePerson
+      - https://d-nb.info/standards/elementset/gnd#forename
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasLastName
+      action: if missing
+      type: literal
+      langProcess: overwrite
+      langValue: und
+      maxPerLang: 1
+      path:
+      - https://d-nb.info/standards/elementset/gnd#preferredNameEntityForThePerson
+      - https://d-nb.info/standards/elementset/gnd#surname
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasUrl
+      action: add
+      type: literal
+      path:
+      - https://d-nb.info/standards/elementset/gnd#homepage
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasDescription
+      action: replace
+      type: literal
+      path:
+      - https://d-nb.info/standards/elementset/gnd#biographicalOrHistoricalInformation
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasAlternativeTitle
+      action: add
+      type: literal
+      langProcess: assure
+      langValue: und
+      maxPerLang: 3
+      path:
+      - https://d-nb.info/standards/elementset/gnd#variantNameForThePerson
+    https://d-nb.info/standards/elementset/gnd#CorporateBody:
+    - property: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+      action: if missing
+      value: https://vocabs.acdh.oeaw.ac.at/schema#Organisation
+      type: resource
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier
+      action: add
+      type: id
+      path:
+      - http://www.w3.org/2002/07/owl#sameAs
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
+      action: if missing
+      type: literal
+      langProcess: overwrite
+      langValue: und
+      maxPerLang: 1
+      path:
+      - https://d-nb.info/standards/elementset/gnd#preferredNameForTheCorporateBody
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasAlternativeTitle
+      action: add
+      type: literal
+      langProcess: assure
+      langValue: und
+      path:
+      - https://d-nb.info/standards/elementset/gnd#variantNameForTheCorporateBody
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasAddress
+      action: replace
+      type: literal
+      path:
+      - https://d-nb.info/standards/elementset/gnd#placeOfBusiness
+      - https://d-nb.info/standards/elementset/gnd#preferredNameForThePlaceOrGeographicName
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasCountry
+      action: replace
+      type: literal
+      langProcess: assure
+      langValue: und
+      path:
+      - https://d-nb.info/standards/elementset/gnd#geographicAreaCode
+      - http://www.w3.org/2004/02/skos/core#prefLabel
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasUrl
+      action: add
+      type: literal
+      path:
+      - https://d-nb.info/standards/elementset/gnd#homepage
+  viaf:
+    http://schema.org/Person:
+    - property: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+      action: if missing
+      value: https://vocabs.acdh.oeaw.ac.at/schema#Person
+      type: resource
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier
+      action: add
+      type: id
+      path:
+      - http://schema.org/sameAs
+      # orcid in viaf seems strange - skipping
+      match: viaf.org|wikidata.org|d-nb.info
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
+      action: if missing
+      type: literal
+      langProcess: overwrite
+      langValue: und
+      maxPerLang: 1
+      path:
+      - http://www.w3.org/2004/02/skos/core#prefLabel
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasFirstName
+      action: if missing
+      type: literal
+      langProcess: assure
+      langValue: und
+      maxPerLang: 1
+      path:
+      - http://schema.org/givenName
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasLastName
+      action: if missing
+      type: literal
+      langProcess: assure
+      langValue: und
+      maxPerLang: 1
+      path:
+      - http://schema.org/familyName        
+  orcid:
+    http://xmlns.com/foaf/0.1/Person:
+    - property: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+      action: if missing
+      value: https://vocabs.acdh.oeaw.ac.at/schema#Person
+      type: resource
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
+      action: if missing
+      type: literal
+      langProcess: overwrite
+      langValue: und
+      maxPerLang: 1
+      path:
+      - http://www.w3.org/2000/01/rdf-schema#label
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasFirstName
+      action: if missing
+      type: literal
+      langProcess: assure
+      langValue: und
+      maxPerLang: 1
+      path:
+      - http://xmlns.com/foaf/0.1/givenName
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasLastName
+      action: if missing
+      type: literal
+      langProcess: assure
+      langValue: und
+      maxPerLang: 1
+      path:
+      - http://xmlns.com/foaf/0.1/familyName
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasUrl
+      action: add
+      type: literal
+      path:
+      - http://xmlns.com/foaf/0.1/page
+

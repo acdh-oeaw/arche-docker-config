@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-    <aocat:has_contributor xmlns:aocat="https://www.ariadne-infrastructure.eu/resource/ao/cat/1.1/" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <aocat:has_contributor xmlns:aocat="https://www.ariadne-infrastructure.eu/resource/ao/cat/1.1/" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#">
         <aocat:AO_Agent val="URI" asAttribute="rdf:about" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
             <aocat:has_name val="/acdh:hasTitle" count="1" lang="true"></aocat:has_name>
             <aocat:has_agent_identifier val="/acdh:hasIdentifier" count="*"></aocat:has_agent_identifier>
             <aocat:has_email val="/acdh:hasEmail" count="*"></aocat:has_email>
-            <aocat:has_homepage val="/acdh:hasUrl" count="*"></aocat:has_homepage>
+            <aocat:has_homepage ComponentId="ariadneHomepage" val="@acdh:hasUrl" count="*"/>
             <aocat:has_institution val="@acdh:isMemberOf/acdh:hasTitle" count="1" lang="true"></aocat:has_institution>
             <rdfs:label val="/acdh:hasTitle" count="1" lang="true"></rdfs:label>
           </aocat:AO_Agent>

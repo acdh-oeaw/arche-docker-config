@@ -456,3 +456,34 @@ acdhids:turtleCollectionMatch2
     acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/schema#TopCollection" ;
     acdh:isRequired         false .
 
+# EXIF
+acdhids:exif
+    a                       acdh:DisseminationService ;
+    acdh:serviceLocation    "https://arche-exif.acdh.oeaw.ac.at/?id={RES_URI|url}" ;
+    acdh:hasReturnType      "application/json" ;
+    acdh:hasReturnType      "exif" ;
+    acdh:serviceRevProxy    false ;
+    acdh:hasTitle           "EXIF Endpoint"@en ;
+    acdh:hasDescription     "Returns EXIF data of a resource serialized as a JSON"@en .
+acdhids:exifMatch1
+    a                       acdh:DisseminationServiceMatchRule ;
+    acdh:relation           acdhids:exif ;
+    acdh:hasTitle           "exifMatch"@en ;
+    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
+    acdh:matchesValue       "image/jpeg" ;
+    acdh:isRequired         false .
+acdhids:exifMatch2
+    a                       acdh:DisseminationServiceMatchRule ;
+    acdh:relation           acdhids:exif ;
+    acdh:hasTitle           "exifMatch"@en ;
+    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
+    acdh:matchesValue       "image/png" ;
+    acdh:isRequired         false .
+acdhids:exifMatch3
+    a                       acdh:DisseminationServiceMatchRule ;
+    acdh:relation           acdhids:exif ;
+    acdh:hasTitle           "exifMatch"@en ;
+    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
+    acdh:matchesValue       "image/tiff" ;
+    acdh:isRequired         false .
+
