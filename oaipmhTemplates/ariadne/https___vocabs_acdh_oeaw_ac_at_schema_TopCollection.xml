@@ -10,6 +10,8 @@
     xmlns:ariadneplus="https://ariadne-infrastructure.eu/aocat/">
 
 <aocat:AO_Collection val="URI" asAttribute="rdf:about">
+    <bar ComponentId="ariadneCreator" asAttribute="rdf:about"/>
+
     <rdfs:label val="URI" count="1"></rdfs:label>
     <aocat:has_identifier val="/acdh:hasNonLinkedIdentifier" count="*"></aocat:has_identifier>
     <aocat:has_identifier val="/acdh:hasIdentifier" count="*"></aocat:has_identifier>
@@ -81,12 +83,12 @@
     <aocat:has_temporal_coverage ComponentId="ariadneNativePeriod" val="@acdh:hasTemporalCoverage" count="*" lang="true"/>
 
     <aocat:has_temporal_coverage>
-        <aocat:AO_Temporal_Region val="RANDOM" match="^(.*)$" replace="https://ariadne-infrastructure.eu/aocat/Time-Span/OEAW/\1" asAttribute="rdf:about">
+        <aocat:AO_Temporal_Region ComponentId="hasCoverageRange" asAttribute="rdf:about" URLEncode="https://ariadne-infrastructure.eu/aocat/Time-Span/OEAW/">
             <aocat:from val="/acdh:hasCoverageStartDate" aggregate="min" count="1" rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime" dateFormat="o"></aocat:from>
             <aocat:until val="/acdh:hasCoverageEndDate" aggregate="max" count="1" rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime" dateFormat="o"></aocat:until>
             <rdfs:label>Temporal region from <foo val="/acdh:hasCoverageStartDate" aggregate="min" count="1" dateFormat="o" replaceXMLTag="true"/> until <foo val="/acdh:hasCoverageEndDate" aggregate="max" count="1" dateFormat="o" replaceXMLTag="true"/></rdfs:label>
             <aocat:has_native_period>
-                <aocat:AO_Concept val="RANDOM" match="^(.*)$" replace="https://ariadne-infrastructure.eu/aocat/Concept/OEAW/\1" asAttribute="rdf:about">
+                <aocat:AO_Concept ComponentId="hasCoverageRange" asAttribute="rdf:about" URLEncode="https://ariadne-infrastructure.eu/aocat/Concept/OEAW/">
                     <skos:prefLabel xml:lang="en">from <foo val="/acdh:hasCoverageStartDate" aggregate="min" count="1" dateFormat="o" replaceXMLTag="true"/> until <foo val="/acdh:hasCoverageEndDate" aggregate="max" count="1" dateFormat="o" replaceXMLTag="true"/></skos:prefLabel>
                 </aocat:AO_Concept>
             </aocat:has_native_period>
@@ -98,8 +100,8 @@
     <aocat:has_native_subject ComponentId="ariadneNativeSubject" val="@acdh:hasSubject" count="*" lang="true"/>
    
     <aocat:has_ARIADNE_subject>
-        <aocat:AO_Concept val="/acdh:hasSubject" match="^(Site and monument|Fieldwork|Fieldwork report|Scientific analysis|Date|Artefact|Coin|Building survey|Fieldwork archive|Maritime|Inscription|Rock art|Burial)$" count ="1" replace="https://ariadne-infrastructure.eu/aocat/Concept/AO_Subject/\1" asAttribute="rdf:about">
-            <skos:prefLabel val="/acdh:hasSubject" match="^(Site and monument|Fieldwork|Fieldwork report|Scientific analysis|Date|Artefact|Coin|Building survey|Fieldwork archive|Maritime|Inscription|Rock art|Burial)$" count ="1" lang="true"></skos:prefLabel>
+        <aocat:AO_Concept val="/acdh:hasSubject" match="^(Site/monument|Fieldwork|Fieldwork report|Scientific analysis|Date|Artefact|Coin|Building survey|Fieldwork archive|Maritime|Inscription|Rock art|Burial)$" count ="1" URLEncode="https://ariadne-infrastructure.eu/aocat/Concept/AO_Subject/" asAttribute="rdf:about">
+            <skos:prefLabel val="/acdh:hasSubject" match="^(Site/monument|Fieldwork|Fieldwork report|Scientific analysis|Date|Artefact|Coin|Building survey|Fieldwork archive|Maritime|Inscription|Rock art|Burial)$" count ="1" lang="true"></skos:prefLabel>
         </aocat:AO_Concept> 
     </aocat:has_ARIADNE_subject>
 
