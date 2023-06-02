@@ -10,8 +10,6 @@
     xmlns:ariadneplus="https://ariadne-infrastructure.eu/aocat/">
 
 <aocat:AO_Collection val="URI" asAttribute="rdf:about">
-    <bar ComponentId="ariadneCreator" asAttribute="rdf:about"/>
-
     <rdfs:label val="URI" count="1"></rdfs:label>
     <aocat:has_identifier val="/acdh:hasNonLinkedIdentifier" count="*"></aocat:has_identifier>
     <aocat:has_identifier val="/acdh:hasIdentifier" count="*"></aocat:has_identifier>
@@ -39,7 +37,7 @@
    
     <aocat:has_access_policy> 
         <owl:Thing rdf:about="https://arche.acdh.oeaw.ac.at/browser/terms-of-use">
-            <rdfs:label>"https://arche.acdh.oeaw.ac.at/browser/terms-of-use"</rdfs:label>
+            <rdfs:label>https://arche.acdh.oeaw.ac.at/browser/terms-of-use</rdfs:label>
         </owl:Thing>
     </aocat:has_access_policy>
     
