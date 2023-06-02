@@ -153,6 +153,8 @@ rest:
     defaultMetadataWriteMode: merge
     # resource/neighbors/relatives
     defaultMetadataSearchMode: resource
+    # number of triples used to generate namespace aliases
+    outputTriplesCache: 1000
     handlers:
         rabbitMq:
             #host: localhost

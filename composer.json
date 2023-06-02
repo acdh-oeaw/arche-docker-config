@@ -1,6 +1,6 @@
 {
     "require": {
-        "acdh-oeaw/arche-core": "^3.7.9",
+        "acdh-oeaw/arche-core": "^3.8.0",
         "acdh-oeaw/arche-doorkeeper": "^4.1",
         "acdh-oeaw/arche-schema": "^3",
         "acdh-oeaw/arche-schema-ingest": "^3",
@@ -11,7 +11,6 @@
         "acdh-oeaw/arche-openrefine": "^0.5",
         "acdh-oeaw/arche-openaire": "^1.1.0",
         "zozlak/yaml-merge": "^1"
-    },
-    "minimum-stability": "RC"
+    }
 }
 
