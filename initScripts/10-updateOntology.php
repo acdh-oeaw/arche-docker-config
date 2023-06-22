@@ -9,12 +9,12 @@
 require_once '/home/www-data/vendor/autoload.php';
 
 $cfg   = yaml_parse_file(__DIR__ . '/config.yaml')['auth']['httpBasic'];
-$cache = $cfg['doorkeeper']['ontologyCacheFile'] ?? '';
 $user  = escapeshellarg($cfg['user']);
 $pswd  = escapeshellarg($cfg['password']);
 $args  = implode(' ', array_map('escapeshellarg', array_slice($argv, 1)));
 
-setDoorkeeperChecks(false);
+$cfg = setDoorkeeperChecks(false);
+$cache = $cfg['doorkeeper']['ontologyCacheFile'] ?? '';
 if (file_exists($cache)) {
     unlink($cache);
 }
@@ -27,7 +27,7 @@ if (file_exists($cache)) {
 
 // helper functions
 
-function setDoorkeeperChecks(bool $restoreOrFalse): void {
+function setDoorkeeperChecks(bool $restoreOrFalse): array {
     $sCfgFile = __DIR__ . '/../yaml/config-repo.yaml';
     static $dCfgBak = [];
     $sCfg           = yaml_parse_file($sCfgFile);
@@ -37,4 +37,5 @@ function setDoorkeeperChecks(bool $restoreOrFalse): void {
     $sCfg['doorkeeper']['checkVocabularyValues']     = $restoreOrFalse ? $dCfgBak['checkVocabularyValues'] : false;
     yaml_emit_file($sCfgFile, $sCfg);
     $dCfgBak  = $dCfgBakTmp;
+    return $sCfg;
 }
