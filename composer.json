@@ -1,6 +1,6 @@
 {
     "require": {
-        "acdh-oeaw/arche-core": "^3.8.0",
+        "acdh-oeaw/arche-core": "^4.0.0",
         "acdh-oeaw/arche-doorkeeper": "^4.1",
         "acdh-oeaw/arche-schema": "^3",
         "acdh-oeaw/arche-schema-ingest": "^3",
