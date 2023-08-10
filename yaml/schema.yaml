@@ -16,6 +16,7 @@ schema:
     searchOrder: search://order
     searchOrderValue: search://orderValue
     searchFts: search://fts
+    searchFtsProperty: search://ftsProperty
     searchCount: search://count
     binarySize: https://vocabs.acdh.oeaw.ac.at/schema#hasRawBinarySize
     fileName: https://vocabs.acdh.oeaw.ac.at/schema#hasFilename
