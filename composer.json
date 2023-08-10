@@ -1,6 +1,7 @@
 {
     "require": {
         "acdh-oeaw/arche-core": "^4",
-        "zozlak/yaml-merge": "^1"
+        "zozlak/yaml-merge": "^1",
+        "sweetrdf/rdf-interface": "^2.0.0-RC2"
     }
 }
