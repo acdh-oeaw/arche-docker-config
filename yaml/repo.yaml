@@ -148,7 +148,7 @@ rest:
         - application/n-triples
         - application/rdf+xml
     # resource/neighbors/relatives
-    defaultMetadataReadMode: neighbors
+    defaultMetadataReadMode: resource
     # add/merge/overwrite (merge is probably the only sane default)
     defaultMetadataWriteMode: merge
     # resource/neighbors/relatives
