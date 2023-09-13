@@ -2,5 +2,6 @@
 /initScripts/*yaml
 /yaml/local.yaml
 /yaml/config-*yaml
+/yaml/*.lastDate
 /composer.lock
 /vendor

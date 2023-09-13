@@ -1,0 +1,17 @@
+repositoryUrl: ~
+namespaces:
+  acdh: https://vocabs.acdh.oeaw.ac.at/schema#
+  acdhi: https://id.acdh.oeaw.ac.at/
+referenceSources:
+  geonames:
+    http://www.geonames.org/ontology#Feature:
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasLatitude
+      action: if missing
+      type: literal
+      path:
+      - http://www.w3.org/2003/01/geo/wgs84_pos#lat
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasLongitude
+      action: if missing
+      type: literal
+      path:
+      - http://www.w3.org/2003/01/geo/wgs84_pos#long
