@@ -44,7 +44,7 @@ acdhi:acdh a acdh:Organisation;
     acdh:hasCountry "Österreich"@de;
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
-    acdh:hasEmail "acdh@oeaw.ac.at";
+    acdh:hasEmail "ACDH-CH-Office@oeaw.ac.at";
     acdh:hasTitle "Austrian Centre for Digital Humanities and Cultural Heritage"@en;
     acdh:hasAlternativeTitle "Austrian Centre for Digital Humanities"@en;
     acdh:hasAlternativeTitle "ACDH-CH"@en;
