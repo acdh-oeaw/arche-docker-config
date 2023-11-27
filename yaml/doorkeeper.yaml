@@ -21,6 +21,11 @@ doorkeeper:
         createValue: create
         clarinSet: https://vocabs.acdh.oeaw.ac.at/archeoaisets/clarin-vlo
         clarinSetProperty: https://vocabs.acdh.oeaw.ac.at/schema#hasOaiSet
+schema:
+    checkRanges:
+        https://vocabs.acdh.oeaw.ac.at/schema#Agent: [viaf, orcid, gnd, wikidata, arche-localhost, acdhi, arche, pmb]
+        https://vocabs.acdh.oeaw.ac.at/schema#Place: [wikidata, arche-localhost, acdhi, arche, pmb, geonames]
+        https://vocabs.acdh.oeaw.ac.at/schema#AgentOrPlace: [viaf, orcid, gnd, wikidata, arche-localhost, acdhi, arche, pmb, geonames]
 rest:
     handlers:
         methods:
