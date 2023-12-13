@@ -315,7 +315,7 @@ acdhids:lorisParam
 # WFS using mapserver proxy
 acdhids:wfs
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "https://maps.acdh.oeaw.ac.at/mapserver/{RES_URI|url}?SERVICE=WFS&{WFS_PARAM}" ;
+    acdh:serviceLocation    "https://maps.acdh.oeaw.ac.at/?id={RES_URI|url}&SERVICE=WFS&{WFS_PARAM}" ;
     acdh:hasReturnType      "application/gml+xml" ;
     acdh:hasReturnType      "wfs" ;
     acdh:serviceRevProxy    false ;
