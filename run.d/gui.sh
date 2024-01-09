@@ -1,9 +1,9 @@
 #!/bin/bash
 if [ ! -d /home/www-data/gui/web ]; then
-    su -l www-data -c 'composer create-project drupal/recommended-project:^9 /home/www-data/gui/tmp --no-interaction --no-install'
+    su -l www-data -c 'composer create-project drupal/recommended-project:^10 /home/www-data/gui/tmp --no-interaction --no-install'
     su -l www-data -c 'mv /home/www-data/gui/tmp/* /home/www-data/gui/ && rmdir /home/www-data/gui/tmp'
-    su -l www-data -c "sed -i -e 's|\"drupal-scaffold\" *:.*|\"drupal-scaffold\": {\"allowed-packages\": [\"acdh-oeaw/arche-gui\",\"acdh-oeaw/arche-theme\" ],|g' /home/www-data/gui/composer.json"
-    su -l www-data -c "cd /home/www-data/gui && composer require drush/drush acdh-oeaw/arche-gui acdh-oeaw/arche-gui-api acdh-oeaw/arche-mde-api acdh-oeaw/arche-theme acdh-oeaw/arche-gui-ontology acdh-oeaw/arche-dashboard composer/installers drupal/core-composer-scaffold drupal/core-project-message drupal/core-recommended drupal/devel drupal/devel_entity_updates drupal/restui drupal/matomo --update-no-dev && composer dump-autoload -o"
+    su -l www-data -c "sed -i -e 's|\"drupal-scaffold\" *:.*|\"drupal-scaffold\": {\"allowed-packages\": [\"acdh-oeaw/arche_core_gui\",\"acdh-oeaw/arche-theme-bs\" ],|g' /home/www-data/gui/composer.json"
+    su -l www-data -c "cd /home/www-data/gui && composer require drush/drush acdh-oeaw/arche_core_gui acdh-oeaw/arche-theme-bs composer/installers drupal/core-composer-scaffold drupal/core-project-message drupal/core-recommended drupal/devel drupal/devel_entity_updates drupal/restui drupal/matomo --update-no-dev && composer dump-autoload -o"
 else
     su -l www-data -c 'cd /home/www-data/gui && composer update --no-dev -o'
 fi
