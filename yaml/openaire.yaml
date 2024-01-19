@@ -5,6 +5,7 @@ openaire:
     authToken: ""
     trackIp: false
     trackUserAgent: true
+    timeout: 1.0
     pidQuery: |
         SELECT m1.value
         FROM
