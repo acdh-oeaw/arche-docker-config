@@ -19,12 +19,12 @@ openaire:
         - https://vocabs.acdh.oeaw.ac.at/schema#hasPid
         - http://www.w3.org/1999/02/22-rdf-syntax-ns#type
         - https://vocabs.acdh.oeaw.ac.at/schema#TopCollection
-rest:
-    handlers:
-        methods:
-            get:
-                - type: function
-                  function: \acdhOeaw\arche\openaire\Handlers::onGet
-            getMetadata:
-                - type: function
-                  function: \acdhOeaw\arche\openaire\Handlers::onGetMetadata
+#rest:
+#    handlers:
+#        methods:
+#            get:
+#                - type: function
+#                  function: \acdhOeaw\arche\openaire\Handlers::onGet
+#            getMetadata:
+#                - type: function
+#                  function: \acdhOeaw\arche\openaire\Handlers::onGetMetadata
