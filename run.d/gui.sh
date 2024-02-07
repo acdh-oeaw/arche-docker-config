@@ -14,6 +14,8 @@ if [ ! -d /home/www-data/gui/web/modules/contrib/arche_core_gui/config ]; then
     su -l www-data -c "mkdir -p /home/www-data/gui/web/modules/contrib/arche_core_gui/config"
 fi
 
+sed -i -e "s/%GUI_DB_DBNAME%/$GUI_DB_NAME/g" -e "s/%GUI_DB_USERNAME%/$GUI_DB_USER/g" -e "s/%GUI_DB_PASSWORD%/$GUI_DB_PSWD/g" -e "s/%GUI_DB_HOST%/$GUI_DB_HOST/g" -e "s/%GUI_DB_PORT%/$GUI_DB_PORT/g" /home/www-data/gui/web/sites/default/settings.php
+
 CMD=/home/www-data/vendor/zozlak/yaml-merge/bin/yaml-edit.php
 CFGD=/home/www-data/config/yaml
 rm -f /home/www-data/gui/web/modules/contrib/arche_core_gui/config/config.yaml $CFGD/config-gui.yaml
