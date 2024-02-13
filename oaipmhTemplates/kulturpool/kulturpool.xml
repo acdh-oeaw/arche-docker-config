@@ -1,56 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<resource>
-  <!-- simple resource property example -->
-  <Title val="/acdh:hasTitle" count="1" lang="true"/>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:edm="http://www.europeana.eu/schemas/edm/"
+    xmlns:ore="http://www.openarchives.org/ore/terms/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:svcs="http://rdfs.org/sioc/services#"
+    xmlns:doap="http://usefulinc.com/ns/doap#">
+    
+    <edm:ProvidedCHO val="OAIID" match="^.*$" replace="\0#CHO" asAttribute="rdf:about">
+        <dc:identifier val="/acdh:hasIdentifier" count="*"/>
+        <!-- required only 1 value out of TEXT, VIDEO, SOUND, IMAGE or 3D -->
+        <edm:type val="@acdh:hasCategory/acdh:hasIdentifier" match="^https://vocabs[.]acdh[.]oeaw[.]ac[.]at/" count="1" valueMap="type"/>
+        <!-- min. 1 of the following -->
+        <dc:title val="/acdh:hasTitle" match="^(?:Facsimiles: )?(.*)$" replace="\1" count="*" lang="true"/>
+        <dc:description val="/acdh:hasDescription" count="*" lang="true"/>
+        <!-- min. 1 of the following -->
+        <dc:subject val="/acdh:hasSubject" count="*" lang="true"/>
+        <dc:type val="/acdh:hasCategory" asAttribute="rdf:resource" count="*"/>
+        <!--<dcterms:spatial ComponentId="kulturpoolSpatial" val="@acdh:hasSpatialCoverage" count="*"/>-->
+        <dcterms:temporal val="/acdh:hasTemporalCoverage" count="*" lang="true"/>
+        <dcterms:temporal val="/acdh:hasTemporalCoverageIdentifier" count="*"/>
+        <!-- only for textual objects -->
+        <dc:language val="@acdh:hasLanguage/acdh:hasIdentifier" count="*" match="^(?:https://vocabs[.]acdh[.]oeaw[.]ac[.]at/iso639[13]/)(.*)" replace="\1"/>
+    </edm:ProvidedCHO>    
+    
+    <ore:Aggregation val="OAIID" match="^.*$" replace="\0#Aggregation" asAttribute="rdf:about">
+        <edm:aggregatedCHO val="OAIID" match="^.*$" replace="\0#CHO" asAttribute="rdf:resource"/>
+        <edm:provider>I guess it is the Kulturpool and we probably do not need to feel it in</edm:provider>
+        <edm:dataProvider val="@acdh:hasHosting/acdh:hasIdentifier" match="https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)" aggregate="min"/>
+        <edm:rights val="@acdh:hasLicense/acdh:hasIdentifier" match="https://creativecommons.org/" replace="http://creativecommons.org/"/>
+        <edm:ugc>false</edm:ugc>
+        <edm:isShownAt val="OAIID" asAttribute="rdf:resource"/>
+        <edm:isShownBy 
+            val="@acdh:hasNextItem/acdh:hasIdentifier" 
+            match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" 
+            replace="https://loris.acdh.oeaw.ac.at/uuid:/\1/full/full/0/default.jpg" 
+            asAttribute="rdf:resource"
+            count="1"/>
+        <edm:hasView
+            val="@^acdh:isPartOf/acdh:hasIdentifier" 
+            match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$"
+            replace="https://loris.acdh.oeaw.ac.at/uuid:/\1/full/full/0/default.jpg" 
+            asAttribute="rdf:resource" 
+            count="*"/>
+    </ore:Aggregation>
 
-  <!-- simple resource property example - multiple values allowed -->
-  <id val="/acdh:hasIdentifier" count="*"/>
+    <placeholder val="@^acdh:isPartOf" ComponentId="webResource" count="*"/>
 
-  <ShortDescription val="/acdh:hasDescription" count="*" lang="true"/>
-  <Keyword val="/acdh:hasSubject" count="*" lang="true"/>
+    <svcs:Service rdf:about="https://loris.acdh.oeaw.ac.at/">
+        <dcterms:conformsTo rdf:resource="http://iiif.io/api/image"/>
+        <doap:implements rdf:resource="http://iiif.io/api/image/2/level2.json"/>
+    </svcs:Service>
 
-  <CreationDate val="/acdh:hasCreatedDate" count="*" dateFormat="Y-m-d"/>
-  <EarliestDate val="/acdh:hasCreatedStartDate" count="*" dateFormat="Y-m-d"/>
-  <LatestDate val="/acdh:hasCreatedEndDate" count="*" dateFormat="Y-m-d"/>
-
-  <Object ComponentId="kulturpoolObject" val="@^acdh:isTitleImageOf" count="1"/>
-
-  <IsShownBy val="/acdh:isSourceOf" format="raw"/>
-  <IsShownAt val="/acdh:hasUrl" count="*"/>
-
-  <!--<ObjectType val="@acdh:hasCategory" count="*" valueMapProp="skos:relatedMatch" valueMapKeepSrc="true"/>--> <!-- not used for arche collection -->
-  <ObjectType val="@acdh:hasCategory/acdh:hasTitle" count="*" lang="true"/> <!-- not used for arche collection -->
-  <Format val="/acdh:hasFormat" count="*"/> <!-- not used for arche collection -->
-
-  <Language val="@acdh:hasLanguage/acdh:hasTitle" count="*" lang="true"/>
-  <Extent val="/acdh:hasExtent" count="1" lang="true"/>
-
-<!--  <Spatial val="@acdh:hasSpatialCoverage" count="*" lang="true"/> -->
-  <Spatial ComponentId="kulturpoolSpatial" val="@acdh:hasSpatialCoverage" count="*"/>
-
-<!--  <Temporal val="@acdh:hasTemporalCoverage" count="*" lang="true"/> -->
-  <Temporal ComponentId="kulturpoolTemporal" val="/acdh:hasTemporalCoverage" count="*"/>
-  <TemporalID val="/acdh:hasTemporalCoverageIdentifier" count="*"/>
-
-  <!-- Hosting institution is called 'Contributor' at Kulturpool -->
-  <Contributor val="@acdh:hasHosting/acdh:hasTitle" count="*" lang="true"/>
-
-  <Rights val="@acdh:hasLicense/acdh:hasTitle" count="1" lang="true"/>
-  <RightsStatus val="@acdh:hasLicense/acdh:hasTitle" count="1" lang="true"/>
-<!--  <Publisher val="@acdh:hasRightsHolder" count="*" lang="true"/> -->
-  <Publisher ComponentId="kulturpoolPublisher" val="@acdh:hasRightsHolder" count="*"/>
-
-<!--  <Source val="@acdh:hasSource" count="*"/> -->
-  <Source ComponentId="kulturpoolSource" val="@acdh:hasSource" count="*"/>
-
-<!--  <Relation val="@acdh:relation" count="*"/> -->
-  <Relation ComponentId="kulturpoolRelatedEntity" val="@acdh:relation" count="*"/>
-
-<!--  <HasView val="@^acdh:isPartOf/acdh:hasPid" count="*"/> -->
-  <HasView ComponentId="kulturpoolHasView" val="@^acdh:isPartOf" count="*"/>
-
-<!--  <IsPartOf val="@acdh:isPartOf/acdh:hasTitle" count="*"/> -->
-  <IsPartOf ComponentId="kulturpoolIsPart" val="@acdh:isPartOf" count="*"/>
-
-  <AvailableDate val="/acdh:hasAvailableDate" count="1" dateFormat="Y-m-d"/>
-</resource>
+    <skos:Concept ComponentId="kulturpoolType" val="@acdh:hasCategory" count="*"/>
+</rdf:RDF>

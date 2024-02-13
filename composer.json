@@ -10,11 +10,11 @@
         "acdh-oeaw/arche-fcs": "^1.1",
         "acdh-oeaw/arche-openrefine": "^0.5",
         "acdh-oeaw/arche-openaire": "^1.1.0",
-        "acdh-oeaw/arche-ref-sources": "^0.8.2",
         "zozlak/yaml-merge": "^1",
-        "sweetrdf/rdf-interface": "^2.0.0-RC2",
-        "sweetrdf/simple-rdf": "^2.0.0-RC2",
-        "sweetrdf/quick-rdf": "^2.0.0-RC2"
+        "sweetrdf/rdf-interface": "^2.0.0-RC7",
+        "sweetrdf/simple-rdf": "^2.0.0-RC7",
+        "sweetrdf/quick-rdf": "^2.0.0-RC7",
+	"sweetrdf/rdf-helpers": "2.0.0-RC1"
     }
 }
 

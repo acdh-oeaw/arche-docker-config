@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Spatial>
-  <title val="/acdh:hasTitle" count="*" lang="true"></title>
-  <alttitle val="/acdh:hasAlternativeTitle" count="*" lang="true"></alttitle>
-  <id val="/acdh:hasIdentifier" count="*"></id>
-  <lat val="/acdh:hasLatitude" count="1"></lat>
-  <long val="/acdh:hasLongitude" count="1"></long>
-</Spatial>
+<edm:Place xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+           xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+           xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+           xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
+           val="URI" asAttribute="rdf:about">
+  <skos:prefLabel val="/acdh:hasTitle" count="1" lang="true"/>
+  <skos:altLabel val="/acdh:hasAlternativeTitle" count="*" lang="true"/>
+  <wgs84_pos:lat val="/acdh:hasLatitude" count="1"/>
+  <wgs84_pos:long val="/acdh:hasLongitude" count="1"/>
+</edm:Place>
