@@ -1,0 +1,12 @@
+{
+    "require": {
+        "acdh-oeaw/arche-core": "^5",
+        "acdh-oeaw/arche-doorkeeper": "dev-master",
+        "acdh-oeaw/arche-schema": "^4",
+        "acdh-oeaw/arche-schema-ingest": "^4",
+        "acdh-oeaw/arche-fcs": "^1.1",
+        "acdh-oeaw/arche-openrefine": "^0.5",
+        "acdh-oeaw/arche-openaire": "^1.1.0",
+        "zozlak/yaml-merge": "^1"
+    }
+}
