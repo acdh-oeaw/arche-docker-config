@@ -1,7 +1,7 @@
 {
     "require": {
         "acdh-oeaw/arche-core": "^5",
-        "acdh-oeaw/arche-doorkeeper": "dev-master",
+        "acdh-oeaw/arche-doorkeeper": "^5",
         "acdh-oeaw/arche-schema": "^4",
         "acdh-oeaw/arche-schema-ingest": "^4",
         "acdh-oeaw/arche-fcs": "^1.1",
