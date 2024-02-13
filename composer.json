@@ -1,24 +1,16 @@
 {
     "require": {
-        "acdh-oeaw/arche-lib": "dev-rdfInterface",
-        "acdh-oeaw/arche-core": "dev-rdfinterface",
-        "acdh-oeaw/arche-schema": "^4",
-        "acdh-oeaw/arche-schema-ingest": "dev-rdfInterface",
-        "acdh-oeaw/arche-lib-ingest": "dev-rdfInterface",
+        "acdh-oeaw/arche-core": "^5.0.0-RC1",
+        "acdh-oeaw/arche-schema-ingest": "^4.0.0-RC1",
+        "acdh-oeaw/arche-lib-schema": "^7.0.0-RC5",
         "acdh-oeaw/arche-doorkeeper": "dev-rdfInterface",
+        "acdh-oeaw/arche-schema": "^4",
         "zozlak/yaml-merge": "^1",
         "zozlak/rdf-constants": "^1",
-        "acdh-oeaw/arche-assets": "^3.10",
+        "acdh-oeaw/arche-assets": "^3.14",
         "acdh-oeaw/epic-handle": "^1",
-        "renanbr/bibtex-parser": "^2.1",
-        "sweetrdf/rdf-interface": "dev-master",
-        "sweetrdf/simple-rdf": "dev-master",
-        "sweetrdf/quick-rdf": "dev-master",
-        "sweetrdf/quick-rdf-io": "dev-master",
-        "acdh-oeaw/uri-normalizer": "dev-master",
-        "acdh-oeaw/arche-lib-schema": "dev-master",
-        "sweetrdf/rdf-helpers": "dev-dev",
-        "sweetrdf/term-templates": "dev-dev"
-    }
+        "renanbr/bibtex-parser": "^2.1"
+    },
+    "minimum-stability": "RC"
 }
 
