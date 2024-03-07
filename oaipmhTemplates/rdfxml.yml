@@ -1,4 +1,0 @@
-metadataPrefix: rdfxml
-metadataNamespace: http://unknown/namespace
-schema: http://unknown/schema
-class: \acdhOeaw\arche\oaipmh\metadata\RdfXml
