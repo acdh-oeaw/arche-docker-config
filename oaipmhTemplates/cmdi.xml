@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmd:CMD CMDVersion="1.2" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:cmd="http://www.clarin.eu/cmd/1"
+         xmlns:cmdp="http://www.clarin.eu/cmd/1/profiles/clarin.eu:cr1:p_1288172614023"
+         xsi:schemaLocation="http://www.clarin.eu/cmd/1
+                             https://infra.clarin.eu/CMDI/1.x/xsd/cmd-envelop.xsd
+                             http://www.clarin.eu/cmd/1/profiles/clarin.eu:cr1:p_1288172614023
+                             https://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/1.x/profiles/clarin.eu:cr1:p_1288172614023/xsd">
+    <cmd:Header>
+        <cmd:MdCreator               val="/acdh:hasMetadataCreator/acdh:hasTitle" aggregate="min"/>
+        <cmd:MdCreationDate          val="NOW" format="D:Y-m-d"/>
+        <cmd:MdSelfLink              val="/acdh:hasMetadataPid" aggregate="min"/>
+        <cmd:MdProfile               val="=clarin.eu:cr1:p_1288172614023"/>
+        <cmd:MdCollectionDisplayName val="/acdh:isPartOf*/acdh:hasTitle" aggregate="min,en" lang="if empty"/>
+    </cmd:Header>
+    <cmd:Resources>
+        <cmd:ResourceProxyList>
+            <cmd:ResourceProxy val="SEQ" as="@id">
+                <cmd:ResourceType val1="=Resource"
+                                  val2="/^acdh:hasPid/acdh:hasFormat" as2="@mimetype" required2="optional"/>
+                <cmd:ResourceRef val="/acdh:hasPid"/>
+            </cmd:ResourceProxy>
+            <cmd:ResourceProxy foreach="/^acdh:isSourceOf/acdh:hasPid" val="SEQ" as="@id">
+                <cmd:ResourceType val1="=Resource"
+                                  val2="/^acdh:hasPid/acdh:hasFormat" as2="@mimetype" required2="optional"/>
+                <cmd:ResourceRef val="CURNODE"/>
+            </cmd:ResourceProxy>
+            <cmd:ResourceProxy foreach="/^acdh:isPartOf/acdh:hasPid" val="SEQ" as="@id">
+                <cmd:ResourceType val1="=Resource"
+                                  val2="/^acdh:hasPid/acdh:hasFormat" as2="@mimetype" required2="optional"/>
+                <cmd:ResourceRef val="CURNODE"/>
+            </cmd:ResourceProxy>
+        </cmd:ResourceProxyList>
+        <cmd:JournalFileProxyList/>
+        <cmd:ResourceRelationList/>
+    </cmd:Resources>
+    <cmd:IsPartOfList>
+        <cmd:IsPartOf val="/acdh:isPartOf*/acdh:hasPid" remove="remove"/>
+    </cmd:IsPartOfList>
+    <cmd:Components>
+        <cmdp:DcmiTerms>
+            <!--
+            <cmdp:abstract              remove="remove" lang="if empty" val=""/>
+            <cmdp:accessRights          remove="remove" lang="if empty" val=""/>
+            <cmdp:accrualMethod         remove="remove" lang="if empty" val=""/>
+            <cmdp:accrualPeriodicity    remove="remove" lang="if empty" val=""/>
+            <cmdp:accrualPolicy         remove="remove" lang="if empty" val=""/>
+            <cmdp:alternative           remove="remove" lang="if empty" val=""/>
+            <cmdp:audience              remove="remove" lang="if empty" val=""/>
+            <cmdp:available             remove="remove" lang="if empty" val=""/>
+            <cmdp:bibliographicCitation remove="remove" lang="if empty" val=""/>
+            <cmdp:conformsTo            remove="remove" lang="if empty" val=""/>
+            -->
+            <cmdp:contributor           remove="remove"                 val="/acdh:hasContributor" />
+            <cmdp:contributor           remove="remove" lang="if empty" val="/acdh:hasContributor/acdh:hasTitle" />
+            <cmdp:coverage              remove="remove" lang="if empty" val="/acdh:hasSpatialCoverage/acdh:hasTitle" />
+            <cmdp:coverage              remove="remove"                 val="/acdh:hasSpatialCoverage" />
+            <!--
+            <cmdp:created               remove="remove" lang="if empty" val=""/>
+            -->
+            <cmdp:creator               remove="remove" lang="if empty" val="/acdh:hasCreator/acdh:hasTitle" />
+            <cmdp:creator               remove="remove"                 val="/acdh:hasCreator" />
+            <cmdp:date                  remove="remove" lang="if empty" val="/acdh:hasAvailableDate"/>
+            <cmdp:dateAccepted          remove="remove" lang="if empty" val="/acdh:hasAcceptedDate"/>
+            <!--
+            <cmdp:dateCopyrighted       remove="remove" lang="if empty" val=""/>
+            -->
+            <cmdp:dateSubmitted         remove="remove" lang="if empty" val="/acdh:hasSubmissionDate"/>
+            <cmdp:description           remove="remove" lang="if empty" val="/acdh:hasDescription"/>
+            <!--
+            <cmdp:educationLevel        remove="remove" lang="if empty" val=""/>
+            <cmdp:extent                remove="remove" lang="if empty" val=""/>
+            -->
+            <cmdp:format                remove="remove" lang="if empty" val="/acdh:hasFormat"/>
+            <!--
+            <cmdp:hasFormat             remove="remove" lang="if empty" val=""/>
+            <cmdp:hasPart               remove="remove" lang="if empty" val=""/>
+            <cmdp:hasVersion            remove="remove" lang="if empty" val=""/>
+            -->
+            <cmdp:identifier            remove="remove"                 val="/acdh:hasIdentifier"/>
+            <!--
+            <cmdp:instructionalMethod   remove="remove" lang="if empty" val=""/>
+            <cmdp:isFormatOf            remove="remove" lang="if empty" val=""/>
+            -->
+            <cmdp:isPartOf              remove="remove" lang="if empty" val="/acdh:isPartOf/acdh:hasTitle"/>
+            <cmdp:isPartOf              remove="remove"                 val="/acdh:isPartOf"/>
+            <!--
+            <cmdp:isReferencedBy        remove="remove" lang="if empty" val=""/>
+            <cmdp:isReplacedBy          remove="remove" lang="if empty" val=""/>
+            <cmdp:isRequiredBy          remove="remove" lang="if empty" val=""/>
+            <cmdp:issued                remove="remove" lang="if empty" val=""/>
+            <cmdp:isVersionOf           remove="remove" lang="if empty" val=""/>
+            -->
+            <cmdp:language              remove="remove" lang="if empty" val="/acdh:hasLanguage/acdh:hasTitle"/>
+            <cmdp:license               remove="remove" lang="if empty" val="/acdh:hasLicence/acdh:hasTitle"/>
+            <!--
+            <cmdp:mediator              remove="remove" lang="if empty" val=""/>
+            <cmdp:medium                remove="remove" lang="if empty" val=""/>
+            -->
+            <cmdp:modified              remove="remove" lang="if empty" val="/acdh:hasUpdatedDate"/>
+            <!--
+            <cmdp:provenance            remove="remove" lang="if empty" val=""/>
+            -->
+            <cmdp:publisher             remove="remove" lang="if empty" val="/acdh:hasHosting/acdh:hasTitle" />
+            <cmdp:publisher             remove="remove"                 val="/acdh:hasHosting"/>
+            <!--
+            <cmdp:references            remove="remove" lang="if empty" val=""/>
+            -->
+            <cmdp:relation              remove="remove"                 val="/acdh:hasRelation" />
+            <cmdp:relation              remove="remove"                 val="/acdh:continues" />
+            <cmdp:relation              remove="remove"                 val="/acdh:documents" />
+            <cmdp:relation              remove="remove"                 val="/acdh:hasDerivedPublication" />
+            <cmdp:relation              remove="remove"                 val="/acdh:hasRelatedCollection" />
+            <cmdp:relation              remove="remove"                 val="/acdh:hasRelatedProject" />
+            <cmdp:relation              remove="remove"                 val="/acdh:hasSource" />
+            <cmdp:relation              remove="remove"                 val="/acdh:isContinuedBy" />
+            <cmdp:relation              remove="remove"                 val="/acdh:isDerivedPublicationOf" />
+            <cmdp:relation              remove="remove"                 val="/acdh:isMetadataFor" />
+            <cmdp:relation              remove="remove"                 val="/acdh:isNewVersionOf" />
+            <cmdp:relation              remove="remove"                 val="/acdh:isSourceOf" />
+            <cmdp:relation              remove="remove"                 val="/acdh:isTitleImageOf" />
+            <!--
+            <cmdp:replaces              remove="remove" lang="if empty" val=""/>
+            <cmdp:requires              remove="remove" lang="if empty" val=""/> 
+            -->
+            <cmdp:rights                remove="remove" lang="if empty" val="/acdh:hasLicense/acdh:hasTitle"/>
+            <cmdp:rightsHolder          remove="remove" lang="if empty" val="/acdh:hasRightsHolder/acdh:hasTitle"/>
+            <cmdp:rightsHolder          remove="remove"                 val="/acdh:hasRightsHolder"/>
+            <cmdp:source                remove="remove" lang="if empty" val="/acdh:hasSource" />
+            <cmdp:spatial               remove="remove" lang="if empty" val="/acdh:hasSpatialCoverage/acdh:hasTitle"/>
+            <cmdp:spatial               remove="remove"                 val="/acdh:hasSpatialCoverage"/>
+            <cmdp:subject               remove="remove" lang="if empty" val="/acdh:hasSubject"/>
+            <!--
+            <cmdp:tableOfContents       remove="remove" lang="if empty" val=""/>
+            -->
+            <cmdp:temporal              remove="remove" lang="if empty" val="/acdh:hasTemporalCoverage"/>
+            <cmdp:temporal              remove="remove"                 val="/acdh:hasTemporalCoverageIdentifier"/>
+            <cmdp:title                 remove="remove" lang="if empty" val="/acdh:hasTitle"/>
+            <cmdp:type                  remove="remove" lang="if empty" val="/acdh:hasCategory/acdh:hasTitle"/>
+            <cmdp:type                  remove="remove" lang="if empty" val="/acdh:hasCategory/skos:prefLabel"/>
+            <!--
+            <cmdp:valid                 remove="remove" lang="if empty" val=""/>  
+            -->
+        </cmdp:DcmiTerms>
+    </cmd:Components>
+</cmd:CMD>

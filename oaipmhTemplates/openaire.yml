@@ -1,0 +1,10 @@
+metadataPrefix: oai_datacite
+metadataNamespace: http://unknown/namespace
+schema: http://unknown/schema
+class: \acdhOeaw\arche\oaipmh\metadata\TemplateMetadata
+templatePath: "tmpl/openaire.xml"
+keepComments: false
+xmlErrors: true
+rdfNamespaces:
+  acdh: https://vocabs.acdh.oeaw.ac.at/schema#
+  skos: http://www.w3.org/2004/02/skos/core#

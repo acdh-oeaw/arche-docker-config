@@ -5,6 +5,7 @@
         "acdh-oeaw/arche-schema": "^4",
         "acdh-oeaw/arche-schema-ingest": "^4",
         "acdh-oeaw/arche-resolver": "^4",
+        "acdh-oeaw/arche-oaipmh": "^5",
         "acdh-oeaw/arche-fcs": "^1.1",
         "acdh-oeaw/arche-openrefine": "^0.5",
         "acdh-oeaw/arche-openaire": "^2",

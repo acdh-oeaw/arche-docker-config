@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<dha:hasAnnotationProperty rdf:parseType="Resource"
-	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-	xmlns:dha="https://digital-humanities.at/schema#"
-	xmlns:premis="http://www.loc.gov/premis/rdf/v1#">
-	<rdf:type rdf:resource="https://digital-humanities.at/schema#Concept" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-	<rdfs:label lang="true" val="/acdh:hasSubject" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"/>
-	<dha:hasCatchPhrase lang="true" val="/acdh:hasSubject"/>
-</dha:hasAnnotationProperty>

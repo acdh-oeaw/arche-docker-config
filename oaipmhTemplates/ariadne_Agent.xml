@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aocat:AO_Agent 
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:aocat="https://www.ariadne-infrastructure.eu/resource/ao/cat/1.1/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    val="CURNODE" as="@rdf:about">
+    <rdfs:label                 val="/acdh:hasTitle"      aggregate="min,und" lang="if empty"/>
+    <aocat:has_name             val="/acdh:hasTitle"      aggregate="min,und" lang="if empty"/>
+    <aocat:has_agent_identifier val="/acdh:hasIdentifier"/>
+    <aocat:has_email            val="/acdh:hasEmail"      aggregate="min" remove="remove"/>
+
+    <aocat:has_homepage foreach="/acdh:hasUrl">
+        <owl:Thing val="CURNODE" as="@rdf:about">
+            <rdfs:label val="CURNODE"/>
+        </owl:Thing>
+    </aocat:has_homepage>
+    <aocat:has_institution foreach="/acdh:isMemberOf" val="/acdh:hasTitle" aggregate="min,en" lang="if empty"/>
+</aocat:AO_Agent>
+

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<geoLocation xmlns="http://datacite.org/schema/kernel-3">
-    <!--WARNING ARCHE doesn't store coordinates for collections
-    <geoLocationPoint>31.233 -67.302</geoLocationPoint>
-    <geoLocationBox>41.090 -71.032  42.893 -68.211</geoLocationBox>-->
-    <!--WARNING Datacite allows free text here so we can use acdh:hasSpatialCoverage, just in ARCHE it's 0-N and in datacite 0-1 only which can lead to data loss. -->
-    <geoLocationPlace val="/acdh:hasSpatialCoverage" count="?"/>
-</geoLocation>
