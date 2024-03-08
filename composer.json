@@ -1,7 +1,6 @@
 {
     "require": {
-        "acdh-oeaw/arche-core": "^5.0.0-RC1",
+        "acdh-oeaw/arche-core": "^5.0.0",
         "zozlak/yaml-merge": "^1"
-    },
-    "minimum-stability": "RC"
+    }
 }
