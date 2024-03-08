@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE doc [
+  <!ENTITY Agent SYSTEM "ariadne_Agent.xml">
+]>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:crm="http://www.cidoc-crm.org/cidoc-crm/"
+    xmlns:crmpe="http://parthenos.d4science.org/CRMext/CRMpe.rdfs/"
+    xmlns:aocat="https://www.ariadne-infrastructure.eu/resource/ao/cat/1.1/"
+    xmlns:lexvo="http://lexvo.org/id/iso639-2/"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:ariadneplus="https://ariadne-infrastructure.eu/aocat/">
+
+<aocat:AO_Collection val="URI" as="@rdf:about">
+    <rdfs:label val="URI"/>
+    <aocat:has_identifier val="/acdh:hasNonLinkedIdentifier" remove="remove"/>
+    <aocat:has_identifier val="/acdh:hasIdentifier"          remove="remove"/>
+    <aocat:has_original_id val="/acdh:hasPid"/>
+    
+    <!-- there should only be one original id, I decided for the handle to be it, the rest are in the has_identifier -->
+    <!-- TODO
+    <aocat:has_type></aocat:has_type> 
+    matches acdh:hasCategory, but the domain of hasCategory must be first set to (top)collections - currently only for binary classes 
+     -->
+    <aocat:has_title val="/acdh:hasTitle" lang="if empty" remove="remove"/>
+    
+    <aocat:has_description val="/acdh:hasDescription" lang="if empty" remove="remove"/>
+    
+    <aocat:was_issued     rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime" val="/acdh:hasAvailableDate"  format="D:Y-m-d"/>
+    <aocat:was_created_on rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime" val="/acdh:hasCreatedEndDate" format="D:Y-m-d"/>
+    <aocat:was_modified   rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime" val="/acdh:hasUpdatedDate"    format="D:Y-m-d" remove="remove"/>
+    
+    <aocat:has_landing_page>
+        <owl:Thing val="/acdh:hasPid" as="@rdfs:about">
+            <rdfs:label val="/acdh:hasPid"/>
+        </owl:Thing> 
+    </aocat:has_landing_page>
+   
+    <aocat:has_access_policy> 
+        <owl:Thing rdf:about="https://arche.acdh.oeaw.ac.at/browser/terms-of-use">
+            <rdfs:label val="=https://arche.acdh.oeaw.ac.at/browser/terms-of-use"/>
+        </owl:Thing>
+    </aocat:has_access_policy>
+    
+
+    <aocat:has_access_rights val="/acdh:hasLicenseSummary" lang="if empty" aggregate="min,en"/>
+    <aocat:has_extent        val="/acdh:hasExtent"         lang="if empty" remove="remove"/>
+    <aocat:has_language foreach="/acdh:hasLanguage">
+        <aocat:AO_Concept val="/acdh:hasIdentifier" match="^https://vocabs[.]acdh[.]oeaw[.]ac[.]at/iso6393/(.*)$" replace="http://lexvo.org/id/iso639-3/\1" as="@rdf:about">
+            <skos:prefLabel val="/acdh:hasTitle" aggregate="min,en" lang="if empty"/>
+        </aocat:AO_Concept>
+    </aocat:has_language>
+    <!-- Publisher for ARIADNE is OeAW and is formatted and hardcoded according to the rules they provided. -->
+    <aocat:has_publisher>
+        <aocat:AO_Agent rdf:about="https://ariadne-infrastructure.eu/aocat/Agent/Austrian%20Academy%20of%20Sciences%20%28OeAW%29">
+            <aocat:has_homepage>
+                <owl:Thing rdf:about="https://www.oeaw.ac.at/">
+                    <rdfs:label val="=https://www.oeaw.ac.at/"/>
+                </owl:Thing>
+            </aocat:has_homepage>
+            <aocat:has_name xml:lang="en" val="=Austrian Academy of Sciences (OeAW)"/>
+            <rdfs:label val="=Austrian Academy of Sciences (OeAW)"/>
+        </aocat:AO_Agent>
+    </aocat:has_publisher>
+    
+    <aocat:has_creator foreach="/acdh:hasCreator">&Agent;</aocat:has_creator>
+    <aocat:has_creator foreach="/acdh:hasAuthor">&Agent;</aocat:has_creator>
+    <aocat:has_owner foreach="/acdh:hasOwner">&Agent;</aocat:has_owner>
+    <aocat:has_responsible foreach="/acdh:hasContact">&Agent;</aocat:has_responsible>
+    <aocat:has_contributor foreach="/acdh:hasContributor">&Agent;</aocat:has_contributor>
+    <aocat:has_spatial_coverage foreach="/acdh:hasSpatialCoverage">
+        <!--<aocat:AO_Spatial_Region_Point val="URI" asAttribute="rdf:about" match="^.*/([^/]+)$" replace="https://ariadne-infrastructure.eu/aocat/Place/OEAW/\1">-->
+        <aocat:AO_Spatial_Region_Point val="CURNODE" as="@rdf:about">
+            <aocat:has_coordinate_system xml:lang="en" val="=WGS-84"/>
+            <rdfs:label val="/acdh:hasTitle"           aggregate="min,en" lang="if empty"/>
+            <aocat:has_place_name val="/acdh:hasTitle" aggregate="min,en" lang="if empty"/>
+            <aocat:has_latitude  rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal" val="/acdh:hasLatitude"  remove="remove"/>
+            <aocat:has_longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal" val="/acdh:hasLongitude" remove="remove"/>
+        </aocat:AO_Spatial_Region_Point>
+    </aocat:has_spatial_coverage>
+    <!--
+    <aocat:has_temporal_coverage>
+        <aocat:AO_Temporal_Region> 
+            <aocat:has_period val="/acdh:hasTemporalCoverageIdentifier" asAttribute="rdf:resource" match="^http://n2t.net/ark:/" count="*"></aocat:has_period>
+        </aocat:AO_Temporal_Region>
+    </aocat:has_temporal_coverage>    
+    --> 
+    <aocat:has_temporal_coverage foreach="/acdh:hasTemporalCoverageIdentifier">
+        <aocat:AO_Temporal_Region>
+            <aocat:has_period>
+                <aocat:AO_Concept val="CURNODE" match="^http://n2t.net/ark:/" as="@rdf:about">
+                    <skos:prefLabel val="CURNODE" match="^http://n2t.net/ark:/" remove="remove"/>
+                </aocat:AO_Concept>
+            </aocat:has_period>
+        </aocat:AO_Temporal_Region>
+    </aocat:has_temporal_coverage>
+
+    <aocat:has_temporal_coverage foreach="/acdh:hasTemporalCoverage">
+        <aocat:AO_Temporal_Region>
+            <aocat:has_native_period>
+                <aocat:AO_Concept val="CURNODE" as="@rdf:about">
+                    <skos:prefLabel val="CURNODE" remove="remove" lang="if empty"/>
+                </aocat:AO_Concept>
+            </aocat:has_native_period>
+        </aocat:AO_Temporal_Region>
+    </aocat:has_temporal_coverage>
+
+    <aocat:has_temporal_coverage>
+        <aocat:AO_Temporal_Region val1="=https://ariadne-infrastructure.eu/aocat/Time-Span/OEAW/" as1="@rdf:about"
+                                  val2="/acdh:hasCoverageStartDate" aggregate2="min" format2="D:o" as2="@rdf:about" action2="append"
+                                  val3="=_" as3="@rdf:about" action3="append"
+                                  val4="/acdh:hasCoverageEndDate" aggregate4="max" format4="D:o" as4="@rdf:about" action4="append">
+            <aocat:from  val="/acdh:hasCoverageStartDate" aggregate="min" format="D:o" rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            <aocat:until val="/acdh:hasCoverageEndDate"   aggregate="max" format="D:o" rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            <rdfs:label  val1="=Temporal region from "
+                         val2="/acdh:hasCoverageStartDate" aggregate2="min" format2="D:o"
+                         val3="= until "
+                         val4="/acdh:hasCoverageEndDate"   aggregate4="max" format4="D:o"/>
+            <aocat:has_native_period>
+                <aocat:AO_Concept val1="=https://ariadne-infrastructure.eu/aocat/Concept/OEAW/" as1="@rdf:about"
+                                  val2="/acdh:hasCoverageStartDate" aggregate2="min" format2="D:o" as2="@rdf:about" action2="append"
+                                  val3="=_" as3="@rdf:about" action3="append"
+                                  val4="/acdh:hasCoverageEndDate" aggregate4="max" format4="D:o" as4="@rdf:about" action4="append">
+                    <skos:prefLabel xml:lang="en" val1="=from "
+                                                  val2="/acdh:hasCoverageStartDate" aggregate2="min" format2="D:o" action2="append"
+                                                  val3="= until " action3="append"
+                                                  val4="/acdh:hasCoverageEndDate" aggregate4="max" format4="D:o" action4="append"/>
+                </aocat:AO_Concept>
+            </aocat:has_native_period>
+        </aocat:AO_Temporal_Region>
+    </aocat:has_temporal_coverage>
+    <!-- It has been requested by ARIADNE to provide temporal periods individually and not all within a single AO_Temporal_Region with argumentation, that each period is a period on its own. -->    
+    <aocat:has_native_subject foreach="/acdh:hasSubject">
+        <aocat:AO_Concept val1="=https://ariadne-infrastructure.eu/aocat/Concept/OEAW/" as1="@rdf:about"
+                          val2="CURNODE" format2="U:" as2="@rdf:about" action2="append">
+            <skos:prefLabel val="CURNODE" aggregate="min,en" lang="if empty"/>
+        </aocat:AO_Concept>
+    </aocat:has_native_subject>
+   
+    <aocat:has_ARIADNE_subject>
+        <aocat:AO_Concept val1="=https://ariadne-infrastructure.eu/aocat/Concept/AO_Subject/" as1="@rdf:about"
+                          val2="/acdh:hasSubject" aggregate2="min" format2="U:" as2="@rdf:about" action2="append"
+                          match2="^(Site/monument|Fieldwork|Fieldwork report|Scientific analysis|Date|Artefact|Coin|Building survey|Fieldwork archive|Maritime|Inscription|Rock art|Burial)$">
+            <skos:prefLabel val="/acdh:hasSubject" aggregate="min,en" lang="if empty"
+                            match="^(Site/monument|Fieldwork|Fieldwork report|Scientific analysis|Date|Artefact|Coin|Building survey|Fieldwork archive|Maritime|Inscription|Rock art|Burial)$"/>
+        </aocat:AO_Concept> 
+    </aocat:has_ARIADNE_subject>
+
+    <aocat:refers_to foreach="/acdh:hasActor">&Agent;</aocat:refers_to> 
+    <!-- aocat:has_derived_subject ; is calculated from has_native_subject via vocabulary mapping to Getty AAT -->
+
+</aocat:AO_Collection>
+
+</rdf:RDF>
