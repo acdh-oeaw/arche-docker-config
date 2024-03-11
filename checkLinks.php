@@ -70,7 +70,7 @@ $pool = new Pool($client, fetchRequests($pdo), [
         $index  = (string) $index;
         $url    = $urls[$index];
         $status = $response->getStatusCode();
-        if ($status === 400 && $param['retry400WithGet']) {
+        if ($status >= 400 && $status < 500 && $param['retry400WithGet']) {
             $response = $client->send(new Request('GET', $url));
             $status = $response->getStatusCode();
         }
