@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skos:Concept xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+           xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+           xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+           xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
+           val="URI" asAttribute="rdf:about">
+  <skos:prefLabel val="/skos:prefLabel" count="*" lang="true"/>
+  <skos:altLabel val="/skos:altLabel" count="*" lang="true"/>
+  <skos:inScheme rdf:resource="https://vocabs.acdh.oeaw.ac.at/archecategory/Schema"/>
+</skos:Concept>

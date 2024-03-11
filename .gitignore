@@ -5,3 +5,5 @@
 /yaml/*.lastDate
 /composer.lock
 /vendor
+oaipmhTemplates/.DS_Store
+.DS_Store

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edm:WebResource
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:edm="http://www.europeana.eu/schemas/edm/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:svcs="http://rdfs.org/sioc/services#"
+    val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1/full/full/0/default.jpg" asAttribute="rdf:about">
+
+    <edm:rights val="@acdh:hasLicense/acdh:hasIdentifier" match="^https://creativecommons.org/" replace="http://creativecommons.org/"/>
+    <dc:format>image/jpeg</dc:format>
+    <dcterms:issued val="/acdh:hasAvailableDate"/>
+    <svcs:has_service rdf:resource="https://loris.acdh.oeaw.ac.at/"/>
+    <edm:isNextInSequence val="@acdh:hasNextItem/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1/full/full/0/default.jpg" asAttribute="rdf:resource" count="*"/>
+</edm:WebResource>
