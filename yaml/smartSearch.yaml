@@ -1,5 +1,7 @@
 smartSearch:
+    matchesLimit: 10000
     prefLang: en
+    fallbackOrderBy: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
     property:
       label: Search match in
       weights:
@@ -9,20 +11,27 @@ smartSearch:
     facets:
     - label: Type
       property: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+      defaultWeight: 0
       weights:
         https://vocabs.acdh.oeaw.ac.at/schema#TopCollection: 500.0
         https://vocabs.acdh.oeaw.ac.at/schema#Collection: 49.0
+        https://vocabs.acdh.oeaw.ac.at/schema#Resource: 1.0
+        https://vocabs.acdh.oeaw.ac.at/schema#Person: 0.5
+        https://vocabs.acdh.oeaw.ac.at/schema#Place: 0.5
+        https://vocabs.acdh.oeaw.ac.at/schema#Organisation: 0.5
+        https://vocabs.acdh.oeaw.ac.at/schema#Publication: 0.5
     - label: License
       property: https://vocabs.acdh.oeaw.ac.at/schema#hasLicense
       type: object
       weights:
-        48908: 1.1 # https://creativecommons.org/publicdomain/zero/1.0/
-        48916: 1.1 # https://creativecommons.org/publicdomain/mark/1.0/
+        48908: 1.0 # https://creativecommons.org/publicdomain/zero/1.0/
+        48916: 1.0 # https://creativecommons.org/publicdomain/mark/1.0/
         48534: 1.0 # https://creativecommons.org/licenses/by/4.0/
         48907: 1.0 # https://creativecommons.org/licenses/by-sa/4.0/
         48903: 1.0 # https://creativecommons.org/licenses/by-nc-nd/4.0/
         48904: 1.0 # https://creativecommons.org/licenses/by-nc-sa/3.0/at/
         48905: 1.0 # https://creativecommons.org/licenses/by-nc-sa/4.0/
+        48913: 1.0 # MIT
         48910: 0.5 # http://rightsstatements.org/vocab/InC/1.0/
     - label: Access restriction
       property: https://vocabs.acdh.oeaw.ac.at/schema#hasAccessRestriction
@@ -49,11 +58,11 @@ smartSearch:
             end:
             - https://vocabs.acdh.oeaw.ac.at/schema#hasCoverageEndDate
             - https://vocabs.acdh.oeaw.ac.at/schema#hasCreatedEndDateOriginal
-        archive:
-            label: Available since
-            bins: 5
-            start: https://vocabs.acdh.oeaw.ac.at/schema#hasAvailableDate
-            end: https://vocabs.acdh.oeaw.ac.at/schema#hasAvailableDate
+#        archive:
+#            label: Available since
+#            bins: 5
+#            start: https://vocabs.acdh.oeaw.ac.at/schema#hasAvailableDate
+#            end: https://vocabs.acdh.oeaw.ac.at/schema#hasAvailableDate
     namedEntities:
         defaultWeight: 1.0
         weights:
@@ -67,4 +76,5 @@ smartSearch:
         - https://vocabs.acdh.oeaw.ac.at/schema#Project
         - https://vocabs.acdh.oeaw.ac.at/schema#Publication
         - http://www.w3.org/2004/02/skos/core#Concept
+    facetsCache: /tmp/facetsCache.json
 
