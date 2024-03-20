@@ -123,6 +123,16 @@ oai:
             rdfNamespaces:
                 acdh: https://vocabs.acdh.oeaw.ac.at/schema#
                 skos: http://www.w3.org/2004/02/skos/core#
+            valueMaps:
+                type:
+                    https://vocabs.acdh.oeaw.ac.at/archecategory/text: TEXT
+                    https://vocabs.acdh.oeaw.ac.at/archecategory/text/tei: TEXT
+                    https://vocabs.acdh.oeaw.ac.at/archecategory/audioVisual: VIDEO
+                    https://vocabs.acdh.oeaw.ac.at/archecategory/sound: SOUND
+                    https://vocabs.acdh.oeaw.ac.at/archecategory/sound/speech: SOUND
+                    https://vocabs.acdh.oeaw.ac.at/archecategory/image: IMAGE
+                    https://vocabs.acdh.oeaw.ac.at/archecategory/image/georeferenced: IMAGE
+                    https://vocabs.acdh.oeaw.ac.at/archecategory/3dData: 3D
         ariadne:
             metadataPrefix: ariadne
             metadataNamespace: https://www.ariadne-infrastructure.eu/resource/ao/cat/1.1/
