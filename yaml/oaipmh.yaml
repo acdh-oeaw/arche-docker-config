@@ -94,7 +94,7 @@ oai:
             templatePath: "/home/www-data/config/oaipmhTemplates/oai_dc.xml"
             keepComments: false
             xmlErrors: false
-            propNmsp:
+            rdfNamespaces:
                 acdh: https://vocabs.acdh.oeaw.ac.at/schema#
         rdfxml:
             metadataPrefix: rdfxml
