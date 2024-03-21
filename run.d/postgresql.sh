@@ -44,6 +44,10 @@ for user in repo guest gui; do
     PSWD=`< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-32}`
     su -l www-data -c "echo \"ALTER USER ${PG_USER_PREFIX}$user WITH password '$PSWD'\" | /usr/bin/psql $PG_CONN"
     echo "*:*:*:${PG_USER_PREFIX}$user:$PSWD" >> /home/www-data/.pgpass
+    if [ "$user" == "repo" ] ; then
+       IP="`cat /etc/hosts | grep -E '^[0-9]+[.][0-9]+[.][0-9]+[.][0-9]+' | grep -v localhost | head -n 1 | sed -e 's/\s.*//'`"
+       echo "$IP:5432:www-data:${PG_USER_PREFIX}$user:$PSWD" > /home/www-data/config/backup_pgpass 
+    fi
 done
 PSWD=""
 
