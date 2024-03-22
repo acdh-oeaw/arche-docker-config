@@ -46,7 +46,8 @@ for user in repo guest gui; do
     echo "*:*:*:${PG_USER_PREFIX}$user:$PSWD" >> /home/www-data/.pgpass
     if [ "$user" == "repo" ] ; then
        IP="`cat /etc/hosts | grep -E '^[0-9]+[.][0-9]+[.][0-9]+[.][0-9]+' | grep -v localhost | head -n 1 | sed -e 's/\s.*//'`"
-       echo "$IP:5432:www-data:${PG_USER_PREFIX}$user:$PSWD" > /home/www-data/config/backup_pgpass 
+       echo "$IP:5432:www-data:${PG_USER_PREFIX}$user:$PSWD" > /home/www-data/config/backup_pgpass &&\
+           chmod 600 /home/www-data/config/backup_pgpass
     fi
 done
 PSWD=""
