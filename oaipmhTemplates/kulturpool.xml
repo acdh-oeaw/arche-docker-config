@@ -36,9 +36,9 @@
             val1="/acdh:hasCoverageStartDate" format1="D:Y" aggregate1="min"
             val2="=-"
             val3="/acdh:hasCoverageEndDate" format3="D:Y" aggregate3="max"/>
-        <dc:type val="/acdh:hasCategory/acdh:hasIdentifier" match="...regexDCnamespace..." as="@rdf:resource" remove="remove"/>
+        <dc:type val="/acdh:hasCategory/acdh:hasIdentifier" match="^http://purl[.]org/dc/elements/1[.]1/" as="@rdf:resource" remove="remove"/>
         <!-- required only 1 value out of TEXT, VIDEO, SOUND, IMAGE or 3D -->
-        <edm:type val="/acdh:hasCategory/acdh:hasIdentifier" map="type"/>
+        <edm:type val="/acdh:hasTag" match="^(TEXT|VIDEO|SOUND|IMAGE|3D)$"/>
     </edm:ProvidedCHO>
     
     <ore:Aggregation val="OAIID" match="^.*$" replace="\0#Aggregation" as="@rdf:about">
