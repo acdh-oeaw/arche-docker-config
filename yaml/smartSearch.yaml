@@ -1,6 +1,8 @@
 smartSearch:
     log: /home/www-data/log/smartsearch.log
     facetsCache: /tmp/facetsCache.json
+    exactMatchWeight: 1.5
+    langMatchWeight: 1.1
     matchesLimit: 10000
     prefLang: en
     fallbackOrderBy: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
