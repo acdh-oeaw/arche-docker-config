@@ -1,70 +1,96 @@
 smartSearch:
+    log: /home/www-data/log/smartsearch.log
+    facetsCache: /tmp/facetsCache.json
+    matchesLimit: 10000
     prefLang: en
-    property:
-      label: Search match in
-      weights:
-        https://vocabs.acdh.oeaw.ac.at/schema#hasTitle: 100.0
-        https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier: 50.0
-        https://vocabs.acdh.oeaw.ac.at/schema#hasDescription: 10.0
+    fallbackOrderBy: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
     facets:
-    - label: Type
-      property: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
-      weights:
-        https://vocabs.acdh.oeaw.ac.at/schema#TopCollection: 500.0
-        https://vocabs.acdh.oeaw.ac.at/schema#Collection: 49.0
-    - label: License
+    - type: continuous
+      property: dateContent
+      label: 
+        en: Temporal coverage
+        de: Zeitliche Abdeckung
+      bins: 5
+      start:
+      - https://vocabs.acdh.oeaw.ac.at/schema#hasCoverageStartDate
+      - https://vocabs.acdh.oeaw.ac.at/schema#hasCreatedStartDateOriginal
+      end:
+      - https://vocabs.acdh.oeaw.ac.at/schema#hasCoverageEndDate
+      - https://vocabs.acdh.oeaw.ac.at/schema#hasCreatedEndDateOriginal
+    - type: object
+      property: https://vocabs.acdh.oeaw.ac.at/schema#hasRelatedDiscipline
+      label: 
+        en: Research Discipline
+        de: Research Discipline
+      weights: []
+    - type: object
+      property: https://vocabs.acdh.oeaw.ac.at/schema#hasCategory
+      label: 
+        en: Category
+        de: Research Discipline
+      weights: []
+    - type: object
       property: https://vocabs.acdh.oeaw.ac.at/schema#hasLicense
-      type: object
+      label: 
+        en: License
+        de: Lizenz
       weights:
-        48908: 1.1 # https://creativecommons.org/publicdomain/zero/1.0/
-        48916: 1.1 # https://creativecommons.org/publicdomain/mark/1.0/
-        48534: 1.0 # https://creativecommons.org/licenses/by/4.0/
-        48907: 1.0 # https://creativecommons.org/licenses/by-sa/4.0/
-        48903: 1.0 # https://creativecommons.org/licenses/by-nc-nd/4.0/
-        48904: 1.0 # https://creativecommons.org/licenses/by-nc-sa/3.0/at/
-        48905: 1.0 # https://creativecommons.org/licenses/by-nc-sa/4.0/
-        48910: 0.5 # http://rightsstatements.org/vocab/InC/1.0/
-    - label: Access restriction
+        48908: 1.0
+        48916: 1.0
+        48534: 1.0
+        48907: 1.0
+        48903: 1.0
+        48904: 1.0
+        48905: 1.0
+        48913: 1.0
+        48910: 0.5
+    - type: object
       property: https://vocabs.acdh.oeaw.ac.at/schema#hasAccessRestriction
-      type: object
+      label: 
+        en: Access restriction
+        de: Zugangsbeschränkung
       weights:
         48508: 1.1
         48513: 1.0
         48519: 0.5
-    - label: Related discipline
-      property: https://vocabs.acdh.oeaw.ac.at/schema#hasRelatedDiscipline
-      type: object
-      weights: []
-    - label: Category
-      property: https://vocabs.acdh.oeaw.ac.at/schema#hasCategory
-      type: object
-      weights: []
-    dateFacets:
-        content:
-            label: Temporal coverage
-            bins: 5
-            start:
-            - https://vocabs.acdh.oeaw.ac.at/schema#hasCoverageStartDate
-            - https://vocabs.acdh.oeaw.ac.at/schema#hasCreatedStartDateOriginal
-            end:
-            - https://vocabs.acdh.oeaw.ac.at/schema#hasCoverageEndDate
-            - https://vocabs.acdh.oeaw.ac.at/schema#hasCreatedEndDateOriginal
-        archive:
-            label: Available since
-            bins: 5
-            start: https://vocabs.acdh.oeaw.ac.at/schema#hasAvailableDate
-            end: https://vocabs.acdh.oeaw.ac.at/schema#hasAvailableDate
-    namedEntities:
-        defaultWeight: 1.0
-        weights:
-            https://vocabs.acdh.oeaw.ac.at/schema#hasAuthor: 10.0
-            https://vocabs.acdh.oeaw.ac.at/schema#hasRelatedDiscipline: 5.0
-            https://vocabs.acdh.oeaw.ac.at/schema#hasActor: 1.0
-        classes:
-        - https://vocabs.acdh.oeaw.ac.at/schema#Organisation
-        - https://vocabs.acdh.oeaw.ac.at/schema#Person
-        - https://vocabs.acdh.oeaw.ac.at/schema#Place
-        - https://vocabs.acdh.oeaw.ac.at/schema#Project
-        - https://vocabs.acdh.oeaw.ac.at/schema#Publication
-        - http://www.w3.org/2004/02/skos/core#Concept
+    - type: literal
+      property: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+      label: 
+        en: Type
+        de: Typ
+      important: true
+      defaultWeight: 0
+      weights:
+        https://vocabs.acdh.oeaw.ac.at/schema#TopCollection: 500.0
+        https://vocabs.acdh.oeaw.ac.at/schema#Collection: 49.0
+        https://vocabs.acdh.oeaw.ac.at/schema#Resource: 1.0
+        https://vocabs.acdh.oeaw.ac.at/schema#Person: 0.5
+        https://vocabs.acdh.oeaw.ac.at/schema#Place: 0.5
+        https://vocabs.acdh.oeaw.ac.at/schema#Organisation: 0.5
+        https://vocabs.acdh.oeaw.ac.at/schema#Publication: 0.5
+    - type: matchProperty
+      label: 
+        en: Search match in
+        de: Suche Übereinstimmung in
+      weights:
+        https://vocabs.acdh.oeaw.ac.at/schema#hasTitle: 100.0
+        https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier: 50.0
+        https://vocabs.acdh.oeaw.ac.at/schema#hasDescription: 10.0
+    - type: linkProperty
+      property: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+      label:
+        en: Linking property
+        de: Verknüpfende Eigenschaft
+      defaultWeight: 1.0
+      weights:
+        https://vocabs.acdh.oeaw.ac.at/schema#hasAuthor: 10.0
+        https://vocabs.acdh.oeaw.ac.at/schema#hasRelatedDiscipline: 5.0
+        https://vocabs.acdh.oeaw.ac.at/schema#hasActor: 1.0
+      classes:
+      - https://vocabs.acdh.oeaw.ac.at/schema#Organisation
+      - https://vocabs.acdh.oeaw.ac.at/schema#Person
+      - https://vocabs.acdh.oeaw.ac.at/schema#Place
+      - https://vocabs.acdh.oeaw.ac.at/schema#Project
+      - https://vocabs.acdh.oeaw.ac.at/schema#Publication
+      - http://www.w3.org/2004/02/skos/core#Concept
 
