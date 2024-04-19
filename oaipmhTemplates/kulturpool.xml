@@ -14,7 +14,8 @@
         <!-- literal, 0...n -->
         <dc:identifier val="/acdh:hasIdentifier" remove="remove"/>
         <!-- min. 1 of the following -->
-        <dc:title val="/acdh:hasTitle" match="^(?:Facsimiles: )?(.*)$" replace="\1" remove="remove" lang="if empty"/>
+        <dc:title val="/acdh:hasAlternativeTitle" remove="remove" lang="if empty"/>
+        <dc:title if="none(acdh:hasAlternativeTitle)" val="/acdh:hasTitle" match="^(?:Facsimiles: )?(.*)$" replace="\1" remove="remove" lang="if empty"/>
         <dc:description val="/acdh:hasDescription" remove="remove" lang="if empty"/>
         <!-- required only for object of TEXT type, recommended for objects that include text -->
         <dc:language val="/acdh:hasLanguage/acdh:hasIdentifier" remove="remove" match="^(?:https://vocabs[.]acdh[.]oeaw[.]ac[.]at/iso639[13]/)(.*)" replace="\1"/>
