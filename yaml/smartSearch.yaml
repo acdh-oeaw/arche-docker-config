@@ -23,13 +23,13 @@ smartSearch:
       property: https://vocabs.acdh.oeaw.ac.at/schema#hasRelatedDiscipline
       label: 
         en: Research Discipline
-        de: Research Discipline
+        de: Forschungsdisziplin
       weights: []
     - type: object
       property: https://vocabs.acdh.oeaw.ac.at/schema#hasCategory
       label: 
         en: Category
-        de: Research Discipline
+        de: Kategorie
       weights: []
     - type: object
       property: https://vocabs.acdh.oeaw.ac.at/schema#hasLicense
