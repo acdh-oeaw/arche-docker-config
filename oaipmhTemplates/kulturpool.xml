@@ -63,7 +63,7 @@
     </ore:Aggregation>
     <placeholder foreach="/^acdh:isPartOf" remove="remove">
         <edm:WebResource val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1/full/full/0/default.jpg" as="@rdf:about">
-            <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^https://creativecommons.org/" replace="http://creativecommons.org/"/>
+            <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^https://creativecommons.org/" replace="http://creativecommons.org/" as="@rdf:resource"/>
             <dc:format val="=image/jpeg"/>
             <dcterms:issued val="/acdh:hasAvailableDate"/>
             <svcs:has_service val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1" as="@rdf:resource"/>
