@@ -6,6 +6,10 @@ smartSearch:
     matchesLimit: 10000
     prefLang: en
     fallbackOrderBy: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
+    cacheTimeout: 16 hours
+    autocomplete:
+      count: 10
+      maxLength: 50
     facets:
     - type: continuous
       property: dateContent
@@ -95,4 +99,35 @@ smartSearch:
       - https://vocabs.acdh.oeaw.ac.at/schema#Project
       - https://vocabs.acdh.oeaw.ac.at/schema#Publication
       - http://www.w3.org/2004/02/skos/core#Concept
+    warnings:
+    - message:
+        en: "Category and/or access restriction are collected only for resources of type acdh:Resource."
+        de: "[translate] Category and/or access restriction are collected only for resources of type acdh:Resource."
+      severity: warning
+      match:
+      - https://vocabs.acdh.oeaw.ac.at/schema#hasCategory: ~
+        https://vocabs.acdh.oeaw.ac.at/schema#hasAccessRestriction: ~
+      - http://www.w3.org/1999/02/22-rdf-syntax-ns#type: "!https://vocabs.acdh.oeaw.ac.at/schema#Resource"
+    - message:
+        en: "Depositors rarely provide information on the reaserch dyscipline and/or license for resources of type other than acdh:Resource."
+        de: "[translate] Depositors rarely provide information on the reaserch dyscipline and/or license for resources of type other than acdh:Resource."
+      severity: warning
+      match:
+      - https://vocabs.acdh.oeaw.ac.at/schema#hasRelatedDiscipline: ~
+        https://vocabs.acdh.oeaw.ac.at/schema#hasLicense: ~
+      - http://www.w3.org/1999/02/22-rdf-syntax-ns#type: "!https://vocabs.acdh.oeaw.ac.at/schema#Resource"
+    - message:
+        en: "Depositors often do not provide explicit information on the temporal and/or spatial coverage of the data."
+        de: "[translate] Depositors often do not provide explicit information on the temporal and/or spatial coverage of the data."
+      severity: warning
+      match:
+      - dateContent: ~
+        map: ~
+    emptySearchMessage:
+      en: |
+        <p>You can discover resources in the ARCHE in multiple ways.</p>
+        <p>If you are just looking around, a good starting point may be to list Top Collections by selecting the <em>acdh:TopCollection</em> value from the <strong>Type</strong> search facet.</p>
+        <p>If you have any particular search phrase in mind, please type it in the search field and click the search button. That way you will get an initial results and the search facets will be updated accordingly allowing you to further narrow down your search.</p>
+        <p>If you are interested in particular time period or area, you can use the temporal and spatial filters but please remember that unfortunately many data depositors do not provide this data explicitly. The search may fetch better results if you provide the year, period or place name as a search phrase.</p>
+      de: [provide the message in German]
 
