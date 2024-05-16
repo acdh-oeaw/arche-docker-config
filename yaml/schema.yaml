@@ -29,6 +29,8 @@ schema:
     binaryModificationUser: https://vocabs.acdh.oeaw.ac.at/schema#hasBinaryUpdatedRole
     creationDate: https://vocabs.acdh.oeaw.ac.at/schema#hasAvailableDate
     creationUser: https://vocabs.acdh.oeaw.ac.at/schema#createdBy
+    imagePxWidth: https://vocabs.acdh.oeaw.ac.at/schema#hasPixelWidth
+    imagePxHeight: https://vocabs.acdh.oeaw.ac.at/schema#hasPixelHeight
     # non-repo core mappings
     pid: https://vocabs.acdh.oeaw.ac.at/schema#hasPid
     binarySizeCumulative: https://vocabs.acdh.oeaw.ac.at/schema#hasBinarySize
