@@ -39,6 +39,7 @@ schema:
     accessRole: https://vocabs.acdh.oeaw.ac.at/schema#hasRestrictionRole
     accessRestriction: https://vocabs.acdh.oeaw.ac.at/schema#hasAccessRestriction
     accessRestrictionAgg: https://vocabs.acdh.oeaw.ac.at/schema#hasAccessRestrictionSummary
+    category: https://vocabs.acdh.oeaw.ac.at/schema#hasCategory
     license: https://vocabs.acdh.oeaw.ac.at/schema#hasLicense
     licenseAgg: https://vocabs.acdh.oeaw.ac.at/schema#hasLicenseSummary
     countCumulative: https://vocabs.acdh.oeaw.ac.at/schema#hasNumberOfItems
