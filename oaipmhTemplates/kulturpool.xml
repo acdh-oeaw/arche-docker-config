@@ -57,7 +57,7 @@
     
     <ore:Aggregation val="OAIID" match="^.*$" replace="\0#Aggregation" as="@rdf:about">
         <edm:aggregatedCHO val="OAIID" match="^.*$" replace="\0#CHO" as="@rdf:resource"/>
-        <edm:dataProvider val="/acdh:hasOwner/hasTitle" aggregate="min@en">
+        <edm:dataProvider val="/acdh:hasOwner/hasTitle" aggregate="min@en"/>
         <edm:intermediateProvider val="/acdh:hasHosting/acdh:hasTitle" aggregate="min@en"/>
         <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^https://creativecommons.org/" replace="http://creativecommons.org/" as="@rdf:resource"/>
         <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^http://rightsstatements.org/vocab/" as="@rdf:resource"/>
