@@ -8,11 +8,13 @@
     xmlns:dcterms="http://purl.org/dc/terms/"
     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
     xmlns:svcs="http://rdfs.org/sioc/services#"
-    xmlns:doap="http://usefulinc.com/ns/doap#">
+    xmlns:doap="http://usefulinc.com/ns/doap#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#">
     
     <edm:ProvidedCHO val="OAIID" match="^.*$" replace="\0#CHO" as="@rdf:about">
         <!-- literal, 0...n -->
         <dc:identifier val="/acdh:hasIdentifier" remove="remove"/>
+        <dc:identifier val="/acdh:hasNonLinkedIdentifier" remove="remove"/>
         <!-- min. 1 of the following -->
         <dc:title val="/acdh:hasAlternativeTitle" remove="remove" lang="if empty"/>
         <dc:title if="none(acdh:hasAlternativeTitle)" val="/acdh:hasTitle" match="^(?:Facsimiles: )?(.*)$" replace="\1" remove="remove" lang="if empty"/>
@@ -40,6 +42,19 @@
         <dc:type val="/acdh:hasCategory/acdh:hasIdentifier" match="^http://purl[.]org/dc/elements/1[.]1/" as="@rdf:resource" remove="remove"/>
         <!-- required only 1 value out of TEXT, VIDEO, SOUND, IMAGE or 3D -->
         <edm:type val="/acdh:hasTag" match="^(TEXT|VIDEO|SOUND|IMAGE|3D)$"/>
+        <!-- Optional fields -->
+        <dc:contributor val="/acdh:hasContributor/acdh:hasTitle"/>
+        <dc:coverage val="/acdh:hasCoverage/acdh:hasTitle"/>
+        <dc:creator val="/acdh:hasCreator/acdh:hasTitle"/>
+        <dc:date val="/acdh:hasDate"/>
+        <dc:publisher val="/acdh:hasPublisher"/>
+        <dc:relation val="/acdh:relation"/>
+        <dc:rights val="/acdh:hasRightsInformation"/>
+        <dc:source val="/^acdh:isSourceOf/acdh:hasTitle"/>
+        <edm:isRelatedTo val="/adch:relation" as="@rdf:resource"/>
+        <edm:isRepresentationOf val="/acdh:documents" as="@rdf:resource"/>
+        <edm:isSuccessorOf val="/acdh:continues" as="@rdf:resource"/>
+        <owl:sameAs val="/acdh:hasIdentifier" match="(https://arche[.]acdh[.]oeaw[.]ac[.]at/api/\d+)" replace="\1/metadata" as="@rdf:resource"/>
     </edm:ProvidedCHO>
     
     <ore:Aggregation val="OAIID" match="^.*$" replace="\0#Aggregation" as="@rdf:about">
