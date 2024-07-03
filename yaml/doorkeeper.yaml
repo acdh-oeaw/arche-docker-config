@@ -31,13 +31,13 @@ rest:
         methods:
             create:
                 - type: function
-                  function: \acdhOeaw\arche\doorkeeper\Doorkeeper::onResEdit
+                  function: \acdhOeaw\arche\doorkeeper\Resource::onResEdit
             updateBinary:
                 - type: function
-                  function: \acdhOeaw\arche\doorkeeper\Doorkeeper::onResEdit
+                  function: \acdhOeaw\arche\doorkeeper\Resource::onResEdit
             updateMetadata:
                 - type: function
-                  function: \acdhOeaw\arche\doorkeeper\Doorkeeper::onResEdit
+                  function: \acdhOeaw\arche\doorkeeper\Resource::onResEdit
             txCommit:
                 - type: function
-                  function: \acdhOeaw\arche\doorkeeper\Doorkeeper::onTxCommit
+                  function: \acdhOeaw\arche\doorkeeper\Transaction::onTxCommit
