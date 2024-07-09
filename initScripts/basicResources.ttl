@@ -388,3 +388,20 @@ acdhi:none a acdh:Person;
     acdh:hasDescription "Rights holder as defined in the Austrian Federal Law on Copyright in Literary and Artistic Works and on Related Rights (Copyright Law) StF: BGBl. Nr. 111/1936 (StR: 39/Gu. BT: 64/Ge S. 19.) paragraph II. Used for rights holders / licensors of works in public domain."@en;
     acdh:hasDescription "Urheber definiert nach dem österreichischen Bundesgesetz über das Urheberrecht an Werken der Literatur und der Kunst und über verwandte Schutzrechte (Urheberrechtsgesetz) StF: BGBl. Nr. 111/1936 (StR: 39/Gu. BT: 64/Ge S. 19.) Abschnitt II. Verwendet für Rechteinhaber / Lizenzgeber von gemeinfreien Werken."@de;
     acdh:hasUrl "https://vocabs.acdh.oeaw.ac.at/archelicenses/publicdomain-1-0".
+
+acdhi:rmandell a acdh:Person;
+    acdh:hasIdentifier <https://orcid.org/0000-0002-7876-5893>;
+    acdh:hasTitle "Rachel Mandell"@und;
+    acdh:hasFirstName "Rachel"@und;
+    acdh:hasLastName "Mandell"@und;
+    acdh:hasAddressLine1 "Bäckerstraße 13";
+    acdh:hasAddressLine2 "c/o ACDH-CH";
+    acdh:hasPostcode "1010";
+    acdh:hasCity "Vienna"@en;
+    acdh:hasCity "Wien"@de;
+    acdh:hasCountry "Austria"@en;
+    acdh:hasCountry "Österreich"@de;
+    acdh:hasRegion "Vienna"@en;
+    acdh:hasRegion "Wien"@de;
+    acdh:hasEmail "RachelAlyson.Mandell@oeaw.ac.at";
+    acdh:isMemberOf acdhi:acdh.
