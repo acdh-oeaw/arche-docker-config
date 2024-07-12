@@ -43,18 +43,18 @@
         <!-- required only 1 value out of TEXT, VIDEO, SOUND, IMAGE or 3D -->
         <edm:type val="/acdh:hasTag" match="^(TEXT|VIDEO|SOUND|IMAGE|3D)$"/>
         <!-- Optional fields -->
-        <dc:contributor val="/acdh:hasContributor/acdh:hasTitle"/>
-        <dc:coverage val="/acdh:hasCoverage/acdh:hasTitle"/>
-        <dc:creator val="/acdh:hasAuthor/acdh:hasTitle"/>
-        <dc:date val="/acdh:hasDate"/>
-        <dc:publisher val="/acdh:hasPublisher"/>
-        <dc:relation val="/acdh:relation"/>
-        <dc:rights val="/acdh:hasRightsInformation"/>
-        <dc:source val="/^acdh:isSourceOf/acdh:hasTitle"/>
-        <edm:isRelatedTo val="/adch:relation" as="@rdf:resource"/>
-        <edm:isRepresentationOf val="/acdh:documents" as="@rdf:resource"/>
-        <edm:isSuccessorOf val="/acdh:continues" as="@rdf:resource"/>
-        <owl:sameAs val="/acdh:hasIdentifier" match="(https://arche[.]acdh[.]oeaw[.]ac[.]at/api/\d+)" replace="\1/metadata" as="@rdf:resource"/>
+        <dc:contributor val="/acdh:hasContributor/acdh:hasTitle" remove="remove"/>
+        <dc:coverage val="/acdh:hasCoverage/acdh:hasTitle" remove="remove"/>
+        <dc:creator val="/acdh:hasAuthor/acdh:hasTitle" remove="remove"/>
+        <dc:date val="/acdh:hasDate" remove="remove"/>
+        <dc:publisher val="/acdh:hasPublisher" remove="remove"/>
+        <dc:relation val="/acdh:relation" remove="remove"/>
+        <dc:rights val="/acdh:hasRightsInformation" remove="remove"/>
+        <dc:source val="/^acdh:isSourceOf/acdh:hasTitle" remove="remove"/>
+        <edm:isRelatedTo val="/adch:relation" as="@rdf:resource" remove="remove"/>
+        <edm:isRepresentationOf val="/acdh:documents" as="@rdf:resource" remove="remove"/>
+        <edm:isSuccessorOf val="/acdh:continues" as="@rdf:resource" remove="remove"/>
+        <owl:sameAs val="/acdh:hasIdentifier" match="(https://arche[.]acdh[.]oeaw[.]ac[.]at/api/\d+)" replace="\1/metadata" as="@rdf:resource" remove="remove"/>
     </edm:ProvidedCHO>
     
     <ore:Aggregation val="OAIID" match="^.*$" replace="\0#Aggregation" as="@rdf:about">
@@ -63,35 +63,76 @@
         <edm:dataProvider val="/acdh:hasHosting/acdh:hasTitle" aggregate="min@en"/>
         <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="https://creativecommons.org/" replace="http://creativecommons.org/" as="@rdf:resource"/>
         <edm:isShownAt val="OAIID" as="@rdf:resource"/>
-        <edm:isShownBy 
-            val="/acdh:hasNextItem/acdh:hasIdentifier" 
-            match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" 
-            replace="https://loris.acdh.oeaw.ac.at/uuid:/\1/full/full/0/default.jpg" 
-            as="@rdf:resource"/>
-        <edm:hasView
-            val="/^acdh:isPartOf/acdh:hasIdentifier" 
-            match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$"
-            replace="https://loris.acdh.oeaw.ac.at/uuid:/\1/full/full/0/default.jpg" 
-            as="@rdf:resource" 
-            remove="remove"/>
+        <!-- WebViews being children of the CHO=Aggregation -->
+	<placeholder if="none(rdf:type == acdh:Resource)" remove="remove">
+            <edm:isShownBy 
+                val="/acdh:hasNextItem/acdh:hasIdentifier" 
+                match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" 
+                replace="https://loris.acdh.oeaw.ac.at/uuid:/\1/full/full/0/default.jpg" 
+                as="@rdf:resource"/>
+            <edm:hasView
+                val="/^acdh:isPartOf/acdh:hasIdentifier" 
+                match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$"
+                replace="https://loris.acdh.oeaw.ac.at/uuid:/\1/full/full/0/default.jpg" 
+                as="@rdf:resource" 
+                remove="remove"/>
+	</placeholder>
+        <!-- CHO=Aggregation=WebView -->
+    	<placeholder if="any(rdf:type == acdh:Resource)" remove="remove">
+            <edm:isShownBy 
+                val="/acdh:hasIdentifier" 
+                match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" 
+                replace="https://loris.acdh.oeaw.ac.at/uuid:/\1/full/full/0/default.jpg" 
+                as="@rdf:resource"/>
+            <edm:hasView
+                val="/acdh:hasIdentifier" 
+                match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$"
+                replace="https://loris.acdh.oeaw.ac.at/uuid:/\1/full/full/0/default.jpg" 
+                as="@rdf:resource" 
+                remove="remove"/>
+	</placeholder>
     </ore:Aggregation>
-    <placeholder foreach="/^acdh:isPartOf" remove="remove">
+    <!-- WebViews being children of the CHO=Aggregation -->
+    <placeholder if="none(rdf:type == acdh:Resource)" remove="remove">
+        <placeholder foreach="/^acdh:isPartOf" remove="remove">
+            <edm:WebResource val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1/full/full/0/default.jpg" as="@rdf:about">
+                <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^https://creativecommons.org/" replace="http://creativecommons.org/" as="@rdf:resource"/>
+                <dc:format val="=image/jpeg"/>
+                <dcterms:issued val="/acdh:hasAvailableDate"/>
+		<svcs:has_service val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1" as="@rdf:resource"/>
+		<!-- to be able to filter out edm:isNextInSequence pointing from first child to the collection we need a litle complex syntax -->
+		<placeholder foreach="/^acdh:hasNextItem" remove="remove">
+                    <edm:isNextInSequence
+                        if="any(rdf:type == acdh:Resource)"
+                        val="/^acdh:hasNextItem/acdh:hasIdentifier" 
+                        match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" 
+                        replace="https://loris.acdh.oeaw.ac.at/uuid:/\1/full/full/0/default.jpg"
+                        as="@rdf:resource" 
+                        remove="remove"/>
+		</placeholder>
+            </edm:WebResource>
+        </placeholder>
+        <placeholder foreach="/^acdh:isPartOf" remove="remove">
+            <svcs:Service val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1" as="@rdf:about">
+                <dcterms:conformsTo rdf:resource="http://iiif.io/api/image"/>
+                <doap:implements rdf:resource="http://iiif.io/api/image/2/level2.json"/>
+            </svcs:Service>
+        </placeholder>
+    </placeholder>
+    <!-- CHO=Aggregation=WebView -->
+    <placeholder if="any(rdf:type == acdh:Resource)" remove="remove">
         <edm:WebResource val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1/full/full/0/default.jpg" as="@rdf:about">
             <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^https://creativecommons.org/" replace="http://creativecommons.org/" as="@rdf:resource"/>
             <dc:format val="=image/jpeg"/>
             <dcterms:issued val="/acdh:hasAvailableDate"/>
             <svcs:has_service val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1" as="@rdf:resource"/>
-            <edm:isNextInSequence val="/^acdh:hasNextItem/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1/full/full/0/default.jpg" as="@rdf:resource" remove="remove"/>
         </edm:WebResource>
-    </placeholder>
-    <placeholder foreach="/^acdh:isPartOf" remove="remove">
         <svcs:Service val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1" as="@rdf:about">
             <dcterms:conformsTo rdf:resource="http://iiif.io/api/image"/>
             <doap:implements rdf:resource="http://iiif.io/api/image/2/level2.json"/>
         </svcs:Service>
     </placeholder>
-
-    <placeholder val="/acdh:hasCategory" remove="remove">
+    <placeholder foreach="/acdh:hasCategory" remove="remove">
         <skos:Concept val="CURNODE" as="@rdf:about">
             <skos:prefLabel val="/skos:prefLabel" remove="remove" lang="if empty"/>
             <skos:altLabel val="/skos:altLabel" remove="remove" lang="if empty"/>
