@@ -69,10 +69,6 @@
         <edm:intermediateProvider val="/acdh:hasHosting/acdh:hasTitle" aggregate="min,en"/>
         <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^https://creativecommons[.]org/" replace="http://creativecommons.org/" as="@rdf:resource" remove="remove"/>
         <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^http://rightsstatements[.]org/vocab/" as="@rdf:resource" remove="remove"/>
-        <placeholder foreach="/acdh:hasRightsHolder" remove="remove">
-          <dc:rights>&Agent;</dc:rights>
-        </placeholder>
-        <dc:rights val="/acdh:hasRightsInformation" lang="if empty" remove="remove"/>
         <edm:isShownAt val="OAIID" as="@rdf:resource"/>
         <!-- WebViews being children of the CHO=Aggregation -->
 	<placeholder if="none(rdf:type == acdh:Resource)" remove="remove">
