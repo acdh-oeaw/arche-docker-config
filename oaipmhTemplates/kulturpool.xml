@@ -59,8 +59,8 @@
     
     <ore:Aggregation val="OAIID" match="^.*$" replace="\0#Aggregation" as="@rdf:about">
         <edm:aggregatedCHO val="OAIID" match="^.*$" replace="\0#CHO" as="@rdf:resource"/>
-        <edm:provider val="=I guess it is the Kulturpool and we probably do not need to fill it in"/>
-        <edm:dataProvider val="/acdh:hasHosting/acdh:hasTitle" aggregate="min@en"/>
+        <edm:dataProvider val="/acdh:hasOwner/acdh:hasTitle" aggregate="min,en"/>
+        <edm:intermediateProvider val="/acdh:hasHosting/acdh:hasTitle" aggregate="min,en"/>
         <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="https://creativecommons.org/" replace="http://creativecommons.org/" as="@rdf:resource"/>
         <edm:isShownAt val="OAIID" as="@rdf:resource"/>
         <!-- WebViews being children of the CHO=Aggregation -->
