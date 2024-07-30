@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE doc [
+  <!ENTITY Agent SYSTEM "kulturpool_agent.xml">
+]>
 <rdf:RDF
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
@@ -49,7 +52,10 @@
         <dc:date val="/acdh:hasDate" remove="remove"/>
         <dc:publisher val="/acdh:hasPublisher" remove="remove"/>
         <dc:relation val="/acdh:relation" remove="remove"/>
-        <dc:rights val="/acdh:hasRightsInformation" remove="remove"/>
+        <placeholder foreach="/acdh:hasRightsHolder" remove="remove">
+          <dc:rights>&Agent;</dc:rights>
+        </placeholder>
+        <dc:rights val="/acdh:hasRightsInformation" lang="if empty" remove="remove"/>
         <dc:source val="/^acdh:isSourceOf/acdh:hasTitle" remove="remove"/>
         <edm:isRelatedTo val="/adch:relation" as="@rdf:resource" remove="remove"/>
         <edm:isRepresentationOf val="/acdh:documents" as="@rdf:resource" remove="remove"/>
@@ -61,7 +67,12 @@
         <edm:aggregatedCHO val="OAIID" match="^.*$" replace="\0#CHO" as="@rdf:resource"/>
         <edm:dataProvider val="/acdh:hasOwner/acdh:hasTitle" aggregate="min,en"/>
         <edm:intermediateProvider val="/acdh:hasHosting/acdh:hasTitle" aggregate="min,en"/>
-        <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="https://creativecommons.org/" replace="http://creativecommons.org/" as="@rdf:resource"/>
+        <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^https://creativecommons[.]org/" replace="http://creativecommons.org/" as="@rdf:resource" remove="remove"/>
+        <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^http://rightsstatements[.]org/vocab/" as="@rdf:resource" remove="remove"/>
+        <placeholder foreach="/acdh:hasRightsHolder" remove="remove">
+          <dc:rights>&Agent;</dc:rights>
+        </placeholder>
+        <dc:rights val="/acdh:hasRightsInformation" lang="if empty" remove="remove"/>
         <edm:isShownAt val="OAIID" as="@rdf:resource"/>
         <!-- WebViews being children of the CHO=Aggregation -->
 	<placeholder if="none(rdf:type == acdh:Resource)" remove="remove">
@@ -96,7 +107,12 @@
     <placeholder if="none(rdf:type == acdh:Resource)" remove="remove">
         <placeholder foreach="/^acdh:isPartOf" remove="remove">
             <edm:WebResource val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1/full/full/0/default.jpg" as="@rdf:about">
-                <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^https://creativecommons.org/" replace="http://creativecommons.org/" as="@rdf:resource"/>
+                <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^https://creativecommons[.]org/" replace="http://creativecommons.org/" as="@rdf:resource" remove="remove"/>
+                <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^http://rightsstatements[.]org/vocab/" as="@rdf:resource" remove="remove"/>
+                <placeholder foreach="/acdh:hasRightsHolder" remove="remove">
+                  <dc:rights>&Agent;</dc:rights>
+                </placeholder>
+                <dc:rights val="/acdh:hasRightsInformation" lang="if empty" remove="remove"/>
                 <dc:format val="=image/jpeg"/>
                 <dcterms:issued val="/acdh:hasAvailableDate"/>
 		<svcs:has_service val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1" as="@rdf:resource"/>
@@ -122,7 +138,8 @@
     <!-- CHO=Aggregation=WebView -->
     <placeholder if="any(rdf:type == acdh:Resource)" remove="remove">
         <edm:WebResource val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1/full/full/0/default.jpg" as="@rdf:about">
-            <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^https://creativecommons.org/" replace="http://creativecommons.org/" as="@rdf:resource"/>
+            <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^https://creativecommons[.]org/" replace="http://creativecommons.org/" as="@rdf:resource" remove="remove"/>
+            <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^http://rightsstatements[.]org/vocab/" as="@rdf:resource" remove="remove"/>
             <dc:format val="=image/jpeg"/>
             <dcterms:issued val="/acdh:hasAvailableDate"/>
             <svcs:has_service val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1" as="@rdf:resource"/>
