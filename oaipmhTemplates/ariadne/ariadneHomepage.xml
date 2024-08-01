@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-    <aocat:has_homepage xmlns:aocat="https://www.ariadne-infrastructure.eu/resource/ao/cat/1.1/" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#">
-         <owl:Thing val="/acdh:hasUrl" asAttribute="rdf:about" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-             <rdfs:label val="/acdh:hasUrl" count="*"></rdfs:label>
-         </owl:Thing>
-    </aocat:has_homepage>
-

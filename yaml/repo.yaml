@@ -49,12 +49,15 @@ accessControl:
         dataCol: data
     authMethods:
         - class: \zozlak\auth\authMethod\TrustedHeader
+          advertise: none
           parameters:
             - HTTP_EPPN
         - class: \zozlak\auth\authMethod\HttpBasic
+          advertise: once
           parameters:
              - repo
         - class: \zozlak\auth\authMethod\Guest
+          advertise: none
           parameters:
              - public
 metadataManagment:

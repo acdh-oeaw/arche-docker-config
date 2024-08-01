@@ -30,6 +30,8 @@ schema:
     binaryModificationUser: https://vocabs.acdh.oeaw.ac.at/schema#hasBinaryUpdatedRole
     creationDate: https://vocabs.acdh.oeaw.ac.at/schema#hasAvailableDate
     creationUser: https://vocabs.acdh.oeaw.ac.at/schema#createdBy
+    imagePxWidth: https://vocabs.acdh.oeaw.ac.at/schema#hasPixelWidth
+    imagePxHeight: https://vocabs.acdh.oeaw.ac.at/schema#hasPixelHeight
     # non-repo core mappings
     pid: https://vocabs.acdh.oeaw.ac.at/schema#hasPid
     binarySizeCumulative: https://vocabs.acdh.oeaw.ac.at/schema#hasBinarySize
@@ -37,6 +39,7 @@ schema:
     accessRole: https://vocabs.acdh.oeaw.ac.at/schema#hasRestrictionRole
     accessRestriction: https://vocabs.acdh.oeaw.ac.at/schema#hasAccessRestriction
     accessRestrictionAgg: https://vocabs.acdh.oeaw.ac.at/schema#hasAccessRestrictionSummary
+    category: https://vocabs.acdh.oeaw.ac.at/schema#hasCategory
     license: https://vocabs.acdh.oeaw.ac.at/schema#hasLicense
     licenseAgg: https://vocabs.acdh.oeaw.ac.at/schema#hasLicenseSummary
     countCumulative: https://vocabs.acdh.oeaw.ac.at/schema#hasNumberOfItems
@@ -47,6 +50,7 @@ schema:
     latitude: https://vocabs.acdh.oeaw.ac.at/schema#hasLatitude
     longitude: https://vocabs.acdh.oeaw.ac.at/schema#hasLongitude
     wkt: https://vocabs.acdh.oeaw.ac.at/schema#hasWKT
+    nextItem: https://vocabs.acdh.oeaw.ac.at/schema#hasNextItem
     classes:
         agent: https://vocabs.acdh.oeaw.ac.at/schema#Agent
         binaryContent: https://vocabs.acdh.oeaw.ac.at/schema#BinaryContent

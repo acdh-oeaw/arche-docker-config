@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<cmd:ResourceProxy id="#" xmlns:cmd="http://www.clarin.eu/cmd/1">
-  <cmd:ResourceType>Resource</cmd:ResourceType>
-  <cmd:ResourceRef val="/acdh:hasPid"></cmd:ResourceRef>
-</cmd:ResourceProxy>

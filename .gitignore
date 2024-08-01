@@ -5,3 +5,5 @@
 /yaml/*.lastDate
 /composer.lock
 /vendor
+/backup_pgpass
+.DS_Store

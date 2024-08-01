@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edm:Agent val="/adch:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/" as="@rdf:about"
+            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+            xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+            xmlns:edm="http://www.europeana.eu/schemas/edm/"
+            xmlns:dc="http://purl.org/dc/elements/1.1/"
+            xmlns:dcterms="http://purl.org/dc/terms/"
+            xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+            xmlns:owl="http://www.w3.org/2002/07/owl#"
+            xmlns:foaf="http://xmlns.com/foaf/0.1/">
+    <skos:prefLabel val="/acdh:hasTitle" lang="if empty" remove="remove"/>
+    <skos:altLabel val="/acdh:hasAlternativeTitle" lang="if empty" remove="remove"/>
+    <skos:note val="/acdh:hasDescription" lang="if empty" remove="remove"/>
+    <skos:note val="/acdh:hasNote" lang="if empty" remove="remove"/>
+    <dc:date val="/acdh:hasDate" remove="remove"/>
+    <dc:identifier val="/acdh:hasIdentifier" as="@rdf:resource" remove="remove"/>
+    <dcterms:hasPart val="/^acdh:isMemberOf" as="@rdf:resource" remove="remove"/>
+    <dcterms:isPartOf val="/acdh:isMemberOf" as="@rdf:resource" remove="remove"/>
+    <foaf:name val="/acdh:hasTitle" lang="if empty" remove="remove"/>
+</edm:Agent>

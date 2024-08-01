@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Publisher>
-  <title val="/acdh:hasTitle" count="*" lang="true"></title>
-  <id val="/acdh:hasIdentifier" count="*"></id>
-</Publisher>

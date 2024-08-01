@@ -3,29 +3,29 @@
            xmlns:dc="http://purl.org/dc/elements/1.1/" 
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
            xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-  <dc:title       count="*" lang="true" val="/acdh:hasTitle"></dc:title>
-  <dc:creator     count="*" lang="true" val="@acdh:hasCreator/acdh:hasTitle"></dc:creator>
-  <dc:creator     count="*"             val="/acdh:hasCreator"></dc:creator>
-  <dc:subject     count="*" lang="true" val="/acdh:hasSubject"></dc:subject>
-  <dc:description count="*" lang="true" val="/acdh:hasDescription"></dc:description>
-  <dc:date        count="*" lang="true" val="/acdh:hasAvailableDate"></dc:date>
-  <dc:publisher   count="*" lang="true" val="/acdh:hasPublisher"></dc:publisher>
-  <dc:contributor count="*" lang="true" val="@acdh:hasContributor/acdh:hasTitle"></dc:contributor>
-  <dc:contributor count="*"             val="/acdh:hasContributor"></dc:contributor>
-  <dc:type        count="*" lang="true" val="@acdh:hasCategory/acdh:hasTitle"></dc:type>
-  <dc:type        count="*"             val="/acdh:hasCategory"></dc:type>
-  <dc:format      count="*" lang="true" val="/acdh:hasFormat"></dc:format>
-  <dc:identifier  count="*" lang="true" val="/acdh:hasIdentifier"></dc:identifier>
-  <dc:source      count="*" lang="true" val="@acdh:hasSource/acdh:hasTitle"></dc:source>
-  <dc:source      count="*"             val="/acdh:hasSource"></dc:source>
-  <dc:language    count="*"             val="@acdh:hasLanguage/acdh:hasTitle"></dc:language>
-  <dc:relation    count="*"             val="@acdh:isPartOf/acdh:hasTitle"></dc:relation>
-  <dc:relation    count="*"             val="/acdh:isPartOf"></dc:relation>
-  <dc:coverage    count="*" lang="true" val="/acdh:hasTemporalCoverage"></dc:coverage>
-  <dc:coverage    count="*"             val="/acdh:hasTemporalCoverageIdentifier"></dc:coverage>
-  <dc:coverage    count="*" lang="true" val="@acdh:hasSpatialCoverage/acdh:hasTitle"></dc:coverage>
-  <dc:coverage    count="*"             val="/acdh:hasSpatialCoverage"></dc:coverage>
-  <dc:rights      count="*" lang="true" val="@acdh:hasLicense/acdh:hasTitle"></dc:rights>
-  <dc:rights      count="*" lang="true" val="@acdh:hasLicensor/acdh:hasTitle"></dc:rights>
-  <dc:rights      count="*"             val="/acdh:hasLicensor"></dc:rights>
+  <dc:title       remove="remove" lang="if empty" val="/acdh:hasTitle"/>
+  <dc:creator     remove="remove" lang="if empty" val="/acdh:hasCreator/acdh:hasTitle"/>
+  <dc:creator     remove="remove"                 val="/acdh:hasCreator"/>
+  <dc:subject     remove="remove" lang="if empty" val="/acdh:hasSubject"/>
+  <dc:description remove="remove" lang="if empty" val="/acdh:hasDescription"/>
+  <dc:date        remove="remove" lang="if empty" val="/acdh:hasAvailableDate"/>
+  <dc:publisher   remove="remove" lang="if empty" val="/acdh:hasPublisher"/>
+  <dc:contributor remove="remove" lang="if empty" val="/acdh:hasContributor/acdh:hasTitle"/>
+  <dc:contributor remove="remove"                 val="/acdh:hasContributor"/>
+  <dc:type        remove="remove" lang="if empty" val="/acdh:hasCategory/acdh:hasTitle"/>
+  <dc:type        remove="remove"                 val="/acdh:hasCategory"/>
+  <dc:format      remove="remove" lang="if empty" val="/acdh:hasFormat"/>
+  <dc:identifier  remove="remove" lang="if empty" val="/acdh:hasIdentifier"/>
+  <dc:source      remove="remove" lang="if empty" val="/acdh:hasSource/acdh:hasTitle"/>
+  <dc:source      remove="remove"                 val="/acdh:hasSource"/>
+  <dc:language    remove="remove"                 val="/acdh:hasLanguage/acdh:hasTitle"/>
+  <dc:relation    remove="remove"                 val="/acdh:isPartOf/acdh:hasTitle"/>
+  <dc:relation    remove="remove"                 val="/acdh:isPartOf"/>
+  <dc:coverage    remove="remove" lang="if empty" val="/acdh:hasTemporalCoverage"/>
+  <dc:coverage    remove="remove"                 val="/acdh:hasTemporalCoverageIdentifier"/>
+  <dc:coverage    remove="remove" lang="if empty" val="/acdh:hasSpatialCoverage/acdh:hasTitle"/>
+  <dc:coverage    remove="remove"                 val="/acdh:hasSpatialCoverage"/>
+  <dc:rights      remove="remove" lang="if empty" val="/acdh:hasLicense/acdh:hasTitle"/>
+  <dc:rights      remove="remove" lang="if empty" val="/acdh:hasLicensor/acdh:hasTitle"/>
+  <dc:rights      remove="remove"                 val="/acdh:hasLicensor"/>
 </oai_dc:dc>

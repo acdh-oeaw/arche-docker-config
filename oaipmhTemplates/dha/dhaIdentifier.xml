@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<dha:hasIdentifier xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dha="https://digital-humanities.at/schema#" xmlns:premis="http://www.loc.gov/premis/rdf/v1#">
-  <dha:Identifier val="/acdh:hasIdentifier" asAttribute="rdf:about" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-  <premis:hasIdentifier val="/acdh:hasIdentifier"/>
-  <dha:hasParsableMetadata val="METAURL"/>
-</dha:Identifier>
-</dha:hasIdentifier>

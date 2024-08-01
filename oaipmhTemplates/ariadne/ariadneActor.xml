@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-    <aocat:refers_to xmlns:aocat="https://www.ariadne-infrastructure.eu/resource/ao/cat/1.1/" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-        <aocat:AO_Agent val="URI" asAttribute="rdf:about" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-            <aocat:has_name val="/acdh:hasTitle" count="1" lang="true"></aocat:has_name>
-            <aocat:has_agent_identifier val="/acdh:hasIdentifier" count="*"></aocat:has_agent_identifier>
-            <rdfs:label val="/acdh:hasTitle" count="1" lang="true"></rdfs:label>
-          </aocat:AO_Agent>
-    </aocat:refers_to>
-

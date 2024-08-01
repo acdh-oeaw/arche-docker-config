@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE doc [
+  <!ENTITY Agent SYSTEM "kulturpool_agent.xml">
+]>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:edm="http://www.europeana.eu/schemas/edm/"
+    xmlns:ore="http://www.openarchives.org/ore/terms/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:svcs="http://rdfs.org/sioc/services#"
+    xmlns:doap="http://usefulinc.com/ns/doap#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#">
+    
+    <edm:ProvidedCHO val="OAIID" match="^.*$" replace="\0#CHO" as="@rdf:about">
+        <!-- literal, 0...n -->
+        <dc:identifier val="/acdh:hasIdentifier" remove="remove"/>
+        <dc:identifier val="/acdh:hasNonLinkedIdentifier" remove="remove"/>
+        <!-- min. 1 of the following -->
+        <dc:title val="/acdh:hasAlternativeTitle" remove="remove" lang="if empty"/>
+        <dc:title if="none(acdh:hasAlternativeTitle)" val="/acdh:hasTitle" match="^(?:Facsimiles: )?(.*)$" replace="\1" remove="remove" lang="if empty"/>
+        <dc:description val="/acdh:hasDescription" remove="remove" lang="if empty"/>
+        <!-- required only for object of TEXT type, recommended for objects that include text -->
+        <dc:language val="/acdh:hasLanguage/acdh:hasIdentifier" remove="remove" match="^(?:https://vocabs[.]acdh[.]oeaw[.]ac[.]at/iso639[13]/)(.*)" replace="\1"/>
+        <!-- min. 1 of the following: subject/spatial/temporal/type -->
+        <dc:subject val="/acdh:hasSubject" remove="remove" lang="if empty"/>
+        <!--
+        <placeholder foreach="/acdh:hasSpatialCoverage" remove="remove"> 
+          <edm:Place val="CURNODE" as="@rdf:about">
+              <skos:prefLabel val="/acdh:hasTitle"            lang="if empty"/>
+              <skos:altLabel  val="/acdh:hasAlternativeTitle" lang="if empty" remove="remove"/>
+              <wgs84_pos:lat  val="/acdh:hasLatitude"/>
+              <wgs84_pos:long val="/acdh:hasLongitude"/>
+          </edm:Place>
+        </placeholder>
+        -->
+        <dcterms:temporal val="/acdh:hasTemporalCoverage" remove="remove" lang="if empty"/>
+        <dcterms:temporal val="/acdh:hasTemporalCoverageIdentifier" remove="remove" as="@rdf:resource"/>
+        <dcterms:temporal remove="remove"
+            val1="/acdh:hasCoverageStartDate" format1="D:Y" aggregate1="min"
+            val2="=-"
+            val3="/acdh:hasCoverageEndDate" format3="D:Y" aggregate3="max"/>
+        <dc:type val="/acdh:hasCategory/acdh:hasIdentifier" match="^http://purl[.]org/dc/elements/1[.]1/" as="@rdf:resource" remove="remove"/>
+        <!-- required only 1 value out of TEXT, VIDEO, SOUND, IMAGE or 3D -->
+        <edm:type val="/acdh:hasTag" match="^(TEXT|VIDEO|SOUND|IMAGE|3D)$"/>
+        <!-- Optional fields -->
+        <placeholder foreach="/acdh:hasCreator" remove="remove">
+          <dc:creator>&Agent;</dc:creator>
+        </placeholder>
+        <placeholder foreach="/acdh:hasAuthor" remove="remove">
+          <dc:creator>&Agent;</dc:creator>
+        </placeholder>
+        <placeholder foreach="/acdh:hasContributor" remove="remove">
+          <dc:contributor>&Agent;</dc:contributor>
+        </placeholder>
+        <dc:coverage val="/acdh:hasCoverage/acdh:hasTitle" remove="remove"/>
+        <dc:date val="/acdh:hasDate" remove="remove"/>
+        <dc:publisher val="/acdh:hasPublisher" remove="remove"/>
+        <dc:relation val="/acdh:relation" remove="remove"/>
+        <placeholder foreach="/acdh:hasRightsHolder" remove="remove">
+          <dc:rights>&Agent;</dc:rights>
+        </placeholder>
+        <dc:rights val="/acdh:hasRightsInformation" lang="if empty" remove="remove"/>
+        <dc:source val="/^acdh:isSourceOf/acdh:hasTitle" remove="remove"/>
+        <edm:isRelatedTo val="/adch:relation" as="@rdf:resource" remove="remove"/>
+        <edm:isRepresentationOf val="/acdh:documents" as="@rdf:resource" remove="remove"/>
+        <edm:isSuccessorOf val="/acdh:continues" as="@rdf:resource" remove="remove"/>
+        <owl:sameAs val="/acdh:hasIdentifier" match="(https://arche[.]acdh[.]oeaw[.]ac[.]at/api/\d+)" replace="\1/metadata" as="@rdf:resource" remove="remove"/>
+    </edm:ProvidedCHO>
+    
+    <ore:Aggregation val="OAIID" match="^.*$" replace="\0#Aggregation" as="@rdf:about">
+        <edm:aggregatedCHO val="OAIID" match="^.*$" replace="\0#CHO" as="@rdf:resource"/>
+        <edm:dataProvider val="/acdh:hasOwner/acdh:hasTitle" aggregate="min,en"/>
+        <edm:intermediateProvider val="/acdh:hasHosting/acdh:hasTitle" aggregate="min,en"/>
+        <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^https://creativecommons[.]org/" replace="http://creativecommons.org/" as="@rdf:resource" remove="remove"/>
+        <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^http://rightsstatements[.]org/vocab/" as="@rdf:resource" remove="remove"/>
+        <edm:isShownAt val="OAIID" as="@rdf:resource"/>
+        <!-- WebViews being children of the CHO=Aggregation -->
+	<placeholder if="none(rdf:type == acdh:Resource)" remove="remove">
+            <edm:isShownBy 
+                val="/acdh:hasNextItem/acdh:hasIdentifier" 
+                match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" 
+                replace="https://loris.acdh.oeaw.ac.at/uuid:/\1/full/full/0/default.jpg" 
+                as="@rdf:resource"/>
+            <edm:hasView
+                val="/^acdh:isPartOf/acdh:hasIdentifier" 
+                match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$"
+                replace="https://loris.acdh.oeaw.ac.at/uuid:/\1/full/full/0/default.jpg" 
+                as="@rdf:resource" 
+                remove="remove"/>
+	</placeholder>
+        <!-- CHO=Aggregation=WebView -->
+    	<placeholder if="any(rdf:type == acdh:Resource)" remove="remove">
+            <edm:isShownBy 
+                val="/acdh:hasIdentifier" 
+                match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" 
+                replace="https://loris.acdh.oeaw.ac.at/uuid:/\1/full/full/0/default.jpg" 
+                as="@rdf:resource"/>
+            <edm:hasView
+                val="/acdh:hasIdentifier" 
+                match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$"
+                replace="https://loris.acdh.oeaw.ac.at/uuid:/\1/full/full/0/default.jpg" 
+                as="@rdf:resource" 
+                remove="remove"/>
+	</placeholder>
+    </ore:Aggregation>
+    <!-- WebViews being children of the CHO=Aggregation -->
+    <placeholder if="none(rdf:type == acdh:Resource)" remove="remove">
+        <placeholder foreach="/^acdh:isPartOf" remove="remove">
+            <edm:WebResource val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1/full/full/0/default.jpg" as="@rdf:about">
+                <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^https://creativecommons[.]org/" replace="http://creativecommons.org/" as="@rdf:resource" remove="remove"/>
+                <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^http://rightsstatements[.]org/vocab/" as="@rdf:resource" remove="remove"/>
+                <placeholder foreach="/acdh:hasRightsHolder" remove="remove">
+                  <dc:rights>&Agent;</dc:rights>
+                </placeholder>
+                <dc:rights val="/acdh:hasRightsInformation" lang="if empty" remove="remove"/>
+                <placeholder foreach="/acdh:hasCreator" remove="remove">
+                    <dc:creator>&Agent;</dc:creator>
+                </placeholder>
+                <placeholder foreach="/acdh:hasAuthor" remove="remove">
+                    <dc:creator>&Agent;</dc:creator>
+                </placeholder>
+                <dc:format val="=image/jpeg"/>
+                <dcterms:issued val="/acdh:hasAvailableDate"/>
+		<svcs:has_service val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1" as="@rdf:resource"/>
+		<!-- to be able to filter out edm:isNextInSequence pointing from first child to the collection we need a litle complex syntax -->
+		<placeholder foreach="/^acdh:hasNextItem" remove="remove">
+                    <edm:isNextInSequence
+                        if="any(rdf:type == acdh:Resource)"
+                        val="/^acdh:hasNextItem/acdh:hasIdentifier" 
+                        match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" 
+                        replace="https://loris.acdh.oeaw.ac.at/uuid:/\1/full/full/0/default.jpg"
+                        as="@rdf:resource" 
+                        remove="remove"/>
+		</placeholder>
+            </edm:WebResource>
+        </placeholder>
+        <placeholder foreach="/^acdh:isPartOf" remove="remove">
+            <svcs:Service val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1" as="@rdf:about">
+                <dcterms:conformsTo rdf:resource="http://iiif.io/api/image"/>
+                <doap:implements rdf:resource="http://iiif.io/api/image/2/level2.json"/>
+            </svcs:Service>
+        </placeholder>
+    </placeholder>
+    <!-- CHO=Aggregation=WebView -->
+    <placeholder if="any(rdf:type == acdh:Resource)" remove="remove">
+        <edm:WebResource val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1/full/full/0/default.jpg" as="@rdf:about">
+            <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^https://creativecommons[.]org/" replace="http://creativecommons.org/" as="@rdf:resource" remove="remove"/>
+            <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^http://rightsstatements[.]org/vocab/" as="@rdf:resource" remove="remove"/>
+            <dc:format val="=image/jpeg"/>
+            <dcterms:issued val="/acdh:hasAvailableDate"/>
+            <svcs:has_service val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1" as="@rdf:resource"/>
+        </edm:WebResource>
+        <svcs:Service val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1" as="@rdf:about">
+            <dcterms:conformsTo rdf:resource="http://iiif.io/api/image"/>
+            <doap:implements rdf:resource="http://iiif.io/api/image/2/level2.json"/>
+        </svcs:Service>
+    </placeholder>
+    <placeholder foreach="/acdh:hasCategory" remove="remove">
+        <skos:Concept val="CURNODE" as="@rdf:about">
+            <skos:prefLabel val="/skos:prefLabel" remove="remove" lang="if empty"/>
+            <skos:altLabel val="/skos:altLabel" remove="remove" lang="if empty"/>
+            <skos:inScheme rdf:resource="https://vocabs.acdh.oeaw.ac.at/archecategory/Schema"/>
+        </skos:Concept> 
+    </placeholder>
+</rdf:RDF>

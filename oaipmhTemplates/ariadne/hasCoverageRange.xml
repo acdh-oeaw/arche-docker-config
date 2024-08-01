@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<root><foo val="/acdh:hasCoverageStartDate" aggregate="min" count="1" dateFormat="o" replaceXMLTag="true"/>_<foo val="/acdh:hasCoverageEndDate" aggregate="max" count="1" dateFormat="o" replaceXMLTag="true"/></root>
