@@ -58,7 +58,7 @@
         </placeholder>
         <dc:rights val="/acdh:hasRightsInformation" lang="if empty" remove="remove"/>
         <dc:source val="/^acdh:isSourceOf/acdh:hasTitle" remove="remove"/>
-        <edm:isRelatedTo val="/adch:relation" as="@rdf:resource" remove="remove"/>
+        <edm:isRelatedTo val="/acdh:relation" as="@rdf:resource" remove="remove"/>
         <edm:isRepresentationOf val="/acdh:documents" as="@rdf:resource" remove="remove"/>
         <edm:isSuccessorOf val="/acdh:continues" as="@rdf:resource" remove="remove"/>
         <owl:sameAs val="/acdh:hasIdentifier" match="(https://arche[.]acdh[.]oeaw[.]ac[.]at/api/\d+)" replace="\1/metadata" as="@rdf:resource" remove="remove"/>
