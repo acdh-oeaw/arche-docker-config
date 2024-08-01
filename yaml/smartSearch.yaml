@@ -23,6 +23,13 @@ smartSearch:
       end:
       - https://vocabs.acdh.oeaw.ac.at/schema#hasCoverageEndDate
       - https://vocabs.acdh.oeaw.ac.at/schema#hasCreatedEndDateOriginal
+    - type: map
+      label:
+          en: Spatial coverage
+          de: Räumliche Abdeckung
+      tooltip:
+        en: foo
+        de: bar
     - type: object
       property: https://vocabs.acdh.oeaw.ac.at/schema#hasRelatedDiscipline
       label: 
