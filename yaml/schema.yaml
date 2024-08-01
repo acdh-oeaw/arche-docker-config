@@ -51,6 +51,7 @@ schema:
     longitude: https://vocabs.acdh.oeaw.ac.at/schema#hasLongitude
     wkt: https://vocabs.acdh.oeaw.ac.at/schema#hasWKT
     nextItem: https://vocabs.acdh.oeaw.ac.at/schema#hasNextItem
+    oaipmhSet: https://vocabs.acdh.oeaw.ac.at/schema#hasOaiSet
     classes:
         agent: https://vocabs.acdh.oeaw.ac.at/schema#Agent
         binaryContent: https://vocabs.acdh.oeaw.ac.at/schema#BinaryContent
