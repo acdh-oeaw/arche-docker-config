@@ -46,9 +46,16 @@
         <!-- required only 1 value out of TEXT, VIDEO, SOUND, IMAGE or 3D -->
         <edm:type val="/acdh:hasTag" match="^(TEXT|VIDEO|SOUND|IMAGE|3D)$"/>
         <!-- Optional fields -->
-        <dc:contributor val="/acdh:hasContributor/acdh:hasTitle" remove="remove"/>
+        <placeholder foreach="/acdh:hasCreator" remove="remove">
+          <dc:creator>&Agent;</dc:creator>
+        </placeholder>
+        <placeholder foreach="/acdh:hasAuthor" remove="remove">
+          <dc:creator>&Agent;</dc:creator>
+        </placeholder>
+        <placeholder foreach="/acdh:hasContributor" remove="remove">
+          <dc:contributor>&Agent;</dc:contributor>
+        </placeholder>
         <dc:coverage val="/acdh:hasCoverage/acdh:hasTitle" remove="remove"/>
-        <dc:creator val="/acdh:hasAuthor/acdh:hasTitle" remove="remove"/>
         <dc:date val="/acdh:hasDate" remove="remove"/>
         <dc:publisher val="/acdh:hasPublisher" remove="remove"/>
         <dc:relation val="/acdh:relation" remove="remove"/>
@@ -109,6 +116,12 @@
                   <dc:rights>&Agent;</dc:rights>
                 </placeholder>
                 <dc:rights val="/acdh:hasRightsInformation" lang="if empty" remove="remove"/>
+                <placeholder foreach="/acdh:hasCreator" remove="remove">
+                    <dc:creator>&Agent;</dc:creator>
+                </placeholder>
+                <placeholder foreach="/acdh:hasAuthor" remove="remove">
+                    <dc:creator>&Agent;</dc:creator>
+                </placeholder>
                 <dc:format val="=image/jpeg"/>
                 <dcterms:issued val="/acdh:hasAvailableDate"/>
 		<svcs:has_service val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1" as="@rdf:resource"/>
