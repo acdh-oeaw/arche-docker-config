@@ -35,6 +35,10 @@
             val1="/^acdh:isPartOf/acdh:hasCreatedStartDateOriginal" format1="D:Y-m-d" aggregate1="min"
             val2="=/"
             val3="/^acdh:isPartOf/acdh:hasCreatedEndDateOriginal" format3="D:Y-m-d" aggregate3="max"/>
+        <dcterms:created remove="remove"
+            val1="/acdh:hasCreatedStartDateOriginal" format1="D:Y-m-d" aggregate1="min"
+            val2="=/"
+            val3="/acdh:hasCreatedEndDateOriginal" format3="D:Y-m-d" aggregate3="max"/>
         <dcterms:temporal val="/acdh:hasTemporalCoverage" remove="remove" lang="if empty"/>
         <dcterms:temporal val="/acdh:hasTemporalCoverageIdentifier" remove="remove" as="@rdf:resource"/>
         <dcterms:temporal remove="remove"
