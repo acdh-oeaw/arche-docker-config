@@ -26,7 +26,7 @@ acdhids:rdf
 # GUI
 acdhids:gui
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "{RES_URI|part(scheme,host)}/browser/oeaw_detail/{RES_ID}" ;
+    acdh:serviceLocation    "{RES_URI|part(scheme,host)}/browser/metadata/{RES_ID}" ;
     acdh:hasReturnType      "gui" ;
     acdh:hasReturnType      "text/html; q=0.2" ;
     acdh:serviceRevProxy    false ;
