@@ -74,7 +74,7 @@
         <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^https://creativecommons[.]org/" replace="http://creativecommons.org/" as="@rdf:resource" remove="remove"/>
         <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^http://rightsstatements[.]org/vocab/" as="@rdf:resource" remove="remove"/>
         <edm:isShownAt val="OAIID" as="@rdf:resource"/>
-        <!-- WebViews being children of the CHO=Aggregation -->
+        <!-- WebResources being children of the CHO=Aggregation -->
 	<placeholder if="none(rdf:type == acdh:Resource)" remove="remove">
             <edm:isShownBy 
                 val="/acdh:hasNextItem/acdh:hasIdentifier" 
@@ -88,7 +88,7 @@
                 as="@rdf:resource" 
                 remove="remove"/>
 	</placeholder>
-        <!-- CHO=Aggregation=WebView -->
+        <!-- CHO=Aggregation=WebResource -->
     	<placeholder if="any(rdf:type == acdh:Resource)" remove="remove">
             <edm:isShownBy 
                 val="/acdh:hasIdentifier" 
@@ -103,7 +103,7 @@
                 remove="remove"/>
 	</placeholder>
     </ore:Aggregation>
-    <!-- WebViews being children of the CHO=Aggregation -->
+    <!-- WebResources being children of the CHO=Aggregation -->
     <placeholder if="none(rdf:type == acdh:Resource)" remove="remove">
         <placeholder foreach="/^acdh:isPartOf" remove="remove">
             <edm:WebResource val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1/full/full/0/default.jpg" as="@rdf:about">
@@ -145,7 +145,7 @@
             </svcs:Service>
         </placeholder>
     </placeholder>
-    <!-- CHO=Aggregation=WebView -->
+    <!-- CHO=Aggregation=WebResource -->
     <placeholder if="any(rdf:type == acdh:Resource)" remove="remove">
         <edm:WebResource val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1/full/full/0/default.jpg" as="@rdf:about">
             <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^https://creativecommons[.]org/" replace="http://creativecommons.org/" as="@rdf:resource" remove="remove"/>
