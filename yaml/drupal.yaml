@@ -16,3 +16,4 @@ schema:
      gazetteerUrl: https://gazetteer.dainst.org/
      doiUrl: https://doi.org/
 clarinVcrUrl: https://collections.clarin.eu/submit/extensional
+authLoginCookie: archeLogin
