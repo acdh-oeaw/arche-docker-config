@@ -56,6 +56,7 @@ accessControl:
           advertise: none
           parameters:
             - HTTP_EPPN
+            - HTTP_EPPN
         - class: \zozlak\auth\authMethod\HttpBasic
           advertise: once
           parameters:
