@@ -30,11 +30,16 @@
         <placeholder foreach="/acdh:hasSpatialCoverage" remove="remove">
           <dcterms:spatial>&Place;</dcterms:spatial>
         </placeholder>
+        <dc:date val="/acdh:hasDate" format="D:Y-m-d" remove="remove"/>
+        <dcterms:created remove="remove"
+            val1="/^acdh:isPartOf/acdh:hasCreatedStartDateOriginal" format1="D:Y" aggregate1="min"
+            val2="=/"
+            val3="/^acdh:isPartOf/acdh:hasCreatedEndDateOriginal" format3="D:Y" aggregate3="max"/>
         <dcterms:temporal val="/acdh:hasTemporalCoverage" remove="remove" lang="if empty"/>
         <dcterms:temporal val="/acdh:hasTemporalCoverageIdentifier" remove="remove" as="@rdf:resource"/>
         <dcterms:temporal remove="remove"
             val1="/acdh:hasCoverageStartDate" format1="D:Y" aggregate1="min"
-            val2="=-"
+            val2="=/"
             val3="/acdh:hasCoverageEndDate" format3="D:Y" aggregate3="max"/>
         <dc:type val="/acdh:hasCategory/acdh:hasIdentifier" match="^http://purl[.]org/dc/elements/1[.]1/" as="@rdf:resource" remove="remove"/>
         <!-- required only 1 value out of TEXT, VIDEO, SOUND, IMAGE or 3D -->
@@ -49,8 +54,6 @@
         <placeholder foreach="/acdh:hasContributor" remove="remove">
           <dc:contributor>&Agent;</dc:contributor>
         </placeholder>
-        <dc:coverage val="/acdh:hasCoverage/acdh:hasTitle" remove="remove"/>
-        <dc:date val="/acdh:hasDate" remove="remove"/>
         <dc:publisher val="/acdh:hasPublisher" remove="remove"/>
         <dc:relation val="/acdh:relation" remove="remove"/>
         <placeholder foreach="/acdh:hasRightsHolder" remove="remove">
@@ -71,7 +74,7 @@
         <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^https://creativecommons[.]org/" replace="http://creativecommons.org/" as="@rdf:resource" remove="remove"/>
         <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^http://rightsstatements[.]org/vocab/" as="@rdf:resource" remove="remove"/>
         <edm:isShownAt val="OAIID" as="@rdf:resource"/>
-        <!-- WebViews being children of the CHO=Aggregation -->
+        <!-- WebResources being children of the CHO=Aggregation -->
 	<placeholder if="none(rdf:type == acdh:Resource)" remove="remove">
             <edm:isShownBy 
                 val="/acdh:hasNextItem/acdh:hasIdentifier" 
@@ -85,22 +88,16 @@
                 as="@rdf:resource" 
                 remove="remove"/>
 	</placeholder>
-        <!-- CHO=Aggregation=WebView -->
+        <!-- CHO=Aggregation=WebResource -->
     	<placeholder if="any(rdf:type == acdh:Resource)" remove="remove">
             <edm:isShownBy 
                 val="/acdh:hasIdentifier" 
                 match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" 
                 replace="https://loris.acdh.oeaw.ac.at/uuid:/\1/full/full/0/default.jpg" 
                 as="@rdf:resource"/>
-            <edm:hasView
-                val="/acdh:hasIdentifier" 
-                match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$"
-                replace="https://loris.acdh.oeaw.ac.at/uuid:/\1/full/full/0/default.jpg" 
-                as="@rdf:resource" 
-                remove="remove"/>
 	</placeholder>
     </ore:Aggregation>
-    <!-- WebViews being children of the CHO=Aggregation -->
+    <!-- WebResources being children of the CHO=Aggregation -->
     <placeholder if="none(rdf:type == acdh:Resource)" remove="remove">
         <placeholder foreach="/^acdh:isPartOf" remove="remove">
             <edm:WebResource val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1/full/full/0/default.jpg" as="@rdf:about">
@@ -117,7 +114,11 @@
                     <dc:creator>&Agent;</dc:creator>
                 </placeholder>
                 <dc:format val="=image/jpeg"/>
-                <dcterms:issued val="/acdh:hasAvailableDate"/>
+                <dcterms:created remove="remove"
+                    val1="/acdh:hasCreatedStartDate" format1="D:Y" aggregate1="min"
+                    val2="=/"
+                    val3="/acdh:hasCreatedEndDate" format3="D:Y" aggregate3="max"/>
+                <dcterms:issued val="/acdh:hasAvailableDate" format="D:Y-m-d" remove="remove"/>
 		<svcs:has_service val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1" as="@rdf:resource"/>
 		<!-- to be able to filter out edm:isNextInSequence pointing from first child to the collection we need a litle complex syntax -->
 		<placeholder foreach="/^acdh:hasNextItem" remove="remove">
@@ -138,13 +139,17 @@
             </svcs:Service>
         </placeholder>
     </placeholder>
-    <!-- CHO=Aggregation=WebView -->
+    <!-- CHO=Aggregation=WebResource -->
     <placeholder if="any(rdf:type == acdh:Resource)" remove="remove">
         <edm:WebResource val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1/full/full/0/default.jpg" as="@rdf:about">
             <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^https://creativecommons[.]org/" replace="http://creativecommons.org/" as="@rdf:resource" remove="remove"/>
             <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^http://rightsstatements[.]org/vocab/" as="@rdf:resource" remove="remove"/>
             <dc:format val="=image/jpeg"/>
-            <dcterms:issued val="/acdh:hasAvailableDate"/>
+            <dcterms:created remove="remove"
+                    val1="/acdh:hasCreatedStartDate" format1="D:Y" aggregate1="min"
+                    val2="=/"
+                    val3="/acdh:hasCreatedEndDate" format3="D:Y" aggregate3="max"/>
+            <dcterms:issued val="/acdh:hasAvailableDate" format="D:Y-m-d" remove="remove"/>
             <svcs:has_service val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1" as="@rdf:resource"/>
         </edm:WebResource>
         <svcs:Service val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1" as="@rdf:about">
