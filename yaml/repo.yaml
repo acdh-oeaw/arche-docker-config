@@ -158,7 +158,7 @@ rest:
     defaultMetadataSearchMode: resource
     # number of triples used to generate namespace aliases
     outputTriplesCache: 1000
-    userEndpointAllowedRedirectRegex: "`^/`"
+    userEndpointAllowedRedirectRegex: "`^https://arche.acdh.oeaw.ac.at/`"
     handlers:
         rabbitMq:
             #host: localhost
