@@ -95,12 +95,6 @@
                 match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" 
                 replace="https://loris.acdh.oeaw.ac.at/uuid:/\1/full/full/0/default.jpg" 
                 as="@rdf:resource"/>
-            <edm:hasView
-                val="/acdh:hasIdentifier" 
-                match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$"
-                replace="https://loris.acdh.oeaw.ac.at/uuid:/\1/full/full/0/default.jpg" 
-                as="@rdf:resource" 
-                remove="remove"/>
 	</placeholder>
     </ore:Aggregation>
     <!-- WebResources being children of the CHO=Aggregation -->
