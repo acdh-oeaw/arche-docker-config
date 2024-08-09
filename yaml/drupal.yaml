@@ -16,5 +16,5 @@ schema:
      gazetteerUrl: https://gazetteer.dainst.org/
      doiUrl: https://doi.org/
 clarinVcrUrl: https://collections.clarin.eu/submit/extensional
-ontologyCacheFile: /home/www-data/docroot/api/ontology.cache
-ontologyCacheTtl: 86400
+authLoginCookie: archeLogin
+publicRole: public

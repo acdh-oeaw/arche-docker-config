@@ -21,6 +21,7 @@ storage:
     hashAlgorithm: sha1
 accessControl:
     publicRole: public
+    loggedInRole: academic
     adminRoles:
         - admin
     create:
@@ -42,6 +43,9 @@ accessControl:
         read: https://vocabs.acdh.oeaw.ac.at/schema#aclRead
         update: https://vocabs.acdh.oeaw.ac.at/schema#aclUpdate
         write: https://vocabs.acdh.oeaw.ac.at/schema#aclWrite
+    cookie:
+        path: /
+        name: archeLogin
     db:
         connStr: 'pgsql: user={PG_USER_PREFIX}repo dbname={PG_DBNAME} host={PG_HOST} port={PG_PORT}'
         table: users
@@ -51,6 +55,7 @@ accessControl:
         - class: \zozlak\auth\authMethod\TrustedHeader
           advertise: none
           parameters:
+            - HTTP_EPPN
             - HTTP_EPPN
         - class: \zozlak\auth\authMethod\HttpBasic
           advertise: once
@@ -158,6 +163,7 @@ rest:
     defaultMetadataSearchMode: resource
     # number of triples used to generate namespace aliases
     outputTriplesCache: 1000
+    userEndpointAllowedRedirectRegex: "`^https://arche.acdh.oeaw.ac.at/`"
     handlers:
         rabbitMq:
             #host: localhost
