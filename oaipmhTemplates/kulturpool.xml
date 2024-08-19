@@ -74,7 +74,7 @@
         <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^https://creativecommons[.]org/" replace="http://creativecommons.org/" as="@rdf:resource" remove="remove"/>
         <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^http://rightsstatements[.]org/vocab/" as="@rdf:resource" remove="remove"/>
         <edm:isShownAt val="OAIID" as="@rdf:resource"/>
-        <!-- WebViews being children of the CHO=Aggregation -->
+        <!-- WebResources being children of the CHO=Aggregation -->
 	<placeholder if="none(rdf:type == acdh:Resource)" remove="remove">
             <edm:isShownBy 
                 val="/acdh:hasNextItem/acdh:hasIdentifier" 
@@ -88,7 +88,7 @@
                 as="@rdf:resource" 
                 remove="remove"/>
 	</placeholder>
-        <!-- CHO=Aggregation=WebView -->
+        <!-- CHO=Aggregation=WebResource -->
     	<placeholder if="any(rdf:type == acdh:Resource)" remove="remove">
             <edm:isShownBy 
                 val="/acdh:hasIdentifier" 
@@ -103,6 +103,7 @@
                 remove="remove"/>
 	</placeholder>
     </ore:Aggregation>
+
     <!-- WebViews being children of the CHO=Aggregation -->
     <placeholder if="none(rdf:type == acdh:Resource)" remove="remove">
         <placeholder foreach="/^acdh:isPartOf" remove="remove">
