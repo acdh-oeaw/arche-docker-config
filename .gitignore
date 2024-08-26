@@ -6,4 +6,5 @@
 /composer.lock
 /vendor
 /backup_pgpass
+/run.d/smartsearch.sh
 .DS_Store
