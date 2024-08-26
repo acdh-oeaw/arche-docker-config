@@ -18,6 +18,7 @@ storage:
     hashAlgorithm: sha1
 accessControl:
     publicRole: public
+    loggedInRole: academic
     adminRoles:
         - admin
     create:
@@ -38,6 +39,9 @@ accessControl:
     schema:
         read: https://vocabs.acdh.oeaw.ac.at/schema#aclRead
         write: https://vocabs.acdh.oeaw.ac.at/schema#aclWrite
+    cookie:
+        path: /
+        name: archeLogin
     db:
         connStr: 'pgsql: user={PG_USER_PREFIX}repo dbname={PG_DBNAME} host={PG_HOST} port={PG_PORT}'
         table: users
