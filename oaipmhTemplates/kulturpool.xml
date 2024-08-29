@@ -141,7 +141,12 @@
                     val2="=/"
                     val3="/acdh:hasCreatedEndDate" format3="D:Y" aggregate3="max"/>
                 <dcterms:issued val="/acdh:hasAvailableDate" format="D:Y-m-d" remove="remove"/>
-		<svcs:has_service val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1" as="@rdf:resource"/>
+		<svcs:has_service>
+                    <svcs:Service val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1" as="@rdf:about">
+                        <dcterms:conformsTo rdf:resource="http://iiif.io/api/image"/>
+                        <doap:implements rdf:resource="http://iiif.io/api/image/2/level2.json"/>
+                    </svcs:Service>
+                </svcs:has_service>
 		<!-- to be able to filter out edm:isNextInSequence pointing from first child to the collection we need a litle complex syntax -->
 		<placeholder foreach="/^acdh:hasNextItem" remove="remove">
                     <edm:isNextInSequence
@@ -153,12 +158,6 @@
                         remove="remove"/>
 		</placeholder>
             </edm:WebResource>
-        </placeholder>
-        <placeholder foreach="/^acdh:isPartOf" remove="remove">
-            <svcs:Service val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1" as="@rdf:about">
-                <dcterms:conformsTo rdf:resource="http://iiif.io/api/image"/>
-                <doap:implements rdf:resource="http://iiif.io/api/image/2/level2.json"/>
-            </svcs:Service>
         </placeholder>
     </placeholder>
     <!-- CHO=Aggregation=WebView -->
@@ -172,11 +171,12 @@
                     val2="=/"
                     val3="/acdh:hasCreatedEndDate" format3="D:Y" aggregate3="max"/>
             <dcterms:issued val="/acdh:hasAvailableDate" format="D:Y-m-d" remove="remove"/>
-            <svcs:has_service val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1" as="@rdf:resource"/>
+            <svcs:has_service>
+                <svcs:Service val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1" as="@rdf:about">
+                    <dcterms:conformsTo rdf:resource="http://iiif.io/api/image"/>
+                    <doap:implements rdf:resource="http://iiif.io/api/image/2/level2.json"/>
+                </svcs:Service>
+            </svcs:has_service>
         </edm:WebResource>
-        <svcs:Service val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/(?!cmdi/|uuid/)(.*)$" replace="https://loris.acdh.oeaw.ac.at/uuid:/\1" as="@rdf:about">
-            <dcterms:conformsTo rdf:resource="http://iiif.io/api/image"/>
-            <doap:implements rdf:resource="http://iiif.io/api/image/2/level2.json"/>
-        </svcs:Service>
     </placeholder>
 </rdf:RDF>
