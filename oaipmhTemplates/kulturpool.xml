@@ -41,7 +41,15 @@
             val1="/acdh:hasCoverageStartDate" format1="D:Y" aggregate1="min"
             val2="=/"
             val3="/acdh:hasCoverageEndDate" format3="D:Y" aggregate3="max"/>
-        <dc:type val="/acdh:hasCategory/acdh:hasIdentifier" match="^http://purl[.]org/dc/elements/1[.]1/" as="@rdf:resource" remove="remove"/>
+        <dc:type>
+            <placeholder foreach="/acdh:hasCategory" remove="remove">
+                <skos:Concept val="CURNODE" as="@rdf:about">
+                    <skos:prefLabel val="/skos:prefLabel" remove="remove" lang="if empty"/>
+                    <skos:altLabel val="/skos:altLabel" remove="remove" lang="if empty"/>
+                    <skos:inScheme rdf:resource="https://vocabs.acdh.oeaw.ac.at/archecategory/Schema"/>
+                </skos:Concept> 
+            </placeholder>
+	</dc:type>
         <!-- required only 1 value out of TEXT, VIDEO, SOUND, IMAGE or 3D -->
         <edm:type val="/acdh:hasTag" match="^(TEXT|VIDEO|SOUND|IMAGE|3D)$"/>
         <!-- Optional fields -->
@@ -170,12 +178,5 @@
             <dcterms:conformsTo rdf:resource="http://iiif.io/api/image"/>
             <doap:implements rdf:resource="http://iiif.io/api/image/2/level2.json"/>
         </svcs:Service>
-    </placeholder>
-    <placeholder foreach="/acdh:hasCategory" remove="remove">
-        <skos:Concept val="CURNODE" as="@rdf:about">
-            <skos:prefLabel val="/skos:prefLabel" remove="remove" lang="if empty"/>
-            <skos:altLabel val="/skos:altLabel" remove="remove" lang="if empty"/>
-            <skos:inScheme rdf:resource="https://vocabs.acdh.oeaw.ac.at/archecategory/Schema"/>
-        </skos:Concept> 
     </placeholder>
 </rdf:RDF>
