@@ -61,7 +61,13 @@
         </placeholder>
         <dc:rights val="/acdh:hasRightsInformation" lang="if empty" remove="remove"/>
         <dc:source val="/^acdh:isSourceOf/acdh:hasTitle" remove="remove"/>
-        <dcterms:isReferencedBy val="/acdh:hasUrl" as="@rdf:resource" remove="remove"/>
+        <dcterms:isReferencedBy>
+            <placeholder foreach="/acdh:hasUrl" remove="remove">
+                <skos:Concept val="CURNODE" as="@rdf:about">
+                    <skos:prefLabel val="CURNODE"/>
+                </skos:Concept>
+            </placeholder>
+        </dcterms:isReferencedBy>
         <edm:isRelatedTo val="/acdh:relation" as="@rdf:resource" remove="remove"/>
         <edm:isRepresentationOf val="/acdh:documents" as="@rdf:resource" remove="remove"/>
         <edm:isSuccessorOf val="/acdh:continues" as="@rdf:resource" remove="remove"/>
