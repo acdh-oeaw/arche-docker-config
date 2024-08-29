@@ -406,24 +406,3 @@ acdhi:rmandell a acdh:Person;
     acdh:hasEmail "RachelAlyson.Mandell@oeaw.ac.at";
     acdh:isMemberOf acdhi:acdh.
 
-acdhi:technical a acdh:Collection;
-    acdh:hasTitle "Collection storing technical resources"@en;
-    acdh:hasMetadataCreator acdhi:mzoltak;
-    acdh:hasOwner acdhi:acdh;
-    acdh:hasRightsHolder acdhi:oeaw;
-    acdh:hasLicensor acdhi:acdh;
-    acdh:hasDepositor acdhi:acdh.
-
-acdhi:restrictedAccessImage a acdh:Resource;
-    acdh:hasTitle "Fallback image for restricted access resources"@en;
-    acdh:hasDescription "A fallback image to be used instead of a restricted access ones in contexts where HTTP 401 Unauthorized is not a viable solution."@en;
-    acdh:hasCategory <https://vocabs.acdh.oeaw.ac.at/archecategory/image>;
-    acdh:hasMetadataCreator acdhi:mzoltak;
-    acdh:hasOwner acdhi:acdh;
-    acdh:hasRightsHolder acdhi:oeaw;
-    acdh:hasLicensor acdhi:acdh;
-    acdh:hasLicense <https://creativecommons.org/licenses/by/4.0/>;
-    acdh:hasDepositor acdhi:acdh;
-    acdh:isPartOf acdhi:technical;
-    acdh:hasHosting acdhi:arche.
-
