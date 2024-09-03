@@ -14,12 +14,12 @@ $cfgFile   = __DIR__ . '/config.yaml';
 $cfg       = json_decode(json_encode(yaml_parse_file($cfgFile)));
 $repo      = Repo::factory($cfgFile);
 $graph     = new MetadataCollection($repo, __DIR__ . '/basicResources.ttl');
-$repo->begin();
+
 try {
+    $repo->begin();
     $resources = $graph->import($cfg->schema->namespaces->id, MetadataCollection::SKIP);
     $repo->commit();
 } catch (Exception $e) {
     echo acdhOeaw\arche\lib\exception\ExceptionUtil::unwrap($e) . "\n";
     $repo->rollback();
 }
-
