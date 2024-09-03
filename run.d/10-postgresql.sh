@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PG_VERSION="`ls -1 /usr/lib/postgresql/ | head -n 1`"
-DB_CONF_YAML=/home/www-data/config/yaml/db.yaml
+DB_CONF_YAML=/home/www-data/config/yaml/config-db.yaml
 
 # cleanup faulty shutdowns
 rm -f /home/www-data/postgresql/postmaster.pid /var/run/postgresql/.s.PGSQL.5432.lock

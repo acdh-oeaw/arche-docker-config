@@ -11,7 +11,7 @@ CFGD=/home/www-data/config/yaml
 rm -f /home/www-data/docroot/fcs/config.yaml $CFGD/config-fcs.yaml
 su -l www-data -c "$CMD \\
     --src $CFGD/fcs.yaml \\
-    --src $CFGD/db.yaml --srcPath '$.dbConnStr.guest' --targetPath '$.dbConnStr' \\
+    --src $CFGD/config-db.yaml --srcPath '$.dbConnStr.guest' --targetPath '$.dbConnStr' \\
     $CFGD/config-fcs.yaml"
 su -l www-data -c "ln -s $CFGD/config-fcs.yaml /home/www-data/docroot/fcs/config.yaml"
 

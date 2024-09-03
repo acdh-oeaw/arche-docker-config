@@ -12,7 +12,7 @@ rm -f /home/www-data/docroot/openrefine/config.yaml $CFGD/config-openrefine.yaml
 su -l www-data -c "$CMD \\
     --src $CFGD/schema.yaml \\
     --src $CFGD/openrefine.yaml \\
-    --src $CFGD/db.yaml --srcPath '$.dbConnStr.guest' --targetPath '$.dbConnStr' \\
+    --src $CFGD/config-db.yaml --srcPath '$.dbConnStr.guest' --targetPath '$.dbConnStr' \\
     --src $CFGD/local.yaml --srcPath '$.openrefine' \\
     $CFGD/config-openrefine.yaml"
 su -l www-data -c "ln -s $CFGD/config-openrefine.yaml /home/www-data/docroot/openrefine/config.yaml"

@@ -12,7 +12,7 @@ rm -f /home/www-data/docroot/resolver/config.yaml $CFGD/config-resolver.yaml
 su -l www-data -c "$CMD \\
     --src $CFGD/schema.yaml \\
     --src $CFGD/resolver.yaml \\
-    --src $CFGD/db.yaml --srcPath '$.dbConnStr.guest' --targetPath '$.resolver.repositories.self.dbConnStr' \\
+    --src $CFGD/config-db.yaml --srcPath '$.dbConnStr.guest' --targetPath '$.resolver.repositories.self.dbConnStr' \\
     --src $CFGD/local.yaml \\
     $CFGD/config-resolver.yaml"
 su -l www-data -c "ln -s $CFGD/config-resolver.yaml /home/www-data/docroot/resolver/config.yaml"
