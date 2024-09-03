@@ -26,7 +26,7 @@ configInfo:
         maximumRecords: 10000
     setting: {}
     supports: {}
-dbConnStr: host=127.0.0.1 port=5432 user=guest dbname=www-data
+dbConnStr: "set by run.d/30-fcs.sh"
 cmdiUrl: https://arche.acdh.oeaw.ac.at/oaipmh/?verb=GetRecordRaw&metadataPrefix=cmdi&identifier=%s
 highlighting:
     minWords: 2

@@ -1,5 +1,5 @@
 baseUrl: to be filled from local config
-dbConnStr: 'dbname=www-data user=guest host=127.0.0.1'
+dbConnStr: "set by run.d/35-openrefine.sh"
 name: ARCHE
 identifierSpace: https://arche.acdh.oeaw.ac.at/api/
 schemaSpace: https://vocabs.acdh.oeaw.ac.at/schema#

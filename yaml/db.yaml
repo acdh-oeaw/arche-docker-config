@@ -1,0 +1,4 @@
+dbConnStr:
+  repo: 'pgsql: host=10.6.16.94 port=5433 user=arche dbname=arche'
+  guest: 'pgsql: host=10.6.16.94 port=5433 user=arche dbname=arche'
+  gui: 'pgsql: host=10.6.16.94 port=5433 user=arche dbname=arche'

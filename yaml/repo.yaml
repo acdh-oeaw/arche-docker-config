@@ -1,11 +1,11 @@
 dbConn:
     # admin connection should grant full data modification rights
-    admin: "pgsql: user={PG_USER_PREFIX}repo dbname={PG_DBNAME} host={PG_HOST} port={PG_PORT}"
+    admin: "pgsql: user={USER_REPO} dbname={PG_DBNAME} host={PG_HOST} port={PG_PORT}"
     # guest connection should be read-only
-    guest: "pgsql: user={PG_USER_PREFIX}guest dbname={PG_DBNAME} host={PG_HOST} port={PG_PORT}"
+    guest: "pgsql: user={USER_GUEST} dbname={PG_DBNAME} host={PG_HOST} port={PG_PORT}"
 dbConnStr:
-    admin: "pgsql: user={PG_USER_PREFIX}repo dbname={PG_DBNAME} host={PG_HOST} port={PG_PORT}"
-    guest: "pgsql: user={PG_USER_PREFIX}guest dbname={PG_DBNAME} host={PG_HOST} port={PG_PORT}"
+    admin: "pgsql: user={USER_REPO} dbname={PG_DBNAME} host={PG_HOST} port={PG_PORT}"
+    guest: "pgsql: user={USER_GUEST} dbname={PG_DBNAME} host={PG_HOST} port={PG_PORT}"
 storage: 
     dir: /home/www-data/data
     tmpDir: /home/www-data/tmp
@@ -47,7 +47,7 @@ accessControl:
         path: /
         name: archeLogin
     db:
-        connStr: 'pgsql: user={PG_USER_PREFIX}repo dbname={PG_DBNAME} host={PG_HOST} port={PG_PORT}'
+        connStr: 'pgsql: user={USER_REPO} dbname={PG_DBNAME} host={PG_HOST} port={PG_PORT}'
         table: users
         userCol: user_id
         dataCol: data

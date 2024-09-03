@@ -9,6 +9,9 @@ su -l www-data -c 'echo -e "php_value max_execution_time 1800\nphp_value memory_
 CMD=/home/www-data/vendor/zozlak/yaml-merge/bin/yaml-edit.php
 CFGD=/home/www-data/config/yaml
 rm -f /home/www-data/docroot/fcs/config.yaml $CFGD/config-fcs.yaml
-su -l www-data -c "$CMD --src $CFGD/fcs.yaml $CFGD/config-fcs.yaml"
+su -l www-data -c "$CMD \\
+    --src $CFGD/fcs.yaml \\
+    --src $CFGD/db.yaml --srcPath '$.dbConnStr.guest' --targetPath '$.dbConnStr' \\
+    $CFGD/config-fcs.yaml"
 su -l www-data -c "ln -s $CFGD/config-fcs.yaml /home/www-data/docroot/fcs/config.yaml"
 
