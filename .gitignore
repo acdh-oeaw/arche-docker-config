@@ -4,3 +4,4 @@
 /yaml/config-*yaml
 /composer.lock
 /vendor
+/backup_pgpass

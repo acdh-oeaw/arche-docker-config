@@ -14,8 +14,6 @@ rm -f /home/www-data/docroot/api/config.yaml $CFGD/config-repo.yaml
 su -l www-data -c "$CMD \\
     --src $CFGD/schema.yaml \\
     --src $CFGD/repo.yaml \\
-    --src $CFGD/doorkeeper.yaml \\
-    --src $CFGD/openaire.yaml \\
     --src $CFGD/config-db.yaml --srcPath '$.dbConnStr.repo' --targetPath '$.dbConn.admin' \\
     --src $CFGD/config-db.yaml --srcPath '$.dbConnStr.repo' --targetPath '$.dbConnStr.admin' \\
     --src $CFGD/config-db.yaml --srcPath '$.dbConnStr.repo' --targetPath '$.accessControl.db.connStr' \\
