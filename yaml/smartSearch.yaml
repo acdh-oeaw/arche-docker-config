@@ -16,6 +16,9 @@ smartSearch:
       label: 
         en: Temporal coverage
         de: Zeitliche Abdeckung
+      tooltip:
+        en: Beginning and end dates or period of time associated with the original material or data.
+        de: Beginning and end dates or period of time associated with the original material or data.
       bins: 5
       start:
       - https://vocabs.acdh.oeaw.ac.at/schema#hasCoverageStartDate
@@ -28,20 +31,26 @@ smartSearch:
           en: Spatial coverage
           de: Räumliche Abdeckung
       tooltip:
-        en: foo
-        de: bar
+        en: Location or area associated with the original material or data. This can be a present-day location or historic.
+        de: Location or area associated with the original material or data. This can be a present-day location or historic.
     - type: object
       property: https://vocabs.acdh.oeaw.ac.at/schema#hasRelatedDiscipline
       label: 
         en: Research Discipline
         de: Forschungsdisziplin
       weights: []
+      tooltip:
+        en: Choose from the drop down below the field of study associated with the data you are interested in. Most datasets will be associated with multiple research disciplines.
+        de: Choose from the drop down below the field of study associated with the data you are interested in. Most datasets will be associated with multiple research disciplines.
     - type: object
       property: https://vocabs.acdh.oeaw.ac.at/schema#hasCategory
       label: 
         en: Category
         de: Kategorie
       weights: []
+      tooltip:
+        en: The kind of data you are searching for.
+        de: The kind of data you are searching for.
     - type: object
       property: https://vocabs.acdh.oeaw.ac.at/schema#hasLicense
       label: 
@@ -57,6 +66,9 @@ smartSearch:
         48905: 1.0
         48913: 1.0
         48910: 0.5
+      tooltip:
+        en: Choose one of the licenses below. Licenses are associated with each individual file, as well as with the entire collection of files.
+        de: Choose one of the licenses below. Licenses are associated with each individual file, as well as with the entire collection of files.
     - type: object
       property: https://vocabs.acdh.oeaw.ac.at/schema#hasAccessRestriction
       label: 
@@ -66,6 +78,9 @@ smartSearch:
         48508: 1.1
         48513: 1.0
         48519: 0.5
+      tooltip:
+        en: The type of restriction placed on data. Public access means there are no restrictions placed on data. Academic access provides access to all individuals affiliated with an academic institution. Restricted access refers to data that requires specific permission from the data owner.
+        de: The type of restriction placed on data. Public access means there are no restrictions placed on data. Academic access provides access to all individuals affiliated with an academic institution. Restricted access refers to data that requires specific permission from the data owner.
     - type: literal
       property: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
       label: 
@@ -81,6 +96,9 @@ smartSearch:
         https://vocabs.acdh.oeaw.ac.at/schema#Place: 0.5
         https://vocabs.acdh.oeaw.ac.at/schema#Organisation: 0.5
         https://vocabs.acdh.oeaw.ac.at/schema#Publication: 0.5
+      tooltip:
+        en: Choose one of the classes below. The TopCollection is the highest level containing the general metadata describing an entire collection. The collection contains metadata on a collection of files within a TopCollection. The resource contains metadata for a single digital object or file.
+        de: Choose one of the classes below. The TopCollection is the highest level containing the general metadata describing an entire collection. The collection contains metadata on a collection of files within a TopCollection. The resource contains metadata for a single digital object or file.
     - type: matchProperty
       label: 
         en: Search match in
@@ -89,6 +107,9 @@ smartSearch:
         https://vocabs.acdh.oeaw.ac.at/schema#hasTitle: 100.0
         https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier: 50.0
         https://vocabs.acdh.oeaw.ac.at/schema#hasDescription: 10.0
+      tooltip:
+        en: Allows you to filter by the metadata property in which your search phrase was found.
+        de: Allows you to choose the metadata property in which your search phrase was found.
     - type: linkProperty
       property: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
       label:
@@ -106,6 +127,9 @@ smartSearch:
       - https://vocabs.acdh.oeaw.ac.at/schema#Project
       - https://vocabs.acdh.oeaw.ac.at/schema#Publication
       - http://www.w3.org/2004/02/skos/core#Concept
+      tooltip:
+        en: Allows to filter by a type of a relation between an entity where the search phrase was found and a repository resource
+        de: Allows to filter by a type of a relation between an entity where the search phrase was found and a repository resource
     warnings:
     - message:
         en: "Category is assigned only to entities of type acdh:Resource (a single file)."
