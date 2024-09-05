@@ -25,9 +25,9 @@ su -l www-data -c "$CMD \\
     --src $CFGD/drupal.yaml \\
     --src $CFGD/smartSearch.yaml \\
     --src $CFGD/repo.yaml --srcPath '$.metadataManagment.nonRelationProperties' --targetPath '$.metadataManagment.nonRelationProperties' \\
+    --src $CFGD/repo.yaml --srcPath '$.accessControl.publicRole' --targetPath '$.publicRole' \\
     --src $CFGD/config-db.yaml --srcPath '$.dbConnStr.gui' --targetPath '$.dbConnStr' \\
     --src $CFGD/local.yaml \\
     $CFGD/config-gui.yaml"
-su -l www-data -c "sed -i -e 's/{PG_HOST}/$PG_HOST/g' -e 's/{PG_PORT}/$PG_PORT/g' -e 's/{PG_DBNAME}/$PG_DBNAME/g' -e 's/{PG_USER_PREFIX}/$PG_USER_PREFIX/g' $CFGD/config-gui.yaml"
 su -l www-data -c "ln -s $CFGD/config-gui.yaml /home/www-data/gui/web/modules/contrib/arche_core_gui/config/config.yaml"
 
