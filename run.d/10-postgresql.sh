@@ -25,7 +25,7 @@ else
         su -l www-data -c "/usr/lib/postgresql/$PG_VERSION/bin/pg_ctl start -D /home/www-data/postgresql -l /home/www-data/log/postgresql.log" &&\
         su -l www-data -c "createdb $PG_DBNAME" &&\
         INIT_DB=1 &&\
-	echo "    initialization successfull"
+	echo "    initialization successfull" || echo "    initialization failed"
     else
         su -l www-data -c "/usr/lib/postgresql/$PG_VERSION/bin/pg_ctl start -D /home/www-data/postgresql -l /home/www-data/log/postgresql.log"
     fi
@@ -40,12 +40,20 @@ if [ "1" == "$INIT_DB" ]; then
         su -l www-data -c "/usr/bin/psql -v ON_ERROR_STOP=on -f /home/www-data/vendor/acdh-oeaw/arche-core/build/db_schema.sql $PG_CONN" &&\
         su -l www-data -c "echo \"CREATE USER ${PG_USER_PREFIX}repo; CREATE USER ${PG_USER_PREFIX}guest; CREATE USER ${PG_USER_PREFIX}gui\" | /usr/bin/psql -v ON_ERROR_STOP=on $PG_CONN" &&\
         su -l www-data -c "echo \"CREATE SCHEMA gui AUTHORIZATION ${PG_USER_PREFIX}gui\" | /usr/bin/psql -v ON_ERROR_STOP=on $PG_CONN" &&\
-	echo "    schema created successfully"
-	if [ "$?" != "0" ] ; then
-	    echo "    schema creation failed - you may need user with admin rights to do it"
-	fi
+	echo "    schema created successfully" || echo "    schema creation failed - you may need user with admin rights to do it"
     fi
 fi
+
+# performance tweaks
+QUERY="
+CREATE INDEX IF NOT EXISTS relations_id_isPartOf_index on relations(id) where property = 'https://vocabs.acdh.oeaw.ac.at/schema#isPartOf';
+CREATE INDEX IF NOT EXISTS relations_target_id_isPartOf_index on relations(target_id) where property = 'https://vocabs.acdh.oeaw.ac.at/schema#isPartOf';
+CREATE INDEX IF NOT EXISTS relations_target_id_hasNextItem_index on relations(target_id) where property = 'https://vocabs.acdh.oeaw.ac.at/schema#hasNextItem';
+CREATE INDEX IF NOT EXISTS relations_id_hasNextItem_index on relations(id) where property = 'https://vocabs.acdh.oeaw.ac.at/schema#hasNextItem';
+CREATE INDEX IF NOT EXISTS relations_target_id_isNewVersionOf_index on relations(target_id) where property = 'https://vocabs.acdh.oeaw.ac.at/schema#isNewVersionOf';
+CREATE INDEX IF NOT EXISTS relations_id_isNewVersionOf_index on relations(id) where property = 'https://vocabs.acdh.oeaw.ac.at/schema#isNewVersionOf';"
+su -l www-data -c "echo \"$QUERY\" | /usr/bin/psql -v ON_ERROR_STOP=on $PG_CONN 2>/dev/null" &&\
+    echo "extra indexes created successfully" || echo "extra indexes creation failed"
 
 # assure not-superuser user rights
 echo "trying to grant rights to unpriviledged users..."
