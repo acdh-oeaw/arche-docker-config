@@ -12,6 +12,15 @@ acdhids:raw
     acdh:hasTitle           "Download"@en ;
     acdh:hasDescription     "Download current file or collection"@en .
 
+# RAW INLINE
+acdhids:rawInline
+    a                       acdh:DisseminationService ;
+    acdh:serviceLocation    "{RES_URI}?skipContentDisposition=" ;
+    acdh:hasReturnType      "rawInline" ;
+    acdh:serviceRevProxy    false ;
+    acdh:hasTitle           "Download for viewing in a browser"@en ;
+    acdh:hasDescription     "Download current file or collection without a Content-Disposition header"@en .
+
 # Metadata
 acdhids:rdf
     a                       acdh:DisseminationService ;
