@@ -99,6 +99,11 @@ fullTextSearch:
     sizeLimits:
         indexing: 1G
         highlighting: 10M
+    skipTags:
+        - application/xml
+        - application/tei+xml
+        - text/html
+        - text/xml
     mimeFilter:
         # skip/include
         type: include
