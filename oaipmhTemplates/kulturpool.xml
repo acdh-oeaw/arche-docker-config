@@ -28,7 +28,7 @@
         <!-- min. 1 of the following: subject/spatial/temporal/type -->
         <dc:subject val="/acdh:hasSubject" remove="remove" lang="if empty"/>
         <placeholder foreach="/acdh:hasSpatialCoverage" remove="remove">
-          <dcterms:spatial>&Place;</dcterms:spatial>
+            <dcterms:spatial>&Place;</dcterms:spatial>
         </placeholder>
         <dc:date val="/acdh:hasDate" format="D:Y-m-d" remove="remove"/>
         <dcterms:created remove="remove"
@@ -54,18 +54,18 @@
         <edm:type val="/acdh:hasTag" match="^(TEXT|VIDEO|SOUND|IMAGE|3D)$"/>
         <!-- Optional fields -->
         <placeholder foreach="/acdh:hasCreator" remove="remove">
-          <dc:creator>&Agent;</dc:creator>
+            <dc:creator>&Agent;</dc:creator>
         </placeholder>
         <placeholder foreach="/acdh:hasAuthor" remove="remove">
-          <dc:creator>&Agent;</dc:creator>
+            <dc:creator>&Agent;</dc:creator>
         </placeholder>
         <placeholder foreach="/acdh:hasContributor" remove="remove">
-          <dc:contributor>&Agent;</dc:contributor>
+            <dc:contributor>&Agent;</dc:contributor>
         </placeholder>
         <dc:publisher val="/acdh:hasPublisher" remove="remove"/>
         <dc:relation val="/acdh:relation" remove="remove"/>
         <placeholder foreach="/acdh:hasRightsHolder" remove="remove">
-          <dc:rights>&Agent;</dc:rights>
+            <dc:rights>&Agent;</dc:rights>
         </placeholder>
         <dc:rights val="/acdh:hasRightsInformation" lang="if empty" remove="remove"/>
         <dc:source val="/^acdh:isSourceOf/acdh:hasTitle" remove="remove"/>
@@ -90,19 +90,22 @@
         <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^http://rightsstatements[.]org/vocab/" as="@rdf:resource" remove="remove"/>
         <edm:isShownAt val="OAIID" as="@rdf:resource"/>
         <!-- WebResources being children of the CHO=Aggregation -->
-	<placeholder if="none(rdf:type == acdh:Resource)" remove="remove">
-            <edm:isShownBy 
-                val="/acdh:hasNextItem/acdh:hasIdentifier" 
-                match="^.*/api/([0-9]+)$"
-                replace="https://loris.acdh.oeaw.ac.at/\1/full/full/0/default.jpg" 
-                as="@rdf:resource"/>
+        <placeholder if="none(rdf:type == acdh:Resource)" remove="remove">
+            <placeholder foreach="/acdh:hasNextItem" remove="remove">
+                <edm:isShownBy 
+                    if="any(acdh:isPartOf == PARENT)"
+                    val="/acdh:hasIdentifier" 
+                    match="^.*/api/([0-9]+)$"
+                    replace="https://loris.acdh.oeaw.ac.at/\1/full/full/0/default.jpg" 
+                    as="@rdf:resource"/>
+            </placeholder>
             <edm:hasView
                 val="/^acdh:isPartOf/acdh:hasIdentifier" 
                 match="^.*/api/([0-9]+)$"
                 replace="https://loris.acdh.oeaw.ac.at/\1/full/full/0/default.jpg" 
                 as="@rdf:resource" 
                 remove="remove"/>
-	</placeholder>
+        </placeholder>
         <!-- CHO=Aggregation=WebResource -->
     	<placeholder if="any(rdf:type == acdh:Resource)" remove="remove">
             <edm:isShownBy 
@@ -126,7 +129,7 @@
                 <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^https://creativecommons[.]org/" replace="http://creativecommons.org/" as="@rdf:resource" remove="remove"/>
                 <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^http://rightsstatements[.]org/vocab/" as="@rdf:resource" remove="remove"/>
                 <placeholder foreach="/acdh:hasRightsHolder" remove="remove">
-                  <dc:rights>&Agent;</dc:rights>
+                    <dc:rights>&Agent;</dc:rights>
                 </placeholder>
                 <dc:rights val="/acdh:hasRightsInformation" lang="if empty" remove="remove"/>
                 <placeholder foreach="/acdh:hasCreator" remove="remove">
@@ -141,14 +144,14 @@
                     val2="=/"
                     val3="/acdh:hasCreatedEndDate" format3="D:Y" aggregate3="max"/>
                 <dcterms:issued val="/acdh:hasAvailableDate" format="D:Y-m-d" remove="remove"/>
-		<svcs:has_service>
+                <svcs:has_service>
                     <svcs:Service val="/acdh:hasIdentifier" match="^.*/api/([0-9]+)$" replace="https://loris.acdh.oeaw.ac.at/\1" as="@rdf:about">
                         <dcterms:conformsTo rdf:resource="http://iiif.io/api/image"/>
                         <doap:implements rdf:resource="http://iiif.io/api/image/2/level2.json"/>
                     </svcs:Service>
                 </svcs:has_service>
-		<!-- to be able to filter out edm:isNextInSequence pointing from first child to the collection we need a litle complex syntax -->
-		<placeholder foreach="/^acdh:hasNextItem" remove="remove">
+                <!-- to be able to filter out edm:isNextInSequence pointing from first child to the collection we need a litle complex syntax -->
+                <placeholder foreach="/^acdh:hasNextItem" remove="remove">
                     <edm:isNextInSequence
                         if="any(rdf:type == acdh:Resource)"
                         val="/^acdh:hasNextItem/acdh:hasIdentifier" 
@@ -156,7 +159,7 @@
                         replace="https://loris.acdh.oeaw.ac.at/\1/full/full/0/default.jpg" 
                         as="@rdf:resource" 
                         remove="remove"/>
-		</placeholder>
+                </placeholder>
             </edm:WebResource>
         </placeholder>
     </placeholder>
@@ -167,9 +170,9 @@
             <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^http://rightsstatements[.]org/vocab/" as="@rdf:resource" remove="remove"/>
             <dc:format val="=image/jpeg"/>
             <dcterms:created remove="remove"
-                    val1="/acdh:hasCreatedStartDate" format1="D:Y" aggregate1="min"
-                    val2="=/"
-                    val3="/acdh:hasCreatedEndDate" format3="D:Y" aggregate3="max"/>
+                val1="/acdh:hasCreatedStartDate" format1="D:Y" aggregate1="min"
+                val2="=/"
+                val3="/acdh:hasCreatedEndDate" format3="D:Y" aggregate3="max"/>
             <dcterms:issued val="/acdh:hasAvailableDate" format="D:Y-m-d" remove="remove"/>
             <svcs:has_service>
                 <svcs:Service val="/acdh:hasIdentifier" match="^.*/api/([0-9]+)$" replace="https://loris.acdh.oeaw.ac.at/\1" as="@rdf:about">
