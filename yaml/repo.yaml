@@ -112,12 +112,18 @@ fullTextSearch:
     mimeFilter:
         # skip/include
         type: include
+        skipTags:
+            - text/xml
+            - text/html
+            - application/tei+xml
+            - application/xml
         mime:
             - text/turtle
             - text/xml
             - text/plain
             - text/html
             - text/csv
+            - application/tei+xml
             - application/xml
             - application/pdf
             - application/json
