@@ -104,7 +104,7 @@ $poolOpts = [
 ];
 
 $urls    = []; // stores URLs fetched by the $fetchRequestsFn
-#$queue   = $fetchRequestsFn($pdo);
+$queue   = $fetchRequestsFn($pdo);
 $retry   = [];
 $broken  = [];
 $failing = [];
