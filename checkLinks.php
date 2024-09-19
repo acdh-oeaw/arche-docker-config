@@ -78,21 +78,21 @@ $fulfilledFn = function(Response $response, $index) {
         }
     }
     if ($status < 200 || $status >= 400) {
-        $retry[$url] = ($retry[$url] ?? 0) + 1;
-	if ($retry[$url] > $param['retry'] || in_array($status, [401, 403])) {
-            unset($retry[$url]);
+	if ($param['retry'] > 0 || !in_array($status, [401, 403])) {
+            $retry[] = $url;
+        } else {
             $broken[(string) $status][$url] = array_combine($response->getHeader('X-Guzzle-Redirect-History'), $response->getHeader('X-Guzzle-Redirect-Status-History'));
         }
     }
     unset($urls[$index]);
 };
 $rejectFn = function(Exception $reason, $index) {
-    global $urls, $failing, $param;
+    global $urls, $failing, $retry, $param;
     $index = (string) $index;
     $url = $urls[$index];
-    $retry[$url] = ($retry[$url] ?? 0) + 1;
-    if ($retry[$url] > $param['retry']) {
-        unset($retry[$url]);
+    if ($param['retry'] > 0) {
+        $retry[] = $url;
+    } else {
         $failing[$url] = $reason->getMessage();
     }
     unset($urls[$index]);
@@ -103,22 +103,23 @@ $poolOpts = [
     'rejected'    => $rejectFn,
 ];
 
-$urls    = []; // stores URLs fetched by the $fetchRequestsFn
-$queue   = $fetchRequestsFn($pdo);
-$retry   = [];
-$broken  = [];
-$failing = [];
-while ($queue instanceof Generator || count($queue) > 0) {
-    if (is_array($queue)) {
-        fwrite(STDERR, "# retrying " . count($queue) . " URLs (concurrency " . $poolOpts['concurrency'] . ")\n");
+$urls     = []; // stores URLs fetched by the $fetchRequestsFn
+$requests = $fetchRequestsFn($pdo);
+$broken   = [];
+$failing  = [];
+while ($param['retry'] >= 0) {
+    if (is_array($requests) && $param['progress']) {
+        fwrite(STDERR, "# retrying " . count($requests) . " URLs (concurrency " . $poolOpts['concurrency'] . ")\n");
     }
-    $pool = new Pool($client, $queue, $poolOpts);
-    $promise = $pool->promise();
+    $retry    = [];
+    $pool     = new Pool($client, $requests, $poolOpts);
+    $promise  = $pool->promise();
     $promise->wait();
-    $urls = array_keys($retry);
-    $queue = array_map(fn($x) => new Request('HEAD', $x), $urls);
+    $urls     = $retry;
+    $requests = array_map(fn($x) => new Request('HEAD', $x), $urls);
     // limit concurrency to the number of distinct hosts in URLs
     $poolOpts['concurrency'] = min($param['parallel'], count(array_unique(array_map(fn($x) => parse_url($x, PHP_URL_HOST), $urls))));
+    $param['retry']--;
 }
 
 $resQuery = $pdo->prepare("SELECT string_agg(id::text || ' -> ' || property, E'\n' ORDER BY id, property) FROM metadata WHERE substring(value, 1, 1000) = ?");
