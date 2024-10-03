@@ -19,7 +19,7 @@ smartSearch:
         de: Zeitliche Abdeckung
       tooltip:
         en: Beginning and end dates or period of time associated with the original material or data.
-        de: Beginning and end dates or period of time associated with the original material or data.
+        de: Anfangs- und Enddatum oder Zeitspanne, die mit dem Originalmaterial bzw. den Daten verbunden sind.
       bins: 5
       start:
       - https://vocabs.acdh.oeaw.ac.at/schema#hasCoverageStartDate
@@ -33,7 +33,7 @@ smartSearch:
           de: Räumliche Abdeckung
       tooltip:
         en: Location or area associated with the original material or data. This can be a present-day location or historic.
-        de: Location or area associated with the original material or data. This can be a present-day location or historic.
+        de: Ort oder Gebiet, das mit dem Originalmaterial bzw. den Daten in Verbindung steht. Dies kann ein rezenter oder historischer Ort sein.
     - type: object
       property: https://vocabs.acdh.oeaw.ac.at/schema#hasRelatedDiscipline
       label: 
@@ -42,7 +42,7 @@ smartSearch:
       weights: []
       tooltip:
         en: Choose from the drop down below the field of study associated with the data you are interested in. Most datasets will be associated with multiple research disciplines.
-        de: Choose from the drop down below the field of study associated with the data you are interested in. Most datasets will be associated with multiple research disciplines.
+        de: Wählen Sie aus der Dropdown-Liste unten das Fachgebiet aus, zu dem die Daten gehören, an denen Sie interessiert sind. Die meisten Datensätze werden mit mehreren Forschungsdisziplinen verbunden sein.
     - type: object
       property: https://vocabs.acdh.oeaw.ac.at/schema#hasCategory
       label: 
@@ -51,7 +51,7 @@ smartSearch:
       weights: []
       tooltip:
         en: The kind of data you are searching for.
-        de: The kind of data you are searching for.
+        de: Die Art der Daten, nach denen Sie suchen.
     - type: object
       property: https://vocabs.acdh.oeaw.ac.at/schema#hasLicense
       label: 
@@ -68,8 +68,8 @@ smartSearch:
         48913: 1.0
         48910: 0.5
       tooltip:
-        en: Choose one of the licenses below. Licenses are associated with each individual file, as well as with the entire collection of files.
-        de: Choose one of the licenses below. Licenses are associated with each individual file, as well as with the entire collection of files.
+        en: Choose one of the licenses below. These are associated with each individual file, as well as with the entire collection of files.
+        de: Wählen Sie eine der unten angeführten Lizenzen. Diese sind sowohl mit jeder einzelnen Datei als auch mit der gesamten Dateisammlung verbunden.
     - type: object
       property: https://vocabs.acdh.oeaw.ac.at/schema#hasAccessRestriction
       label: 
@@ -80,8 +80,8 @@ smartSearch:
         48513: 1.0
         48519: 0.5
       tooltip:
-        en: The type of restriction placed on data. Public access means there are no restrictions placed on data. Academic access provides access to all individuals affiliated with an academic institution. Restricted access refers to data that requires specific permission from the data owner.
-        de: The type of restriction placed on data. Public access means there are no restrictions placed on data. Academic access provides access to all individuals affiliated with an academic institution. Restricted access refers to data that requires specific permission from the data owner.
+        en: The type of restriction placed on data. Public access means there are no restrictions. Academic access provides access to all individuals affiliated with an academic institution. Restricted access refers to data that requires specific permission from the data owners.
+        de: Die Art der Einschränkung der Daten. Öffentlicher Zugang bedeutet, dass es keine Einschränkungen gibt. Der akademische Zugang ermöglicht allen Personen, die mit einer akademischen Institution verbunden sind, den Zugang. Eingeschränkter Zugang bezieht sich auf Daten, für die eine spezielle Genehmigung der Dateneigentümer:innen erforderlich ist.
     - type: literal
       property: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
       label: 
@@ -98,8 +98,8 @@ smartSearch:
         https://vocabs.acdh.oeaw.ac.at/schema#Organisation: 0.5
         https://vocabs.acdh.oeaw.ac.at/schema#Publication: 0.5
       tooltip:
-        en: Choose one of the classes below. The TopCollection is the highest level containing the general metadata describing an entire collection. The collection contains metadata on a collection of files within a TopCollection. The resource contains metadata for a single digital object or file.
-        de: Choose one of the classes below. The TopCollection is the highest level containing the general metadata describing an entire collection. The collection contains metadata on a collection of files within a TopCollection. The resource contains metadata for a single digital object or file.
+        en: Choose one of the classes below. TopCollection is the highest level containing the general metadata describing an entire collection. Collection contains metadata on a collection of files within a TopCollection. Resource contains metadata for a single digital object or file.
+        de: Wählen Sie eine der folgenden Klassen. „TopCollection“ ist die höchste Ebene und enthält die allgemeinen Metadaten, die eine ganze Sammlung beschreiben. „Collection“ enthält Metadaten zu einer Sammlung von Dateien innerhalb einer „TopCollection“. „Resource“ enthält Metadaten für ein einzelnes digitales Objekt bzw. eine Datei.
     - type: matchProperty
       label: 
         en: Search match in
@@ -110,7 +110,7 @@ smartSearch:
         https://vocabs.acdh.oeaw.ac.at/schema#hasDescription: 10.0
       tooltip:
         en: Allows you to filter by the metadata property in which your search phrase was found.
-        de: Allows you to choose the metadata property in which your search phrase was found.
+        de: Ermöglicht das Filtern nach der Metadateneigenschaft, in der Ihr Suchbegriff gefunden wurde.
     - type: linkProperty
       property: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
       label:
@@ -129,47 +129,47 @@ smartSearch:
       - https://vocabs.acdh.oeaw.ac.at/schema#Publication
       - http://www.w3.org/2004/02/skos/core#Concept
       tooltip:
-        en: Allows to filter by a type of a relation between an entity where the search phrase was found and a repository resource
-        de: Allows to filter by a type of a relation between an entity where the search phrase was found and a repository resource
+        en: Allows to filter by a type of a relation between an entity where the search phrase was found and a repository resource.
+        de: Ermöglicht das Filtern nach einem Beziehungstyp zwischen einer Entität, in der der Suchbegriff gefunden wurde, und einer Repositoriumsressource.
     warnings:
     - message:
         en: "Category is assigned only to entities of type acdh:Resource (a single file)."
-        de: "[translate] Category and/or access restriction are collected only for resources of type acdh:Resource."
+        de: "Kategorie wird nur Entitäten des Typs acdh:Resource (eine einzelne Datei) zugeordnet."
       severity: warning
       match:
       - https://vocabs.acdh.oeaw.ac.at/schema#hasCategory: ~
       - http://www.w3.org/1999/02/22-rdf-syntax-ns#type: "!https://vocabs.acdh.oeaw.ac.at/schema#Resource"
     - message:
         en: "Access setting is only determined for entities of type acdh:Resource (for a single file)."
-        de: "[translate] Access setting is only determined for entities of type acdh:Resource (for a single file)."
+        de: "Die Zugriffseinstellung wird nur für Entitäten des Typs acdh:Resource (für eine einzelne Datei) festgelegt."
       severity: warning
       match:
       - https://vocabs.acdh.oeaw.ac.at/schema#hasAccessRestriction: ~
       - http://www.w3.org/1999/02/22-rdf-syntax-ns#type: "!https://vocabs.acdh.oeaw.ac.at/schema#Resource"
     - message:
         en: "Research discipline is usually provided only for entities of type other than acdh:Resource, most often for type acdh:TopCollection."
-        de: "[translate] Research discipline is usually provided only for entities of type other than acdh:Resource, most often for type acdh:TopCollection."
+        de: "Die Forschungsdisziplin wird in der Regel nur für Entitäten eines anderen Typs als acdh:Resource angegeben, am häufigsten für den Typ acdh:TopCollection."
       severity: warning
       match:
       - https://vocabs.acdh.oeaw.ac.at/schema#hasRelatedDiscipline: ~
       - http://www.w3.org/1999/02/22-rdf-syntax-ns#type: "https://vocabs.acdh.oeaw.ac.at/schema#Resource"
     - message:
-        en: "Because a data collection can include files with different licenses, License is rarely provided for entities of type acdh:TopCollection."
-        de: "[translate] Because a data collection can include files with different licenses, License is rarely provided for entities of type acdh:TopCollection and acdh:Collection."
+        en: "Because a data collection can include files with different licenses, license is rarely provided for entities of type acdh:TopCollection."
+        de: "Da eine Datensammlung Dateien mit unterschiedlichen Lizenzen enthalten kann, wird die Lizenz nur selten für Entitäten des Typs acdh:TopCollection bereitgestellt."
       severity: warning
       match:
       - https://vocabs.acdh.oeaw.ac.at/schema#hasLicense: ~
       - http://www.w3.org/1999/02/22-rdf-syntax-ns#type: "https://vocabs.acdh.oeaw.ac.at/schema#TopCollection"
     - message:
-        en: "Because a data collection can include files with different licenses, License is rarely provided for entities of type acdh:Collection."
-        de: "[translate] Because a data collection can include files with different licenses, License is rarely provided for entities of type acdh:TopCollection and acdh:Collection."
+        en: "Because a data collection can include files with different licenses, license is rarely provided for entities of type acdh:Collection."
+        de: "Da eine Datensammlung Dateien mit unterschiedlichen Lizenzen enthalten kann, wird die Lizenz nur selten für Entitäten des Typs acdh:Collection bereitgestellt."
       severity: warning
       match:
       - https://vocabs.acdh.oeaw.ac.at/schema#hasLicense: ~
       - http://www.w3.org/1999/02/22-rdf-syntax-ns#type: "https://vocabs.acdh.oeaw.ac.at/schema#Collection"
     - message:
-        en: "Explicit information on the temporal and/or spatial coverage of the data is not always provided. Usually it is provided for entities of type acdh:TopCollection."
-        de: "[translate]Explicit information on the temporal and/or spatial coverage of the data is not always provided. Usually it is provided for entities of type acdh:TopCollection."
+        en: "Explicit information on the temporal and/or spatial coverage of the data is not always provided, but usually for entities of the type acdh:TopCollection."
+        de: "Explizite Informationen über die zeitliche und/oder räumliche Abdeckung der Daten werden nicht immer, sondern in der Regel für Entitäten des Typs acdh:TopCollection bereitgestellt."
       severity: warning
       match:
       - dateContent: ~
@@ -178,7 +178,12 @@ smartSearch:
       en: |
         <p>Oops, your search did not return any data. Read further to learn how search in ARCHE works!</p>
         <p>You can discover resources in the ARCHE in multiple ways.</p>
-        <p>If you are just looking around, a good starting point may be to list Top Collections by selecting the <em>acdh:TopCollection</em> value from the <strong>Type</strong> search facet. This will return all main data collections stored in ARCHE and you can continue browsing from there.</p>
+        <p>If you are just looking around, a good starting point may be to list TopCollections by selecting the <em>acdh:TopCollection</em> value from the <strong>Type</strong> search facet. This will return all main data collections stored in ARCHE and you can continue browsing from there.</p>
         <p>If you have any particular search phrase in mind, please type it in the search field and click the search button. That way you will get an initial results and the search facets will be updated accordingly allowing you to further narrow down your search.</p>
         <p>If you are interested in particular time period or area, you can use the temporal and spatial filters. As these information are not always provided explicitly, the search may fetch better results if you enter the year, period or place name as a search phrase.</p>
-      de: [provide the message in German]
+      de: 
+        <p>Ups, Ihre Suche hat keine Daten ergeben. Lesen Sie weiter, um zu erfahren, wie die Suche in ARCHE funktioniert!</p>
+        <p>Sie können Ressourcen in ARCHE auf verschiedene Weise entdecken.</p>
+        <p>Wenn Sie sich nur umsehen wollen, ist es ein guter Ausgangspunkt, die „TopCollection“ aufzulisten, indem Sie den Wert <em>acdh:TopCollection</em> aus der Suchfacette <strong>Typ</strong> auswählen. Dadurch werden alle in ARCHE gespeicherten Hauptdatensammlungen angezeigt, und Sie können von dort aus die Suche fortsetzen.</p>
+        <p>Wenn Sie einen bestimmten Suchbegriff im Sinn haben, geben Sie ihn bitte in das Suchfeld ein und klicken Sie auf die Schaltfläche „Suchen“. Auf diese Weise erhalten Sie ein erstes Ergebnis und die Suchfacetten werden entsprechend aktualisiert, so dass Sie Ihre Suche weiter eingrenzen können.</p>
+        <p>Wenn Sie an einem bestimmten Zeitraum oder Gebiet interessiert sind, können Sie die zeitlichen und räumlichen Filter verwenden. Da diese Informationen nicht immer explizit angegeben werden, kann die Suche zu besseren Ergebnissen führen, wenn Sie das Jahr, den Zeitraum oder den Ortsnamen als Suchbegriff eingeben.</p>
