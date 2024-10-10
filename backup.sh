@@ -24,4 +24,4 @@ fi
 
 # compress logs
 echo "--- Compressing logs"
-$CDIR/run.d/logs.sh
+$CDIR/run.d/01-logs.sh
