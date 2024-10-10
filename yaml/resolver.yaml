@@ -28,7 +28,7 @@ resolver:
         self:
             baseUrl: http://127.0.0.1/
             # optional, when available a faster resource search is performed (saving ~100 ms)
-            dbConnStr: "pgsql: user=guest dbname=www-data host=127.0.0.1"
+            dbConnStr: "set by run.d/20-resolver.sh"
             #options:
             #  auth:
             #  - login

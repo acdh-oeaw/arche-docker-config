@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<edm:Place val="/acdh:hasIdentifier" match="^https://id[.]acdh[.]oeaw[.]ac[.]at/" as="@rdf:about"
+<edm:Place val="/acdh:hasIdentifier" match="^https://arche.*/api/[0-9]+$" as="@rdf:about"
            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
            xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
            xmlns:edm="http://www.europeana.eu/schemas/edm/"
@@ -17,5 +17,5 @@
     <skos:note val="/acdh:hasNote" lang="if empty" remove="remove"/>
     <dcterms:hasPart val="/^acdh:isPartOf" as="@rdf:resource" remove="remove"/>
     <dcterms:isPartOf val="/acdh:isPartOf" as="@rdf:resource" remove="remove"/>
-    <owl:sameAs val="/acdh:hasIdentifier" as="@rdf:resource" remove="remove"/>
+    <owl:sameAs val="/acdh:hasIdentifier" notMatch="^https://arche.*/api/[0-9]+$" as="@rdf:resource" remove="remove"/>
 </edm:Place>

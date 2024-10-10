@@ -1,7 +1,5 @@
-dbConn:
-  guest: 'pgsql: host={PG_HOST} port={PG_PORT} user={PG_USER_PREFIX}gui dbname={PG_DBNAME}'
 dbConnStr:
-  guest: 'pgsql: host={PG_HOST} port={PG_PORT} user={PG_USER_PREFIX}gui dbname={PG_DBNAME}'
+  guest: 'set up by run.d/80-gui.sh'
 schema:
   drupal:
      vocabsNamespace: https://vocabs.acdh.oeaw.ac.at/schema#
@@ -18,3 +16,5 @@ schema:
 clarinVcrUrl: https://collections.clarin.eu/submit/extensional
 authLoginCookie: archeLogin
 publicRole: public
+ontologyCacheFile: /home/www-data/docroot/api/ontology.cache
+ontologyCacheTtl: 86400

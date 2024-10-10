@@ -8,7 +8,7 @@ oai:
         adminEmail: mateusz.zoltak@oeaw.ac.at
         granularity: YYYY-MM-DDThh:mm:ssZ
     # Repository database connection data
-    dbConnStr: "pgsql: user=guest dbname=www-data host=127.0.0.1"
+    dbConnStr: "set by run.d/25-oaipmh.sh"
     # Cache dir - leave empty not to use cache
     cacheDir: ""
     # Logging settings

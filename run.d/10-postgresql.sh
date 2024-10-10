@@ -78,8 +78,12 @@ else
         echo "$PG_HOST:$PG_PORT:$PG_DBNAME:${PG_USER_PREFIX}$user:$PSWD" >> /home/www-data/.pgpass
 	echo "  $user: 'pgsql: host=$PG_HOST port=$PG_PORT user=${PG_USER_PREFIX}$user dbname=$PG_DBNAME'" >> "$DB_CONF_YAML"
         if [ "$user" == "repo" ] ; then
-            IP="`cat /etc/hosts | grep -E '^[0-9]+[.][0-9]+[.][0-9]+[.][0-9]+' | grep -v localhost | head -n 1 | sed -e 's/\s.*//'`"
-            echo "$IP:5432:www-data:${PG_USER_PREFIX}$user:$PSWD" > /home/www-data/config/backup_pgpass &&\
+            if [ ! -z "$PG_EXTERNAL" ]; then
+                IP="$PG_HOST"
+            else
+                IP="`cat /etc/hosts | grep -E '^[0-9]+[.][0-9]+[.][0-9]+[.][0-9]+' | grep -v localhost | head -n 1 | sed -e 's/\s.*//'`"
+            fi
+            echo "$IP:$PG_PORT:$PG_DBNAME:${PG_USER_PREFIX}$user:$PSWD" > /home/www-data/config/backup_pgpass &&\
             chmod 600 /home/www-data/config/backup_pgpass
         fi
     done

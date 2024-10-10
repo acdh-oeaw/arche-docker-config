@@ -1,11 +1,11 @@
 dbConn:
     # admin connection should grant full data modification rights
-    admin: "pgsql: user={PG_USER_PREFIX}repo dbname={PG_DBNAME} host={PG_HOST} port={PG_PORT}"
+    admin: "pgsql: user={USER_REPO} dbname={PG_DBNAME} host={PG_HOST} port={PG_PORT}"
     # guest connection should be read-only
-    guest: "pgsql: user={PG_USER_PREFIX}guest dbname={PG_DBNAME} host={PG_HOST} port={PG_PORT}"
+    guest: "pgsql: user={USER_GUEST} dbname={PG_DBNAME} host={PG_HOST} port={PG_PORT}"
 dbConnStr:
-    admin: "pgsql: user={PG_USER_PREFIX}repo dbname={PG_DBNAME} host={PG_HOST} port={PG_PORT}"
-    guest: "pgsql: user={PG_USER_PREFIX}guest dbname={PG_DBNAME} host={PG_HOST} port={PG_PORT}"
+    admin: "pgsql: user={USER_REPO} dbname={PG_DBNAME} host={PG_HOST} port={PG_PORT}"
+    guest: "pgsql: user={USER_GUEST} dbname={PG_DBNAME} host={PG_HOST} port={PG_PORT}"
 storage: 
     dir: /home/www-data/data
     tmpDir: /home/www-data/tmp
@@ -41,13 +41,12 @@ accessControl:
     enforceOnMetadata: false
     schema:
         read: https://vocabs.acdh.oeaw.ac.at/schema#aclRead
-        update: https://vocabs.acdh.oeaw.ac.at/schema#aclUpdate
         write: https://vocabs.acdh.oeaw.ac.at/schema#aclWrite
     cookie:
         path: /
         name: archeLogin
     db:
-        connStr: 'pgsql: user={PG_USER_PREFIX}repo dbname={PG_DBNAME} host={PG_HOST} port={PG_PORT}'
+        connStr: 'pgsql: user={USER_REPO} dbname={PG_DBNAME} host={PG_HOST} port={PG_PORT}'
         table: users
         userCol: user_id
         dataCol: data
@@ -109,6 +108,11 @@ fullTextSearch:
     sizeLimits:
         indexing: 1G
         highlighting: 10M
+    skipTags:
+        - application/xml
+        - application/tei+xml
+        - text/html
+        - text/xml
     mimeFilter:
         # skip/include
         type: include
@@ -118,6 +122,7 @@ fullTextSearch:
             - text/plain
             - text/html
             - text/csv
+            - application/tei+xml
             - application/xml
             - application/pdf
             - application/json

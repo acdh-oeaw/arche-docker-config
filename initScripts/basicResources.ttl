@@ -405,3 +405,4 @@ acdhi:rmandell a acdh:Person;
     acdh:hasRegion "Wien"@de;
     acdh:hasEmail "RachelAlyson.Mandell@oeaw.ac.at";
     acdh:isMemberOf acdhi:acdh.
+
