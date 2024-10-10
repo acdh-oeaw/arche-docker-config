@@ -288,7 +288,7 @@ acdhids:collectionDwnldScriptMatch2
 # Loris
 acdhids:loris
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "https://loris.acdh.oeaw.ac.at/uuid:{ID&id|part(path)}/{param}" ;
+    acdh:serviceLocation    "https://loris.acdh.oeaw.ac.at/{RES_ID}/{param}" ;
     acdh:hasReturnType      "image/jpeg" ;
     acdh:hasReturnType      "iiif" ;
     acdh:serviceRevProxy    false ;
