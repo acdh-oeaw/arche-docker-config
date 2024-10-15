@@ -181,7 +181,7 @@ acdhids:customTei2HtmlParam1
 # 3D Object
 acdhids:3DObject
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "{RES_URI|part(scheme,host)}/browser/oeaw_3d_viewer/{RES_ID}" ;
+    acdh:serviceLocation    "{RES_URI|part(scheme,host)}/browser/dissemination/3d/{RES_ID}" ;
     acdh:hasReturnType      "3dViewer" ;
     acdh:serviceRevProxy    false ;
     acdh:hasTitle           "3D viewer"@en ;
@@ -204,7 +204,7 @@ acdhids:3DObjectMatch2
 # IIIF viewer
 acdhids:iiif
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "{RES_URI|part(scheme,host)}/browser/iiif_viewer/{RES_ID}" ;
+    acdh:serviceLocation    "{RES_URI|part(scheme,host)}/browser/dissemination/iiif/{RES_ID}" ;
     acdh:hasReturnType      "iiifviewer" ;
     acdh:hasReturnType      "text/html; q=0.1" ;
     acdh:serviceRevProxy    false ;
@@ -240,32 +240,32 @@ acdhids:iiifMatch4
     acdh:isRequired         false .
 
 # Collection Download
-acdhids:collectionDwnld
-    a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "{RES_URI|part(scheme,host)}/browser/oeaw_dl_collection/{RES_ID}" ;
-    acdh:hasReturnType      "Download Collection" ;
-    acdh:serviceRevProxy    false ;
-    acdh:hasTitle           "Download Collection"@en ;
-    acdh:hasDescription     "Download current file or collection"@en .
-acdhids:collectionDwnldMatch
-    a                       acdh:DisseminationServiceMatchRule ;
-    acdh:relation           acdhids:collectionDwnld ;
-    acdh:hasTitle           "collectionDwnldMatch"@en ;
-    acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
-    acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/schema#Collection" ;
-    acdh:isRequired         false .
-acdhids:collectionDwnldMatch2
-    a                       acdh:DisseminationServiceMatchRule ;
-    acdh:relation           acdhids:collectionDwnld ;
-    acdh:hasTitle           "collectionDwnldMatch"@en ;
-    acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
-    acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/schema#TopCollection" ;
-    acdh:isRequired         false .
+#acdhids:collectionDwnld
+#    a                       acdh:DisseminationService ;
+#    acdh:serviceLocation    "{RES_URI|part(scheme,host)}/browser/oeaw_dl_collection/{RES_ID}" ;
+#    acdh:hasReturnType      "Download Collection" ;
+#    acdh:serviceRevProxy    false ;
+#    acdh:hasTitle           "Download Collection"@en ;
+#    acdh:hasDescription     "Download current file or collection"@en .
+#acdhids:collectionDwnldMatch
+#    a                       acdh:DisseminationServiceMatchRule ;
+#    acdh:relation           acdhids:collectionDwnld ;
+#    acdh:hasTitle           "collectionDwnldMatch"@en ;
+#    acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
+#    acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/schema#Collection" ;
+#    acdh:isRequired         false .
+#acdhids:collectionDwnldMatch2
+#    a                       acdh:DisseminationServiceMatchRule ;
+#    acdh:relation           acdhids:collectionDwnld ;
+#    acdh:hasTitle           "collectionDwnldMatch"@en ;
+#    acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
+#    acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/schema#TopCollection" ;
+#    acdh:isRequired         false .
 
 # Collection Download Script
 acdhids:collectionDwnldScript
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "{RES_URI|part(scheme,host)}/browser/oeaw_coll_dl_script/{RES_ID}" ;
+    acdh:serviceLocation    "{RES_URI|part(scheme,host)}/browser/dissemination/collection_download_script/{RES_ID}" ;
     acdh:hasReturnType      "Download Collection Script" ;
     acdh:serviceRevProxy    false ;
     acdh:hasTitle           "Download Collection Script"@en ;
