@@ -18,3 +18,4 @@ authLoginCookie: archeLogin
 publicRole: public
 ontologyCacheFile: /home/www-data/docroot/api/ontology.cache
 ontologyCacheTtl: 86400
+authSsoHeader: HTTP_EPPN
