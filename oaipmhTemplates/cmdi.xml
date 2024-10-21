@@ -16,17 +16,17 @@
     </cmd:Header>
     <cmd:Resources>
         <cmd:ResourceProxyList>
-            <cmd:ResourceProxy val="SEQ" as="@id">
+            <cmd:ResourceProxy val1="=id" as1="@id" val2="SEQ" as2="@id" action2="append">
                 <cmd:ResourceType val1="=Resource"
                                   val2="/^acdh:hasPid/acdh:hasFormat" as2="@mimetype" required2="optional"/>
                 <cmd:ResourceRef val="/acdh:hasPid"/>
             </cmd:ResourceProxy>
-            <cmd:ResourceProxy foreach="/^acdh:isSourceOf/acdh:hasPid" val="SEQ" as="@id">
+            <cmd:ResourceProxy foreach="/^acdh:isSourceOf/acdh:hasPid" val1="=id" as1="@id" val2="SEQ" as2="@id" action2="append">
                 <cmd:ResourceType val1="=Resource"
                                   val2="/^acdh:hasPid/acdh:hasFormat" as2="@mimetype" required2="optional"/>
                 <cmd:ResourceRef val="CURNODE"/>
             </cmd:ResourceProxy>
-            <cmd:ResourceProxy foreach="/^acdh:isPartOf/acdh:hasPid" val="SEQ" as="@id">
+            <cmd:ResourceProxy foreach="/^acdh:isPartOf/acdh:hasPid" val1="=id" as1="@id" val2="SEQ" as2="@id" action2="append">
                 <cmd:ResourceType val1="=Resource"
                                   val2="/^acdh:hasPid/acdh:hasFormat" as2="@mimetype" required2="optional"/>
                 <cmd:ResourceRef val="CURNODE"/>
