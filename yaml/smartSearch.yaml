@@ -32,8 +32,8 @@ smartSearch:
           en: Spatial coverage
           de: Räumliche Abdeckung
       tooltip:
-        en: Location or area (present-day or historic) associated with the original material or data. Use the icon on the left side of the map to draw a rectangle around the area you are interested in exploring and then click “magnifying glass” to update the map.
-        de: Ort oder Gebiet (rezent oder historisch), der/das mit dem Originalmaterial oder den Daten verbunden ist. Verwenden Sie das Symbol auf der linken Seite der Karte, um ein Rechteck um den Bereich zu ziehen, den Sie erforschen möchten, und klicken Sie dann auf „Lupe“, um die Karte zu aktualisieren.
+        en: Location or area (present-day or historic) associated with the original material or data. Use the icon on the left side of the map to draw a rectangle around the area you are interested in exploring and then click on the “magnifying glass” to refresh the map.
+        de: Ort oder Gebiet (rezent oder historisch), der/das mit dem Originalmaterial oder den Daten verbunden ist. Verwenden Sie das Symbol auf der linken Seite der Karte, um ein Rechteck um den Bereich zu ziehen, den Sie erforschen möchten, und klicken Sie dann auf die „Lupe“, um die Karte zu aktualisieren.
     - type: object
       property: https://vocabs.acdh.oeaw.ac.at/schema#hasRelatedDiscipline
       label: 
