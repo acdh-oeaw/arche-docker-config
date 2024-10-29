@@ -60,10 +60,6 @@ accessControl:
           advertise: once
           parameters:
              - repo
-        - class: \zozlak\auth\authMethod\Guest
-          advertise: none
-          parameters:
-             - public
 metadataManagment:
     nonRelationProperties:
         - http://www.w3.org/1999/02/22-rdf-syntax-ns#type
