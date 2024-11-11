@@ -97,6 +97,7 @@ smartSearch:
         https://vocabs.acdh.oeaw.ac.at/schema#Place: 0.5
         https://vocabs.acdh.oeaw.ac.at/schema#Organisation: 0.5
         https://vocabs.acdh.oeaw.ac.at/schema#Publication: 0.5
+        https://vocabs.acdh.oeaw.ac.at/schema#Project: 0.5
       tooltip:
         en: Choose one of the classes below. TopCollection is the highest level containing the general metadata describing an entire collection. Collection contains metadata on a collection of files within a TopCollection. Resource contains metadata for a single digital object or file.
         de: Wählen Sie eine der folgenden Klassen. „TopCollection“ ist die höchste Ebene und enthält die allgemeinen Metadaten, die eine ganze Sammlung beschreiben. „Collection“ enthält Metadaten zu einer Sammlung von Dateien innerhalb einer „TopCollection“. „Resource“ enthält Metadaten für ein einzelnes digitales Objekt bzw. eine Datei.
