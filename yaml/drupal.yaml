@@ -21,3 +21,10 @@ ontologyCacheTtl: 86400
 authSsoHeader: HTTP_EPPN
 skosAllowedRedirectNmsp:
 - https://vocabs.acdh.oeaw.ac.at/
+binaryDownload:
+  resourceClasses:
+  https://vocabs.acdh.oeaw.ac.at/schema#Resource
+  https://vocabs.acdh.oeaw.ac.at/schema#Metadata
+  collectionClasses:
+  https://vocabs.acdh.oeaw.ac.at/schema#Collection
+  https://vocabs.acdh.oeaw.ac.at/schema#TopCollection
