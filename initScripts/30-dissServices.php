@@ -45,7 +45,7 @@ try {
         if (!in_array($i->getUri(), $valid)) {
             echo "Removing obsolete diss service " . $i->getUri() . "\n";
             try {
-                $i->deleteRecursively($cfg->schema->parent, true, true);
+                $i->delete(true, true, $cfg->schema->parent);
             } catch (Deleted $e) {}
         }
     }
