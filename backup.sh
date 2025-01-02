@@ -21,9 +21,9 @@ echo "### Dumping the database"
 $SDIR/backup.php $BDIR/dbdump_$DOW "$CFGFILE" --tmpDir "$TDIR" --include all --compression gzip --compressionLevel 9 --dateFrom 2200-01-01 --dateTo 2200-01-01 2>&1 | tee $BDIR/dbdump_$DOW.log &&\
     echo "### Database dumped successfully"
 # full incremental binaries backup on Sunday
-if [ "$DOW" == "4" ] ; then
-    $SDIR/backup.php --dateFile "$DATEFILE" --compression $COMPRESSION --compressionLevel $COMPRESSIONLEVEL --include none --lock skip "$CFGFILE" "$TDIR/${FILE}" 2>&1 | tee "$BDIR/${FILE}.log" &&\
-    && echo "### Incremental binary dump ended successfully" | tee -a "$BDIR/${FILE}.log"
+if [ "$DOW" == "0" ] ; then
+    $SDIR/backup.php --dateFile "$DATEFILE" --compression $COMPRESSION --compressionLevel $COMPRESSIONLEVEL --include none --lock skip "$TDIR/${FILE}" "$CFGFILE" 2>&1 | tee "$BDIR/${FILE}.log" &&\
+    echo "### Incremental binary dump ended successfully" | tee -a "$BDIR/${FILE}.log"
     cp "$BDIR/${FILE}.log" "$ODIR/backup_last.txt"
 fi
 
@@ -32,3 +32,5 @@ echo "### Backup ended on `date +%Y-%m-%dT%H:%M:%S`"
 # compress logs
 echo "### Compressing logs"
 $CDIR/run.d/01-logs.sh
+
+echo "### Ended"
