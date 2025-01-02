@@ -202,6 +202,50 @@ acdhids:collectionDwnldScriptMatch2
     acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/schema#TopCollection" ;
     acdh:isRequired         false .
 
+# IIIF presentation manifest
+acdhids:iiifmanifest
+    a                       acdh:DisseminationService ;
+    acdh:serviceLocation    "https://arche-iiifmanifest.acdh.oeaw.ac.at/?mode={mode}&id={RES_URI|url}" ;
+    acdh:hasReturnType      "application/json" ;
+    acdh:hasReturnType      "iiifmanifest" ;
+    acdh:serviceRevProxy    false ;
+    acdh:hasTitle           "IIIF Presentation Manifest"@en ;
+    acdh:hasDescription     "Returns IIIF Presentation Manifest of a given collection or a collection an image belongs to"@en .
+acdhids:iiifmanifestMatch1
+    a                       acdh:DisseminationServiceMatchRule ;
+    acdh:relation           acdhids:iiifmanifest ;
+    acdh:hasTitle           "iiifmanifestMatch"@en ;
+    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
+    acdh:matchesValue       "image/jpeg" ;
+    acdh:isRequired         false .
+acdhids:iiifmanifestMatch2
+    a                       acdh:DisseminationServiceMatchRule ;
+    acdh:relation           acdhids:iiifmanifest ;
+    acdh:hasTitle           "iiifmanifestMatch"@en ;
+    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
+    acdh:matchesValue       "image/png" ;
+    acdh:isRequired         false .
+acdhids:iiifmanifestMatch3
+    a                       acdh:DisseminationServiceMatchRule ;
+    acdh:relation           acdhids:iiifmanifest ;
+    acdh:hasTitle           "iiifmanifestMatch"@en ;
+    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
+    acdh:matchesValue       "image/tiff" ;
+    acdh:isRequired         false .
+acdhids:iiifmanifestMatch4
+    a                       acdh:DisseminationServiceMatchRule ;
+    acdh:relation           acdhids:iiifmanifest ;
+    acdh:hasTitle           "iiifmanifestMatch"@en ;
+    acdh:matchesProp        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" ;
+    acdh:matchesValue       "https://vocabs.acdh.oeaw.ac.at/schema#Collection" ;
+    acdh:isRequired         false .
+acdhids:iiifmanifestMode
+    a                       acdh:DisseminationServiceParameter ;
+    acdh:relation           acdhids:iiifmanifest ;
+    acdh:hasTitle           "mode"@en ;
+    acdh:hasDefaultValue    "manifest" ;
+    acdh:hasDescription     "Allows to choose returned data format: manifest (IIIF presentation manifest), images (OpenSeadragon-compatible images list), image (single image IIIF manifest)"@en .
+
 # Loris
 acdhids:loris
     a                       acdh:DisseminationService ;
