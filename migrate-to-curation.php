@@ -51,7 +51,7 @@ if ($argv[1] === 'dump') {
     echo "Copying repository config\n";
     copy('/home/www-data/config/yaml/config-repo.yaml', "$basePath/$cfgDump");
     echo "Dumping metadata\n";
-    system('pg_dump -f ' . escapeshellarg("$basePath/$dataDump") . ' -a --disable-triggers -t resources -t identifiers -t relations -t metadata -t spatial_search -t full_text_search ' . $dbConn);
+    system('pg_dump -f ' . escapeshellarg("$basePath/$dataDump") . ' -a --disable-triggers -t resources -t identifiers -t relations -t metadata -t spatial_search -t full_text_search -t id_seq -t mid_seq -t spid_seq -t ftsid_seq' . $dbConn);
 
     echo "Dumping title images\n";
     $query = $pdo->prepare("SELECT id FROM relations r JOIN metadata m USING (id) WHERE r.property = ? AND m.property = ? ORDER BY 1");
@@ -89,23 +89,21 @@ if ($argv[1] === 'dump') {
             (isset($dbConnParam['dbname']) ? " '" . $dbConnParam['dbname'] . "'" : '') ;
     }
 
-    echo "Removing old metadata\n";
+    echo "### Removing old metadata\n";
     system("psql $dbConn -c 'TRUNCATE resources CASCADE; TRUNCATE metadata_history;'");
-    echo "Importing new data\n";
-    #system("psql -f " . escapeshellarg($dataDump) . $dbConn);
-    echo "psql -f " . escapeshellarg($dataDump) . $dbConn . "\n";
-    #system("psql -f " . escapeshellarg($usersDump) . $dbConn);
-    echo "Updating base indentifiers\n";
+    echo "### Importing new data\n";
+    system("psql -f " . escapeshellarg($dataDump) . $dbConn);
+
     $oldCfg    = json_decode(json_encode(yaml_parse_file($cfgDump)));
     $oldIdBase = $oldCfg->rest->urlBase . $oldCfg->rest->pathBase;
     $newIdBase = $cfg->rest->urlBase . $cfg->rest->pathBase;
-    #$query     = $pdo->prepare("UPDATE identifiers SET ids = replace(ids, ?, ?) WHERE ids LIKE ?");
-    #$query->execute([$oldIdBase, $newIdBase, "$oldIdBase%"]);
-    echo "UPDATE identifiers SET ids = replace(ids, '$oldIdBase', '$newIdBase') WHERE ids LIKE '$oldIdBase%'";
-    echo "Restoring thumbnails\n";
+    echo "### Migrating identifiers from $oldIdBase to $newIdBase\n";
+    $query     = $pdo->prepare("UPDATE identifiers SET ids = replace(ids, ?, ?) WHERE ids LIKE ?");
+    $query->execute([$oldIdBase, $newIdBase, "$oldIdBase%"]);
+    echo "### Restoring thumbnails\n";
     $imgsDump = getcwd() . "/$imgsDump";
     chdir($cfg->storage->dir);
     system("tar -x -f " . escapeshellarg($imgsDump));
-    echo "\nMigration finished\n\n";
+    echo "### Migration finished\n\n";
 }
 
