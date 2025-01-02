@@ -35,7 +35,7 @@ if ($argv[1] === 'dump') {
         (isset($dbConnParam['port']) ? " -p '" . $dbConnParam['port'] . "'" : '') .
         (isset($dbConnParam['user']) ? " -U '" . $dbConnParam['user'] . "'" : '') .
         (isset($dbConnParam['dbname']) ? " '" . $dbConnParam['dbname'] . "'" : '') ;
-    $basePath = $cfg->storage->dir;
+    $basePath = $cfg->storage->tmpDir;
     $levelMax = $cfg->storage->levels;
 
     function getStorageDir(int $id, string $path, int $level, int $levelMax): string {
