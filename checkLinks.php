@@ -1,5 +1,7 @@
 #!/usr/bin/php
 <?php
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Pool;
@@ -34,11 +36,11 @@ $opts = [
         'track_redirects' => true,
     ],
 ];
-$client     = new GuzzleHttp\Client($opts);
+$client     = new Client($opts);
 $clientAuth = null;
 if (!empty($param['auth'])) {
     $opts['auth'] = explode(':', $param['auth']);
-    $clientAuth   = new GuzzleHttp\Client($opts);
+    $clientAuth   = new Client($opts);
 }
 $pdo = new PDO($param['dbConn']);
 $count = $pdo->query("SELECT count(DISTINCT value) FROM metadata WHERE type = 'http://www.w3.org/2001/XMLSchema#anyURI'")->fetchColumn();
@@ -114,7 +116,18 @@ while ($param['retry'] >= 0) {
     $retry    = [];
     $pool     = new Pool($client, $requests, $poolOpts);
     $promise  = $pool->promise();
-    $promise->wait();
+    // for unknown reason ConnectException is not trapped as a failed promise
+    try {
+        $promise->wait();
+    } catch (ConnectException $e) {
+        $url = $e->getRequest()->getUri();
+        if ($param['retry'] > 0) {
+            $retry[] = $url;
+	} else {
+            $broken[-1][$url] = [$url, -1];
+	}
+        echo "ConnectException for " . $e->getRequest()->getUri() . ": " . $e->getMessage() . "\n";
+    }
     $urls     = $retry;
     $requests = array_map(fn($x) => new Request('HEAD', $x), $urls);
     // limit concurrency to the number of distinct hosts in URLs
