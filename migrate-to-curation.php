@@ -20,7 +20,6 @@ if (!in_array($argv[1] ?? '', ['dump', 'restore'])) {
 }
 
 $cfg        = json_decode(json_encode(yaml_parse_file('/home/www-data/config/yaml/config-repo.yaml')));
-$pdo        = new PDO($cfg->dbConn->admin);
 $dataDump   = 'dump_data.sql';
 $imgsDump   = 'dump_titleimgages.tar';
 $usersDump  = '/tmp/dump_users.sql';
@@ -30,6 +29,7 @@ $dbConnParam = array_map(fn($x) => explode('=', $x), explode(' ', $cfg->dbConnSt
 $dbConnParam = array_combine(array_map(fn($x) => $x[0], $dbConnParam), array_map(fn($x) => $x[1] ?? '', $dbConnParam));
 
 if ($argv[1] === 'dump') {
+    $pdo    = new PDO($cfg->dbConn->admin);
     $dbConn = '' .
         (isset($dbConnParam['host']) ? " -h '" . $dbConnParam['host'] . "'" : '') .
         (isset($dbConnParam['port']) ? " -p '" . $dbConnParam['port'] . "'" : '') .
@@ -98,8 +98,7 @@ if ($argv[1] === 'dump') {
     $oldIdBase = $oldCfg->rest->urlBase . $oldCfg->rest->pathBase;
     $newIdBase = $cfg->rest->urlBase . $cfg->rest->pathBase;
     echo "### Migrating identifiers from $oldIdBase to $newIdBase\n";
-    $query     = $pdo->prepare("UPDATE identifiers SET ids = replace(ids, ?, ?) WHERE ids LIKE ?");
-    $query->execute([$oldIdBase, $newIdBase, "$oldIdBase%"]);
+    system("psql $dbConn -c 'UPDATE identifiers SET ids = replace(ids, \'$oldIdBase\', \'$newIdBase\') WHERE ids LIKE \'$oldIdBase%\''");
     echo "### Restoring thumbnails\n";
     $imgsDump = getcwd() . "/$imgsDump";
     chdir($cfg->storage->dir);
