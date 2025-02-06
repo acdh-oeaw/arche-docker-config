@@ -83,10 +83,10 @@ if ($argv[1] === 'dump') {
     $dbConn = reset($dbConn);
     if (!empty($dbConn)) {
         $dbConn = '' .
-            (isset($dbConnParam['host']) ? " -h '" . $dbConnParam['host'] . "'" : '') .
-            (isset($dbConnParam['port']) ? " -p '" . $dbConnParam['port'] . "'" : '') .
+            " -h '" . $dbConn[0] . "'" .
+            ($dbConn[1] !== '*' ? " -p '" . $dbConn[1] . "'" : '') .
             " -U '$dbUser'" .
-            (isset($dbConnParam['dbname']) ? " '" . $dbConnParam['dbname'] . "'" : '') ;
+            " '" . $dbConn[2] . "'";
     }
 
     echo "### Removing old metadata\n";
