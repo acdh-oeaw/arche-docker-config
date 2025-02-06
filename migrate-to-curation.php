@@ -60,7 +60,7 @@ if ($argv[1] === 'dump') {
     while($id = $query->fetchColumn()) {
         $imgs .= " " . escapeshellarg(getStorageDir($id, '.', 0, $levelMax));
     }
-    chdir($basePath);
+    chdir($cfg->storage->dir);
     system('tar -c -f ' . escapeshellarg("$basePath/$imgsDump") . $imgs);
     echo "\nDump completed - copy all the $basePath/dump_* files to the curation instance and run the script with the 'restore' parameter there.\n\n";
 } else {
