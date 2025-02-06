@@ -98,7 +98,7 @@ if ($argv[1] === 'dump') {
     $oldIdBase = $oldCfg->rest->urlBase . $oldCfg->rest->pathBase;
     $newIdBase = $cfg->rest->urlBase . $cfg->rest->pathBase;
     echo "### Migrating identifiers from $oldIdBase to $newIdBase\n";
-    system("psql $dbConn -c 'UPDATE identifiers SET ids = replace(ids, \'$oldIdBase\', \'$newIdBase\') WHERE ids LIKE \'$oldIdBase%\''");
+    system("psql $dbConn -c \"UPDATE identifiers SET ids = replace(ids, '$oldIdBase', '$newIdBase') WHERE ids LIKE '$oldIdBase%'\"");
     echo "### Restoring thumbnails\n";
     $imgsDump = getcwd() . "/$imgsDump";
     chdir($cfg->storage->dir);
