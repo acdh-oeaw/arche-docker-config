@@ -53,6 +53,8 @@ schema:
     nextItem: https://vocabs.acdh.oeaw.ac.at/schema#hasNextItem
     oaipmhSet: https://vocabs.acdh.oeaw.ac.at/schema#hasOaiSet
     aclRead: https://vocabs.acdh.oeaw.ac.at/schema#aclRead
+    oldParent: https://vocabs.acdh.oeaw.ac.at/schema#wasPartOf
+    version: https://vocabs.acdh.oeaw.ac.at/schema#hasVersion
     classes:
         agent: https://vocabs.acdh.oeaw.ac.at/schema#Agent
         binaryContent: https://vocabs.acdh.oeaw.ac.at/schema#BinaryContent
@@ -60,6 +62,7 @@ schema:
         concept: http://www.w3.org/2004/02/skos/core#Concept
         image: https://vocabs.acdh.oeaw.ac.at/schema#Image
         metadata: https://vocabs.acdh.oeaw.ac.at/schema#Metadata
+        oldResource: https://vocabs.acdh.oeaw.ac.at/schema#OldResource
         organisation: https://vocabs.acdh.oeaw.ac.at/schema#Organisation
         person: https://vocabs.acdh.oeaw.ac.at/schema#Person
         place: https://vocabs.acdh.oeaw.ac.at/schema#Place
