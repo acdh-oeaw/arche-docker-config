@@ -83,6 +83,7 @@ schema:
         premis: http://www.loc.gov/premis/rdf/v1#
         rdfs: http://www.w3.org/1999/02/22-rdf-syntax-ns#
         vid: https://id.acdh.oeaw.ac.at/vid/
+        xsd: http://www.w3.org/2001/XMLSchema#
     dissService:
         class: https://vocabs.acdh.oeaw.ac.at/schema#DisseminationService
         location: https://vocabs.acdh.oeaw.ac.at/schema#serviceLocation
