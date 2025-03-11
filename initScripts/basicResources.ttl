@@ -222,7 +222,7 @@ acdhi:uczeitschner a acdh:Person;
     acdh:hasEmail "ulrike.czeitschner@oeaw.ac.at";
     acdh:isMemberOf acdhi:acdh.
 
-acdhi:choffman a acdh:Person;
+acdhi:choffmann a acdh:Person;
     acdh:hasTitle "Christoph Hoffmann"@und;
     acdh:hasFirstName "Christoph"@und;
     acdh:hasLastName "Hoffmann"@und;
