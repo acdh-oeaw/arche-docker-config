@@ -124,7 +124,7 @@ acdhi:mdurco a acdh:Person;
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
     acdh:hasEmail "matej.durco@oeaw.ac.at";
-    acdh:hasUrl "https://www.oeaw.ac.at/acdh/team/current-team/matej-durco";
+    acdh:hasUrl "https://www.oeaw.ac.at/de/acdh/institut/team/mitarbeitende/matej-durco";
     acdh:isMemberOf acdhi:acdh.
     
 acdhi:pandorfer a acdh:Person;
@@ -145,7 +145,7 @@ acdhi:pandorfer a acdh:Person;
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
     acdh:hasEmail "peter.andorfer@oeaw.ac.at";
-    acdh:hasUrl "https://www.oeaw.ac.at/acdh/team/current-team/peter-andorfer";
+    acdh:hasUrl "https://www.oeaw.ac.at/de/acdh/institut/team/mitarbeitende/peter-andorfer";
     acdh:isMemberOf acdhi:acdh.
     
 acdhi:mtrognitz a acdh:Person;
@@ -163,7 +163,7 @@ acdhi:mtrognitz a acdh:Person;
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
     acdh:hasEmail "martina.trognitz@oeaw.ac.at";
-    acdh:hasUrl "https://www.oeaw.ac.at/acdh/team/current-team/martina-trognitz";
+    acdh:hasUrl "https://www.oeaw.ac.at/de/acdh/institut/team/mitarbeitende/martina-trognitz";
     acdh:isMemberOf acdhi:acdh.
     
 acdhi:dschopper a acdh:Person;
@@ -183,7 +183,7 @@ acdhi:dschopper a acdh:Person;
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
     acdh:hasEmail "daniel.schopper@oeaw.ac.at" ;
-    acdh:hasUrl "https://www.oeaw.ac.at/acdh/team/current-team/daniel-schopper";
+    acdh:hasUrl "https://www.oeaw.ac.at/de/acdh/institut/team/mitarbeitende/daniel-schopper";
     acdh:isMemberOf acdhi:acdh.
 	
 acdhi:hpirker a acdh:Person;
@@ -200,7 +200,7 @@ acdhi:hpirker a acdh:Person;
     acdh:hasCountry "Österreich"@de;
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
-    acdh:hasUrl "https://www.oeaw.ac.at/acdh/team/current-team/hannes-pirker";
+    acdh:hasUrl "https://www.oeaw.ac.at/de/acdh/institut/team/mitarbeitende/hannes-pirker";
     acdh:hasEmail "hannes.pirker@oeaw.ac.at";
     acdh:isMemberOf acdhi:acdh.
     
@@ -218,7 +218,7 @@ acdhi:uczeitschner a acdh:Person;
     acdh:hasCountry "Österreich"@de;
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
-    acdh:hasUrl "https://www.oeaw.ac.at/acdh/team/current-team/ulrike-czeitschner";
+    acdh:hasUrl "https://www.oeaw.ac.at/de/acdh/institut/team/mitarbeitende/ulrike-czeitschner";
     acdh:hasEmail "ulrike.czeitschner@oeaw.ac.at";
     acdh:isMemberOf acdhi:acdh.
 
@@ -235,7 +235,7 @@ acdhi:choffmann a acdh:Person;
     acdh:hasCountry "Österreich"@de;
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
-    acdh:hasUrl "https://www.oeaw.ac.at/acdh/team/current-team/christoph-hoffmann";
+    acdh:hasUrl "https://www.oeaw.ac.at/de/acdh/institut/team/mitarbeitende/christoph-hoffmann";
     acdh:hasEmail "christoph.hoffmann@oeaw.ac.at";
     acdh:isMemberOf acdhi:acdh.
 
@@ -260,7 +260,7 @@ acdhi:kmoerth a acdh:Person;
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
     acdh:hasEmail "karlheinz.moerth@oeaw.ac.at";
-    acdh:hasUrl "https://www.oeaw.ac.at/acdh/team/current-team/karlheinz-moerth";
+    acdh:hasUrl "https://www.oeaw.ac.at/de/acdh/institut/team/mitarbeitende/karlheinz-moerth";
     acdh:isMemberOf acdhi:acdh.
 
 acdhi:sstuhec a acdh:Person;
@@ -279,26 +279,7 @@ acdhi:sstuhec a acdh:Person;
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
     acdh:hasEmail "seta.stuhec@oeaw.ac.at";
-    acdh:hasUrl "https://www.oeaw.ac.at/acdh/team/current-team/seta-stuhec";
-    acdh:isMemberOf acdhi:acdh.
-
-acdhi:mkirnbauer a acdh:Person;
-    acdh:hasIdentifier <https://orcid.org/0000-0001-7081-2280>;
-    acdh:hasTitle "Martin Kirnbauer"@und;
-    acdh:hasFirstName "Martin"@und;
-    acdh:hasLastName "Kirnbauer"@und;
-    acdh:hasPersonalTitle "MA";
-    acdh:hasAddressLine1 "Bäckerstraße 13";
-    acdh:hasAddressLine2 "c/o ACDH-CH";
-    acdh:hasPostcode "1010";
-    acdh:hasCity "Vienna"@en;
-    acdh:hasCity "Wien"@de;
-    acdh:hasCountry "Austria"@en;
-    acdh:hasCountry "Österreich"@de;
-    acdh:hasRegion "Vienna"@en;
-    acdh:hasRegion "Wien"@de;
-    acdh:hasEmail "martin.kirnbauer@oeaw.ac.at";
-    acdh:hasUrl "https://www.oeaw.ac.at/acdh/team/current-team/martin-kirnbauer";
+    acdh:hasUrl "https://www.oeaw.ac.at/de/acdh/institut/team/mitarbeitende/seta-stuhec";
     acdh:isMemberOf acdhi:acdh.
 
 acdhi:mcarloni a acdh:Person;
@@ -317,12 +298,12 @@ acdhi:mcarloni a acdh:Person;
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
     acdh:hasEmail "massimiliano.carloni@oeaw.ac.at";
-    acdh:hasUrl "https://www.oeaw.ac.at/acdh/team/current-team/massimiliano-carloni";
+    acdh:hasUrl "https://www.oeaw.ac.at/de/acdh/institut/team/mitarbeitende/massimiliano-carloni";
     acdh:isMemberOf acdhi:acdh.
 
 acdhi:dstoxreiter a acdh:Person;
     acdh:hasIdentifier <https://orcid.org/0000-0002-0636-4476>;
-    acdh:hasTitle "Daniel Stoxreiter"@und;
+    acdh:hasTitle "Daniel Elsner"@und;
     acdh:hasFirstName "Daniel"@und;
     acdh:hasLastName "Stoxreiter"@und;
     acdh:hasPersonalTitle "MA";
@@ -335,8 +316,8 @@ acdhi:dstoxreiter a acdh:Person;
     acdh:hasCountry "Österreich"@de;
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
-    acdh:hasEmail "daniel.stoxreiter@oeaw.ac.at";
-    acdh:hasUrl "https://www.oeaw.ac.at/acdh/team/current-team/daniel-stoxreiter";
+    acdh:hasEmail "daniel.elsner@oeaw.ac.at";
+    acdh:hasUrl "https://www.oeaw.ac.at/de/acdh/institut/team/mitarbeitende/daniel-elsner";
     acdh:isMemberOf acdhi:acdh.
 
 acdhi:mzoltak a acdh:Person;
@@ -355,7 +336,7 @@ acdhi:mzoltak a acdh:Person;
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
     acdh:hasEmail "mateusz.zoltak@oeaw.ac.at";
-    acdh:hasUrl "https://www.oeaw.ac.at/acdh/team/current-team/mateusz-zoltak";
+    acdh:hasUrl "https://www.oeaw.ac.at/de/acdh/institut/team/mitarbeitende/mateusz-zoltak";
     acdh:isMemberOf acdhi:acdh.
 
 acdhi:nczirjak a acdh:Person;
@@ -372,7 +353,7 @@ acdhi:nczirjak a acdh:Person;
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
     acdh:hasEmail "norbert.czirjak@oeaw.ac.at";
-    acdh:hasUrl "https://www.oeaw.ac.at/acdh/team/current-team/norbert-czirjak";
+    acdh:hasUrl "https://www.oeaw.ac.at/de/acdh/institut/team/mitarbeitende/norbert-czirjak";
     acdh:isMemberOf acdhi:acdh.
 
 acdhi:unknown a acdh:Person;
