@@ -80,7 +80,7 @@ $fulfilledFn = function(Response $response, $index) {
         }
     }
     if ($status < 200 || $status >= 400) {
-	if ($param['retry'] > 0 || !in_array($status, [401, 403])) {
+	if ($param['retry'] > 0 && !in_array($status, [401, 403])) {
             $retry[] = $url;
         } else {
             $broken[(string) $status][$url] = array_combine($response->getHeader('X-Guzzle-Redirect-History'), $response->getHeader('X-Guzzle-Redirect-Status-History'));
