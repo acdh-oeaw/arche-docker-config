@@ -105,7 +105,7 @@ acdhi:arche a acdh:Organisation;
     acdh:hasRegion "Wien"@de;
     acdh:hasTitle "ARCHE"@en;
     acdh:hasAlternativeTitle "A Resource Centre for the HumanitiEs"@en;
-    acdh:hasUrl "https://arche.acdh.oeaw.ac.at/browser";
+    acdh:hasUrl "https://arche.acdh.oeaw.ac.at/browser/";
     acdh:isMemberOf acdhi:acdh.   
     
 acdhi:mdurco a acdh:Person;
