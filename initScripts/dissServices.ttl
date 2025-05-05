@@ -282,6 +282,23 @@ acdhids:lorisParam
     acdh:hasTitle           "param"@en ;
     acdh:hasDefaultValue    "full/full/0/default.jpg" .
 
+# GLB
+acdhids:glb
+    a                       acdh:DisseminationService ;
+    acdh:serviceLocation    "https://arche-glb.acdh.oeaw.ac.at/?id={RES_URI|url}" ;
+    acdh:hasReturnType      "model/gltf-binary" ;
+    acdh:hasReturnType      "glb" ;
+    acdh:serviceRevProxy    false ;
+    acdh:hasTitle           "GLB 3D Model Endpoint"@en ;
+    acdh:hasDescription     "Serves downscaled version of a 3D model suitable for on-line viewing"@en .
+acdhids:glbMatch1
+    a                       acdh:DisseminationServiceMatchRule ;
+    acdh:relation           acdhids:glb ;
+    acdh:hasTitle           "glbMatch"@en ;
+    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
+    acdh:matchesValue       "model/gltf-binary" ;
+    acdh:isRequired         true .
+
 # WFS using mapserver proxy
 acdhids:wfs
     a                       acdh:DisseminationService ;

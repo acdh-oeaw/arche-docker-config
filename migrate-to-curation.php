@@ -20,7 +20,6 @@ if (!in_array($argv[1] ?? '', ['dump', 'restore'])) {
 }
 
 $cfg        = json_decode(json_encode(yaml_parse_file('/home/www-data/config/yaml/config-repo.yaml')));
-$pdo        = new PDO($cfg->dbConn->admin);
 $dataDump   = 'dump_data.sql';
 $imgsDump   = 'dump_titleimgages.tar';
 $usersDump  = '/tmp/dump_users.sql';
@@ -30,6 +29,7 @@ $dbConnParam = array_map(fn($x) => explode('=', $x), explode(' ', $cfg->dbConnSt
 $dbConnParam = array_combine(array_map(fn($x) => $x[0], $dbConnParam), array_map(fn($x) => $x[1] ?? '', $dbConnParam));
 
 if ($argv[1] === 'dump') {
+    $pdo    = new PDO($cfg->dbConn->admin);
     $dbConn = '' .
         (isset($dbConnParam['host']) ? " -h '" . $dbConnParam['host'] . "'" : '') .
         (isset($dbConnParam['port']) ? " -p '" . $dbConnParam['port'] . "'" : '') .
@@ -60,7 +60,7 @@ if ($argv[1] === 'dump') {
     while($id = $query->fetchColumn()) {
         $imgs .= " " . escapeshellarg(getStorageDir($id, '.', 0, $levelMax));
     }
-    chdir($basePath);
+    chdir($cfg->storage->dir);
     system('tar -c -f ' . escapeshellarg("$basePath/$imgsDump") . $imgs);
     echo "\nDump completed - copy all the $basePath/dump_* files to the curation instance and run the script with the 'restore' parameter there.\n\n";
 } else {
@@ -83,10 +83,10 @@ if ($argv[1] === 'dump') {
     $dbConn = reset($dbConn);
     if (!empty($dbConn)) {
         $dbConn = '' .
-            (isset($dbConnParam['host']) ? " -h '" . $dbConnParam['host'] . "'" : '') .
-            (isset($dbConnParam['port']) ? " -p '" . $dbConnParam['port'] . "'" : '') .
+            " -h '" . $dbConn[0] . "'" .
+            ($dbConn[1] !== '*' ? " -p '" . $dbConn[1] . "'" : '') .
             " -U '$dbUser'" .
-            (isset($dbConnParam['dbname']) ? " '" . $dbConnParam['dbname'] . "'" : '') ;
+            " '" . $dbConn[2] . "'";
     }
 
     echo "### Removing old metadata\n";
@@ -98,8 +98,7 @@ if ($argv[1] === 'dump') {
     $oldIdBase = $oldCfg->rest->urlBase . $oldCfg->rest->pathBase;
     $newIdBase = $cfg->rest->urlBase . $cfg->rest->pathBase;
     echo "### Migrating identifiers from $oldIdBase to $newIdBase\n";
-    $query     = $pdo->prepare("UPDATE identifiers SET ids = replace(ids, ?, ?) WHERE ids LIKE ?");
-    $query->execute([$oldIdBase, $newIdBase, "$oldIdBase%"]);
+    system("psql $dbConn -c \"UPDATE identifiers SET ids = replace(ids, '$oldIdBase', '$newIdBase') WHERE ids LIKE '$oldIdBase%'\"");
     echo "### Restoring thumbnails\n";
     $imgsDump = getcwd() . "/$imgsDump";
     chdir($cfg->storage->dir);
