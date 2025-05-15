@@ -9,6 +9,7 @@ DATEFILE="$BDIR/dateFile"
 DOW=`date +%u`
 COMPRESSION="none"
 COMPRESSIONLEVEL=9
+CHUNKSIZEMB=204800 # 200GB
 
 . "$CDIR/cluster_init.sh"
 
@@ -22,7 +23,7 @@ $SDIR/backup.php $BDIR/dbdump_$DOW "$CFGFILE" --tmpDir "$TDIR" --include all --c
     echo "### Database dumped successfully"
 # full incremental binaries backup on Sunday
 if [ "$DOW" == "7" ] ; then
-    $SDIR/backup.php --dateFile "$DATEFILE" --compression $COMPRESSION --compressionLevel $COMPRESSIONLEVEL --include none --lock skip --tmpDir "$TDIR" "$BDIR/${FILE}" "$CFGFILE" 2>&1 | tee "$BDIR/${FILE}.log" &&\
+    $SDIR/backup.php --dateFile "$DATEFILE" --chunkSize $CHUNKSIZEMB --compression $COMPRESSION --compressionLevel $COMPRESSIONLEVEL --include none --lock skip --tmpDir "$TDIR" "$BDIR/${FILE}" "$CFGFILE" 2>&1 | tee "$BDIR/${FILE}.log" &&\
     echo "### Incremental binary dump ended successfully" | tee -a "$BDIR/${FILE}.log"
     cp "$BDIR/${FILE}.log" "$ODIR/backup_last.txt"
 fi
