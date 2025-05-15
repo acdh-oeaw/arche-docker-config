@@ -67,6 +67,9 @@ acdhids:biblatex
     a                       acdh:DisseminationService ;
     acdh:serviceLocation    "https://arche-biblatex.acdh.oeaw.ac.at/?lang={lang}&id={RES_URI|url}&override={override}" ;
     acdh:hasReturnType      "application/x-bibtex" ;
+    acdh:hasReturnType      "application/vnd.citationstyles.csl+json" ;
+    acdh:hasReturnType      "apa-6th-edition" ;
+    acdh:hasReturnType      "vancouver" ;
     acdh:hasReturnType      "biblatex" ;
     acdh:serviceRevProxy    false ;
     acdh:hasTitle           "BibLaTeX service"@en ;
