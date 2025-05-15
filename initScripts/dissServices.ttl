@@ -262,6 +262,7 @@ acdhids:loris
     acdh:hasReturnType      "image/png" ;
     acdh:hasReturnType      "image/gif" ;
     acdh:hasReturnType      "image/webp" ;
+    acdh:hasReturnType      "image/json" ;
     acdh:serviceRevProxy    false ;
     acdh:hasTitle           "IIIF Endpoint"@en ;
     acdh:hasDescription     "Redirects to the IIIF endpoint of the current image"@en .
