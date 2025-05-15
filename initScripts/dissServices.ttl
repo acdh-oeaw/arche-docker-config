@@ -65,7 +65,7 @@ acdhids:thumbnailParam2
 # biblatex
 acdhids:biblatex
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "https://arche-biblatex.acdh.oeaw.ac.at/?lang={lang}&id={RES_URI|url}&override={override}" ;
+    acdh:serviceLocation    "https://arche-biblatex.acdh.oeaw.ac.at/?lang={lang}&id={RES_URI|url}&override={override}&format={format}" ;
     acdh:hasReturnType      "application/x-bibtex" ;
     acdh:hasReturnType      "application/vnd.citationstyles.csl+json" ;
     acdh:hasReturnType      "apa-6th-edition" ;
@@ -118,6 +118,11 @@ acdhids:biblatexParam2
     a                       acdh:DisseminationServiceParameter ;
     acdh:relation           acdhids:biblatex ;
     acdh:hasTitle           "override"@en ;
+    acdh:hasDefaultValue    "" .
+acdhids:biblatexParam3
+    a                       acdh:DisseminationServiceParameter ;
+    acdh:relation           acdhids:biblatex ;
+    acdh:hasTitle           "format"@en ;
     acdh:hasDefaultValue    "" .
 
 # cmdi2html
@@ -252,9 +257,11 @@ acdhids:iiifmanifestMode
 # Loris
 acdhids:loris
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "https://loris.acdh.oeaw.ac.at/{RES_ID}/{param}" ;
+    acdh:serviceLocation    "https://loris.acdh.oeaw.ac.at/{RES_ID}/{param}{format|substr(6,10)}" ;
     acdh:hasReturnType      "image/jpeg" ;
-    acdh:hasReturnType      "iiif" ;
+    acdh:hasReturnType      "image/png" ;
+    acdh:hasReturnType      "image/gif" ;
+    acdh:hasReturnType      "image/webp" ;
     acdh:serviceRevProxy    false ;
     acdh:hasTitle           "IIIF Endpoint"@en ;
     acdh:hasDescription     "Redirects to the IIIF endpoint of the current image"@en .
@@ -279,11 +286,16 @@ acdhids:lorisMatch3
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "image/tiff" ;
     acdh:isRequired         false .
-acdhids:lorisParam
+acdhids:lorisParam1
     a                       acdh:DisseminationServiceParameter ;
     acdh:relation           acdhids:loris ;
     acdh:hasTitle           "param"@en ;
-    acdh:hasDefaultValue    "full/full/0/default.jpg" .
+    acdh:hasDefaultValue    "full/full/0/default." .
+acdhids:lorisParam2
+    a                       acdh:DisseminationServiceParameter ;
+    acdh:relation           acdhids:loris ;
+    acdh:hasTitle           "format"@en ;
+    acdh:hasDefaultValue    "image/jpg" .
 
 # GLB
 acdhids:glb
