@@ -257,12 +257,13 @@ acdhids:iiifmanifestMode
 # Loris
 acdhids:loris
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "https://loris.acdh.oeaw.ac.at/{RES_ID}/{param}{format|substr(6,10)}" ;
+    acdh:serviceLocation    "https://loris.acdh.oeaw.ac.at/{RES_ID}/{param|emptyIf(format,image/json)}{format|emptyIf(param)|replace(image/json,info.json)|replace(image/,)|replace(iiif,jpg)}" ;
     acdh:hasReturnType      "image/jpeg" ;
     acdh:hasReturnType      "image/png" ;
     acdh:hasReturnType      "image/gif" ;
     acdh:hasReturnType      "image/webp" ;
     acdh:hasReturnType      "image/json" ;
+    acdh:hasReturnType      "iiif" ;
     acdh:serviceRevProxy    false ;
     acdh:hasTitle           "IIIF Endpoint"@en ;
     acdh:hasDescription     "Redirects to the IIIF endpoint of the current image"@en .
