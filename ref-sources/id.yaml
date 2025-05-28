@@ -31,10 +31,10 @@ sharedMappings:
     path:
     - http://www.wikidata.org/prop/direct-normalized/P1667
 referenceSources:
-  # geonames, getty, pleiades, orcid provides no external identifiers 
+  # geonames, getty, pleiades, orcid, ror provides no external identifiers 
+  # or we don't trust the data they provide
   gnd:
-    https://d-nb.info/standards/elementset/gnd#DifferentiatedPerson: *gndId
-    https://d-nb.info/standards/elementset/gnd#CorporateBody: *gndId
+    # Place
     https://d-nb.info/standards/elementset/gnd#AdministrativeUnit: *gndId
     https://d-nb.info/standards/elementset/gnd#BuildingOrMemorial: *gndId
     https://d-nb.info/standards/elementset/gnd#Country: *gndId
@@ -46,6 +46,10 @@ referenceSources:
     https://d-nb.info/standards/elementset/gnd#ReligiousTerritory: *gndId
     https://d-nb.info/standards/elementset/gnd#TerritorialCorporateBodyOrAdministrativeUnit: *gndId
     https://d-nb.info/standards/elementset/gnd#WayBorderOrLine: *gndId
+    # Person
+    https://d-nb.info/standards/elementset/gnd#DifferentiatedPerson: *gndId
+    # Organisation
+    https://d-nb.info/standards/elementset/gnd#CorporateBody: *gndId
   gazetteer:
     http://www.cidoc-crm.org/rdfs/cidoc-crm#E53_Place:
     - property: https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier
