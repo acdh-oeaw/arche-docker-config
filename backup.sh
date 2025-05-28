@@ -34,4 +34,8 @@ echo "### Backup ended on `date +%Y-%m-%dT%H:%M:%S`"
 echo "### Compressing logs"
 $CDIR/run.d/01-logs.sh
 
+# ref-source
+echo -e "### Running updateFromRefSources.sh\n"
+$CDIR/updateFromRefSources.sh
+
 echo "### Ended"
