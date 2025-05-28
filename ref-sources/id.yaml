@@ -61,18 +61,18 @@ referenceSources:
   # wikidata is evil
   wikidata:
     # Place
-    http://www.wikidata.org/entity/Q200250: wikidataId
-    http://www.wikidata.org/entity/Q515: wikidataId
-    http://www.wikidata.org/entity/Q7930989: wikidataId
-    http://www.wikidata.org/entity/Q124250988: wikidataId
-    http://www.wikidata.org/entity/Q486972: wikidataId
-    http://www.wikidata.org/entity/Q123964505: wikidataId
-    http://www.wikidata.org/entity/Q839954: wikidataId
-    http://www.wikidata.org/entity/Q2221906: wikidataId
-    http://www.wikidata.org/entity/Q17334923: wikidataId
-    http://www.wikidata.org/entity/Q27096213: wikidataId
+    http://www.wikidata.org/entity/Q200250: *wikidataId
+    http://www.wikidata.org/entity/Q515: *wikidataId
+    http://www.wikidata.org/entity/Q7930989: *wikidataId
+    http://www.wikidata.org/entity/Q124250988: *wikidataId
+    http://www.wikidata.org/entity/Q486972: *wikidataId
+    http://www.wikidata.org/entity/Q123964505: *wikidataId
+    http://www.wikidata.org/entity/Q839954: *wikidataId
+    http://www.wikidata.org/entity/Q2221906: *wikidataId
+    http://www.wikidata.org/entity/Q17334923: *wikidataId
+    http://www.wikidata.org/entity/Q27096213: *wikidataId
     # Person
-    http://www.wikidata.org/entity/Q5: wikidataId
+    http://www.wikidata.org/entity/Q5: *wikidataId
     # Organisation
     http://www.wikidata.org/entity/Q1371037: *wikidataId
     http://www.wikidata.org/entity/Q162633: *wikidataId
