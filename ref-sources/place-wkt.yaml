@@ -1,0 +1,69 @@
+sharedMappings:
+  gndPlace: &gndPlace
+  - property: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+    action: if missing
+    value: https://vocabs.acdh.oeaw.ac.at/schema#Place
+    type: resource
+  - property: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
+    action: if missing
+    type: literal
+    langProcess: overwrite
+    langValue: und
+    maxPerLang: 1
+    path:
+    - https://d-nb.info/standards/elementset/gnd#preferredNameForThePlaceOrGeographicName
+  - property: https://vocabs.acdh.oeaw.ac.at/schema#hasWkt
+    action: if missing
+    type: literal
+    path:
+    - http://www.opengis.net/ont/geosparql#hasGeometry
+    - http://www.opengis.net/ont/geosparql#asWKT
+referenceSources:
+  gnd:
+    https://d-nb.info/standards/elementset/gnd#AdministrativeUnit: *gndPlace
+    https://d-nb.info/standards/elementset/gnd#BuildingOrMemorial: *gndPlace
+    https://d-nb.info/standards/elementset/gnd#Country: *gndPlace
+    https://d-nb.info/standards/elementset/gnd#ExtraterrestrialTerritory: *gndPlace
+    https://d-nb.info/standards/elementset/gnd#FictivePlace: *gndPlace
+    https://d-nb.info/standards/elementset/gnd#MemberState: *gndPlace
+    https://d-nb.info/standards/elementset/gnd#NameOfSmallGeographicUnitLyingWithinAnotherGeographicUnit: *gndPlace
+    https://d-nb.info/standards/elementset/gnd#NaturalGeographicUnit: *gndPlace
+    https://d-nb.info/standards/elementset/gnd#ReligiousTerritory: *gndPlace
+    https://d-nb.info/standards/elementset/gnd#TerritorialCorporateBodyOrAdministrativeUnit: *gndPlace
+    https://d-nb.info/standards/elementset/gnd#WayBorderOrLine: *gndPlace
+  gazetteer:
+    http://www.cidoc-crm.org/rdfs/cidoc-crm#E53_Place:
+    - property: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+      action: if missing
+      value: https://vocabs.acdh.oeaw.ac.at/schema#Place
+      type: resource
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
+      action: if missing
+      type: literal
+      maxPerLang: 1
+      langProcess: assure
+      langValue: und
+      path:
+      - http://www.w3.org/2004/02/skos/core#prefLabel
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasWkt
+      action: if missing
+      type: literal
+      maxPerLang: 1
+      datatype: http://www.w3.org/2001/XMLSchema#string
+      path:
+      - http://www.opengis.net/ont/geosparql#hasGeometry
+      - http://www.opengis.net/ont/geosparql#asWKT
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasLatitude
+      action: if missing
+      type: literal
+      maxPerLang: 1
+      datatype: http://www.w3.org/2001/XMLSchema#float
+      path:
+      - http://www.w3.org/2003/01/geo/wgs84_pos#lat
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasLongitude
+      action: if missing
+      type: literal
+      maxPerLang: 1
+      datatype: http://www.w3.org/2001/XMLSchema#float
+      path:
+      - http://www.w3.org/2003/01/geo/wgs84_pos#long

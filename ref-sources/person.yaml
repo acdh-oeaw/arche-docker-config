@@ -1,0 +1,163 @@
+sharedMappings:
+  wikidataPerson: &wikidataPerson
+  - property: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+    action: if missing
+    value: https://vocabs.acdh.oeaw.ac.at/schema#Person
+    type: resource
+  - property: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
+    action: if missing
+    type: literal
+    langProcess: overwrite
+    langValue: und
+    preferredLangs:
+      - en
+      - de    
+    path:
+    - http://www.w3.org/2000/01/rdf-schema#label
+  - property: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
+    action: if missing
+    type: literal
+    langProcess: overwrite
+    langValue: und
+    preferredLangs:
+      - en
+      - de    
+    path:
+    - http://www.w3.org/2004/02/skos/core#prefLabel
+  - property: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
+    action: if missing
+    type: literal
+    langProcess: overwrite
+    langValue: und
+    preferredLangs:
+      - en
+      - de    
+    path:
+    - http://schema.org/name
+  - property: https://vocabs.acdh.oeaw.ac.at/schema#hasFirstName
+    action: if missing
+    type: literal
+    langProcess: overwrite
+    langValue: und
+    maxPerLang: 1
+    path:
+    - http://www.wikidata.org/prop/direct/P735
+    - http://www.w3.org/2000/01/rdf-schema#label
+  - property: https://vocabs.acdh.oeaw.ac.at/schema#hasLastName
+    action: if missing
+    type: literal
+    langProcess: overwrite
+    langValue: und
+    maxPerLang: 1
+    path:
+    - http://www.wikidata.org/prop/direct/P734
+    - http://www.w3.org/2000/01/rdf-schema#label
+referenceSources:
+  wikidata:
+    http://www.wikidata.org/entity/Q5: *wikidataPerson
+  orcid:
+    http://xmlns.com/foaf/0.1/Person:
+    - property: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+      action: if missing
+      value: https://vocabs.acdh.oeaw.ac.at/schema#Person
+      type: resource
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
+      action: if missing
+      type: literal
+      langProcess: overwrite
+      langValue: und
+      maxPerLang: 1
+      path:
+      - http://www.w3.org/2000/01/rdf-schema#label
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasFirstName
+      action: if missing
+      type: literal
+      langProcess: assure
+      langValue: und
+      maxPerLang: 1
+      path:
+      - http://xmlns.com/foaf/0.1/givenName
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasLastName
+      action: if missing
+      type: literal
+      langProcess: assure
+      langValue: und
+      maxPerLang: 1
+      path:
+      - http://xmlns.com/foaf/0.1/familyName
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasUrl
+      action: add
+      type: literal
+      path:
+      - http://xmlns.com/foaf/0.1/page
+  gnd:
+    https://d-nb.info/standards/elementset/gnd#DifferentiatedPerson:
+    - property: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+      action: if missing
+      value: https://vocabs.acdh.oeaw.ac.at/schema#Person
+      type: resource
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
+      action: if missing
+      type: literal
+      langProcess: overwrite
+      langValue: und
+      maxPerLang: 1
+      path:
+      - https://d-nb.info/standards/elementset/gnd#preferredNameForThePerson
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasFirstName
+      action: if missing
+      type: literal
+      langProcess: overwrite
+      langValue: und
+      maxPerLang: 1
+      path:
+      - https://d-nb.info/standards/elementset/gnd#preferredNameEntityForThePerson
+      - https://d-nb.info/standards/elementset/gnd#forename
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasLastName
+      action: if missing
+      type: literal
+      langProcess: overwrite
+      langValue: und
+      maxPerLang: 1
+      path:
+      - https://d-nb.info/standards/elementset/gnd#preferredNameEntityForThePerson
+      - https://d-nb.info/standards/elementset/gnd#surname
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasUrl
+      action: add
+      type: literal
+      path:
+      - https://d-nb.info/standards/elementset/gnd#homepage
+  viaf:
+    http://schema.org/Person:
+    - property: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+      action: if missing
+      value: https://vocabs.acdh.oeaw.ac.at/schema#Person
+      type: resource
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
+      action: if missing
+      type: literal
+      preferredLangs:
+      - en-GB
+      - en-US
+      - de-DE
+      langProcess: overwrite
+      langValue: und
+      maxPerLang: 1
+      path:
+      - http://www.w3.org/2004/02/skos/core#prefLabel
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasFirstName
+      action: if missing
+      type: literal
+      langProcess: assure
+      langValue: und
+      maxPerLang: 1
+      path:
+      - http://schema.org/givenName
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasLastName
+      action: if missing
+      type: literal
+      langProcess: assure
+      langValue: und
+      maxPerLang: 1
+      path:
+      - http://schema.org/familyName

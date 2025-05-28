@@ -1,0 +1,108 @@
+sharedMappings:
+  wikidataOrganisation: &wikidataOrganisation
+  - property: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+    action: if missing
+    value: https://vocabs.acdh.oeaw.ac.at/schema#Organisation
+    type: resource
+  - property: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
+    action: if missing
+    type: literal
+    langProcess: assure
+    langValue: und
+    preferredLangs:
+      - en
+      - de    
+    path:
+    - http://www.w3.org/2000/01/rdf-schema#label
+  - property: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
+    action: if missing
+    type: literal
+    langProcess: assure
+    langValue: und
+    preferredLangs:
+      - en
+      - de    
+    path:
+    - http://www.w3.org/2004/02/skos/core#prefLabel
+  - property: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
+    action: if missing
+    type: literal
+    langProcess: assure
+    langValue: und
+    preferredLangs:
+      - en
+      - de    
+    path:
+    - http://schema.org/name
+referenceSources:
+  wikidata:
+    # wikidata is evil
+    http://www.wikidata.org/entity/Q1371037: *wikidataOrganisation
+    http://www.wikidata.org/entity/Q162633: *wikidataOrganisation
+    http://www.wikidata.org/entity/Q16519632: *wikidataOrganisation
+    http://www.wikidata.org/entity/Q1664720: *wikidataOrganisation
+    http://www.wikidata.org/entity/Q31855: *wikidataOrganisation
+    http://www.wikidata.org/entity/Q3918: *wikidataOrganisation
+    http://www.wikidata.org/entity/Q414147: *wikidataOrganisation
+    http://www.wikidata.org/entity/Q43229: *wikidataOrganisation
+    http://www.wikidata.org/entity/Q4671277: *wikidataOrganisation
+    http://www.wikidata.org/entity/Q4830453: *wikidataOrganisation
+    http://www.wikidata.org/entity/Q5341295: *wikidataOrganisation
+  gnd:
+    https://d-nb.info/standards/elementset/gnd#CorporateBody:
+    - property: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+      action: if missing
+      value: https://vocabs.acdh.oeaw.ac.at/schema#Organisation
+      type: resource
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
+      action: if missing
+      type: literal
+      langProcess: overwrite
+      langValue: und
+      maxPerLang: 1
+      path:
+      - https://d-nb.info/standards/elementset/gnd#preferredNameForTheCorporateBody
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasUrl
+      action: add
+      type: literal
+      path:
+      - https://d-nb.info/standards/elementset/gnd#homepage
+  viaf:
+    http://schema.org/Organization:
+    - property: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+      action: if missing
+      value: https://vocabs.acdh.oeaw.ac.at/schema#Organisation
+      type: resource
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
+      action: if missing
+      type: literal
+      preferredLangs:
+      - en-GB
+      - en-US
+      - de-DE
+      langProcess: overwrite
+      langValue: und
+      maxPerLang: 1
+      path:
+      - http://www.w3.org/2004/02/skos/core#prefLabel
+  ror:
+    unknownClass:
+    - property: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+      action: if missing
+      value: https://vocabs.acdh.oeaw.ac.at/schema#Organisation
+      type: resource
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
+      action: if missing
+      type: literal
+      langProcess: overwrite
+      langValue: und
+      maxPerLang: 1
+      path:
+      - names
+      - value0
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasUrl
+      action: add
+      type: literal
+      path:
+      - links
+      - value0

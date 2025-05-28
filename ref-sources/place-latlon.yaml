@@ -1,0 +1,168 @@
+sharedMappings:
+  gettyPlace: &gettyPlace
+  - property: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+    action: if missing
+    value: https://vocabs.acdh.oeaw.ac.at/schema#Place
+    type: resource
+  - property: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
+    action: if missing
+    type: literal
+    langProcess: assure
+    langValue: und
+    maxPerLang: 1
+    preferredLangs:
+      - en
+      - de
+    path:
+    - http://www.w3.org/2004/02/skos/core#prefLabel
+  - property: https://vocabs.acdh.oeaw.ac.at/schema#hasLatitude
+    action: if missing
+    type: literal
+    maxPerLang: 1
+    datatype: http://www.w3.org/2001/XMLSchema#float
+    path:
+    - http://xmlns.com/foaf/0.1/focus
+    - http://www.w3.org/2003/01/geo/wgs84_pos#lat
+  - property: https://vocabs.acdh.oeaw.ac.at/schema#hasLongitude
+    action: if missing
+    type: literal
+    maxPerLang: 1
+    datatype: http://www.w3.org/2001/XMLSchema#float
+    path:
+    - http://xmlns.com/foaf/0.1/focus
+    - http://www.w3.org/2003/01/geo/wgs84_pos#long
+  wikidataPlace: &wikidataPlace
+  - property: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+    action: if missing
+    value: https://vocabs.acdh.oeaw.ac.at/schema#Place
+    type: resource
+  - property: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
+    action: if missing
+    type: literal
+    langProcess: assure
+    langValue: und
+    preferredLangs:
+      - en
+      - de    
+    path:
+    - http://www.w3.org/2000/01/rdf-schema#label
+  - property: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
+    action: if missing
+    type: literal
+    langProcess: assure
+    langValue: und
+    preferredLangs:
+      - en
+      - de    
+    path:
+    - http://www.w3.org/2004/02/skos/core#prefLabel
+  - property: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
+    action: if missing
+    type: literal
+    langProcess: assure
+    langValue: und
+    preferredLangs:
+      - en
+      - de    
+    path:
+    - http://schema.org/name
+  - property: https://vocabs.acdh.oeaw.ac.at/schema#hasLatitude
+    action: if missing
+    type: literal
+    maxPerLang: 1
+    match: ^Point[(][0-9.]+ ([0-9.]+)[)]$
+    replace: \1
+    datatype: http://www.w3.org/2001/XMLSchema#float
+    path:
+    - http://www.wikidata.org/prop/direct/P625
+  - property: https://vocabs.acdh.oeaw.ac.at/schema#hasLongitude
+    action: if missing
+    type: literal
+    maxPerLang: 1
+    match: ^Point[(]([0-9.]+) [0-9.]+[)]$
+    replace: \1
+    datatype: http://www.w3.org/2001/XMLSchema#float
+    path:
+    - http://www.wikidata.org/prop/direct/P625
+referenceSources:
+  geonames:
+    http://www.geonames.org/ontology#Feature:
+    - property: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+      action: if missing
+      value: https://vocabs.acdh.oeaw.ac.at/schema#Place
+      type: resource
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
+      action: if missing
+      type: literal
+      langProcess: overwrite
+      langValue: und
+      maxPerLang: 1
+      path:
+      - http://www.geonames.org/ontology#name
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
+      action: if missing
+      type: literal
+      maxPerLang: 1
+      langProcess: assure
+      langValue: und
+      path:
+      - http://www.geonames.org/ontology#officialName
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasLatitude
+      action: if missing
+      type: literal
+      maxPerLang: 1
+      datatype: http://www.w3.org/2001/XMLSchema#float
+      path:
+      - http://www.w3.org/2003/01/geo/wgs84_pos#lat
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasLongitude
+      action: if missing
+      type: literal
+      maxPerLang: 1
+      datatype: http://www.w3.org/2001/XMLSchema#float
+      path:
+      - http://www.w3.org/2003/01/geo/wgs84_pos#long
+  getty:
+    http://vocab.getty.edu/ontology#AdminPlaceConcept: *gettyPlace
+    http://vocab.getty.edu/ontology#PhysPlaceConcept: *gettyPlace
+    http://vocab.getty.edu/ontology#PhysAdminPlaceConcept: *gettyPlace
+  pleiades:
+    Place:
+    - property: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+      action: if missing
+      value: https://vocabs.acdh.oeaw.ac.at/schema#Place
+      type: resource
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
+      action: if missing
+      type: literal
+      maxPerLang: 1
+      langProcess: assure
+      langValue: und
+      path:
+      - title0
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasLatitude
+      action: if missing
+      type: literal
+      maxPerLang: 1
+      datatype: http://www.w3.org/2001/XMLSchema#float
+      path:
+      - bbox1
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasLongitude
+      action: if missing
+      type: literal
+      maxPerLang: 1
+      datatype: http://www.w3.org/2001/XMLSchema#float
+      path:
+      - bbox0
+  # wikidata is evil
+  wikidata:
+    http://www.wikidata.org/entity/Q200250: *wikidataPlace
+    http://www.wikidata.org/entity/Q200250: *wikidataPlace
+    http://www.wikidata.org/entity/Q515: *wikidataPlace
+    http://www.wikidata.org/entity/Q7930989: *wikidataPlace
+    http://www.wikidata.org/entity/Q124250988: *wikidataPlace
+    http://www.wikidata.org/entity/Q486972: *wikidataPlace
+    http://www.wikidata.org/entity/Q123964505: *wikidataPlace
+    http://www.wikidata.org/entity/Q839954: *wikidataPlace
+    http://www.wikidata.org/entity/Q2221906: *wikidataPlace
+    http://www.wikidata.org/entity/Q17334923: *wikidataPlace
+    http://www.wikidata.org/entity/Q27096213: *wikidataPlace

@@ -1,0 +1,104 @@
+sharedMappings:
+  gndId: &gndId
+  - property: https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier
+    action: add
+    type: id
+    path:
+    - http://www.w3.org/2002/07/owl#sameAs
+  wikidataId: &wikidataId
+  # GND
+  - property: https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier
+    action: add
+    type: id
+    path:
+    - http://www.wikidata.org/prop/direct-normalized/P227
+  # VIAF
+  - property: https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier
+    action: add
+    type: id
+    path:
+    - http://www.wikidata.org/prop/direct-normalized/P214
+  # geonames
+  - property: https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier
+    action: add
+    type: id
+    path:
+    - http://www.wikidata.org/prop/direct-normalized/P1566
+  # GETTY
+  - property: https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier
+    action: add
+    type: id
+    path:
+    - http://www.wikidata.org/prop/direct-normalized/P1667
+referenceSources:
+  # geonames, getty, pleiades, orcid provides no external identifiers 
+  gnd:
+    https://d-nb.info/standards/elementset/gnd#DifferentiatedPerson: *gndId
+    https://d-nb.info/standards/elementset/gnd#CorporateBody: *gndId
+    https://d-nb.info/standards/elementset/gnd#AdministrativeUnit: *gndId
+    https://d-nb.info/standards/elementset/gnd#BuildingOrMemorial: *gndId
+    https://d-nb.info/standards/elementset/gnd#Country: *gndId
+    https://d-nb.info/standards/elementset/gnd#ExtraterrestrialTerritory: *gndId
+    https://d-nb.info/standards/elementset/gnd#FictivePlace: *gndId
+    https://d-nb.info/standards/elementset/gnd#MemberState: *gndId
+    https://d-nb.info/standards/elementset/gnd#NameOfSmallGeographicUnitLyingWithinAnotherGeographicUnit: *gndId
+    https://d-nb.info/standards/elementset/gnd#NaturalGeographicUnit: *gndId
+    https://d-nb.info/standards/elementset/gnd#ReligiousTerritory: *gndId
+    https://d-nb.info/standards/elementset/gnd#TerritorialCorporateBodyOrAdministrativeUnit: *gndId
+    https://d-nb.info/standards/elementset/gnd#WayBorderOrLine: *gndId
+  gazetteer:
+    http://www.cidoc-crm.org/rdfs/cidoc-crm#E53_Place:
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier
+      action: add
+      type: id
+      path:
+      - http://www.w3.org/2002/07/owl#sameAs
+      match: wikidata.org|d-nb.info|geonames
+  # wikidata is evil
+  wikidata:
+    # Place
+    http://www.wikidata.org/entity/Q200250: wikidataId
+    http://www.wikidata.org/entity/Q515: wikidataId
+    http://www.wikidata.org/entity/Q7930989: wikidataId
+    http://www.wikidata.org/entity/Q124250988: wikidataId
+    http://www.wikidata.org/entity/Q486972: wikidataId
+    http://www.wikidata.org/entity/Q123964505: wikidataId
+    http://www.wikidata.org/entity/Q839954: wikidataId
+    http://www.wikidata.org/entity/Q2221906: wikidataId
+    http://www.wikidata.org/entity/Q17334923: wikidataId
+    http://www.wikidata.org/entity/Q27096213: wikidataId
+    # Person
+    http://www.wikidata.org/entity/Q5: wikidataId
+    # Organisation
+    http://www.wikidata.org/entity/Q1371037: *wikidataId
+    http://www.wikidata.org/entity/Q162633: *wikidataId
+    http://www.wikidata.org/entity/Q16519632: *wikidataId
+    http://www.wikidata.org/entity/Q1664720: *wikidataId
+    http://www.wikidata.org/entity/Q31855: *wikidataId
+    http://www.wikidata.org/entity/Q3918: *wikidataId
+    http://www.wikidata.org/entity/Q414147: *wikidataId
+    http://www.wikidata.org/entity/Q43229: *wikidataId
+    http://www.wikidata.org/entity/Q4671277: *wikidataId
+    http://www.wikidata.org/entity/Q4830453: *wikidataId
+    http://www.wikidata.org/entity/Q5341295: *wikidataId
+  viaf:
+    http://schema.org/Person:
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier
+      action: add
+      type: id
+      path:
+      - http://schema.org/sameAs
+      # orcid in viaf seems strange - skipping
+      match: viaf.org|wikidata.org|d-nb.info
+    http://schema.org/Organization:
+    - property: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+      action: if missing
+      value: https://vocabs.acdh.oeaw.ac.at/schema#Organisation
+      type: resource
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier
+      action: add
+      type: id
+      path:
+      - http://schema.org/sameAs
+      # orcid in viaf seems strange - skipping
+      match: viaf.org|wikidata.org|d-nb.info
