@@ -29,8 +29,8 @@ configInfo:
 dbConnStr: "set by run.d/30-fcs.sh"
 cmdiUrl: https://arche.acdh.oeaw.ac.at/oaipmh/?verb=GetRecordRaw&metadataPrefix=cmdi&identifier=%s
 highlighting:
-    minWords: 2
-    maxWords: 5
+    minWords: 5
+    maxWords: 15
     shortWord: 3
     maxFragments: 1000
 resourceQuery:
