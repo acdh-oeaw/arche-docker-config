@@ -12,7 +12,7 @@ sharedMappings:
     maxPerLang: 1
     path:
     - https://d-nb.info/standards/elementset/gnd#preferredNameForThePlaceOrGeographicName
-  - property: https://vocabs.acdh.oeaw.ac.at/schema#hasWkt
+  - property: https://vocabs.acdh.oeaw.ac.at/schema#hasWKT
     action: if missing
     type: literal
     path:
@@ -45,7 +45,7 @@ referenceSources:
       langValue: und
       path:
       - http://www.w3.org/2004/02/skos/core#prefLabel
-    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasWkt
+    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasWKT
       action: if missing
       type: literal
       maxPerLang: 1
