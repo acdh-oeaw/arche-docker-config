@@ -85,11 +85,6 @@ referenceSources:
       maxPerLang: 1
       path:
       - http://xmlns.com/foaf/0.1/familyName
-    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasUrl
-      action: add
-      type: literal
-      path:
-      - http://xmlns.com/foaf/0.1/page
   gnd:
     https://d-nb.info/standards/elementset/gnd#DifferentiatedPerson:
     - property: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
@@ -122,11 +117,6 @@ referenceSources:
       path:
       - https://d-nb.info/standards/elementset/gnd#preferredNameEntityForThePerson
       - https://d-nb.info/standards/elementset/gnd#surname
-    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasUrl
-      action: add
-      type: literal
-      path:
-      - https://d-nb.info/standards/elementset/gnd#homepage
   viaf:
     http://schema.org/Person:
     - property: http://www.w3.org/1999/02/22-rdf-syntax-ns#type

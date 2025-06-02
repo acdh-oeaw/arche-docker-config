@@ -62,11 +62,6 @@ referenceSources:
       maxPerLang: 1
       path:
       - https://d-nb.info/standards/elementset/gnd#preferredNameForTheCorporateBody
-    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasUrl
-      action: add
-      type: literal
-      path:
-      - https://d-nb.info/standards/elementset/gnd#homepage
   viaf:
     http://schema.org/Organization:
     - property: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
@@ -99,10 +94,4 @@ referenceSources:
       maxPerLang: 1
       path:
       - names
-      - value0
-    - property: https://vocabs.acdh.oeaw.ac.at/schema#hasUrl
-      action: add
-      type: literal
-      path:
-      - links
       - value0
