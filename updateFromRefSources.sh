@@ -4,7 +4,7 @@ LDIR=/home/www-data/log
 ODIR=/home/www-data/docroot/status
 CDIR=`dirname "$BASH_SOURCE[0]"`
 VERBOSE="--verbose"
-REPOURL="https://arche.acdh.oeaw.ac.at/api/"
+REPOURL="`curl -s http://127.0.0.1/api/describe | grep urlBase: | sed -e 's/^.* //'`/api/"
 ACDH="https://vocabs.acdh.oeaw.ac.at/schema#"
 
 PSWD=`grep "password:" "$CDIR/initScripts/config.yaml" | head -n 1 | sed -E 's/^.*password: *"?(.*)"? *$/\1/g'`
