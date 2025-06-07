@@ -1,18 +1,17 @@
 #!/bin/bash
 # Initializes a plain acdhch/arche container so it can be used for ARCHE-related cron jobs
 
-if [ -f /home/www-data/composer.json ] ; then
-    echo "This script should not be run on initialized ARCHE container"
-    exit 1
+if [ ! -f /home/www-data/composer.json ] ; then
+  # install composer-managed libraries
+  ln -s /home/www-data/config/composer.json /home/www-data/composer.json
+  cd /home/www-data && su -l www-data -c 'composer update -o --no-dev' || exit 2
+
+  # set up pgpass file for www-data based on the pgpass file in the config dir
+  cp /home/www-data/config/backup_pgpass /home/www-data/.pgpass
 fi
 
-# install composer-managed libraries
-ln -s /home/www-data/config/composer.json /home/www-data/composer.json
-cd /home/www-data && su -l www-data -c 'composer update -o --no-dev' || exit 2
-
-# set up pgpass files for www-data and root users based on the pgpass file in the config dir
-cp /home/www-data/config/backup_pgpass /home/www-data/.pgpass &&\
-  cp /home/www-data/.pgpass /root/.pgpass &&\
+# set up pgpass root
+cp /home/www-data/.pgpass /root/.pgpass &&\
   chmod 600 /home/www-data/.pgpass /root/.pgpass &&\
   chown www-data:www-data /home/www-data/.pgpass
 

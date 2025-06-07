@@ -11,7 +11,7 @@ COMPRESSION="none"
 COMPRESSIONLEVEL=9
 CHUNKSIZEMB=204800 # 200GB
 
-#. "$CDIR/cluster_init.sh"
+source "$CDIR/cluster_init.sh"
 
 echo "### Initialization completed, starting a backup on `date +%Y-%m-%dT%H:%M:%S`"
 
