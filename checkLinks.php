@@ -1,10 +1,10 @@
 #!/usr/bin/php
 <?php
-use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Pool;
+use zozlak\ProxyClient;
 
 include '/home/www-data/vendor/autoload.php';
 
@@ -36,11 +36,11 @@ $opts = [
         'track_redirects' => true,
     ],
 ];
-$client     = new Client($opts);
+$client     = ProxyClient::factory($opts);
 $clientAuth = null;
 if (!empty($param['auth'])) {
     $opts['auth'] = explode(':', $param['auth']);
-    $clientAuth   = new Client($opts);
+    $clientAuth   = ProxyClient::factory($opts);
 }
 $pdo = new PDO($param['dbConn']);
 $count = $pdo->query("SELECT count(DISTINCT value) FROM metadata WHERE type = 'http://www.w3.org/2001/XMLSchema#anyURI'")->fetchColumn();
