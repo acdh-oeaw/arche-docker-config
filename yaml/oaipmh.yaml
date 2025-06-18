@@ -112,6 +112,7 @@ oai:
             rdfNamespaces:
                 acdh: https://vocabs.acdh.oeaw.ac.at/schema#
                 skos: http://www.w3.org/2004/02/skos/core#
+                rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
         kulturpool:
             metadataPrefix: kulturpool
             metadataNamespace: http://we.do.not.care

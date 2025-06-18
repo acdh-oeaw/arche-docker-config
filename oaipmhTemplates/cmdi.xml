@@ -58,9 +58,17 @@
             <cmdp:coverage              remove="remove"                 val="/acdh:hasSpatialCoverage" />
             <!--
             <cmdp:created               remove="remove" lang="if empty" val=""/>
-            -->
-            <cmdp:creator               remove="remove" lang="if empty" val="/acdh:hasCreator/acdh:hasTitle" />
-            <cmdp:creator               remove="remove"                 val="/acdh:hasCreator" />
+	    -->
+	    <placeholder if="none(rdf:type == acdh:TopCollection)" remove="remove">
+	            <cmdp:creator               remove="remove" lang="if empty" val="/acdh:hasCreator/acdh:hasTitle" />
+        	    <cmdp:creator               remove="remove"                 val="/acdh:hasCreator" />
+	            <cmdp:creator               remove="remove" lang="if empty" val="/acdh:hasAuthor/acdh:hasTitle" />
+        	    <cmdp:creator               remove="remove"                 val="/acdh:hasAuthor" />
+	    </placeholder>
+	    <placeholder if="any(rdf:type == acdh:TopCollection)" remove="remove">
+	            <cmdp:creator               remove="remove" lang="if empty" val="/acdh:hasEditor/acdh:hasTitle" />
+        	    <cmdp:creator               remove="remove"                 val="/acdh:hasEditor" />
+	    </placeholder>
             <cmdp:date                  remove="remove" lang="if empty" val="/acdh:hasAvailableDate"/>
             <cmdp:dateAccepted          remove="remove" lang="if empty" val="/acdh:hasAcceptedDate"/>
             <!--

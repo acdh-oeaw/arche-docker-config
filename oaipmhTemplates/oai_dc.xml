@@ -4,8 +4,12 @@
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
            xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
   <dc:title       remove="remove" lang="if empty" val="/acdh:hasTitle"/>
+  <dc:creator     remove="remove" lang="if empty" val="/acdh:hasEditor/acdh:hasTitle"/>
+  <dc:creator     remove="remove"                 val="/acdh:hasEditor"/>
   <dc:creator     remove="remove" lang="if empty" val="/acdh:hasCreator/acdh:hasTitle"/>
   <dc:creator     remove="remove"                 val="/acdh:hasCreator"/>
+  <dc:creator     remove="remove" lang="if empty" val="/acdh:hasAuthor/acdh:hasTitle"/>
+  <dc:creator     remove="remove"                 val="/acdh:hasAuthor"/>
   <dc:subject     remove="remove" lang="if empty" val="/acdh:hasSubject"/>
   <dc:description remove="remove" lang="if empty" val="/acdh:hasDescription"/>
   <dc:date        remove="remove" lang="if empty" val="/acdh:hasAvailableDate"/>

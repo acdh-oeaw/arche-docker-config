@@ -65,8 +65,11 @@
         </aocat:AO_Agent>
     </aocat:has_publisher>
     
+    <aocat:has_creator foreach="/acdh:hasEditor">&Agent;</aocat:has_creator>
+    <!--
     <aocat:has_creator foreach="/acdh:hasCreator">&Agent;</aocat:has_creator>
     <aocat:has_creator foreach="/acdh:hasAuthor">&Agent;</aocat:has_creator>
+    -->
     <aocat:has_owner foreach="/acdh:hasOwner">&Agent;</aocat:has_owner>
     <aocat:has_responsible foreach="/acdh:hasContact">&Agent;</aocat:has_responsible>
     <aocat:has_contributor foreach="/acdh:hasContributor">&Agent;</aocat:has_contributor>
