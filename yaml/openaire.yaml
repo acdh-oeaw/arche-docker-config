@@ -9,7 +9,7 @@ openaire:
     pidQuery: |
         SELECT m1.value
         FROM
-            (SELECT id FROM get_relatives(?, ?, 0, -99999, false, false) t ORDER BY n LIMIT 1) i
+            (SELECT id FROM get_relatives(?::bigint, ?, 0, -99999, false, false) t ORDER BY n LIMIT 1) i
             JOIN metadata m1 USING (id)
             JOIN metadata m2 USING (id)
         WHERE m1.property = ? AND m2.property = ? AND m2.value = ?
