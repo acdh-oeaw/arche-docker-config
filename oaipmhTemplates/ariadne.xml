@@ -7,7 +7,7 @@
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:crm="http://www.cidoc-crm.org/cidoc-crm/"
     xmlns:crmpe="http://parthenos.d4science.org/CRMext/CRMpe.rdfs/"
-    xmlns:aocat="https://www.ariadne-infrastructure.eu/resource/ao/cat/1.1/"
+    xmlns:aocat="https://www.ariadne-infrastructure.eu/resource/ao/cat/2.0/"
     xmlns:lexvo="http://lexvo.org/id/iso639-2/"
     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
@@ -82,7 +82,7 @@
             <aocat:has_latitude  rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal" val="/acdh:hasLatitude"  remove="remove"/>
             <aocat:has_longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal" val="/acdh:hasLongitude" remove="remove"/>
             <aocat:has_country>
-                <rdf:Description val="/acdh:hasIdentifier" match="^https://sws.geonames.org" aggregate="min" as="rdf:about">
+                <rdf:Description val="/acdh:hasIdentifier" match="^https://sws.geonames.org" aggregate="min" as="@rdf:about">
                     <rdfs:label val="/acdh:hasTitle" aggregate="min,en" lang="if empty"/>
                 </rdf:Description>
             </aocat:has_country> 
