@@ -81,6 +81,11 @@
             <aocat:has_place_name val="/acdh:hasTitle" aggregate="min,en" lang="if empty"/>
             <aocat:has_latitude  rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal" val="/acdh:hasLatitude"  remove="remove"/>
             <aocat:has_longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal" val="/acdh:hasLongitude" remove="remove"/>
+            <aocat:has_country>
+                <rdf:Description val="/acdh:hasIdentifier" match="^https://sws.geonames.org" aggregate="min" as="rdf:about">
+                    <rdfs:label val="/acdh:hasTitle" aggregate="min,en" lang="if empty"/>
+                </rdf:Description>
+            </aocat:has_country> 
         </aocat:AO_Spatial_Region_Point>
     </aocat:has_spatial_coverage>
     <!--
