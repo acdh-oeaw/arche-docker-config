@@ -1,7 +1,7 @@
 #!/bin/bash
 SDIR=/home/www-data/vendor/acdh-oeaw/arche-core
 BDIR=/home/www-data/backup
-TDIR=/home/www-data/data/tmp
+TDIR=/home/www-data/backup/tmp
 ODIR=/home/www-data/docroot/status
 CDIR=`dirname "$BASH_SOURCE[0]"`
 FILE="`date +%Y-%m-%d`"
