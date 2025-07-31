@@ -88,6 +88,7 @@ schema:
         class: https://vocabs.acdh.oeaw.ac.at/schema#DisseminationService
         location: https://vocabs.acdh.oeaw.ac.at/schema#serviceLocation
         returnFormat: https://vocabs.acdh.oeaw.ac.at/schema#hasReturnType
+        matchClass: https://vocabs.acdh.oeaw.ac.at/schema#DisseminationServiceMatchRule
         matchProperty: https://vocabs.acdh.oeaw.ac.at/schema#matchesProp
         matchValue: https://vocabs.acdh.oeaw.ac.at/schema#matchesValue
         matchRequired: https://vocabs.acdh.oeaw.ac.at/schema#isRequired

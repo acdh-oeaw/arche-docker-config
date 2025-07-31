@@ -22,32 +22,33 @@ $repo      = Repo::factory($cfgFile);
 $graph     = new MetadataCollection($repo, __DIR__ . '/dissServices.ttl');
 $repo->begin();
 try {
-    // get all existing diss services and their children (match rules and parameters)
-    $query = "
-        SELECT (get_relatives(id, ?, 1, 0)).id
-        FROM metadata
-        WHERE property = ? AND substring(value, 1, 100) = ?
-    ";
-    $param = [$cfg->schema->parent, RDF::RDF_TYPE, $cfg->schema->dissService->class];
-    $sc = new SearchConfig();
-    $sc->metadataMode = RepoResourceInterface::META_RESOURCE;
-    $existing = $repo->getResourcesBySqlQuery($query, $param, $sc);
+    $now = (new DateTimeImmutable())->format(DateTimeImmutable::ISO8601);
 
     // import current diss services definitions
-    $resources = $graph->import($cfg->schema->namespaces->id, MetadataCollection::SKIP);
+    $graph->import($cfg->schema->namespaces->id, MetadataCollection::SKIP);
 
-    // remove obsolete dissemination services and/or their parameters/match rules
-    $valid = [];
-    foreach ($resources as $i) {
-        $valid[] = $i->getUri();
-    }
-    foreach ($existing as $i) {
-        if (!in_array($i->getUri(), $valid)) {
-            echo "Removing obsolete diss service " . $i->getUri() . "\n";
-            try {
-                $i->delete(true, true, $cfg->schema->parent);
-            } catch (Deleted $e) {}
-        }
+    // find and remove all dissemination service-related resources which were not update
+    $query = "
+        SELECT id
+        FROM metadata m1 JOIN metadata m2 USING (id)
+        WHERE 
+            m1.property = ? AND substring(m1.value, 1, 100) IN (?, ?, ?)
+            AND m2.property = ? AND m2.value_t < ?
+    ";
+    $param = [
+        RDF::RDF_TYPE,
+        $cfg->schema->dissService->class,
+        $cfg->schema->dissService->matchClass,
+        $cfg->schema->dissService->parameterClass,
+        $cfg->schema->modificationDate,
+        $now,
+    ];
+    $toRemove = $repo->getResourcesBySqlQuery($query, $param, new SearchConfig());
+    foreach ($toRemove as $i) {
+        echo "Removing obsolete diss service object " . $i->getUri() . "\n";
+        try {
+            $i->delete(true, true);
+        } catch (Deleted $e) {}
     }
 
     $repo->commit();
