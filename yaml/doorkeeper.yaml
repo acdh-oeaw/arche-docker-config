@@ -11,7 +11,7 @@ doorkeeper:
     checkVocabularyValues: true
     checkRanges:
         https://vocabs.acdh.oeaw.ac.at/schema#Agent: [viaf, orcid, gnd, wikidata, arche-localhost, acdhi, arche, pmb, ror]
-        https://vocabs.acdh.oeaw.ac.at/schema#Place: [wikidata, arche-localhost, acdhi, arche, pmb, geonames, gnd]
+        https://vocabs.acdh.oeaw.ac.at/schema#Place: [wikidata, arche-localhost, acdhi, arche, pmb, geonames, gnd, gazetteer]
         https://vocabs.acdh.oeaw.ac.at/schema#AgentOrPlace: [viaf, orcid, gnd, wikidata, arche-localhost, acdhi, arche, pmb, geonames, ror]
     epicPid:
         resolver: 'https://hdl.handle.net/'
@@ -25,7 +25,7 @@ doorkeeper:
 schema:
     checkRanges:
         https://vocabs.acdh.oeaw.ac.at/schema#Agent: [viaf, orcid, gnd, wikidata, arche-localhost, acdhi, arche, pmb, ror]
-        https://vocabs.acdh.oeaw.ac.at/schema#Place: [wikidata, arche-localhost, acdhi, arche, pmb, geonames]
+        https://vocabs.acdh.oeaw.ac.at/schema#Place: [wikidata, arche-localhost, acdhi, arche, pmb, geonames, gazetteer]
         https://vocabs.acdh.oeaw.ac.at/schema#AgentOrPlace: [viaf, orcid, gnd, wikidata, arche-localhost, acdhi, arche, pmb, geonames, ror]
 rest:
     handlers:
