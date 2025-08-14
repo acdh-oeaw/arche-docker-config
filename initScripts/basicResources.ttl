@@ -44,10 +44,9 @@ acdhi:acdh a acdh:Organisation;
     acdh:hasCountry "Österreich"@de;
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
-    acdh:hasEmail "ACDH-CH-Office@oeaw.ac.at";
-    acdh:hasTitle "Austrian Centre for Digital Humanities and Cultural Heritage"@en;
-    acdh:hasAlternativeTitle "Austrian Centre for Digital Humanities"@en;
-    acdh:hasAlternativeTitle "ACDH-CH"@en;
+    acdh:hasEmail "ACDH-Office@oeaw.ac.at";
+    acdh:hasTitle "Austrian Centre for Digital Humanities"@en;
+    acdh:hasAlternativeTitle "ACDH"@en;
     acdh:hasUrl "https://www.oeaw.ac.at/acdh";
     acdh:isMemberOf acdhi:oeaw.
     
@@ -77,15 +76,15 @@ Mit 1. Jänner 2021 wurde IKAnt mit dem Institut für Orientalische und Europäi
 acdhi:oeai a acdh:Organisation;
     acdh:hasIdentifier <https://d-nb.info/gnd/35371-1>;
     acdh:hasIdentifier <https://viaf.org/viaf/125130162>;
-    acdh:hasAddressLine1 "Franz Klein-Gasse 1";
-    acdh:hasPostcode "1190";
+    acdh:hasAddressLine1 "Dominikanerbastei 16";
+    acdh:hasPostcode "1010";
     acdh:hasCity "Vienna"@en;
     acdh:hasCity "Wien"@de;
     acdh:hasCountry "Austria"@en;
     acdh:hasCountry "Österreich"@de;
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
-    acdh:hasEmail "mailbox@oeai.at";
+    acdh:hasEmail "oeai@oeaw.ac.at";
     acdh:hasTitle "Österreichisches Archäologisches Institut | Österreichische Akademie der Wissenschaften"@de;
     acdh:hasTitle "Austrian Archaeological Institute | Austrian Academy of Sciences"@en;
     acdh:hasAlternativeTitle "ÖAI"@de;
