@@ -115,7 +115,7 @@
                 remove="remove"/>
         </placeholder>
         <!-- CHO=Aggregation=WebResource -->
-    	<placeholder if="any(rdf:type == acdh:Resource)" remove="remove">
+        <placeholder if="any(rdf:type == acdh:Resource)" remove="remove">
             <edm:isShownBy 
                 val="/acdh:hasIdentifier" 
                 match="^.*/api/([0-9]+)$"
