@@ -139,7 +139,6 @@ spatialSearch:
         application/vnd.google-earth.kml+xml: \acdhOeaw\arche\core\util\Spatial::fromKml
         application/gml+xml: \acdhOeaw\arche\core\util\Spatial::fromGml
         image/tiff: \acdhOeaw\arche\core\util\Spatial::fromRaster
-        image/png: \acdhOeaw\arche\core\util\Spatial::fromRaster
     sizeLimit: 100M
 rest:
     logging:
