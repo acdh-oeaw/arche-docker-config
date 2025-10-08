@@ -116,18 +116,34 @@
         </placeholder>
         <!-- CHO=Aggregation=WebResource -->
         <placeholder if="any(rdf:type == acdh:Resource)" remove="remove">
-            <edm:isShownBy 
-                val="/acdh:hasIdentifier" 
-                match="^.*/api/([0-9]+)$"
-                replace="https://loris.acdh.oeaw.ac.at/\1/full/full/0/default.jpg" 
-                as="@rdf:resource"/>
-            <edm:hasView
-                val="/acdh:hasIdentifier" 
-                match="^.*/api/([0-9]+)$"
-                replace="https://loris.acdh.oeaw.ac.at/\1/full/full/0/default.jpg" 
-                as="@rdf:resource" 
-                remove="remove"/>
-	</placeholder>
+            <!-- GLB 3D model -->
+            <placeholder if="any(acdh:hasFormat == 'model/gltf-binary')" remove="remove">
+                <edm:isShownBy 
+                    val="/acdh:hasIdentifier" 
+                    match="^.*/api/[0-9]+$"
+                    replace="https://arche-glb.acdh.oeaw.ac.at/?id=\0"
+                    as="@rdf:resource"/>
+                <edm:hasView
+                    val="/acdh:hasIdentifier" 
+                    match="^.*/api/[0-9]+$"
+                    replace="https://arche-glb.acdh.oeaw.ac.at/?id=\0"
+                    as="@rdf:resource"/>
+            </placeholder>
+            <!-- Image -->
+            <placeholder if="none(acdh:hasFormat == 'model/gltf-binary')" remove="remove">
+                <edm:isShownBy 
+                    val="/acdh:hasIdentifier" 
+                    match="^.*/api/([0-9]+)$"
+                    replace="https://loris.acdh.oeaw.ac.at/\1/full/full/0/default.jpg" 
+                    as="@rdf:resource"/>
+                <edm:hasView
+                    val="/acdh:hasIdentifier" 
+                    match="^.*/api/([0-9]+)$"
+                    replace="https://loris.acdh.oeaw.ac.at/\1/full/full/0/default.jpg" 
+                    as="@rdf:resource" 
+                    remove="remove"/>
+            </placeholder>
+        </placeholder>
     </ore:Aggregation>
 
     <!-- WebViews being children of the CHO=Aggregation -->
@@ -151,8 +167,8 @@
                     val1="/acdh:hasCreatedStartDate" format1="D:Y" aggregate1="min"
                     val2="=/"
                     val3="/acdh:hasCreatedEndDate" format3="D:Y" aggregate3="max"/>
-		<dcterms:issued val="/acdh:hasAvailableDate" format="D:Y-m-d" remove="remove"/>
-		<dcterms:isReferencedBy
+                <dcterms:issued val="/acdh:hasAvailableDate" format="D:Y-m-d" remove="remove"/>
+                <dcterms:isReferencedBy
                     val1="=https://arche-iiifmanifest.acdh.oeaw.ac.at/?mode=manifest&amp;id=" as1="@rdf:resource"
                     val2="OAIID" format2="U:" as2="@rdf:resource" action2="append"/>
                 <svcs:has_service>
@@ -176,21 +192,23 @@
     </placeholder>
     <!-- CHO=Aggregation=WebView -->
     <placeholder if="any(rdf:type == acdh:Resource)" remove="remove">
-        <edm:WebResource val="/acdh:hasIdentifier" match="^.*/api/([0-9]+)$" replace="https://loris.acdh.oeaw.ac.at/\1/full/full/0/default.jpg" as="@rdf:about">
-            <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^https://creativecommons[.]org/" replace="http://creativecommons.org/" as="@rdf:resource" remove="remove"/>
-            <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^http://rightsstatements[.]org/vocab/" as="@rdf:resource" remove="remove"/>
-            <dc:format val="=image/jpeg"/>
-            <dcterms:created remove="remove"
-                val1="/acdh:hasCreatedStartDate" format1="D:Y" aggregate1="min"
-                val2="=/"
-                val3="/acdh:hasCreatedEndDate" format3="D:Y" aggregate3="max"/>
-            <dcterms:issued val="/acdh:hasAvailableDate" format="D:Y-m-d" remove="remove"/>
-            <svcs:has_service>
-                <svcs:Service val="/acdh:hasIdentifier" match="^.*/api/([0-9]+)$" replace="https://loris.acdh.oeaw.ac.at/\1" as="@rdf:about">
-                    <dcterms:conformsTo rdf:resource="http://iiif.io/api/image"/>
-                    <doap:implements rdf:resource="http://iiif.io/api/image/2/level2.json"/>
-                </svcs:Service>
-            </svcs:has_service>
-        </edm:WebResource>
+        <placeholder if="none(acdh:hasFormat == 'model/gltf-binary')" remove="remove">
+            <edm:WebResource val="/acdh:hasIdentifier" match="^.*/api/([0-9]+)$" replace="https://loris.acdh.oeaw.ac.at/\1/full/full/0/default.jpg" as="@rdf:about">
+                <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^https://creativecommons[.]org/" replace="http://creativecommons.org/" as="@rdf:resource" remove="remove"/>
+                <edm:rights val="/acdh:hasLicense/acdh:hasIdentifier" match="^http://rightsstatements[.]org/vocab/" as="@rdf:resource" remove="remove"/>
+                <dc:format val="=image/jpeg"/>
+                <dcterms:created remove="remove"
+                    val1="/acdh:hasCreatedStartDate" format1="D:Y" aggregate1="min"
+                    val2="=/"
+                    val3="/acdh:hasCreatedEndDate" format3="D:Y" aggregate3="max"/>
+                <dcterms:issued val="/acdh:hasAvailableDate" format="D:Y-m-d" remove="remove"/>
+                <svcs:has_service>
+                    <svcs:Service val="/acdh:hasIdentifier" match="^.*/api/([0-9]+)$" replace="https://loris.acdh.oeaw.ac.at/\1" as="@rdf:about">
+                        <dcterms:conformsTo rdf:resource="http://iiif.io/api/image"/>
+                        <doap:implements rdf:resource="http://iiif.io/api/image/2/level2.json"/>
+                    </svcs:Service>
+                </svcs:has_service>
+            </edm:WebResource>
+        </placeholder>
     </placeholder>
 </rdf:RDF>
