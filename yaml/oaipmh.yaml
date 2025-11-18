@@ -157,4 +157,15 @@ oai:
             rdfNamespaces:
                 acdh: https://vocabs.acdh.oeaw.ac.at/schema#
                 skos: http://www.w3.org/2004/02/skos/core#
+        google:
+            metadataPrefix: schema.org
+            metadataNamespace: https://schema.org/
+            schema: http://we.do.not.have.an.xsd
+            class: \acdhOeaw\arche\oaipmh\metadata\TemplateMetadata
+            templatePath: /home/www-data/config/oaipmhTemplates/google.xml
+            keepComments: false
+            xmlErrors: true
+            rdfNamespaces:
+                acdh: https://vocabs.acdh.oeaw.ac.at/schema#
+                skos: http://www.w3.org/2004/02/skos/core#
 

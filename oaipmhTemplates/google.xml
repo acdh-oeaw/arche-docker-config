@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE doc [
+  <!ENTITY Person SYSTEM "google_person.xml">
+]>
+
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:so="https://schema.org/">
+	<so:Dataset xmlns="https://schema.org/">
+		<so:sameAs val="/acdh:hasIdentifier"/>
+		<so:description val="/acdh:hasDescription" lang="if empty"></so:description>
+		<so:name val="/acdh:hasTitle" lang="if empty"></so:name>
+		<so:license val="/acdh:hasLicense/acdh:hasIdentifier" match="^https://vocabs.acdh.oeaw.ac.at/"/>
+		<placeholder foreach="/acdh:hasCreator" remove="remove">
+			<so:creator>&Person;</so:creator>
+		</placeholder>
+		<placeholder foreach="/acdh:hasAuthor" remove="remove">
+			<so:author>&Person;</so:author>
+		</placeholder>
+		<placeholder foreach="/acdh:hasEditor" remove="remove">
+			<so:editor>&Person;</so:editor>
+		</placeholder>
+	</so:Dataset>
+</rdf:RDF>

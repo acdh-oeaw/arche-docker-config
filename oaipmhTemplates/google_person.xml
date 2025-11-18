@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<so:Person val="/acdh:hasIdentifier" match="^https://arche.*/api/[0-9]+$" as="@rdf:about" xmlns:so="https://schema.org/">
+	<so:sameAs val="/acdh:hasIdentifier"/>
+	<so:name val="/acdh:hasTitle" aggregate="min,en"/>
+	<so:givenName val="/acdh:hasFirstName"/>
+	<so:familyName val="/acdh:hasLastName"/>
+</so:Person>
