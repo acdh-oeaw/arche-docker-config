@@ -8,10 +8,22 @@ use zozlak\ProxyClient;
 
 include '/home/www-data/vendor/autoload.php';
 
-$param = ['dbConn' => 'pgsql:', 'timeout' => 10, 'parallel' => 5, 'retry' => 3, 'retry400WithGet' => false, 'help' => false, 'progress' => false, 'auth' => '', 'authNmsp' => ''];
-$helpStr = "$argv[0] [--timeout seconds] [--parallel N] [--retry N] [--dbConn PDOconnString] [--retry400WithGet] [--auth user:pswd] [--authNmsp authIsUsedOnlyInThisNamespace] [--help]\n\nSearches arche-core database for broken URLs.\nAll literal values of type xsd:anyURI are checked.\n\ndefault parameter values: dbConn: '" . $param['dbConn'] . "', timeout: " . $param['timeout'] . ", parallel: " . $param['parallel'] . "\n\n";
+$param = [
+    'dbConn' => 'pgsql:', 
+    'timeout' => 10, 
+    'parallel' => 5, 
+    'retry' => 3, 
+    'retry400WithGet' => false, 
+    'help' => false, 
+    'progress' => false, 
+    'auth' => '', 
+    'authNmsp' => '', 
+    'agent' => 'arche-link-checker/1.0', 
+    'timeoutLastRetry' => '60',
+];
+$helpStr = "$argv[0] [--timeout seconds] [--parallel N] [--retry N] [--dbConn PDOconnString] [--retry400WithGet] [--auth user:pswd] [--authNmsp authIsUsedOnlyInThisNamespace] [--agent user-agentHeader] [--timeoutLastRetry] [--help]\n\nSearches arche-core database for broken URLs.\nAll literal values of type xsd:anyURI are checked.\n\ndefault parameter values: dbConn: '" . $param['dbConn'] . "', timeout: " . $param['timeout'] . ", timeoutLastRetry: " . $param['timeoutLastRetry'] . ", parallel: " . $param['parallel'] . ", agent: " . $param['agent'] . "\n\n";
 foreach ($argv as $n => $v) {
-    if (in_array($v, ['--timeout', '--parallel', '--retry', '--dbConn', '--auth', '--authNmsp'])) {
+    if (in_array($v, ['--timeout', '--parallel', '--retry', '--dbConn', '--auth', '--authNmsp', '--agent', '--timeoutLastRetry'])) {
         if (!isset($argv[$n + 1])) {
             echo $helpStr;
             exit();
@@ -35,6 +47,9 @@ $opts = [
         'strict'          => false,
         'track_redirects' => true,
     ],
+    'headers'         => [
+        'user-agent' => $param['agent'],
+    ]
 ];
 $client     = ProxyClient::factory($opts);
 $clientAuth = null;
@@ -42,6 +57,10 @@ if (!empty($param['auth'])) {
     $opts['auth'] = explode(':', $param['auth']);
     $clientAuth   = ProxyClient::factory($opts);
 }
+unset($opts['auth']);
+$opts['timeout'] = $param['timeoutLastRetry'];
+$clientSlow = ProxyClient::factory($opts);
+
 $pdo = new PDO($param['dbConn']);
 $count = $pdo->query("SELECT count(DISTINCT value) FROM metadata WHERE type = 'http://www.w3.org/2001/XMLSchema#anyURI'")->fetchColumn();
 unset($param['dbConn'], $param['help']);
@@ -50,7 +69,7 @@ echo "@ Checking for broken URLs (" . date('Y-m-d H:i:s') . ") $count URLs to ch
 
 $fetchRequestsFn = function($pdo) {
     global $urls, $param, $count, $t0;
-    $query = $pdo->query("SELECT DISTINCT value FROM metadata WHERE type = 'http://www.w3.org/2001/XMLSchema#anyURI'");
+    $query = $pdo->query("SELECT DISTINCT value FROM metadata WHERE type = 'http://www.w3.org/2001/XMLSchema#anyURI' and value like 'https://hdl.handle.net/21.11115/0000-000E-75CA-B%'");
     $n = 0;
     while ($i = $query->fetchColumn()) {
         $urls[(string)$n] = $i;
@@ -80,7 +99,7 @@ $fulfilledFn = function(Response $response, $index) {
         }
     }
     if ($status < 200 || $status >= 400) {
-	if ($param['retry'] > 0 && !in_array($status, [401, 403])) {
+        if ($param['retry'] > 0 && !in_array($status, [401, 403])) {
             $retry[] = $url;
         } else {
             $broken[(string) $status][$url] = array_combine($response->getHeader('X-Guzzle-Redirect-History'), $response->getHeader('X-Guzzle-Redirect-Status-History'));
@@ -89,7 +108,7 @@ $fulfilledFn = function(Response $response, $index) {
     unset($urls[$index]);
 };
 $rejectFn = function(Exception $reason, $index) {
-    global $urls, $failing, $retry, $param;
+    global $urls, $failing, $retry, $slow, $param;
     $index = (string) $index;
     $url = $urls[$index];
     if ($param['retry'] > 0) {
@@ -114,7 +133,7 @@ while ($param['retry'] >= 0) {
         fwrite(STDERR, "# retrying " . count($requests) . " URLs (concurrency " . $poolOpts['concurrency'] . ")\n");
     }
     $retry    = [];
-    $pool     = new Pool($client, $requests, $poolOpts);
+    $pool     = new Pool($param['retry'] == 0 ? $clientSlow : $client, $requests, $poolOpts);
     $promise  = $pool->promise();
     // for unknown reason ConnectException is not trapped as a failed promise
     try {
@@ -123,9 +142,9 @@ while ($param['retry'] >= 0) {
         $url = $e->getRequest()->getUri();
         if ($param['retry'] > 0) {
             $retry[] = $url;
-	} else {
+        } else {
             $broken[-1][$url] = [$url, -1];
-	}
+        }
         echo "ConnectException for " . $e->getRequest()->getUri() . ": " . $e->getMessage() . "\n";
     }
     $urls     = $retry;
