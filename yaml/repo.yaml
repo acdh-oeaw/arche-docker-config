@@ -46,7 +46,6 @@ accessControl:
         path: /
         name: archeLogin
     db:
-        connStr: 'pgsql: user={USER_REPO} dbname={PG_DBNAME} host={PG_HOST} port={PG_PORT}'
         table: users
         userCol: user_id
         dataCol: data
