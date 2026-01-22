@@ -3,6 +3,9 @@ doorkeeper:
     roleAcademic: academic
     ontologyCacheFile: /home/www-data/docroot/api/ontology.cache
     ontologyCacheTtl: 600
+    retryAttempts: 3
+    retryDelay: 2
+    retryOn: [429, 500, 501, 502, 503, 504]
     # Should Doorkeeper::checkUnknownProperties() be run? We need to be able to turn it off for the ontology import.
     checkUnknownProperties: true
     # Should Doorkeeper::checkAutoCreatedResources() be run? We need to be able to turn it off for the ontology import.
