@@ -69,7 +69,7 @@ echo "@ Checking for broken URLs (" . date('Y-m-d H:i:s') . ") $count URLs to ch
 
 $fetchRequestsFn = function($pdo) {
     global $urls, $param, $count, $t0;
-    $query = $pdo->query("SELECT DISTINCT value FROM metadata WHERE type = 'http://www.w3.org/2001/XMLSchema#anyURI' and value like 'https://hdl.handle.net/21.11115/0000-000E-75CA-B%'");
+    $query = $pdo->query("SELECT DISTINCT value FROM metadata WHERE type = 'http://www.w3.org/2001/XMLSchema#anyURI'");
     $n = 0;
     while ($i = $query->fetchColumn()) {
         $urls[(string)$n] = $i;
