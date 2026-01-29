@@ -19,21 +19,25 @@
                 val="/acdh:hasLicenseSummary" 
                 match="^.*CC ([-A-Z]+) ([0-9.]+).*$"
                 replace="https://creativecommons.org/licenses/\1/\2/"
+                remove="remove"
             />
             <so:license 
                 val="/acdh:hasLicenseSummary" 
                 match="^.*CC0 ([0-9.]+):.*$"
                 replace="https://creativecommons.org/publicdomain/zero/\1/"
+                remove="remove"
             />
             <so:license 
                 val="/acdh:hasLicenseSummary" 
                 match="^.*Public Domain Mark ([0-9.]+):.*$"
                 replace="https://creativecommons.org/publicdomain/mark/\1/"
+                remove="remove"
             />
             <so:license 
                 val="/acdh:hasLicenseSummary" 
                 match="^.*InC:.*$"
                 replace="http://rightsstatements.org/vocab/InC/1.0/"
+                remove="remove"
             />
         </placeholder>
         <placeholder if="any(rdf:type == acdh:TopCollection)" remove="remove">
