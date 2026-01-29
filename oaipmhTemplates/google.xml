@@ -6,7 +6,7 @@
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:so="https://schema.org/">
     <so:Dataset xmlns="https://schema.org/">
         <so:sameAs val="/acdh:hasIdentifier"/>
-        <so:description val="/acdh:hasDescription" lang="if empty"></so:description>
+        <so:description val="/acdh:hasDescription" lang="if empty" remove="remove"/>
         <so:name val="/acdh:hasTitle" lang="if empty"></so:name>
         <placeholder if="any(acdh:hasLicense)" remove="remove">
             <so:license 
