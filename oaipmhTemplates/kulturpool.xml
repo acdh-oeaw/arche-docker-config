@@ -57,7 +57,7 @@
                     <skos:inScheme rdf:resource="https://vocabs.acdh.oeaw.ac.at/archecategory/Schema"/>
                 </skos:Concept> 
             </placeholder>
-	</dc:type>
+        </dc:type>
         <!-- required only 1 value out of TEXT, VIDEO, SOUND, IMAGE or 3D -->
         <edm:type val="/acdh:hasTag" match="^(TEXT|VIDEO|SOUND|IMAGE|3D)$"/>
         <!-- Optional fields -->
@@ -87,6 +87,7 @@
         <edm:isRelatedTo val="/acdh:relation" as="@rdf:resource" remove="remove"/>
         <edm:isRepresentationOf val="/acdh:documents" as="@rdf:resource" remove="remove"/>
         <edm:isSuccessorOf val="/acdh:continues" as="@rdf:resource" remove="remove"/>
+        <edm:isPartOf val="/acdh:isPartOf*/acdh:hasTitle" lang="if empty" remove="remove"/>
         <owl:sameAs val="/acdh:hasIdentifier" match="(https://arche[.]acdh[.]oeaw[.]ac[.]at/api/\d+)" replace="\1/metadata" as="@rdf:resource" remove="remove"/>
     </edm:ProvidedCHO>
     
