@@ -7,6 +7,7 @@ rest:
     withReferences: X-WITH-REFERENCES
     resourceProperties: X-RESOURCE-PROPERTIES
     relativesProperties: X-RELATIVES-PROPERTIES
+    existingResourceLocation: X-EXISTING-RESOURCE-LOCATION
 schema:
     id: https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier
     parent: https://vocabs.acdh.oeaw.ac.at/schema#isPartOf
