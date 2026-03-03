@@ -11,6 +11,7 @@
         "acdh-oeaw/arche-openrefine": "^0.5",
         "acdh-oeaw/arche-openaire": "^2",
         "acdh-oeaw/arche-ref-sources": "^1",
-        "zozlak/yaml-merge": "^1"
+        "zozlak/yaml-merge": "^1",
+        "acdh-oeaw/arche-ingest": "^1.6"
     }
 }

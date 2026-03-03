@@ -264,7 +264,7 @@ acdhids:iiifmanifestMode
 # Loris
 acdhids:loris
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "https://loris.acdh.oeaw.ac.at/{RES_ID}/{param|emptyIf(format,image/json)}{format|emptyIf(param)|replace(image/json,info.json)|replace(image/,)|replace(iiif,jpg)}" ;
+    acdh:serviceLocation    "https://loris.acdh.oeaw.ac.at/{ID@id|removeprotocol}/{param|emptyIf(format,image/json)}{format|emptyIf(param)|replace(image/json,info.json)|replace(image/,)|replace(iiif,jpg)}" ;
     acdh:hasReturnType      "image/jpeg" ;
     acdh:hasReturnType      "image/png" ;
     acdh:hasReturnType      "image/gif" ;

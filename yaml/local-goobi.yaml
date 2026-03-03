@@ -1,0 +1,11 @@
+rest:
+    urlBase: http://arche-local
+    pathBase: /api/
+doorkeeper:
+    epicPid:
+        pswd:
+resolver:
+    repositories:
+        self:
+            baseUrl: http://arche-local/api/
+
