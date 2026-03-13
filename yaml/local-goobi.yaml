@@ -4,6 +4,7 @@ rest:
 doorkeeper:
     epicPid:
         pswd:
+    certVerify: false
 resolver:
     repositories:
         self:
