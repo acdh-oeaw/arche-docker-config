@@ -1,7 +1,7 @@
 {
     "require": {
         "acdh-oeaw/arche-core": "^5.9",
-        "acdh-oeaw/arche-doorkeeper": "^6.12",
+        "acdh-oeaw/arche-doorkeeper": "^6.14",
         "acdh-oeaw/arche-schema": "^6",
         "acdh-oeaw/arche-schema-ingest": "^4",
         "acdh-oeaw/epic-handle": "^1",
