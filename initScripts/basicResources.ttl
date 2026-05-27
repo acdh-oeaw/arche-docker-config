@@ -30,8 +30,8 @@ acdhi:oeaw a acdh:Organisation;
     acdh:hasEmail "webmaster@oeaw.ac.at";
     acdh:hasTitle "Österreichische Akademie der Wissenschaften"@de;
     acdh:hasTitle "Austrian Academy of Sciences"@en;
-    acdh:hasAlternativeTitle "ÖAW"@de;
-    acdh:hasUrl "https://www.oeaw.ac.at".
+#    acdh:hasUrl "https://www.oeaw.ac.at";
+    acdh:hasAlternativeTitle "ÖAW"@de.
 
 acdhi:acdh a acdh:Organisation;
     acdh:hasIdentifier <https://d-nb.info/gnd/1123037736>;
@@ -47,7 +47,7 @@ acdhi:acdh a acdh:Organisation;
     acdh:hasEmail "ACDH-Office@oeaw.ac.at";
     acdh:hasTitle "Austrian Centre for Digital Humanities"@en;
     acdh:hasAlternativeTitle "ACDH"@en;
-    acdh:hasUrl "https://www.oeaw.ac.at/acdh";
+#    acdh:hasUrl "https://www.oeaw.ac.at/acdh";
     acdh:isMemberOf acdhi:oeaw.
     
 acdhi:ikan a acdh:Organisation;
@@ -69,7 +69,7 @@ acdhi:ikan a acdh:Organisation;
 On 1 January 2021, IKAnt has been merged with the Institute for Oriental and European Archaeology (OREA) and the Austrian Archaeological Institute (OeAI). Under the name OeAI, the new institute focuses on the foundational research in the field of archaeology and classical studies at the Austrian Academy of Sciences (OeAW)."""@en;
     acdh:hasDescription """Das Institut für Kulturgeschichte der Antike (IKAnt), eine Forschungseinrichtung an der Österreichischen Akademie der Wissenschaften (ÖAW), ging im Jahre 2000 aus der Forschungsstelle Archäologie hervor, die 1994 durch den Zusammenschluss mehrerer ÖAW Kommissionen entstanden war: u. a. die Limeskommission (gegründet 1897), die Kommission für Praktische Archäologie (1988 hervorgegangen aus dem Unternehmen Ephesos, das seit 1954 unter der Patronanz der Akademie stand) und die Kommission für das Corpus Vasorum Antiquorum (gegr. 1951). Zwischen 1997 und 2000 wurde die Antiquarische Abteilung der Balkan-Kommission (gegr. 1897) und die Kommission für das Corpus der antiken Mosaiken Kleinasiens (gegr. 1973) ins IKAnt eingegliedert. 2013 schließlich erfolgte Eingliederung der Kommission für Antike Rechtsgeschichte (gegr. 1974), der Numismatischen Kommission (gegr. 1973) und der Kleinasiatischen Kommission (gegr. 1896).
 Mit 1. Jänner 2021 wurde IKAnt mit dem Institut für Orientalische und Europäische Archäologie (OREA) und dem Österreichischen Archäologischen Institut (ÖAI) fusioniert. Unter der Bezeichnung ÖAI bündelt das neue Institut die Grundlagenforschung auf dem Gebiet der Archäologie und Altertumswissenschaften an der Österreichischen Akademie der Wissenschaften (ÖAW)."""@de;
-    acdh:hasUrl "https://www.oeaw.ac.at/antike/home";
+#    acdh:hasUrl "https://www.oeaw.ac.at/antike/home";
     acdh:relation <https://id.acdh.oeaw.ac.at/oeai>;
     acdh:isMemberOf acdhi:oeaw.
 
@@ -89,7 +89,7 @@ acdhi:oeai a acdh:Organisation;
     acdh:hasTitle "Austrian Archaeological Institute | Austrian Academy of Sciences"@en;
     acdh:hasAlternativeTitle "ÖAI"@de;
     acdh:hasAlternativeTitle "OeAI"@en;
-    acdh:hasUrl "https://www.oeaw.ac.at/oeai";
+#    acdh:hasUrl "https://www.oeaw.ac.at/oeai";
     acdh:isMemberOf acdhi:oeaw. 
     
 acdhi:arche a acdh:Organisation;
@@ -123,7 +123,7 @@ acdhi:mdurco a acdh:Person;
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
     acdh:hasEmail "matej.durco@oeaw.ac.at";
-    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/matej-durco";
+#    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/matej-durco";
     acdh:isMemberOf acdhi:acdh.
     
 acdhi:pandorfer a acdh:Person;
@@ -144,7 +144,7 @@ acdhi:pandorfer a acdh:Person;
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
     acdh:hasEmail "peter.andorfer@oeaw.ac.at";
-    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/peter-andorfer";
+#    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/peter-andorfer";
     acdh:isMemberOf acdhi:acdh.
     
 acdhi:mtrognitz a acdh:Person;
@@ -162,7 +162,7 @@ acdhi:mtrognitz a acdh:Person;
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
     acdh:hasEmail "martina.trognitz@oeaw.ac.at";
-    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/martina-trognitz";
+#    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/martina-trognitz";
     acdh:isMemberOf acdhi:acdh.
     
 acdhi:dschopper a acdh:Person;
@@ -182,7 +182,7 @@ acdhi:dschopper a acdh:Person;
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
     acdh:hasEmail "daniel.schopper@oeaw.ac.at" ;
-    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/daniel-schopper";
+#    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/daniel-schopper";
     acdh:isMemberOf acdhi:acdh.
 	
 acdhi:hpirker a acdh:Person;
@@ -199,7 +199,7 @@ acdhi:hpirker a acdh:Person;
     acdh:hasCountry "Österreich"@de;
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
-    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/hannes-pirker";
+#    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/hannes-pirker";
     acdh:hasEmail "hannes.pirker@oeaw.ac.at";
     acdh:isMemberOf acdhi:acdh.
     
@@ -217,7 +217,7 @@ acdhi:uczeitschner a acdh:Person;
     acdh:hasCountry "Österreich"@de;
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
-    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/ulrike-czeitschner";
+#    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/ulrike-czeitschner";
     acdh:hasEmail "ulrike.czeitschner@oeaw.ac.at";
     acdh:isMemberOf acdhi:acdh.
 
@@ -234,7 +234,7 @@ acdhi:choffmann a acdh:Person;
     acdh:hasCountry "Österreich"@de;
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
-    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/christoph-hoffmann";
+#    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/christoph-hoffmann";
     acdh:hasEmail "christoph.hoffmann@oeaw.ac.at";
     acdh:isMemberOf acdhi:acdh.
 
@@ -259,7 +259,7 @@ acdhi:kmoerth a acdh:Person;
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
     acdh:hasEmail "karlheinz.moerth@oeaw.ac.at";
-    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/christoph-hoffmann";
+#    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/christoph-hoffmann";
     acdh:isMemberOf acdhi:acdh.
 
 acdhi:sstuhec a acdh:Person;
@@ -278,7 +278,7 @@ acdhi:sstuhec a acdh:Person;
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
     acdh:hasEmail "seta.stuhec@oeaw.ac.at";
-    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/seta-stuhec";
+#    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/seta-stuhec";
     acdh:isMemberOf acdhi:acdh.
 
 acdhi:mcarloni a acdh:Person;
@@ -297,7 +297,7 @@ acdhi:mcarloni a acdh:Person;
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
     acdh:hasEmail "massimiliano.carloni@oeaw.ac.at";
-    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/massimiliano-carloni";
+#    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/massimiliano-carloni";
     acdh:isMemberOf acdhi:acdh.
 
 acdhi:dstoxreiter a acdh:Person;
@@ -316,7 +316,7 @@ acdhi:dstoxreiter a acdh:Person;
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
     acdh:hasEmail "daniel.elsner@oeaw.ac.at";
-    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/daniel-elsner";
+#    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/daniel-elsner";
     acdh:isMemberOf acdhi:acdh.
 
 acdhi:mzoltak a acdh:Person;
@@ -335,7 +335,7 @@ acdhi:mzoltak a acdh:Person;
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
     acdh:hasEmail "mateusz.zoltak@oeaw.ac.at";
-    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/mateusz-zoltak";
+#    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/mateusz-zoltak";
     acdh:isMemberOf acdhi:acdh.
 
 acdhi:nczirjak a acdh:Person;
@@ -352,7 +352,7 @@ acdhi:nczirjak a acdh:Person;
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
     acdh:hasEmail "norbert.czirjak@oeaw.ac.at";
-    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/norbert-czirjak";
+#    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/norbert-czirjak";
     acdh:isMemberOf acdhi:acdh.
 
 acdhi:unknown a acdh:Person;
@@ -384,6 +384,6 @@ acdhi:rmandell a acdh:Person;
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
     acdh:hasEmail "RachelAlyson.Mandell@oeaw.ac.at";
-	acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/rachel-alyson-mandell";
+#    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/rachel-alyson-mandell";
     acdh:isMemberOf acdhi:acdh.
 
