@@ -43,13 +43,16 @@ oai:
         searchClass: \acdhOeaw\arche\oaipmh\search\BaseSearch
         # RDF property storing last modification date
         dateProp: https://vocabs.acdh.oeaw.ac.at/schema#hasUpdatedDate
-        # Namespace of the identfier to be used as the OAI-PMH resource id
-        idNmsp: https://hdl.handle.net/
         # Required repository-related settings
+        repoBaseUrl: https://arche.acdh.oeaw.ac.at/api/
+        # Property used as an identifier by the ARCHE repo
         id: https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier
+        # RDBMS table to search for OAI-PMH resource ids - one of identifiers/metadata/relations
+        idTable: metadata
+        # if idTable=relations or metadata, a property of the identfier to be used as the OAI-PMH resource id
+        idProp: https://vocabs.acdh.oeaw.ac.at/schema#hasPid
         searchMatch: search://match
         searchCount: search://count
-        repoBaseUrl: https://arche.acdh.oeaw.ac.at/api/
         # Execution time after each a resumption token is returned
         # for the listRecords verb
         resumptionTimeout: 120
