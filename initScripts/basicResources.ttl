@@ -387,3 +387,8 @@ acdhi:rmandell a acdh:Person;
 #    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/rachel-alyson-mandell";
     acdh:isMemberOf acdhi:acdh.
 
+acdhi:privateHands a acdh:Organisation ;
+    acdh:hasTitle "private hands (legal entity)"@en ;
+    acdh:hasTitle "Privatbesitz (Rechtsträger)"@de ;
+    acdh:hasDescription "The owner or possessor of a physical object."@en ;
+    acdh:hasDescription "Eigentümer oder Besitzer eines physischen Objektes."@de .
