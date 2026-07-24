@@ -10,7 +10,6 @@
         "acdh-oeaw/arche-openrefine": "^0.5",
         "acdh-oeaw/arche-openaire": "^2",
         "acdh-oeaw/arche-ref-sources": "^1",
-        "zozlak/yaml-merge": "^1",
-        "guzzlehttp/guzzle": "<7.15.0"
+        "zozlak/yaml-merge": "^1"
     }
 }
