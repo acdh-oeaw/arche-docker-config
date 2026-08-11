@@ -148,6 +148,7 @@ acdhi:pandorfer a acdh:Person;
     acdh:isMemberOf acdhi:acdh.
     
 acdhi:mtrognitz a acdh:Person;
+    acdh:hasIdentifier <https://orcid.org/0000-0003-0485-6861>;
     acdh:hasTitle "Martina Trognitz"@und;
     acdh:hasFirstName "Martina"@und;
     acdh:hasLastName "Trognitz"@und;
@@ -336,6 +337,41 @@ acdhi:mzoltak a acdh:Person;
     acdh:hasRegion "Wien"@de;
     acdh:hasEmail "mateusz.zoltak@oeaw.ac.at";
 #    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/mateusz-zoltak";
+    acdh:isMemberOf acdhi:acdh.
+
+acdhi:slai a acdh:Person;
+    acdh:hasIdentifier <https://orcid.org/0009-0008-6707-6639>;
+    acdh:hasTitle "Suvini Lai"@und;
+    acdh:hasFirstName "Ka Yee Suvini"@und;
+    acdh:hasLastName "Lai"@und;
+    acdh:hasAddressLine1 "Bäckerstraße 13";
+    acdh:hasAddressLine2 "c/o ACDH";
+    acdh:hasPostcode "1010";
+    acdh:hasCity "Vienna"@en;
+    acdh:hasCity "Wien"@de;
+    acdh:hasCountry "Austria"@en;
+    acdh:hasCountry "Österreich"@de;
+    acdh:hasRegion "Vienna"@en;
+    acdh:hasRegion "Wien"@de;
+    acdh:hasEmail "suvini.lai@oeaw.ac.at";
+    acdh:isMemberOf acdhi:acdh.
+
+acdhi:fmader a acdh:Person;
+    acdh:hasIdentifier <https://orcid.org/0000-0002-3666-463X>;
+    acdh:hasTitle "Franziska Mader"@und;
+    acdh:hasFirstName "Franziska"@und;
+    acdh:hasLastName "Mader"@und;
+    acdh:hasPersonalTitle "Mag. Dr.";
+    acdh:hasAddressLine1 "Bäckerstraße 13";
+    acdh:hasAddressLine2 "c/o ACDH";
+    acdh:hasPostcode "1010";
+    acdh:hasCity "Vienna"@en;
+    acdh:hasCity "Wien"@de;
+    acdh:hasCountry "Austria"@en;
+    acdh:hasCountry "Österreich"@de;
+    acdh:hasRegion "Vienna"@en;
+    acdh:hasRegion "Wien"@de;
+    acdh:hasEmail "franziska.mader@oeaw.ac.at";
     acdh:isMemberOf acdhi:acdh.
 
 acdhi:nczirjak a acdh:Person;
