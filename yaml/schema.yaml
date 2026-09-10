@@ -57,6 +57,7 @@ schema:
     oldParent: https://vocabs.acdh.oeaw.ac.at/schema#wasPartOf
     version: https://vocabs.acdh.oeaw.ac.at/schema#hasVersion
     funderLogo: https://vocabs.acdh.oeaw.ac.at/schema#hasFunderLogo
+    language: https://vocabs.acdh.oeaw.ac.at/schema#hasLanguage
     classes:
         agent: https://vocabs.acdh.oeaw.ac.at/schema#Agent
         binaryContent: https://vocabs.acdh.oeaw.ac.at/schema#BinaryContent
