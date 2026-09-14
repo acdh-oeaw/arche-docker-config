@@ -1,7 +1,9 @@
 #!/bin/bash
 SDIR=/home/www-data/vendor/bin
 LDIR=/home/www-data/log
-ODIR=/home/www-data/docroot/status
+if [ "$ODIR" == "" ] ; then
+    ODIR=/home/www-data/docroot/status
+fi
 CDIR=`dirname "$BASH_SOURCE[0]"`
 VERBOSE="--verbose"
 ACDH="https://vocabs.acdh.oeaw.ac.at/schema#"
