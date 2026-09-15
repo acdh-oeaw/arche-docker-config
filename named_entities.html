@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('#phrase').on('change', search);
+        $('#search').on('click', search);
+      });
+      
+      function search() {
+          document.location = $('#instance').val() + '/api/search?' +
+            '&resourceProperties[]=' + encodeURIComponent('https://vocabs.acdh.oeaw.ac.at/schema#hasTitle') +
+            '&resourceProperties[]=' + encodeURIComponent('https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier') + 
+            '&resourceProperties[]=' + encodeURIComponent('http://www.w3.org/1999/02/22-rdf-syntax-ns#type') +
+            '&property[0]=' + encodeURIComponent('http://www.w3.org/1999/02/22-rdf-syntax-ns#type') +
+            '&value[0]=' + encodeURIComponent($('#class').val()) +
+            '&operator[1]=~*' + 
+            '&value[1]=' + encodeURIComponent($('#phrase').val())
+        }
+    </script>
+  </head>
+  <body>
+    <h2>ARCHE named entities search</h2>
+    <form>
+      ARCHE instance: <select id="instance">
+        <option value="https://arche.acdh.oeaw.ac.at">production</option>
+        <option value="https://arche-curation.acdh-dev.oeaw.ac.at">curation</option>
+      </select><br/>
+      Named entity class: <select id="class">
+        <option value="https://vocabs.acdh.oeaw.ac.at/schema#Person">Person</option>
+        <option value="https://vocabs.acdh.oeaw.ac.at/schema#Organisation">Organisation</option>
+        <option value="https://vocabs.acdh.oeaw.ac.at/schema#Place">Place</option>
+      </select><br/>
+      Phrase: <input type="text" id="phrase"/> (regular expression, case insensitive)<br/>
+      <button type="button" id="search">search</button>
+    </form>
+  </body>
+</html>
