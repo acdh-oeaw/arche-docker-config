@@ -3,7 +3,7 @@ if [ ! -d /home/www-data/gui/.git ]; then
     su -w http_proxy,https_proxy -l www-data -c 'git clone https://github.com/nczirjak-acdh/arche-gui-backend-api.git /home/www-data/gui' || exit 1
 fi
 su -w http_proxy,https_proxy -l www-data -c 'cd /home/www-data/gui && APP_ENV=prod APP_DEBUG=0 composer install --no-dev --no-interaction --optimize-autoloader' || exit 1
-su -l www-data -c "ln -sfn /home/www-data/gui/public /home/www-data/docroot/browser"
+su -l www-data -c "ln -sfn /home/www-data/gui/public /home/www-data/docroot/guiApi"
 
 CMD=/home/www-data/vendor/zozlak/yaml-merge/bin/yaml-edit.php
 CFGD=/home/www-data/config/yaml
