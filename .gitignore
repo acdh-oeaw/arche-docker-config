@@ -8,3 +8,4 @@
 /backup_pgpass
 /run.d/smartsearch.sh
 .DS_Store
+/nbproject/private/
