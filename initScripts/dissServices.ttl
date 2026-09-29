@@ -262,10 +262,10 @@ acdhids:iiifmanifestMode
     acdh:hasDefaultValue    "manifest" ;
     acdh:hasDescription     "Allows to choose returned data format: manifest (IIIF presentation manifest), images (OpenSeadragon-compatible images list), image (single image IIIF manifest)"@en .
 
-# Loris
-acdhids:loris
+# IIIF Image API
+acdhids:iiifimage
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "https://loris.acdh.oeaw.ac.at/{RES_ID}/{param|emptyIf(format,image/json)}{format|emptyIf(param)|replace(image/json,info.json)|replace(image/,)|replace(iiif,jpg)}" ;
+    acdh:serviceLocation    "https://arche-iiifimage.acdh.oeaw.ac.at/{RES_URI|url}/{param|emptyIf(format,image/json)}{format|emptyIf(param)|replace(image/json,info.json)|replace(image/,)|replace(iiif,webp)|replace(jpeg,jpg)}" ;
     acdh:hasReturnType      "image/jpeg" ;
     acdh:hasReturnType      "image/png" ;
     acdh:hasReturnType      "image/gif" ;
@@ -275,37 +275,44 @@ acdhids:loris
     acdh:serviceRevProxy    false ;
     acdh:hasTitle           "IIIF Endpoint"@en ;
     acdh:hasDescription     "Redirects to the IIIF endpoint of the current image"@en .
-acdhids:lorisMatch1
+acdhids:iiifimageMatch1
     a                       acdh:DisseminationServiceMatchRule ;
-    acdh:relation           acdhids:loris ;
-    acdh:hasTitle           "lorisMatch"@en ;
+    acdh:relation           acdhids:iiifimage ;
+    acdh:hasTitle           "iiifimageMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "image/jpeg" ;
     acdh:isRequired         false .
-acdhids:lorisMatch2
+acdhids:iiifimageMatch2
     a                       acdh:DisseminationServiceMatchRule ;
-    acdh:relation           acdhids:loris ;
-    acdh:hasTitle           "lorisMatch"@en ;
+    acdh:relation           acdhids:iiifimage ;
+    acdh:hasTitle           "iiifimageMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "image/png" ;
     acdh:isRequired         false .
-acdhids:lorisMatch3
+acdhids:iiifimageMatch3
     a                       acdh:DisseminationServiceMatchRule ;
-    acdh:relation           acdhids:loris ;
-    acdh:hasTitle           "lorisMatch"@en ;
+    acdh:relation           acdhids:iiifimage ;
+    acdh:hasTitle           "iiifimageMatch"@en ;
     acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
     acdh:matchesValue       "image/tiff" ;
     acdh:isRequired         false .
-acdhids:lorisParam1
+acdhids:iiifimageMatch3
+    a                       acdh:DisseminationServiceMatchRule ;
+    acdh:relation           acdhids:iiifimage ;
+    acdh:hasTitle           "iiifimageMatch"@en ;
+    acdh:matchesProp        "https://vocabs.acdh.oeaw.ac.at/schema#hasFormat" ;
+    acdh:matchesValue       "image/webp" ;
+    acdh:isRequired         false .
+acdhids:iiifimageParam1
     a                       acdh:DisseminationServiceParameter ;
-    acdh:relation           acdhids:loris ;
+    acdh:relation           acdhids:iiifimage ;
     acdh:hasTitle           "param"@en ;
-    acdh:hasDefaultValue    "full/full/0/default." .
-acdhids:lorisParam2
+    acdh:hasDefaultValue    "full/max/0/default." .
+acdhids:iiifimageParam2
     a                       acdh:DisseminationServiceParameter ;
-    acdh:relation           acdhids:loris ;
+    acdh:relation           acdhids:iiifimage ;
     acdh:hasTitle           "format"@en ;
-    acdh:hasDefaultValue    "image/jpg" .
+    acdh:hasDefaultValue    "image/webp" .
 
 # GLB
 acdhids:glb

@@ -38,7 +38,7 @@ $SDIR/arche-ref-sources --user "$USER" --pswd "$PSWD" --repositoryUrl $REPOURL -
 
 # once a month scrap ids
 if [ "`date +%d`" == "01" ] ; then
-    $SDIR/arche-ref-sources --repositoryUrl $REPOURL --mode resolve cfg/id.yaml --output "$ODIR/ids.ttl" > "$ODIR/ref-ids.txt" 2>&1
+    $SDIR/arche-ref-sources --repositoryUrl $REPOURL --mode resolve $CDIR/id.yaml --output "$ODIR/ids.ttl" > "$ODIR/ref-ids.txt" 2>&1
 fi
 
 chown www-data:www-data $ODIR/*

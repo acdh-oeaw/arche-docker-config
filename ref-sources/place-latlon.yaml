@@ -166,3 +166,4 @@ referenceSources:
     http://www.wikidata.org/entity/Q2221906: *wikidataPlace
     http://www.wikidata.org/entity/Q17334923: *wikidataPlace
     http://www.wikidata.org/entity/Q27096213: *wikidataPlace
+    http://wikiba.se/ontology#Item: *wikidataPlace
