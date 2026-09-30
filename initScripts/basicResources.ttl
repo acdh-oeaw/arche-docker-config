@@ -107,25 +107,6 @@ acdhi:arche a acdh:Organisation;
     acdh:hasUrl "https://arche.acdh.oeaw.ac.at/browser/";
     acdh:isMemberOf acdhi:acdh.   
     
-acdhi:mdurco a acdh:Person;
-    acdh:hasIdentifier <https://orcid.org/0000-0002-5274-8278>;
-    acdh:hasTitle "Matej Ďurčo"@und;
-    acdh:hasFirstName "Matej"@und;
-    acdh:hasLastName "Ďurčo"@und;
-    acdh:hasPersonalTitle "DI";
-    acdh:hasAddressLine1 "Bäckerstraße 13";
-    acdh:hasAddressLine2 "c/o ACDH";
-    acdh:hasPostcode "1010";
-    acdh:hasCity "Vienna"@en;
-    acdh:hasCity "Wien"@de;
-    acdh:hasCountry "Austria"@en;
-    acdh:hasCountry "Österreich"@de;
-    acdh:hasRegion "Vienna"@en;
-    acdh:hasRegion "Wien"@de;
-    acdh:hasEmail "matej.durco@oeaw.ac.at";
-#    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/matej-durco";
-    acdh:isMemberOf acdhi:acdh.
-    
 acdhi:pandorfer a acdh:Person;
     acdh:hasIdentifier <https://viaf.org/viaf/251032539>;
     acdh:hasIdentifier <https://orcid.org/0000-0002-9575-9372>;
@@ -166,44 +147,6 @@ acdhi:mtrognitz a acdh:Person;
 #    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/martina-trognitz";
     acdh:isMemberOf acdhi:acdh.
     
-acdhi:dschopper a acdh:Person;
-    acdh:hasIdentifier <https://orcid.org/0000-0003-2436-0361>;
-    acdh:hasIdentifier <https://viaf.org/viaf/249676043>;
-    acdh:hasTitle "Daniel Schopper"@und;
-    acdh:hasFirstName "Daniel"@und;
-    acdh:hasLastName "Schopper"@und;
-    acdh:hasPersonalTitle "Mag.";
-    acdh:hasAddressLine1 "Bäckerstraße 13";
-    acdh:hasAddressLine2 "c/o ACDH";
-    acdh:hasPostcode "1010";
-    acdh:hasCity "Vienna"@en;
-    acdh:hasCity "Wien"@de;
-    acdh:hasCountry "Austria"@en;
-    acdh:hasCountry "Österreich"@de;
-    acdh:hasRegion "Vienna"@en;
-    acdh:hasRegion "Wien"@de;
-    acdh:hasEmail "daniel.schopper@oeaw.ac.at" ;
-#    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/daniel-schopper";
-    acdh:isMemberOf acdhi:acdh.
-	
-acdhi:hpirker a acdh:Person;
-    acdh:hasTitle "Hannes Pirker"@und;
-    acdh:hasFirstName "Hannes"@und;
-    acdh:hasLastName "Pirker"@und;
-    acdh:hasPersonalTitle "Mag.";
-    acdh:hasAddressLine1 "Bäckerstraße 13";
-    acdh:hasAddressLine2 "c/o ACDH";
-    acdh:hasPostcode "1010";
-    acdh:hasCity "Vienna"@en;
-    acdh:hasCity "Wien"@de;
-    acdh:hasCountry "Austria"@en;
-    acdh:hasCountry "Österreich"@de;
-    acdh:hasRegion "Vienna"@en;
-    acdh:hasRegion "Wien"@de;
-#    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/hannes-pirker";
-    acdh:hasEmail "hannes.pirker@oeaw.ac.at";
-    acdh:isMemberOf acdhi:acdh.
-    
 acdhi:uczeitschner a acdh:Person;
     acdh:hasTitle "Ulrike Czeitschner"@und;
     acdh:hasFirstName "Ulrike"@und;
@@ -220,47 +163,6 @@ acdhi:uczeitschner a acdh:Person;
     acdh:hasRegion "Wien"@de;
 #    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/ulrike-czeitschner";
     acdh:hasEmail "ulrike.czeitschner@oeaw.ac.at";
-    acdh:isMemberOf acdhi:acdh.
-
-acdhi:choffmann a acdh:Person;
-    acdh:hasTitle "Christoph Hoffmann"@und;
-    acdh:hasFirstName "Christoph"@und;
-    acdh:hasLastName "Hoffmann"@und;
-    acdh:hasAddressLine1 "Bäckerstraße 13";
-    acdh:hasAddressLine2 "c/o ACDH";
-    acdh:hasPostcode "1010";
-    acdh:hasCity "Vienna"@en;
-    acdh:hasCity "Wien"@de;
-    acdh:hasCountry "Austria"@en;
-    acdh:hasCountry "Österreich"@de;
-    acdh:hasRegion "Vienna"@en;
-    acdh:hasRegion "Wien"@de;
-#    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/christoph-hoffmann";
-    acdh:hasEmail "christoph.hoffmann@oeaw.ac.at";
-    acdh:isMemberOf acdhi:acdh.
-
-acdhi:elemus a acdh:Person;
-    acdh:hasTitle "Elmy Lemus"@und;
-    acdh:hasFirstName "Elmy"@und;
-    acdh:hasLastName "Lemus"@und.
-
-acdhi:kmoerth a acdh:Person;
-    acdh:hasIdentifier <https://viaf.org/viaf/311166103>;
-    acdh:hasTitle "Karlheinz Mörth"@und;
-    acdh:hasFirstName "Karlheinz"@und;
-    acdh:hasLastName "Mörth"@und;
-    acdh:hasPersonalTitle "Dr.";
-    acdh:hasAddressLine1 "Bäckerstraße 13";
-    acdh:hasAddressLine2 "c/o ACDH";
-    acdh:hasPostcode "1010";
-    acdh:hasCity "Vienna"@en;
-    acdh:hasCity "Wien"@de;
-    acdh:hasCountry "Austria"@en;
-    acdh:hasCountry "Österreich"@de;
-    acdh:hasRegion "Vienna"@en;
-    acdh:hasRegion "Wien"@de;
-    acdh:hasEmail "karlheinz.moerth@oeaw.ac.at";
-#    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/christoph-hoffmann";
     acdh:isMemberOf acdhi:acdh.
 
 acdhi:sstuhec a acdh:Person;
@@ -339,6 +241,41 @@ acdhi:mzoltak a acdh:Person;
 #    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/mateusz-zoltak";
     acdh:isMemberOf acdhi:acdh.
 
+acdhi:nczirjak a acdh:Person;
+    acdh:hasTitle "Norbert Czirjak"@und;
+    acdh:hasFirstName "Norbert"@und;
+    acdh:hasLastName "Czirjak"@und;
+    acdh:hasAddressLine1 "Bäckerstraße 13";
+    acdh:hasAddressLine2 "c/o ACDH";
+    acdh:hasPostcode "1010";
+    acdh:hasCity "Vienna"@en;
+    acdh:hasCity "Wien"@de;
+    acdh:hasCountry "Austria"@en;
+    acdh:hasCountry "Österreich"@de;
+    acdh:hasRegion "Vienna"@en;
+    acdh:hasRegion "Wien"@de;
+    acdh:hasEmail "norbert.czirjak@oeaw.ac.at";
+#    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/norbert-czirjak";
+    acdh:isMemberOf acdhi:acdh.
+
+acdhi:rmandell a acdh:Person;
+    acdh:hasIdentifier <https://orcid.org/0000-0002-7876-5893>;
+    acdh:hasTitle "Rachel Mandell"@und;
+    acdh:hasFirstName "Rachel"@und;
+    acdh:hasLastName "Mandell"@und;
+    acdh:hasAddressLine1 "Bäckerstraße 13";
+    acdh:hasAddressLine2 "c/o ACDH";
+    acdh:hasPostcode "1010";
+    acdh:hasCity "Vienna"@en;
+    acdh:hasCity "Wien"@de;
+    acdh:hasCountry "Austria"@en;
+    acdh:hasCountry "Österreich"@de;
+    acdh:hasRegion "Vienna"@en;
+    acdh:hasRegion "Wien"@de;
+    acdh:hasEmail "RachelAlyson.Mandell@oeaw.ac.at";
+#    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/rachel-alyson-mandell";
+    acdh:isMemberOf acdhi:acdh.
+
 acdhi:slai a acdh:Person;
     acdh:hasIdentifier <https://orcid.org/0009-0008-6707-6639>;
     acdh:hasTitle "Suvini Lai"@und;
@@ -374,10 +311,12 @@ acdhi:fmader a acdh:Person;
     acdh:hasEmail "franziska.mader@oeaw.ac.at";
     acdh:isMemberOf acdhi:acdh.
 
-acdhi:nczirjak a acdh:Person;
-    acdh:hasTitle "Norbert Czirjak"@und;
-    acdh:hasFirstName "Norbert"@und;
-    acdh:hasLastName "Czirjak"@und;
+acdhi:n a acdh:Person;
+    acdh:hasIdentifier <https://orcid.org/0000-0003-1189-214X>;
+    acdh:hasTitle "Naomi Nota"@und;
+    acdh:hasFirstName "Naomi"@und;
+    acdh:hasLastName "Nota"@und;
+    acdh:hasPersonalTitle "Dr.";
     acdh:hasAddressLine1 "Bäckerstraße 13";
     acdh:hasAddressLine2 "c/o ACDH";
     acdh:hasPostcode "1010";
@@ -387,13 +326,14 @@ acdhi:nczirjak a acdh:Person;
     acdh:hasCountry "Österreich"@de;
     acdh:hasRegion "Vienna"@en;
     acdh:hasRegion "Wien"@de;
-    acdh:hasEmail "norbert.czirjak@oeaw.ac.at";
-#    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/norbert-czirjak";
+    acdh:hasEmail "naomi.nota@oeaw.ac.at";
     acdh:isMemberOf acdhi:acdh.
 
 acdhi:unknown a acdh:Person;
     acdh:hasTitle "unknown rights holder (legal entity)"@en;
     acdh:hasTitle "Urheber unbekannt (Rechtsträger)"@de;
+    acdh:hasLastName "unknown rights holder (legal entity)"@en;
+    acdh:hasLastName "Urheber unbekannt (Rechtsträger)"@de;
     acdh:hasDescription "Rights holder as defined in the Austrian Federal Law on Copyright in Literary and Artistic Works and on Related Rights (Copyright Law) StF: BGBl. Nr. 111/1936 (StR: 39/Gu. BT: 64/Ge S. 19.) paragraph II. Used for Orpahn Works."@en;
     acdh:hasDescription "Urheber definiert nach dem österreichischen Bundesgesetz über das Urheberrecht an Werken der Literatur und der Kunst und über verwandte Schutzrechte (Urheberrechtsgesetz) StF: BGBl. Nr. 111/1936 (StR: 39/Gu. BT: 64/Ge S. 19.) Abschnitt II. Verwendet für Rechteinhaber von verwaisten Werken."@de;
     acdh:hasUrl "https://vocabs.acdh.oeaw.ac.at/archelicenses/inc-ow-eu".
@@ -401,27 +341,11 @@ acdhi:unknown a acdh:Person;
 acdhi:none a acdh:Person;
     acdh:hasTitle "no rights holder / licensor (legal entity)"@en;
     acdh:hasTitle "kein Urheber / Lizenzgeber (Rechtsträger)"@de;
+    acdh:hasLastName "no rights holder / licensor (legal entity)"@en;
+    acdh:hasLastName "kein Urheber / Lizenzgeber (Rechtsträger)"@de;
     acdh:hasDescription "Rights holder as defined in the Austrian Federal Law on Copyright in Literary and Artistic Works and on Related Rights (Copyright Law) StF: BGBl. Nr. 111/1936 (StR: 39/Gu. BT: 64/Ge S. 19.) paragraph II. Used for rights holders / licensors of works in public domain."@en;
     acdh:hasDescription "Urheber definiert nach dem österreichischen Bundesgesetz über das Urheberrecht an Werken der Literatur und der Kunst und über verwandte Schutzrechte (Urheberrechtsgesetz) StF: BGBl. Nr. 111/1936 (StR: 39/Gu. BT: 64/Ge S. 19.) Abschnitt II. Verwendet für Rechteinhaber / Lizenzgeber von gemeinfreien Werken."@de;
     acdh:hasUrl "https://vocabs.acdh.oeaw.ac.at/archelicenses/publicdomain-1-0".
-
-acdhi:rmandell a acdh:Person;
-    acdh:hasIdentifier <https://orcid.org/0000-0002-7876-5893>;
-    acdh:hasTitle "Rachel Mandell"@und;
-    acdh:hasFirstName "Rachel"@und;
-    acdh:hasLastName "Mandell"@und;
-    acdh:hasAddressLine1 "Bäckerstraße 13";
-    acdh:hasAddressLine2 "c/o ACDH";
-    acdh:hasPostcode "1010";
-    acdh:hasCity "Vienna"@en;
-    acdh:hasCity "Wien"@de;
-    acdh:hasCountry "Austria"@en;
-    acdh:hasCountry "Österreich"@de;
-    acdh:hasRegion "Vienna"@en;
-    acdh:hasRegion "Wien"@de;
-    acdh:hasEmail "RachelAlyson.Mandell@oeaw.ac.at";
-#    acdh:hasUrl "https://www.oeaw.ac.at/acdh/institute/team/staff-members/rachel-alyson-mandell";
-    acdh:isMemberOf acdhi:acdh.
 
 acdhi:privateHands a acdh:Organisation ;
     acdh:hasTitle "private hands (legal entity)"@en ;
