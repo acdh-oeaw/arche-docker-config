@@ -28,3 +28,9 @@ binaryDownload:
   collectionClasses:
   - https://vocabs.acdh.oeaw.ac.at/schema#Collection
   - https://vocabs.acdh.oeaw.ac.at/schema#TopCollection
+xmlPreview:
+  formats:
+  - text/xml
+  - application/xml
+  - application/tei+xml
+  maxSize: 5242880
