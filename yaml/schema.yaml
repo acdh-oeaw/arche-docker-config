@@ -60,6 +60,7 @@ schema:
     funderLogo: https://vocabs.acdh.oeaw.ac.at/schema#hasFunderLogo
     language: https://vocabs.acdh.oeaw.ac.at/schema#hasLanguage
     lastName: https://vocabs.acdh.oeaw.ac.at/schema#hasLastName
+    schema: https://vocabs.acdh.oeaw.ac.at/schema#hasSchema
     classes:
         agent: https://vocabs.acdh.oeaw.ac.at/schema#Agent
         binaryContent: https://vocabs.acdh.oeaw.ac.at/schema#BinaryContent
