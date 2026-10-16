@@ -9,11 +9,11 @@ su -l www-data -c "ln -sf /home/www-data/gui/public /home/www-data/docroot/guiAp
 
 echo "Creating /home/www-data/gui/.env"
 echo "APP_SHARE_DIR=var/share" >> /home/www-data/gui/.env
-echo "DB_HOST='$GUI_DB_HOST'" >> /home/www-data/gui/.env
-echo "DB_PORT='$GUI_DB_PORT'" >> /home/www-data/gui/.env
-echo "DB_USER='$GUI_DB_USER'" >> /home/www-data/gui/.env
-echo "DB_PASS='$GUI_DB_PSWD"  >> /home/www-data/gui/.env
-echo "DB_NAME='$GUI_DB_NAME'" >> /home/www-data/gui/.env
+echo "DB_HOST='$GUI_DB_HOST'"  >> /home/www-data/gui/.env
+echo "DB_PORT='$GUI_DB_PORT'"  >> /home/www-data/gui/.env
+echo "DB_USER='$GUI_DB_USER'"  >> /home/www-data/gui/.env
+echo "DB_PASS='$GUI_DB_PSWD'"  >> /home/www-data/gui/.env
+echo "DB_NAME='$GUI_DB_NAME'"  >> /home/www-data/gui/.env
 echo "APP_ENV=$APP_ENV"           >> /home/www-data/gui/.env
 echo "APP_DEBUG=$APP_DEBUG"       >> /home/www-data/gui/.env
 echo "APP_SECRET='$APP_SECRET'"   >> /home/www-data/gui/.env
