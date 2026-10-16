@@ -5,9 +5,6 @@ if [ ! -d /home/www-data/gui/.git ]; then
     rm -fR $GUIDIR/* $GUISIR/.* &&\
         su -w http_proxy,https_proxy -l www-data -c "git clone https://github.com/nczirjak-acdh/arche-gui-backend-api.git $GUIDIR" || exit 1
 fi
-#sed -i -e '/cache:clear/d' -e '/assets:install/d' $GUIDIR/composer.json
-su -l www-data -w http_proxy,https_proxy -c 'cd /home/www-data/gui && composer install --no-dev --no-interaction --optimize-autoloader' || exit 1
-
 su -l www-data -c "ln -sf /home/www-data/gui/public /home/www-data/docroot/guiApi"
 
 echo "Creating /home/www-data/gui/.env"
@@ -15,6 +12,7 @@ echo "APP_SHARE_DIR=var/share" >> /home/www-data/gui/.env
 echo "DB_HOST='$GUI_DB_HOST'" >> /home/www-data/gui/.env
 echo "DB_PORT='$GUI_DB_PORT'" >> /home/www-data/gui/.env
 echo "DB_USER='$GUI_DB_USER'" >> /home/www-data/gui/.env
+echo "DB_PASS='$GUI_DB_PSWD"  >> /home/www-data/gui/.env
 echo "DB_NAME='$GUI_DB_NAME'" >> /home/www-data/gui/.env
 echo "APP_ENV=$APP_ENV"           >> /home/www-data/gui/.env
 echo "APP_DEBUG=$APP_DEBUG"       >> /home/www-data/gui/.env
@@ -37,3 +35,5 @@ su -l www-data -c "$CMD \\
     $CFGD/config-gui.yaml"
 su -l www-data -c "ln -s $CFGD/config-gui.yaml /home/www-data/gui/src/arche-config/config-gui.yaml"
 
+#sed -i -e '/cache:clear/d' -e '/assets:install/d' $GUIDIR/composer.json
+su -l www-data -w http_proxy,https_proxy -c 'cd /home/www-data/gui && composer install --no-dev --no-interaction --optimize-autoloader' || exit 1
