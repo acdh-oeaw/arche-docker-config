@@ -281,6 +281,7 @@ acdhi:slai a acdh:Person;
     acdh:hasTitle "Suvini Lai"@und;
     acdh:hasFirstName "Ka Yee Suvini"@und;
     acdh:hasLastName "Lai"@und;
+    acdh:hasPersonalTitle "MA";
     acdh:hasAddressLine1 "Bäckerstraße 13";
     acdh:hasAddressLine2 "c/o ACDH";
     acdh:hasPostcode "1010";
