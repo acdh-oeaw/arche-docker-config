@@ -5,7 +5,7 @@
 @prefix dc: <http://purl.org/dc/elements/1.1/>.
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
 
-acdhi:vienn a acdh:Place;
+acdhi:vienna a acdh:Place;
     acdh:hasIdentifier acdhi:vienna;
     acdh:hasIdentifier <https://www.geonames.org/2761367>;
     acdh:hasTitle "Vienna"@en;
