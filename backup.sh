@@ -1,5 +1,5 @@
 #!/bin/bash
-SDIR=/home/www-data/vendor/acdh-oeaw/arche-core
+SDIR=/home/www-data/vendor/bin
 BDIR=/home/www-data/backup
 TDIR=/home/www-data/backup/tmp
 TDIRDB=/home/www-data/data/tmp
@@ -20,11 +20,11 @@ echo "### Initialization completed, starting a backup on `date +%Y-%m-%dT%H:%M:%
 cd /home/www-data/ && tar -czf $BDIR/config_$DOW.tgz config && echo "### Config archived successfully"
 # always dump the database
 echo "### Dumping the database"
-$SDIR/backup.php $BDIR/dbdump_$DOW "$CFGFILE" --tmpDir "$TDIRDB" --include all --compression gzip --compressionLevel 9 --dateFrom 2200-01-01 --dateTo 2200-01-01 2>&1 | tee $BDIR/dbdump_$DOW.log &&\
+$SDIR/backup $BDIR/dbdump_$DOW "$CFGFILE" --tmpDir "$TDIRDB" --include all --compression gzip --compressionLevel 9 --dateFrom 2200-01-01 --dateTo 2200-01-01 2>&1 | tee $BDIR/dbdump_$DOW.log &&\
     echo "### Database dumped successfully"
 # full incremental binaries backup on Sunday
 if [ "$DOW" == "7" ] ; then
-    $SDIR/backup.php --dateFile "$DATEFILE" --chunkSize $CHUNKSIZEMB --compression $COMPRESSION --compressionLevel $COMPRESSIONLEVEL --include none --lock skip --tmpDir "$TDIR" "$BDIR/${FILE}" "$CFGFILE" 2>&1 | tee "$BDIR/${FILE}.log" &&\
+    $SDIR/backup --dateFile "$DATEFILE" --chunkSize $CHUNKSIZEMB --compression $COMPRESSION --compressionLevel $COMPRESSIONLEVEL --include none --lock skip --tmpDir "$TDIR" "$BDIR/${FILE}" "$CFGFILE" 2>&1 | tee "$BDIR/${FILE}.log" &&\
     echo "### Incremental binary dump ended successfully" | tee -a "$BDIR/${FILE}.log"
     cp "$BDIR/${FILE}.log" "$ODIR/backup_last.txt"
 fi
