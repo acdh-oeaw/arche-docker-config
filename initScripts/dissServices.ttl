@@ -265,7 +265,7 @@ acdhids:iiifmanifestMode
 # IIIF Image API
 acdhids:iiifimage
     a                       acdh:DisseminationService ;
-    acdh:serviceLocation    "https://arche-iiifimage.acdh.oeaw.ac.at/{RES_URI|url}/{param|emptyIf(format,image/json)}{format|emptyIf(param)|replace(image/json,info.json)|replace(image/,)|replace(iiif,webp)|replace(jpeg,jpg)}" ;
+    acdh:serviceLocation    "https://arche-iiifimage.acdh.oeaw.ac.at/{RES_URI|url}/{param|emptyIf(format,image/json)}{format|emptyIf(param)|replace(image/json,info.json)|replace(image/,)|replace(iiif,webp)|replace(jpeg,jpg)|replace(/*,)}" ;
     acdh:hasReturnType      "image/jpeg" ;
     acdh:hasReturnType      "image/png" ;
     acdh:hasReturnType      "image/gif" ;
