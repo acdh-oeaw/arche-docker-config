@@ -39,7 +39,7 @@ su -l www-data -c "$CMD \\
     --src $CFGD/local.yaml \\
     $CFGD/config-gui.yaml"
 
-su -l www-data -c "ln -s $CFGD/config-gui.yaml $GUI_CFGD/config-gui.yaml"
-
 #sed -i -e '/cache:clear/d' -e '/assets:install/d' $GUIDIR/composer.json
 su -l www-data -w http_proxy,https_proxy -c 'cd /home/www-data/gui && composer install --no-dev --no-interaction --optimize-autoloader' || exit 1
+# Move the config file after the symfony is installed
+su -l www-data -c "ln -s $CFGD/config-gui.yaml $GUI_CFGD/config-gui.yaml"
