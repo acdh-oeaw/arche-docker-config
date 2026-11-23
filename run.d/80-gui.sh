@@ -22,6 +22,11 @@ echo "CORS_ALLOW_ORIGIN='$CORS_ALLOW_ORIGIN'" >> /home/www-data/gui/.env
 
 CMD=/home/www-data/vendor/zozlak/yaml-merge/bin/yaml-edit.php
 CFGD=/home/www-data/config/yaml
+GUI_CFGD=/home/www-data/gui/src/arche-config
+
+# Create directory if it does not exist
+mkdir -p "$GUI_CFGD"
+
 echo "Creating $CFGD/config-gui.yaml"
 rm -f /home/www-data/gui/src/arche-config/config-gui.yaml $CFGD/config-gui.yaml
 su -l www-data -c "$CMD \\
@@ -33,7 +38,8 @@ su -l www-data -c "$CMD \\
     --src $CFGD/config-db.yaml --srcPath '$.dbConnStr.gui' --targetPath '$.dbConnStr' \\
     --src $CFGD/local.yaml \\
     $CFGD/config-gui.yaml"
-su -l www-data -c "ln -s $CFGD/config-gui.yaml /home/www-data/gui/src/arche-config/config-gui.yaml"
+
+su -l www-data -c "ln -s $CFGD/config-gui.yaml $GUI_CFGD/config-gui.yaml"
 
 #sed -i -e '/cache:clear/d' -e '/assets:install/d' $GUIDIR/composer.json
 su -l www-data -w http_proxy,https_proxy -c 'cd /home/www-data/gui && composer install --no-dev --no-interaction --optimize-autoloader' || exit 1
