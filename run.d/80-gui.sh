@@ -2,7 +2,7 @@
 
 GUIDIR=/home/www-data/gui
 if [ ! -d /home/www-data/gui/.git ]; then
-    rm -fR $GUIDIR/* $GUISIR/.* &&\
+    rm -fR $GUIDIR/* $GUIDIR/.* &&\
         su -w http_proxy,https_proxy -l www-data -c "git clone https://github.com/nczirjak-acdh/arche-gui-backend-api.git $GUIDIR" || exit 1
 fi
 su -l www-data -c "ln -sf /home/www-data/gui/public /home/www-data/docroot/guiApi"
@@ -25,7 +25,11 @@ CFGD=/home/www-data/config/yaml
 GUI_CFGD=/home/www-data/gui/src/arche-config
 
 # Create directory if it does not exist
-mkdir -p "$GUI_CFGD"
+if [ -d "$GUI_CFGD" ]; then
+    chown www-data:www-data "$GUI_CFGD" || exit 1
+fi
+su -l www-data -c "mkdir -p '$GUI_CFGD'" || exit 1
+
 
 echo "Creating $CFGD/config-gui.yaml"
 rm -f /home/www-data/gui/src/arche-config/config-gui.yaml $CFGD/config-gui.yaml
